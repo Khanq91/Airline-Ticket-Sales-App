@@ -138,7 +138,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\frmDangNhap1.png" />
+    <None Include="Resources\airplane-pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmDangKi-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmDangNhap-final.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
