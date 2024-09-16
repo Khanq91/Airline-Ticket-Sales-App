@@ -17,8 +17,27 @@ namespace BanVeMayBay
         {
             InitializeComponent();
 
-        }
+            var a = this.PointToScreen(btnDangKi.Location);
+            a = picDangNhap.PointToClient(a);
 
+            LamTrongSuotNenChu(label1, picNenDN);
+            LamTrongSuotNenChu(picMayBay, picNenDN);
+            LamTrongSuotNenChu(picThoat, picDangNhap);
+        }
+        void LamTrongSuotNenChu(Control x, PictureBox nenX) //x là textbox, nenX là pictureBox nằm dưới textbox
+        {
+            var a = this.PointToScreen(x.Location);
+            a = nenX.PointToClient(a);
+            x.Parent = nenX;
+            x.Location = a;
+            x.BackColor = Color.Transparent;
+
+            //var a = this.PointToScreen(label1.Location);
+            //a = picNenDN.PointToClient(a);
+            //label1.Parent = picNenDN;
+            //label1.Location = a;
+            //label1.BackColor = Color.Transparent;
+        }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             //Đổi màu theo mã màu Hex
@@ -50,6 +69,16 @@ namespace BanVeMayBay
             this.Hide();
             frmDangKy fdk = new frmDangKy();
             fdk.Show();
+        }
+
+        private void picThoat_MouseMove(object sender, MouseEventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void picThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

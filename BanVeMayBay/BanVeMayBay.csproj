@@ -149,5 +149,11 @@
   <ItemGroup>
     <None Include="Resources\frmDangNhap-final.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudPicture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

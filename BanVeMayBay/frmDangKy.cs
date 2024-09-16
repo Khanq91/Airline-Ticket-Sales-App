@@ -14,9 +14,24 @@ namespace BanVeMayBay
     {
         public frmDangKy()
         {
-            InitializeComponent();
-        }
+            InitializeComponent(); 
+            
+            var a = this.PointToScreen(btnDangKi.Location);
+            a = picDangKi.PointToClient(a);
 
+            LamTrongSuotNenChu(label1, picNenDK);
+            LamTrongSuotNenChu(picMayBay, picNenDK);
+            LamTrongSuotNenChu(picThoat, picDangKi);
+        }
+        void LamTrongSuotNenChu(Control x, PictureBox nenX) //x là textbox, nenX là pictureBox nằm dưới textbox
+        {
+            var a = this.PointToScreen(x.Location);
+            a = nenX.PointToClient(a);
+            x.Parent = nenX;
+            x.Location = a;
+            x.BackColor = Color.Transparent;
+
+        }
         private void frmDangKy_Load(object sender, EventArgs e)
         {
             txtTaiKhoan_DK.Clear();
@@ -62,6 +77,11 @@ namespace BanVeMayBay
                 this.erpTKMK.SetError(ctr, "Bạn phải nhập lại mật khẩu!");
             else
                 this.erpTKMK.Clear();
+        }
+
+        private void picThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

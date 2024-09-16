@@ -40,13 +40,13 @@ namespace BanVeMayBay
             this.picNenDN = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMayBay = new System.Windows.Forms.PictureBox();
+            this.picThoat = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picDangNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpTKMK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNenDN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMayBay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMatKhau_DN
@@ -115,6 +115,7 @@ namespace BanVeMayBay
             // picNenDN
             // 
             this.picNenDN.BackColor = System.Drawing.Color.DarkCyan;
+            this.picNenDN.Image = global::BanVeMayBay.Properties.Resources.cloudPicture1;
             this.picNenDN.Location = new System.Drawing.Point(0, 0);
             this.picNenDN.Name = "picNenDN";
             this.picNenDN.Size = new System.Drawing.Size(885, 980);
@@ -125,54 +126,42 @@ namespace BanVeMayBay
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DarkCyan;
+            this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 44F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(43, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1218, 116);
+            this.label1.Size = new System.Drawing.Size(822, 348);
             this.label1.TabIndex = 6;
-            this.label1.Text = "HỆ THỐNG xấu điên luôn ă";
+            this.label1.Text = "HỆ THỐNG\r\nBÁN VÉ MÁY BAY\r\nDuoKT_Jet\r\n";
             // 
             // elipseTool1
             // 
             this.elipseTool1.CornerRadius = 40;
             this.elipseTool1.TargetControl = this;
             // 
-            // label2
+            // picMayBay
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkCyan;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 44F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(43, 300);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(822, 116);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "BÁN VÉ MÁY BAY";
+            this.picMayBay.BackColor = System.Drawing.Color.DarkCyan;
+            this.picMayBay.Image = global::BanVeMayBay.Properties.Resources.airplane_pic;
+            this.picMayBay.Location = new System.Drawing.Point(78, 496);
+            this.picMayBay.Name = "picMayBay";
+            this.picMayBay.Size = new System.Drawing.Size(737, 250);
+            this.picMayBay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMayBay.TabIndex = 9;
+            this.picMayBay.TabStop = false;
             // 
-            // label3
+            // picThoat
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkCyan;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 44F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(43, 455);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(508, 116);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "DuoKT_Jet";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkCyan;
-            this.pictureBox1.Image = global::BanVeMayBay.Properties.Resources.airplane_pic;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 495);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(737, 250);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.picThoat.Image = global::BanVeMayBay.Properties.Resources.close;
+            this.picThoat.Location = new System.Drawing.Point(1471, 9);
+            this.picThoat.Name = "picThoat";
+            this.picThoat.Size = new System.Drawing.Size(40, 40);
+            this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picThoat.TabIndex = 10;
+            this.picThoat.TabStop = false;
+            this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
+            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picThoat_MouseMove);
             // 
             // frmDangNhap
             // 
@@ -180,12 +169,11 @@ namespace BanVeMayBay
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1520, 980);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.picThoat);
+            this.Controls.Add(this.btnDangNhap);
+            this.Controls.Add(this.picMayBay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangKi);
-            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau_DN);
             this.Controls.Add(this.txtTaiKhoan_DN);
             this.Controls.Add(this.picDangNhap);
@@ -198,7 +186,8 @@ namespace BanVeMayBay
             ((System.ComponentModel.ISupportInitialize)(this.picDangNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpTKMK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNenDN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMayBay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,8 +203,7 @@ namespace BanVeMayBay
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.PictureBox picNenDN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picMayBay;
+        private System.Windows.Forms.PictureBox picThoat;
     }
 }
