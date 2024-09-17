@@ -80,5 +80,12 @@ namespace BanVeMayBay
         {
             Application.Exit();
         }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frmMain = new frmMain();
+            frmMain.Show();
+        }
     }
 }
