@@ -46,3 +46,4 @@ C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\Ne
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.exe
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDiaDiemDatVe.resources

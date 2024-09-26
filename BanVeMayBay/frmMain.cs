@@ -32,6 +32,8 @@ namespace BanVeMayBay
             frmDangNhap frmdn = new frmDangNhap();
             frmdn.Close();
             lblChaoNguoiDung.Text = "Xin chào + tên người dùng";
+            pnlDuoiGiaoDien.Visible = false;
+            pnlThanGiaoDien.Height += 87; 
         }
 
         private void picThoat_Click(object sender, EventArgs e)

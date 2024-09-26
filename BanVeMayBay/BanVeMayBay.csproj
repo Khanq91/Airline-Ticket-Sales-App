@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChonDiaDiemDatVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChonDiaDiemDatVe.Designer.cs">
+      <DependentUpon>frmChonDiaDiemDatVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChonDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Tool\ElipseTool.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmChonDiaDiemDatVe.resx">
+      <DependentUpon>frmChonDiaDiemDatVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChonDichVu.resx">
       <DependentUpon>frmChonDichVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +163,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane-arrival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane-departure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voucher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
