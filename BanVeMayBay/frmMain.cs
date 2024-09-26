@@ -33,7 +33,13 @@ namespace BanVeMayBay
             frmdn.Close();
             lblChaoNguoiDung.Text = "Xin chào + tên người dùng";
             pnlDuoiGiaoDien.Visible = false;
-            pnlThanGiaoDien.Height += 87; 
+            pnlThanGiaoDien.Height += 87;
+
+
+            frmChonDiaDiemDatVe frmCDDDV = new frmChonDiaDiemDatVe();
+            frmCDDDV.TopLevel = false;
+            flowLayoutPnlThanGianDien.Controls.Add(frmCDDDV);
+            frmCDDDV.Show();
         }
 
         private void picThoat_Click(object sender, EventArgs e)
@@ -44,6 +50,15 @@ namespace BanVeMayBay
         private void picThoat_MouseMove(object sender, MouseEventArgs e)
         {
             Cursor.Current = Cursors.Hand;
+        }
+
+        private void picReset_Click(object sender, EventArgs e)
+        {
+            //phương thức reset form khi ấn nút reset
+            this.Hide();
+            Form frmm = new frmMain();
+            frmm.FormClosed += (s, args) => this.Close();
+            frmm.Show();
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

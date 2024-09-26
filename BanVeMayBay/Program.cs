@@ -28,7 +28,7 @@ namespace BanVeMayBay
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmChonDiaDiemDatVe());
+            Application.Run(new frmMain());
         }
     }
 }
