@@ -123,8 +123,8 @@
             // picTroLaiDN
             // 
             this.picTroLaiDN.BackColor = System.Drawing.Color.White;
-            this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.arrow_left;
-            this.picTroLaiDN.Location = new System.Drawing.Point(1007, 148);
+            this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.angle_left;
+            this.picTroLaiDN.Location = new System.Drawing.Point(1007, 152);
             this.picTroLaiDN.Name = "picTroLaiDN";
             this.picTroLaiDN.Size = new System.Drawing.Size(49, 35);
             this.picTroLaiDN.TabIndex = 5;

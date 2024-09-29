@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -50,11 +51,19 @@ namespace BanVeMayBay
                     frmcon.StartPosition = FormStartPosition.Manual;
                 }
                 frmcon.Location = new Point(1229, 651);
-                frmcon.ShowDialog();
+                DialogResult result = frmcon.ShowDialog();
                 frmCoDangMoHayKhong = true;
+                if(result == DialogResult.OK)
+                {
+                    string SLHK = string.Empty;
+                    frmCon_frmChonDiaDiemDatVe frmc = new frmCon_frmChonDiaDiemDatVe();
+                    int slNL = int.Parse(frmc.SLnl);
+                    int slTE = int.Parse(frmc.SLte);
+                    int slEB = int.Parse(frmc.SLeb);
+                    //kt so luong nguoi de xuat hien tren form
 
-                //List<int> lstSL = new List<int>();
-                //lstSL = frmcon.SL;
+                }    
+                
             }
         }
 

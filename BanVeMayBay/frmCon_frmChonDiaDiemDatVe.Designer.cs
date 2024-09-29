@@ -329,6 +329,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCon_frmChonDiaDiemDatVe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmCon_frmChonDiaDiemDatVe";
             ((System.ComponentModel.ISupportInitialize)(this.picThemEB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThemTE)).EndInit();

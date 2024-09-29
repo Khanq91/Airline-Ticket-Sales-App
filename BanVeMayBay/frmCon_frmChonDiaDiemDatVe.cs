@@ -13,17 +13,17 @@ namespace BanVeMayBay
     public partial class frmCon_frmChonDiaDiemDatVe : Form
     {
 
-        private List<int> _SL;
-        private List<string> _DuLieu;
+        string _SLnl;
+        string _SLte;
+        string _SLeb;
 
-        public List<int> SL { get => _SL; set => _SL = value; }
-        public List<string> DuLieu { get => _DuLieu; set => _DuLieu = value; }
+        public string SLnl { get => _SLnl; set => _SLnl = value; }
+        public string SLte { get => _SLte; set => _SLte = value; }
+        public string SLeb { get => _SLeb; set => _SLeb = value; }
 
         public frmCon_frmChonDiaDiemDatVe()
         {
             InitializeComponent();
-            SL = new List<int>();
-            DuLieu = new List<string>();
         }
 
         private async void picThemNL_Click(object sender, EventArgs e)
@@ -110,26 +110,22 @@ namespace BanVeMayBay
             int nl = int.Parse(lblSLNguoiLon.Text);
             int te = int.Parse(lblSLTreEm.Text);
             int eb = int.Parse(lblSLEmBe.Text);
-            string str_nl = lblNguoiLon.Text;
-            string str_te = lblSLTreEm.Text;
-            string str_eb = lblSLEmBe.Text;
 
             if (nl > 1)
             {
-                SL.Add(nl);
-                DuLieu.Add(str_nl);
+                SLnl = lblSLNguoiLon.Text;
             }
-            else if (te > 0)
+            else SLnl = "1";
+            if (te > 0)
             {
-                SL.Add(te);
-                DuLieu.Add(str_te);
+                SLte = lblSLTreEm.Text;
             }
-            else if (eb > 0)
+            else SLte = "0";
+            if (eb > 0)
             {
-                SL.Add(eb);
-                DuLieu.Add(str_eb);
+                SLeb = lblSLEmBe.Text;
             }
-            else return;
+            else SLeb = "0";
             this.Close();
         }
 
