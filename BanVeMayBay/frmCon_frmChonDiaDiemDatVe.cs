@@ -107,26 +107,29 @@ namespace BanVeMayBay
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int nl = int.Parse(lblSLNguoiLon.Text);
-            int te = int.Parse(lblSLTreEm.Text);
-            int eb = int.Parse(lblSLEmBe.Text);
+            //int nl = int.Parse(lblSLNguoiLon.Text);
+            //int te = int.Parse(lblSLTreEm.Text);
+            //int eb = int.Parse(lblSLEmBe.Text);
 
-            if (nl > 1)
-            {
-                SLnl = lblSLNguoiLon.Text;
-            }
-            else SLnl = "1";
-            if (te > 0)
-            {
-                SLte = lblSLTreEm.Text;
-            }
-            else SLte = "0";
-            if (eb > 0)
-            {
-                SLeb = lblSLEmBe.Text;
-            }
-            else SLeb = "0";
-            this.Close();
+            //if (nl > 1)
+            //{
+            //    SLnl = lblSLNguoiLon.Text;
+            //}
+            //else SLnl = "1";
+            //if (te > 0)
+            //{
+            //    SLte = lblSLTreEm.Text;
+            //}
+            //else SLte = "0";
+            //if (eb > 0)
+            //{
+            //    SLeb = lblSLEmBe.Text;
+            //}
+            //else SLeb = "0";
+            SLnl = lblSLNguoiLon.Text;
+            SLte = lblSLTreEm.Text;
+            SLeb = lblSLEmBe.Text;
+            //this.Close();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace BanVeMayBay
             InitializeComponent();
         }
 
+
         void LamTrongSuotNenChu(Control x, PictureBox nenX) //x là textbox, nenX là pictureBox nằm dưới textbox
         {
             var a = this.PointToScreen(x.Location);
@@ -29,11 +30,13 @@ namespace BanVeMayBay
         {
             //nếu phân quyền là admin thì nút quản lý dữ liệu xuất hiện
             //btnQuanLy.Visible = true;
+            pnlTTCB.Visible = false;
+            pnlThanGiaoDien.Location = new Point(0, 140);
             frmDangNhap frmdn = new frmDangNhap();
             frmdn.Close();
             lblChaoNguoiDung.Text = "Xin chào + tên người dùng";
             pnlDuoiGiaoDien.Visible = false;
-            pnlThanGiaoDien.Height += 87;
+            pnlThanGiaoDien.Height += 171;
 
 
             frmChonDiaDiemDatVe frmCDDDV = new frmChonDiaDiemDatVe();
@@ -59,6 +62,13 @@ namespace BanVeMayBay
             Form frmm = new frmMain();
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
+        }
+        public void ShowTTCB()
+        {
+            pnlTTCB.Visible = true; 
+            pnlThanGiaoDien.Location = new Point(0, 229);
+            pnlThanGiaoDien.Height -= 171;
+            pnlDuoiGiaoDien.Visible = true;
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

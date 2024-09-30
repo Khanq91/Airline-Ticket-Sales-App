@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTTHanhKhach = new System.Windows.Forms.Label();
             this.rdoMotChieu = new System.Windows.Forms.RadioButton();
@@ -49,13 +50,13 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.lblDiemKhoiHanh = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTimChuyenBay = new System.Windows.Forms.Button();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHanhKhachDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDoiViTri)).BeginInit();
@@ -68,8 +69,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackgroundImage = global::BanVeMayBay.Properties.Resources.cloudPicture1;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1890, 775);
+            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -96,7 +108,7 @@
             this.panel2.Controls.Add(this.pictureBox14);
             this.panel2.Controls.Add(this.pictureBox15);
             this.panel2.Controls.Add(this.lblDiemKhoiHanh);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnTimChuyenBay);
             this.panel2.Controls.Add(this.pictureBox16);
             this.panel2.Controls.Add(this.pictureBox17);
             this.panel2.Controls.Add(this.pictureBox18);
@@ -105,19 +117,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1894, 783);
+            this.panel2.Size = new System.Drawing.Size(1890, 775);
             this.panel2.TabIndex = 13;
             // 
             // lblTTHanhKhach
             // 
             this.lblTTHanhKhach.AutoSize = true;
             this.lblTTHanhKhach.BackColor = System.Drawing.Color.White;
-            this.lblTTHanhKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTTHanhKhach.Location = new System.Drawing.Point(1282, 430);
+            this.lblTTHanhKhach.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTTHanhKhach.Location = new System.Drawing.Point(1245, 431);
             this.lblTTHanhKhach.Name = "lblTTHanhKhach";
-            this.lblTTHanhKhach.Size = new System.Drawing.Size(78, 32);
+            this.lblTTHanhKhach.Size = new System.Drawing.Size(47, 30);
             this.lblTTHanhKhach.TabIndex = 25;
-            this.lblTTHanhKhach.Text = "label1";
+            this.lblTTHanhKhach.Text = "null";
             this.lblTTHanhKhach.Visible = false;
             // 
             // rdoMotChieu
@@ -177,6 +189,7 @@
             // picHanhKhachDropDown
             // 
             this.picHanhKhachDropDown.BackColor = System.Drawing.Color.White;
+            this.picHanhKhachDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picHanhKhachDropDown.Image = global::BanVeMayBay.Properties.Resources.caret_down;
             this.picHanhKhachDropDown.Location = new System.Drawing.Point(1591, 427);
             this.picHanhKhachDropDown.Name = "picHanhKhachDropDown";
@@ -190,9 +203,9 @@
             // 
             this.txtMaKhuyenMai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(1282, 536);
+            this.txtMaKhuyenMai.Location = new System.Drawing.Point(1245, 536);
             this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(337, 32);
+            this.txtMaKhuyenMai.Size = new System.Drawing.Size(374, 32);
             this.txtMaKhuyenMai.TabIndex = 3;
             // 
             // dateTimePickerNgayVe
@@ -341,17 +354,18 @@
             this.lblDiemKhoiHanh.TabIndex = 7;
             this.lblDiemKhoiHanh.Text = "Điểm khởi hành";
             // 
-            // button2
+            // btnTimChuyenBay
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1282, 609);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(290, 84);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Tìm chuyến bay";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnTimChuyenBay.BackColor = System.Drawing.Color.Orange;
+            this.btnTimChuyenBay.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimChuyenBay.ForeColor = System.Drawing.Color.White;
+            this.btnTimChuyenBay.Location = new System.Drawing.Point(1258, 609);
+            this.btnTimChuyenBay.Name = "btnTimChuyenBay";
+            this.btnTimChuyenBay.Size = new System.Drawing.Size(290, 84);
+            this.btnTimChuyenBay.TabIndex = 6;
+            this.btnTimChuyenBay.Text = "Tìm chuyến bay";
+            this.btnTimChuyenBay.UseVisualStyleBackColor = false;
+            this.btnTimChuyenBay.Click += new System.EventHandler(this.btnTimChuyenBay_Click);
             // 
             // pictureBox16
             // 
@@ -406,29 +420,18 @@
             this.pictureBox20.TabIndex = 0;
             this.pictureBox20.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BackgroundImage = global::BanVeMayBay.Properties.Resources.cloudPicture1;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1894, 783);
-            this.panel1.TabIndex = 0;
-            // 
             // frmChonDiaDiemDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1894, 783);
+            this.ClientSize = new System.Drawing.Size(1890, 775);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChonDiaDiemDatVe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChonDiaDiemDatVe";
             this.Load += new System.EventHandler(this.frmChonDiaDiemDatVe_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHanhKhachDropDown)).EndInit();
@@ -442,7 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -469,7 +471,7 @@
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Label lblDiemKhoiHanh;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTimChuyenBay;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox18;

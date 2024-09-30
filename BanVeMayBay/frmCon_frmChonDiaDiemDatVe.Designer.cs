@@ -64,7 +64,7 @@
             this.lblNguoiLon.AutoSize = true;
             this.lblNguoiLon.BackColor = System.Drawing.Color.White;
             this.lblNguoiLon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNguoiLon.Location = new System.Drawing.Point(79, 43);
+            this.lblNguoiLon.Location = new System.Drawing.Point(74, 16);
             this.lblNguoiLon.Name = "lblNguoiLon";
             this.lblNguoiLon.Size = new System.Drawing.Size(121, 32);
             this.lblNguoiLon.TabIndex = 3;
@@ -75,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 72);
+            this.label2.Location = new System.Drawing.Point(76, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 4;
@@ -86,7 +86,7 @@
             this.lblTreEm.AutoSize = true;
             this.lblTreEm.BackColor = System.Drawing.Color.White;
             this.lblTreEm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTreEm.Location = new System.Drawing.Point(79, 115);
+            this.lblTreEm.Location = new System.Drawing.Point(74, 88);
             this.lblTreEm.Name = "lblTreEm";
             this.lblTreEm.Size = new System.Drawing.Size(87, 32);
             this.lblTreEm.TabIndex = 5;
@@ -97,7 +97,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(81, 144);
+            this.label4.Location = new System.Drawing.Point(76, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 21);
             this.label4.TabIndex = 6;
@@ -108,7 +108,7 @@
             this.lblEmBe.AutoSize = true;
             this.lblEmBe.BackColor = System.Drawing.Color.White;
             this.lblEmBe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmBe.Location = new System.Drawing.Point(79, 187);
+            this.lblEmBe.Location = new System.Drawing.Point(74, 160);
             this.lblEmBe.Name = "lblEmBe";
             this.lblEmBe.Size = new System.Drawing.Size(81, 32);
             this.lblEmBe.TabIndex = 8;
@@ -119,7 +119,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(81, 216);
+            this.label6.Location = new System.Drawing.Point(76, 189);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 7;
@@ -131,7 +131,7 @@
             this.lblSLNguoiLon.BackColor = System.Drawing.Color.White;
             this.lblSLNguoiLon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSLNguoiLon.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblSLNguoiLon.Location = new System.Drawing.Point(330, 52);
+            this.lblSLNguoiLon.Location = new System.Drawing.Point(325, 25);
             this.lblSLNguoiLon.Name = "lblSLNguoiLon";
             this.lblSLNguoiLon.Size = new System.Drawing.Size(27, 32);
             this.lblSLNguoiLon.TabIndex = 11;
@@ -143,7 +143,7 @@
             this.lblSLTreEm.BackColor = System.Drawing.Color.White;
             this.lblSLTreEm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSLTreEm.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblSLTreEm.Location = new System.Drawing.Point(330, 124);
+            this.lblSLTreEm.Location = new System.Drawing.Point(325, 97);
             this.lblSLTreEm.Name = "lblSLTreEm";
             this.lblSLTreEm.Size = new System.Drawing.Size(27, 32);
             this.lblSLTreEm.TabIndex = 10;
@@ -155,7 +155,7 @@
             this.lblSLEmBe.BackColor = System.Drawing.Color.White;
             this.lblSLEmBe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSLEmBe.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblSLEmBe.Location = new System.Drawing.Point(330, 196);
+            this.lblSLEmBe.Location = new System.Drawing.Point(325, 169);
             this.lblSLEmBe.Name = "lblSLEmBe";
             this.lblSLEmBe.Size = new System.Drawing.Size(27, 32);
             this.lblSLEmBe.TabIndex = 9;
@@ -166,7 +166,7 @@
             this.picThemEB.BackColor = System.Drawing.Color.White;
             this.picThemEB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picThemEB.Image = global::BanVeMayBay.Properties.Resources.add2;
-            this.picThemEB.Location = new System.Drawing.Point(363, 197);
+            this.picThemEB.Location = new System.Drawing.Point(358, 170);
             this.picThemEB.Name = "picThemEB";
             this.picThemEB.Size = new System.Drawing.Size(30, 30);
             this.picThemEB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,7 +179,7 @@
             this.picThemTE.BackColor = System.Drawing.Color.White;
             this.picThemTE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picThemTE.Image = global::BanVeMayBay.Properties.Resources.add2;
-            this.picThemTE.Location = new System.Drawing.Point(363, 125);
+            this.picThemTE.Location = new System.Drawing.Point(358, 98);
             this.picThemTE.Name = "picThemTE";
             this.picThemTE.Size = new System.Drawing.Size(30, 30);
             this.picThemTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -192,7 +192,7 @@
             this.picThemNL.BackColor = System.Drawing.Color.White;
             this.picThemNL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picThemNL.Image = global::BanVeMayBay.Properties.Resources.add2;
-            this.picThemNL.Location = new System.Drawing.Point(363, 53);
+            this.picThemNL.Location = new System.Drawing.Point(358, 26);
             this.picThemNL.Name = "picThemNL";
             this.picThemNL.Size = new System.Drawing.Size(30, 30);
             this.picThemNL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +205,7 @@
             this.picGiamEB.BackColor = System.Drawing.Color.White;
             this.picGiamEB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGiamEB.Image = global::BanVeMayBay.Properties.Resources.minus;
-            this.picGiamEB.Location = new System.Drawing.Point(294, 197);
+            this.picGiamEB.Location = new System.Drawing.Point(289, 170);
             this.picGiamEB.Name = "picGiamEB";
             this.picGiamEB.Size = new System.Drawing.Size(30, 30);
             this.picGiamEB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,7 +218,7 @@
             this.picGiamTE.BackColor = System.Drawing.Color.White;
             this.picGiamTE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGiamTE.Image = global::BanVeMayBay.Properties.Resources.minus;
-            this.picGiamTE.Location = new System.Drawing.Point(294, 125);
+            this.picGiamTE.Location = new System.Drawing.Point(289, 98);
             this.picGiamTE.Name = "picGiamTE";
             this.picGiamTE.Size = new System.Drawing.Size(30, 30);
             this.picGiamTE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +231,7 @@
             this.picGiamNL.BackColor = System.Drawing.Color.White;
             this.picGiamNL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGiamNL.Image = global::BanVeMayBay.Properties.Resources.minus;
-            this.picGiamNL.Location = new System.Drawing.Point(294, 53);
+            this.picGiamNL.Location = new System.Drawing.Point(289, 26);
             this.picGiamNL.Name = "picGiamNL";
             this.picGiamNL.Size = new System.Drawing.Size(30, 30);
             this.picGiamNL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,7 +243,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::BanVeMayBay.Properties.Resources.teen;
-            this.pictureBox3.Location = new System.Drawing.Point(23, 115);
+            this.pictureBox3.Location = new System.Drawing.Point(18, 88);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,7 +254,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::BanVeMayBay.Properties.Resources.baby1;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 187);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 160);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +265,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::BanVeMayBay.Properties.Resources.adult;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -277,7 +277,7 @@
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Red;
-            this.btnHuy.Location = new System.Drawing.Point(294, 246);
+            this.btnHuy.Location = new System.Drawing.Point(289, 219);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(99, 33);
             this.btnHuy.TabIndex = 18;
@@ -292,7 +292,7 @@
             this.btnThem.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(189, 246);
+            this.btnThem.Location = new System.Drawing.Point(184, 219);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(99, 33);
             this.btnThem.TabIndex = 19;
@@ -306,7 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(414, 292);
+            this.ClientSize = new System.Drawing.Size(407, 269);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.picThemEB);
