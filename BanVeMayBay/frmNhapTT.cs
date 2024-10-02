@@ -16,5 +16,13 @@ namespace BanVeMayBay
         {
             InitializeComponent();
         }
+
+        private void frmNhapTT_Load(object sender, EventArgs e)
+        {
+            txtHo.Focus();
+            dateTimePickerNgaySinh.MaxDate = DateTime.Now;
+            cboQuocGia.SelectedItem = "Vietnam";
+            cboQuocGia.MaxDropDownItems = 5;
+        }
     }
 }

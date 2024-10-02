@@ -31,14 +31,15 @@
             this.pnlThanGiaoDien = new System.Windows.Forms.Panel();
             this.flowLayoutPnlThanGianDien = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDauGiaoDien = new System.Windows.Forms.Panel();
+            this.picReset = new System.Windows.Forms.PictureBox();
+            this.picThoat = new System.Windows.Forms.PictureBox();
             this.lblChaoNguoiDung = new System.Windows.Forms.Label();
             this.lblDuoKTJet = new System.Windows.Forms.Label();
+            this.flowLayoutPanelTTVeDat = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDuoiGiaoDien = new System.Windows.Forms.Panel();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.btnDiTiep = new System.Windows.Forms.Button();
-            this.picReset = new System.Windows.Forms.PictureBox();
-            this.picThoat = new System.Windows.Forms.PictureBox();
             this.pnlTTCB = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,21 +49,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblChuyenBayKHMC = new System.Windows.Forms.Label();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
+            this.pnlTTVeDat = new System.Windows.Forms.Panel();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
-            this.pnlDuoiGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThoat)).BeginInit();
+            this.pnlDuoiGiaoDien.SuspendLayout();
             this.pnlTTCB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlTTVeDat.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlThanGiaoDien
             // 
-            this.pnlThanGiaoDien.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlThanGiaoDien.BackColor = System.Drawing.Color.IndianRed;
             this.pnlThanGiaoDien.Controls.Add(this.flowLayoutPnlThanGianDien);
-            this.pnlThanGiaoDien.Location = new System.Drawing.Point(0, 229);
+            this.pnlThanGiaoDien.Location = new System.Drawing.Point(0, 228);
             this.pnlThanGiaoDien.Name = "pnlThanGiaoDien";
             this.pnlThanGiaoDien.Size = new System.Drawing.Size(1900, 610);
             this.pnlThanGiaoDien.TabIndex = 0;
@@ -90,6 +93,30 @@
             this.pnlDauGiaoDien.Size = new System.Drawing.Size(1898, 144);
             this.pnlDauGiaoDien.TabIndex = 1;
             // 
+            // picReset
+            // 
+            this.picReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReset.Image = global::BanVeMayBay.Properties.Resources.refresh;
+            this.picReset.Location = new System.Drawing.Point(1800, 9);
+            this.picReset.Name = "picReset";
+            this.picReset.Size = new System.Drawing.Size(40, 40);
+            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picReset.TabIndex = 12;
+            this.picReset.TabStop = false;
+            this.picReset.Click += new System.EventHandler(this.picReset_Click);
+            // 
+            // picThoat
+            // 
+            this.picThoat.Image = global::BanVeMayBay.Properties.Resources.circle_cross;
+            this.picThoat.Location = new System.Drawing.Point(1846, 9);
+            this.picThoat.Name = "picThoat";
+            this.picThoat.Size = new System.Drawing.Size(40, 40);
+            this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picThoat.TabIndex = 11;
+            this.picThoat.TabStop = false;
+            this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
+            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picThoat_MouseMove);
+            // 
             // lblChaoNguoiDung
             // 
             this.lblChaoNguoiDung.AutoSize = true;
@@ -111,6 +138,16 @@
             this.lblDuoKTJet.Size = new System.Drawing.Size(554, 128);
             this.lblDuoKTJet.TabIndex = 0;
             this.lblDuoKTJet.Text = "DuoKT_Jet";
+            // 
+            // flowLayoutPanelTTVeDat
+            // 
+            this.flowLayoutPanelTTVeDat.BackColor = System.Drawing.Color.LightGray;
+            this.flowLayoutPanelTTVeDat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTTVeDat.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelTTVeDat.Name = "flowLayoutPanelTTVeDat";
+            this.flowLayoutPanelTTVeDat.Size = new System.Drawing.Size(555, 610);
+            this.flowLayoutPanelTTVeDat.TabIndex = 0;
+            this.flowLayoutPanelTTVeDat.Visible = false;
             // 
             // pnlDuoiGiaoDien
             // 
@@ -156,30 +193,6 @@
             this.btnDiTiep.TabIndex = 0;
             this.btnDiTiep.Text = "Đi tiếp";
             this.btnDiTiep.UseVisualStyleBackColor = true;
-            // 
-            // picReset
-            // 
-            this.picReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReset.Image = global::BanVeMayBay.Properties.Resources.refresh;
-            this.picReset.Location = new System.Drawing.Point(1800, 9);
-            this.picReset.Name = "picReset";
-            this.picReset.Size = new System.Drawing.Size(40, 40);
-            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picReset.TabIndex = 12;
-            this.picReset.TabStop = false;
-            this.picReset.Click += new System.EventHandler(this.picReset_Click);
-            // 
-            // picThoat
-            // 
-            this.picThoat.Image = global::BanVeMayBay.Properties.Resources.circle_cross;
-            this.picThoat.Location = new System.Drawing.Point(1846, 9);
-            this.picThoat.Name = "picThoat";
-            this.picThoat.Size = new System.Drawing.Size(40, 40);
-            this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picThoat.TabIndex = 11;
-            this.picThoat.TabStop = false;
-            this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
-            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picThoat_MouseMove);
             // 
             // pnlTTCB
             // 
@@ -278,11 +291,21 @@
             this.elipseTool1.CornerRadius = 40;
             this.elipseTool1.TargetControl = this;
             // 
+            // pnlTTVeDat
+            // 
+            this.pnlTTVeDat.Controls.Add(this.flowLayoutPanelTTVeDat);
+            this.pnlTTVeDat.Location = new System.Drawing.Point(1342, 228);
+            this.pnlTTVeDat.Name = "pnlTTVeDat";
+            this.pnlTTVeDat.Size = new System.Drawing.Size(555, 610);
+            this.pnlTTVeDat.TabIndex = 7;
+            this.pnlTTVeDat.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1898, 924);
+            this.Controls.Add(this.pnlTTVeDat);
             this.Controls.Add(this.pnlTTCB);
             this.Controls.Add(this.pnlDuoiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
@@ -295,14 +318,15 @@
             this.pnlThanGiaoDien.ResumeLayout(false);
             this.pnlDauGiaoDien.ResumeLayout(false);
             this.pnlDauGiaoDien.PerformLayout();
-            this.pnlDuoiGiaoDien.ResumeLayout(false);
-            this.pnlDuoiGiaoDien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThoat)).EndInit();
+            this.pnlDuoiGiaoDien.ResumeLayout(false);
+            this.pnlDuoiGiaoDien.PerformLayout();
             this.pnlTTCB.ResumeLayout(false);
             this.pnlTTCB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlTTVeDat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -329,6 +353,8 @@
         private System.Windows.Forms.Label lblDiemKhoiHanh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblChuyenBayKHMC;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTTVeDat;
+        private System.Windows.Forms.Panel pnlTTVeDat;
     }
 }
 

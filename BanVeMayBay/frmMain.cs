@@ -69,6 +69,18 @@ namespace BanVeMayBay
             pnlThanGiaoDien.Location = new Point(0, 229);
             pnlThanGiaoDien.Height -= 171;
             pnlDuoiGiaoDien.Visible = true;
+
+            pnlThanGiaoDien.Width -= 555;
+            flowLayoutPnlThanGianDien.Width -= 555;
+            pnlTTVeDat.Visible = true;
+            flowLayoutPanelTTVeDat.Visible = true;
+
+            //frmTTDatVe xuất hiện
+            frmTTVeDat frmttvd = new frmTTVeDat();
+            frmttvd.TopLevel = false;
+            flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+            frmttvd.Show();
+            
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

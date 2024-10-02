@@ -150,6 +150,7 @@ namespace BanVeMayBay
             }
             frmMain frmmain = (frmMain)this.Parent.Parent.Parent;
             frmmain.ShowTTCB();
+            this.Hide();
         }
     }
 }
