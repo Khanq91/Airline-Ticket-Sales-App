@@ -1,0 +1,68 @@
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDichVu.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangKy.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangNhap.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmThanhToan.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDichVu.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangKy.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangNhap.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmThanhToan.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\bin\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\bin\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDichVu.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangKy.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangNhap.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmThanhToan.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDiaDiemDatVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (2)\BanVeMayBay\obj\Debug\BanVeMayBay.frmCon_frmChonDiaDiemDatVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\bin\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDiaDiemDatVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDichVu.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmCon_frmChonDiaDiemDatVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangKy.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangNhap.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmThanhToan.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.exe
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\New folder (3)\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonVe.resources
