@@ -5,7 +5,6 @@ CREATE TABLE SANBAY
 (
 	MaSB CHAR(10) NOT NULL,
 	TenSB NVARCHAR(50),
-	QuocGia NVARCHAR(30),
 	CONSTRAINT PK_SB_MaSB PRIMARY KEY(MaSB)
 );
 
@@ -13,7 +12,7 @@ CREATE TABLE MAYBAY
 (
 	MaMB CHAR(10) NOT NULL,
 	LoaiMB NVARCHAR(50),
-	Hang NVARCHAR(50),
+	HangBay NVARCHAR(50),
 	TongSoGhe INT,
 	CONSTRAINT PK_MB_MaMB PRIMARY KEY(MaMB)
 );
@@ -38,7 +37,7 @@ CREATE TABLE CHUCVU
 CREATE TABLE QLTaiKhoan
 (
 	IDTaiKhoan CHAR(20) NOT NULL,
-	TenTaiKhoan VARCHAR(100),
+	TenTaiKhoan NVARCHAR(100),
     TenDangNhap VARCHAR(50),
 	MatKhau VARCHAR(50),
 	LoaiTK NVARCHAR(30) CHECK (LoaiTK IN (N'HANHKHACH', N'NHANVIEN')), 
@@ -52,7 +51,7 @@ CREATE TABLE NHANVIEN
 	GioiTinh NVARCHAR(4) CHECK(GioiTinh IN (N'Nam', N'Nữ')),
 	Luong MONEY,
 	NgaySinhNV DATETIME,
-	DiaChiNV NVARCHAR(50) DEFAULT '',
+	DiaChiNV NVARCHAR(50),
 	SDTnv CHAR(11) CHECK (SDTnv LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 	MaSB CHAR(10) NOT NULL,
 	MaChucVu CHAR(10) NOT NULL,
@@ -80,12 +79,13 @@ CREATE TABLE CHUYENBAY
 CREATE TABLE HANHKHACH 
 (
 	MaHK CHAR(10) NOT NULL,
-	TenHK NVARCHAR(50),
-	DiaChi NVARCHAR(50) DEFAULT '', 
-	SDT CHAR(11) CHECK (SDT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-	CCCD CHAR(20) UNIQUE,
-	HoChieu CHAR(20) UNIQUE,
-	NgaySinh DATETIME,
+	TenHK NVARCHAR(50) DEFAULT '',      -- Mặc định là chuỗi rỗng
+	DiaChi NVARCHAR(50) DEFAULT '',     -- Mặc định là chuỗi rỗng
+	Email VARCHAR(30) DEFAULT '',       -- Mặc định là chuỗi rỗng
+	SDT CHAR(11) DEFAULT '' CHECK (SDT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),-- Mặc định là chuỗi rỗng (nếu muốn)
+	CCCD CHAR(20) UNIQUE DEFAULT '',    -- Mặc định là chuỗi rỗng (nếu muốn)
+	HoChieu CHAR(20) UNIQUE DEFAULT '', -- Mặc định là chuỗi rỗng (nếu muốn)
+	NgaySinh DATETIME DEFAULT NULL,     -- Có thể để NULL nếu không cung cấp giá trị
 	IDTaiKhoan CHAR(20) NOT NULL,
 	CONSTRAINT PK_HK_MaHK PRIMARY KEY(MaHK),
 	CONSTRAINT FK_HK_IDtk FOREIGN KEY(IDTaiKhoan) REFERENCES QLTaiKhoan(IDTaiKhoan)
@@ -101,7 +101,7 @@ CREATE TABLE HANGVE
 CREATE TABLE CHITIETPHUPHI
 (
 	MaPhuPhi CHAR(10) NOT NULL,
-	PhuPhi MONEY,
+	PhuPhi MONEY DEFAULT 0,
 	LoaiPhuPhi NVARCHAR(50),  -- Thêm loại phụ phí(phụ phí của hành lý hoặc phụ phí của dịch vụ (nếu có))
 	CONSTRAINT PK_CTPhuPhi_MaPhuPhi PRIMARY KEY(MaPhuPhi)
 );
@@ -109,11 +109,13 @@ CREATE TABLE CHITIETPHUPHI
 CREATE TABLE GIAVE
 (
 	MaGiaVe CHAR(10) NOT NULL,
-	GiaVe MONEY,
+	GiaCoBan MONEY,
+	TongGiaVe MONEY DEFAULT 0,
+	PhuPhi MONEY DEFAULT 0,
+	GiamGia MONEY DEFAULT 0,
 	MaCB CHAR(10) NOT NULL,
 	MaHangVe CHAR(10) NOT NULL,
 	NgayDatVe DATE,  -- Ngày đặt vé (nếu có)
-	--PhuPhi MONEY DEFAULT 0,  -- Giá vé có thể bao gồm phụ phí
 	CONSTRAINT PK_GV_MaGiaVe PRIMARY KEY(MaGiaVe),
 	CONSTRAINT FK_GV_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB),
 	CONSTRAINT FK_GV_MaHangVe FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe)
@@ -137,7 +139,6 @@ CREATE TABLE DATVE
 (
 	MaDV CHAR(10) NOT NULL,
 	ThanhTien MONEY DEFAULT 0,
-	PhuPhi MONEY DEFAULT 0,
 	MaVe CHAR(10) NOT NULL,
 	MaCB CHAR(10) NOT NULL,
 	MaHK CHAR(10) NOT NULL,
@@ -162,6 +163,7 @@ CREATE TABLE HANHLY
 (
 	MaHL CHAR(10) NOT NULL,
 	SoKG FLOAT,
+	LoaiHanhLy NVARCHAR(30),
 	MaPhuPhi CHAR(10) NOT NULL,
 	MaHK CHAR(10) NOT NULL,
 	MaCB CHAR(10) NOT NULL,
@@ -174,29 +176,29 @@ CREATE TABLE HANHLY
 -----------------------------------------------------------------------
 --								DỮ LIỆU
 -----------------------------------------------------------------------
-INSERT INTO SANBAY (MaSB, TenSB, QuocGia) 
+INSERT INTO SANBAY (MaSB, TenSB)
 VALUES 
-	('SB001', 'Tan Son Nhat', 'Vietnam'),
-	('SB002', 'Noi Bai', 'Vietnam'),
-	('SB003', 'Changi', 'Singapore'),
-	('SB004', 'Incheon', 'South Korea'),
-	('SB005', 'Suvarnabhumi', 'Thailand');
+    ('SB001', N'Sân bay Tân Sơn Nhất'),
+    ('SB002', N'Sân bay Nội Bài'),
+    ('SB003', N'Sân bay Đà Nẵng'),
+    ('SB004', N'Sân bay Cam Ranh'),
+    ('SB005', N'Sân bay Phú Quốc');
 
-INSERT INTO MAYBAY (MaMB, LoaiMB, Hang, TongSoGhe) 
+INSERT INTO MAYBAY (MaMB, LoaiMB, HangBay, TongSoGhe)
 VALUES 
-	('MB001', 'Boeing 777', 'Vietnam Airlines', 300),
-	('MB002', 'Airbus A320', 'VietJet Air', 180),
-	('MB003', 'Boeing 787', 'Bamboo Airways', 250),
-	('MB004', 'Airbus A350', 'Vietnam Airlines', 320),
-	('MB005', 'Boeing 737', 'Thai Airways', 200);
+    ('MB001', N'Airbus A320', N'VietJet Air', 180),
+    ('MB002', N'Boeing 787', N'Vietnam Airlines', 300),
+    ('MB003', N'Airbus A321', N'Bamboo Airways', 220),
+    ('MB004', N'Boeing 777', N'Vietnam Airlines', 350),
+    ('MB005', N'Airbus A330', N'Bamboo Airways', 260);
 
-INSERT INTO CHANGBAY (MaChangBay, MaSBdi, MaSBden) 
+INSERT INTO CHANGBAY (MaChangBay, MaSBdi, MaSBden)
 VALUES 
-	('CB001', 'SB001', 'SB002'),
-	('CB002', 'SB002', 'SB003'),
-	('CB003', 'SB003', 'SB004'),
-	('CB004', 'SB004', 'SB005'),
-	('CB005', 'SB005', 'SB001');
+    ('CBY001', 'SB001', 'SB002'),
+    ('CBY002', 'SB002', 'SB003'),
+    ('CBY003', 'SB003', 'SB004'),
+    ('CBY004', 'SB004', 'SB005'),
+    ('CBY005', 'SB005', 'SB001');
 
 INSERT INTO CHUCVU (MaChucVu, TenChucVu)
 VALUES 
@@ -205,16 +207,16 @@ VALUES
 
 INSERT INTO QLTaiKhoan (IDTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTK)
 VALUES 
-    ('TK001', 'Nguyen Van A', 'nguyenvana', 'password123', N'NHANVIEN'),
-    ('TK002', 'Tran Thi B', 'tranthib', 'password456', N'NHANVIEN'),
-    ('TK003', 'Le Van C', 'levanc', 'pass789', N'NHANVIEN'),
-    ('TK004', 'Pham Thi D', 'phamthid', 'secret123', N'NHANVIEN'),
-    ('TK005', 'Hoang Van E', 'hoangvane', 'secure456', N'NHANVIEN'),
-    ('TK006', 'Nguyen Van A', 'nguyenvana1', 'password123', N'HANHKHACH'),
-    ('TK007', 'Tran Thi B', 'tranthib1', 'password456', N'HANHKHACH'),
-    ('TK008', 'Le Van C', 'levanc1', 'pass789', N'HANHKHACH'),
-    ('TK009', 'Pham Thi D', 'phamthid1', 'secret123', N'HANHKHACH'),
-    ('TK010', 'Hoang Van E', 'hoangvane1', 'secure456', N'HANHKHACH');
+    ('TK001',  N'Nguyễn Văn A', 'nguyenvana', 'password123', N'NHANVIEN'),
+    ('TK002',  N'Trần Thị B', 'tranthib', 'password456', N'NHANVIEN'),
+    ('TK003', N'Lê Văn C', 'levanc', 'pass789', N'NHANVIEN'),
+    ('TK004', N'Phạm Thị D', 'phamthid', 'secret123', N'NHANVIEN'),
+    ('TK005', N'Hoàng Văn E', 'hoangvane', 'secure456', N'NHANVIEN'),
+    ('TK006', N'Nguyễn Văn F', 'nguyenvanf1', 'password123', N'HANHKHACH'),
+    ('TK007', N'Trần Thị G', 'tranthig1', 'password456', N'HANHKHACH'),
+    ('TK008', N'Lê Văn H', 'levanh1', 'pass789', N'HANHKHACH'),
+    ('TK009', N'Phạm Thị K', 'phamthik1', 'secret123', N'HANHKHACH'),
+    ('TK010', N'Hoàng Văn L', 'hoangvanl1', 'secure456', N'HANHKHACH');
 
 INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, Luong, NgaySinhNV, DiaChiNV, SDTnv, MaSB, MaChucVu, IDTaiKhoan) 
 VALUES 
@@ -224,21 +226,21 @@ VALUES
 	('NV004', N'Phạm Thị M', N'Nữ', 18000000, '1982-04-04', N'Hải Phòng', '0908123456', 'SB004', 'CV002', 'TK004'),
 	('NV005', N'Hoàng Văn N', N'Nam', 19000000, '1987-05-05', N'Cần Thơ', '0909123456', 'SB005', 'CV002', 'TK005');
 
-INSERT INTO CHUYENBAY (MaCB, NgayBay, GioBay, GioDen, ThoiGianBay, MaMB, MaChangBay) 
+INSERT INTO CHUYENBAY (MaCB, NgayBay, GioBay, GioDen, ThoiGianBay, MaMB, MaChangBay)
 VALUES 
-	('CBY001', '2024-09-01', '07:00:00', '09:00:00', '02:00:00', 'MB001', 'CB001'),
-	('CBY002', '2024-09-02', '08:00:00', '11:00:00', '03:00:00', 'MB002', 'CB002'),
-	('CBY003', '2024-09-03', '09:00:00', '12:30:00', '03:30:00', 'MB003', 'CB003'),
-	('CBY004', '2024-09-04', '06:00:00', '08:30:00', '02:30:00', 'MB004', 'CB004'),
-	('CBY005', '2024-09-05', '05:30:00', '08:00:00', '02:30:00', 'MB005', 'CB005');
+    ('CB001', '2024-10-15', '08:00', '10:00', '02:00', 'MB001', 'CBY001'),
+    ('CB002', '2024-10-16', '14:00', '16:30', '02:30', 'MB002', 'CBY002'),
+    ('CB003', '2024-10-17', '09:00', '11:30', '02:30', 'MB003', 'CBY003'),
+    ('CB004', '2024-10-18', '13:00', '15:30', '02:30', 'MB004', 'CBY004'),
+    ('CB005', '2024-10-19', '17:00', '19:30', '02:30', 'MB005', 'CBY005');
 
 INSERT INTO HANHKHACH (MaHK, TenHK, DiaChi, SDT, CCCD, HoChieu, NgaySinh, IDTaiKhoan) 
 VALUES 
-	('HK001', N'Nguyễn Văn A', N'Ho Chi Minh City', '0909123456', '0123456789', 'A1234567', '1990-01-01', 'TK006'),
-	('HK002', N'Trần Thị B', N'Ha Noi', '0912123456', '9876543210', 'B1234567', '1992-02-02', 'TK007'),
-	('HK003', N'Lê Văn C', N'Da Nang', '0903123456', '1234567890', 'C1234567', '1988-03-03', 'TK008'),
-	('HK004', N'Phạm Thị D', N'Hai Phong', '0918123456', '0987654321', 'D1234567', '1991-04-04', 'TK009'),
-	('HK005', N'Hoàng Văn E', N'Can Tho', '0904123456', '2345678901', 'E1234567', '1985-05-05', 'TK010');
+	('HK001', N'Nguyễn Văn F', N'Thành phố Hồ Chí Minh', '0909123456', '0123456789', 'A1234567', '1990-01-01', 'TK006'),
+	('HK002', N'Trần Thị G', N'Bến Tre', '0912123456', '9876543210', 'B1234567', '1992-02-02', 'TK007'),
+	('HK003', N'Lê Văn H', N'Phú Quốc', '0903123456', '1234567890', 'C1234567', '1988-03-03', 'TK008'),
+	('HK004', N'Phạm Thị K', N'Tiền Giang', '0918123456', '0987654321', 'D1234567', '1991-04-04', 'TK009'),
+	('HK005', N'Hoàng Văn L', N'Yên Bái', '0904123456', '2345678901', 'E1234567', '1985-05-05', 'TK010');
 
 INSERT INTO HANGVE (MaHangVe, TenHangVe) 
 VALUES 
@@ -255,13 +257,13 @@ VALUES
     ('PP004', 350000, N'Hành lý quá cân'),
     ('PP005', 400000, N'Hành lý quá cân');
 
-INSERT INTO GIAVE (MaGiaVe, GiaVe, MaCB, MaHangVe, NgayDatVe) 
+INSERT INTO GIAVE (MaGiaVe, GiaCoBan, TongGiaVe, PhuPhi, GiamGia, MaCB, MaHangVe, NgayDatVe)
 VALUES 
-	('GV001', 1000000, 'CBY001', 'HV001', '2024-08-01'),
-	('GV002', 1500000, 'CBY002', 'HV002', '2024-08-02'),
-	('GV003', 2000000, 'CBY003', 'HV003', '2024-08-03'),
-	('GV004', 2500000, 'CBY004', 'HV004', '2024-08-04'),
-	('GV005', 3000000, 'CBY005', 'HV004', '2024-08-05');
+    ('GV001', 2000000, 0, 0, 0, 'CB001', 'HV001', '2024-10-01'),
+    ('GV002', 3500000, 0, 0, 0, 'CB002', 'HV002', '2024-10-02'),
+    ('GV003', 5000000, 0, 0, 0, 'CB003', 'HV003', '2024-10-03'),
+    ('GV004', 4000000, 0, 0, 0, 'CB004', 'HV004', '2024-10-04'),
+    ('GV005', 1500000, 0, 0, 0, 'CB005', 'HV004', '2024-10-05');
 
 INSERT INTO VE (MaVe, DonViTien, ViTriGhe, MaHK, MaGiaVe) 
 VALUES 
@@ -271,29 +273,29 @@ VALUES
 	('VE004', 'VND', 'D4', 'HK004', 'GV004'),
 	('VE005', 'VND', 'E5', 'HK005', 'GV005');
 
-INSERT INTO DATVE (MaDV, ThanhTien, PhuPhi, MaVe, MaCB, MaHK) 
+INSERT INTO DATVE (MaDV, ThanhTien, MaVe, MaCB, MaHK)
 VALUES 
-	('DV001', 1200000, 200000, 'VE001', 'CBY001', 'HK001'),
-	('DV002', 1750000, 250000, 'VE002', 'CBY002', 'HK002'),
-	('DV003', 2300000, 300000, 'VE003', 'CBY003', 'HK003'),
-	('DV004', 2850000, 350000, 'VE004', 'CBY004', 'HK004'),
-	('DV005', 3400000, 400000, 'VE005', 'CBY005', 'HK005');
+    ('DV001', 0, 'VE001', 'CB001', 'HK001'),
+    ('DV002', 0, 'VE002', 'CB002', 'HK002'),
+    ('DV003', 0, 'VE003', 'CB003', 'HK003'),
+    ('DV004', 0, 'VE004', 'CB004', 'HK004'),
+    ('DV005', 0, 'VE005', 'CB005', 'HK005');
 
-INSERT INTO NHANXET (MaHK, MaCB, NDNhanXet, DiemDanhGia) 
+INSERT INTO NHANXET (MaHK, MaCB, NDNhanXet, DiemDanhGia)
 VALUES 
-	('HK001', 'CBY001', N'Chuyến bay tuyệt vời, rất thoải mái.', 5),
-	('HK002', 'CBY002', N'Dịch vụ tốt nhưng chuyến bay bị hoãn.', 4),
-	('HK003', 'CBY003', N'Trải nghiệm bình thường, không có gì đặc biệt.', 3),
-	('HK004', 'CBY004', N'Không hài lòng với dịch vụ.', 2),
-	('HK005', 'CBY005', N'Trải nghiệm khủng khiếp, sẽ không dùng hãng bay này nữa.', 1);
+    ('HK001', 'CB001', N'Trải nghiệm tuyệt vời, rất hài lòng.', 5),
+    ('HK002', 'CB002', N'Dịch vụ tốt, nhưng có thể cải thiện.', 4),
+    ('HK003', 'CB003', N'Chuyến bay ổn, nhưng ghế hơi chật.', 3),
+    ('HK004', 'CB004', N'Trễ chuyến bay, nhưng nhân viên hỗ trợ tốt.', 4),
+    ('HK005', 'CB005', N'Chuyến bay hoàn hảo, không có gì để chê.', 5);
 
-INSERT INTO HANHLY (MaHL, SoKG, MaPhuPhi, MaHK, MaCB) 
+INSERT INTO HANHLY (MaHL, SoKG, LoaiHanhLy, MaPhuPhi, MaHK, MaCB)
 VALUES 
-	('HL001', 20, 'PP001', 'HK001', 'CBY001'),
-	('HL002', 25, 'PP002', 'HK002', 'CBY002'),
-	('HL003', 30, 'PP003', 'HK003', 'CBY003'),
-	('HL004', 35, 'PP004', 'HK004', 'CBY004'),
-	('HL005', 40, 'PP005', 'HK005', 'CBY005');
+    ('HL001', 20, N'Hành lý ký gửi', 'PP001', 'HK001', 'CB001'),
+    ('HL002', 15, N'Hành lý xách tay', 'PP002', 'HK002', 'CB002'),
+    ('HL003', 25, N'Hành lý ký gửi', 'PP001', 'HK003', 'CB003'),
+    ('HL004', 10, N'Hành lý xách tay', 'PP003', 'HK004', 'CB004'),
+    ('HL005', 30, N'Hành lý ký gửi', 'PP004', 'HK005', 'CB005');
 
 --	XEM DỮ LIỆU BẢNG
 SELECT * FROM SANBAY
