@@ -52,12 +52,6 @@
     <Compile Include="frmChonDiaDiemDatVe.Designer.cs">
       <DependentUpon>frmChonDiaDiemDatVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChonDichVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChonDichVu.Designer.cs">
-      <DependentUpon>frmChonDichVu.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCon_frmChonDiaDiemDatVe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,17 +70,29 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHanhLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHanhLy.Designer.cs">
+      <DependentUpon>frmHanhLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhapTT.cs">
+    <Compile Include="frmNhapTT_EmBe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhapTT.Designer.cs">
-      <DependentUpon>frmNhapTT.cs</DependentUpon>
+    <Compile Include="frmNhapTT_EmBe.Designer.cs">
+      <DependentUpon>frmNhapTT_EmBe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapTT_NguoiLon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapTT_NguoiLon.Designer.cs">
+      <DependentUpon>frmNhapTT_NguoiLon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhapTT_Main.cs">
       <SubType>Form</SubType>
@@ -94,17 +100,23 @@
     <Compile Include="frmNhapTT_Main.Designer.cs">
       <DependentUpon>frmNhapTT_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapTT_TreEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapTT_TreEm.Designer.cs">
+      <DependentUpon>frmNhapTT_TreEm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThanhToan.Designer.cs">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChonVe.cs">
+    <Compile Include="frmChonDV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChonVe.Designer.cs">
-      <DependentUpon>frmChonVe.cs</DependentUpon>
+    <Compile Include="frmChonDV.Designer.cs">
+      <DependentUpon>frmChonDV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTTVeDat.cs">
       <SubType>Form</SubType>
@@ -125,9 +137,6 @@
     <EmbeddedResource Include="frmChonDiaDiemDatVe.resx">
       <DependentUpon>frmChonDiaDiemDatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChonDichVu.resx">
-      <DependentUpon>frmChonDichVu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCon_frmChonDiaDiemDatVe.resx">
       <DependentUpon>frmCon_frmChonDiaDiemDatVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,20 +146,29 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHanhLy.resx">
+      <DependentUpon>frmHanhLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapTT.resx">
-      <DependentUpon>frmNhapTT.cs</DependentUpon>
+    <EmbeddedResource Include="frmNhapTT_EmBe.resx">
+      <DependentUpon>frmNhapTT_EmBe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapTT_NguoiLon.resx">
+      <DependentUpon>frmNhapTT_NguoiLon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapTT_Main.resx">
       <DependentUpon>frmNhapTT_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapTT_TreEm.resx">
+      <DependentUpon>frmNhapTT_TreEm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChonVe.resx">
-      <DependentUpon>frmChonVe.cs</DependentUpon>
+    <EmbeddedResource Include="frmChonDV.resx">
+      <DependentUpon>frmChonDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTTVeDat.resx">
       <DependentUpon>frmTTVeDat.cs</DependentUpon>
@@ -250,6 +268,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plane %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane-seat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\case.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angle-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luggage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

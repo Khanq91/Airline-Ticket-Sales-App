@@ -63,7 +63,7 @@ namespace BanVeMayBay
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
         }
-        public void ShowTTCB()
+        public void ShowTTCB(int slNL, int slTE, int slEB)
         {
             pnlTTCB.Visible = true; 
             pnlThanGiaoDien.Location = new Point(0, 229);
@@ -80,7 +80,42 @@ namespace BanVeMayBay
             frmttvd.TopLevel = false;
             flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
             frmttvd.Show();
-            
+
+            int i;
+            //flowLayoutPnlThanGianDien.Size = new Size(920, 610);
+            //pnlThanGiaoDien.Size = new Size(920, 610);
+            //flowLayoutPnlThanGianDien.Location = new Point(0, 300);
+            for (i = 0; i < slNL; i++)
+            {
+                frmNhapTT_NguoiLon frmTTNL = new frmNhapTT_NguoiLon();
+                frmTTNL.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmTTNL);
+                frmTTNL.Show();
+            }
+            for (i = 0; i < slTE; i++)
+            {
+                frmNhapTT_TreEm frmTTTE = new frmNhapTT_TreEm();
+                frmTTTE.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmTTTE);
+                frmTTTE.Show();
+            }
+            for (i = 0; i < slEB; i++)
+            {
+                frmNhapTT_EmBe frmTTEB = new frmNhapTT_EmBe();
+                frmTTEB.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmTTEB);
+                frmTTEB.Show();
+            }
+
+        }
+
+        private void btnDiTiep_Click(object sender, EventArgs e)
+        {
+            flowLayoutPnlThanGianDien.Controls.Clear();
+            frmChonDV frmDV = new frmChonDV();
+            frmDV.TopLevel = false;
+            flowLayoutPnlThanGianDien.Controls.Add(frmDV);
+            frmDV.Show();
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

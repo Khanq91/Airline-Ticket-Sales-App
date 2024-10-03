@@ -31,7 +31,10 @@ namespace BanVeMayBay
             await Task.Run(() =>
             {
                 int sl = int.Parse(lblSLNguoiLon.Text);
-                if (sl < 5)
+                int slTE = int.Parse(lblSLTreEm.Text);
+                int slEB = int.Parse(lblSLEmBe.Text);
+                int tong = sl + slTE + slEB;
+                if (sl < 5 && tong < 10)
                 {
                     sl += 1;
                     lblSLNguoiLon.Invoke((MethodInvoker)(() => lblSLNguoiLon.Text = sl.ToString()));
@@ -56,7 +59,10 @@ namespace BanVeMayBay
             await Task.Run(() =>
             {
                 int sl = int.Parse(lblSLTreEm.Text);
-                if (sl < 5)
+                int slNL = int.Parse(lblSLNguoiLon.Text);
+                int slEB = int.Parse(lblSLEmBe.Text);
+                int tong = sl + slNL + slEB;
+                if (sl < 5 && tong < 10)
                 {
                     sl += 1;
                     lblSLTreEm.Invoke((MethodInvoker)(() => lblSLTreEm.Text = sl.ToString()));
@@ -82,7 +88,10 @@ namespace BanVeMayBay
             await Task.Run(() =>
             {
                 int sl = int.Parse(lblSLEmBe.Text);
-                if (sl < 5)
+                int slNL = int.Parse(lblSLNguoiLon.Text);
+                int slTE = int.Parse(lblSLTreEm.Text);
+                int tong = sl + slNL + slTE;
+                if (sl < 5 && sl < slNL && tong < 10)
                 {
                     sl += 1;
                     lblSLEmBe.Invoke((MethodInvoker)(() => lblSLEmBe.Text = sl.ToString()));

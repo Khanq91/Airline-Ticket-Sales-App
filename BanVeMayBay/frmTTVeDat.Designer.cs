@@ -452,8 +452,8 @@
             // 
             // frmTTVeDat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(550, 536);
             this.Controls.Add(this.pnlDuoiGiaoDien);
             this.Controls.Add(this.lblTienHL);

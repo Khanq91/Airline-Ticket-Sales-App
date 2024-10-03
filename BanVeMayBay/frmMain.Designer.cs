@@ -48,8 +48,8 @@
             this.lblDiemKhoiHanh = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblChuyenBayKHMC = new System.Windows.Forms.Label();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.pnlTTVeDat = new System.Windows.Forms.Panel();
+            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -75,6 +75,7 @@
             this.flowLayoutPnlThanGianDien.AutoScroll = true;
             this.flowLayoutPnlThanGianDien.BackColor = System.Drawing.Color.LightGray;
             this.flowLayoutPnlThanGianDien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPnlThanGianDien.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPnlThanGianDien.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPnlThanGianDien.Name = "flowLayoutPnlThanGianDien";
             this.flowLayoutPnlThanGianDien.Size = new System.Drawing.Size(1900, 610);
@@ -193,6 +194,7 @@
             this.btnDiTiep.TabIndex = 0;
             this.btnDiTiep.Text = "Đi tiếp";
             this.btnDiTiep.UseVisualStyleBackColor = true;
+            this.btnDiTiep.Click += new System.EventHandler(this.btnDiTiep_Click);
             // 
             // pnlTTCB
             // 
@@ -286,11 +288,6 @@
             this.lblChuyenBayKHMC.TabIndex = 0;
             this.lblChuyenBayKHMC.Text = "CHUYẾN BAY MỘT CHIỀU | 1 NGƯỜI LỚN";
             // 
-            // elipseTool1
-            // 
-            this.elipseTool1.CornerRadius = 40;
-            this.elipseTool1.TargetControl = this;
-            // 
             // pnlTTVeDat
             // 
             this.pnlTTVeDat.Controls.Add(this.flowLayoutPanelTTVeDat);
@@ -299,6 +296,11 @@
             this.pnlTTVeDat.Size = new System.Drawing.Size(555, 610);
             this.pnlTTVeDat.TabIndex = 7;
             this.pnlTTVeDat.Visible = false;
+            // 
+            // elipseTool1
+            // 
+            this.elipseTool1.CornerRadius = 40;
+            this.elipseTool1.TargetControl = this;
             // 
             // frmMain
             // 

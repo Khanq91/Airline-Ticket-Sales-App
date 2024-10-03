@@ -40,6 +40,7 @@ namespace BanVeMayBay
         //Form frmcon = new frmCon_frmChonDiaDiemDatVe();
         frmCon_frmChonDiaDiemDatVe frmcon = new frmCon_frmChonDiaDiemDatVe();
         bool frmCoDangMoHayKhong = false; //Form có đang mở hay không
+        public int slNL, slTE, slEB;
         private void picHanhKhachDropDown_Click(object sender, EventArgs e)
         {
             if(frmCoDangMoHayKhong)
@@ -60,9 +61,9 @@ namespace BanVeMayBay
                 if(result == DialogResult.OK)
                 {
                     string SLHK = "1 Người lớn";
-                    int slNL = int.Parse(frmcon.SLnl);
-                    int slTE = int.Parse(frmcon.SLte);
-                    int slEB = int.Parse(frmcon.SLeb);
+                    slNL = int.Parse(frmcon.SLnl);
+                    slTE = int.Parse(frmcon.SLte);
+                    slEB = int.Parse(frmcon.SLeb);
                     if(slNL != 1)
                     {
                         SLHK = slNL.ToString() + " Người lớn";
@@ -78,7 +79,6 @@ namespace BanVeMayBay
                     lblTTHanhKhach.Visible = true;
                     lblTTHanhKhach.Text = SLHK;
                     //kt so luong nguoi de xuat hien tren form
-
                 }    
                 
             }
@@ -149,7 +149,7 @@ namespace BanVeMayBay
                 }
             }
             frmMain frmmain = (frmMain)this.Parent.Parent.Parent;
-            frmmain.ShowTTCB();
+            frmmain.ShowTTCB(slNL, slTE, slEB);
             this.Hide();
         }
     }

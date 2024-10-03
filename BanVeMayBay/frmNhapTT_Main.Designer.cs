@@ -28,44 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
+            this.pnl = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelTT = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnl
             // 
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1890, 775);
-            this.panel1.TabIndex = 0;
+            this.pnl.BackColor = System.Drawing.Color.White;
+            this.pnl.Controls.Add(this.flowLayoutPanelTT);
+            this.pnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl.Location = new System.Drawing.Point(0, 0);
+            this.pnl.Name = "pnl";
+            this.pnl.Size = new System.Drawing.Size(1092, 775);
+            this.pnl.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelTT
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 37);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1131, 701);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanelTT.AutoScroll = true;
+            this.flowLayoutPanelTT.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanelTT.Location = new System.Drawing.Point(37, 37);
+            this.flowLayoutPanelTT.Name = "flowLayoutPanelTT";
+            this.flowLayoutPanelTT.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanelTT.Size = new System.Drawing.Size(1000, 701);
+            this.flowLayoutPanelTT.TabIndex = 0;
             // 
             // frmNhapTT_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1890, 775);
-            this.Controls.Add(this.panel1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1092, 775);
+            this.Controls.Add(this.pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNhapTT_Main";
             this.Text = "frmNhapTT_Main";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmNhapTT_Main_Load);
+            this.pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel pnl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTT;
     }
 }
