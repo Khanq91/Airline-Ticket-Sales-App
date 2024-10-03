@@ -1,38 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\",
+  "WorkspaceRootPath": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmchondv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmchondv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmchondv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmchondv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmhanhly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\3-10-2024\\banvemaybay\\banvemaybay\\frmchondiadiemdatve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmchondiadiemdatve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\db\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|solutionrelative:db\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|solutionrelative:db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\banvemaybay\\frmnhaptt_embe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_embe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|d:\\tong_hop_tieu_luan\\.net\\baocao\\banvemaybay\\db\\dangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|solutionrelative:db\\dangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,111 +62,189 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmMain.cs",
-              "ViewState": "AQIAAGcAAAAAAAAAAAAAAHUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T12:26:58.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmChonDV.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDV.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmChonDV.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDV.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmChonDV.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAAADAAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T11:58:49.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmHanhLy.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmHanhLy.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmHanhLy.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAAAHwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T11:33:51.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmHanhLy.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmHanhLy.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs [Design]",
-              "RelativeToolTip": "BanVeMayBay\\frmHanhLy.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T11:01:29.56Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmChonDV.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDV.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmChonDV.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDV.cs [Design]",
-              "RelativeToolTip": "BanVeMayBay\\frmChonDV.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T10:19:00.645Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\Program.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\Program.cs",
-              "RelativeToolTip": "BanVeMayBay\\Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAAB4AAAAnAAAA",
+              "Title": "frmHanhLy.cs [Design]",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmHanhLy.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmHanhLy.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmHanhLy.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T16:28:04.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T16:45:03.264Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
               "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs [Design]",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmMain.cs [Design]",
               "RelativeToolTip": "BanVeMayBay\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T12:26:52.572Z",
+              "WhenOpened": "2024-10-03T16:45:01.957Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "frmChonDiaDiemDatVe.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDiaDiemDatVe.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmChonDiaDiemDatVe.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\3-10-2024\\BanVeMayBay\\BanVeMayBay\\frmChonDiaDiemDatVe.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmChonDiaDiemDatVe.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAADQAAAA2AAAA",
+              "Title": "frmNhapTT_Main.cs [Design]",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_Main.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T11:59:11.013Z",
+              "WhenOpened": "2024-10-03T16:44:53.456Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\Program.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\Program.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\Program.cs",
+              "RelativeToolTip": "BanVeMayBay\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAADgvx4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:41:23.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmDangKy.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangKy.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmDangKy.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangKy.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmDangKy.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAADwv3AAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:39:59.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmDangKy.cs [Design]",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangKy.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmDangKy.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangKy.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmDangKy.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:39:58.415Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmMain.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwFEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:36:08.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmDangNhap.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmDangNhap.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangNhap.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmDangNhap.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAhwFkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:33:22.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmDangNhap.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:33:20.657Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmNhapTT_EmBe.cs [Design]",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_EmBe.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_EmBe.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_EmBe.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_EmBe.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:33:16.819Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DangNhap.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DangNhap.cs",
+              "RelativeDocumentMoniker": "DB\\DangNhap.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DangNhap.cs",
+              "RelativeToolTip": "DB\\DangNhap.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:12:33.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DangKi.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DangKi.cs",
+              "RelativeDocumentMoniker": "DB\\DangKi.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DangKi.cs",
+              "RelativeToolTip": "DB\\DangKi.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:11:58.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DB_Connet.cs",
+              "DocumentMoniker": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DB_Connet.cs",
+              "RelativeDocumentMoniker": "DB\\DB_Connet.cs",
+              "ToolTip": "D:\\Tong_hop_Tieu_Luan\\.NET\\baocao\\BanVeMayBay\\DB\\DB_Connet.cs",
+              "RelativeToolTip": "DB\\DB_Connet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:11:06.347Z",
               "EditorCaption": ""
             }
           ]

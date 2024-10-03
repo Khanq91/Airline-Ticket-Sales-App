@@ -1,0 +1,6 @@
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\bin\Debug\DB.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\bin\Debug\DB.pdb
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\obj\Debug\DB.csproj.AssemblyReference.cache
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\obj\Debug\DB.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\DB\obj\Debug\DB.pdb

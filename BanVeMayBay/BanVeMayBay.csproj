@@ -284,5 +284,11 @@
   <ItemGroup>
     <None Include="Resources\correct.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{25da6a1f-03a7-4ba3-99a9-d1270fba8939}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

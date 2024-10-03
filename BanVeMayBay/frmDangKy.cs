@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BanVeMayBay
 {
     public partial class frmDangKy : Form
     {
+        DangKi db_Dk = new DangKi();
         public frmDangKy()
         {
             InitializeComponent(); 
@@ -82,6 +84,54 @@ namespace BanVeMayBay
         private void picThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDangKi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTaiKhoan_DK.Text.Length <= 0 || txtMatKhau_DK.Text.Length <= 0 || txtNhapLaiMatKhau_DK.Text.Length <= 0)
+                {
+                    lbl_ThongBao.Text = "Hãy nhập đầy đủ thông tin";
+                    return;
+                }
+                if (txtMatKhau_DK.Text != txtNhapLaiMatKhau_DK.Text)
+                {
+                    lbl_ThongBao.Text = "Mật khẩu không chính xác";
+                    return;
+
+                }
+                if (db_Dk.KTTaiKhoan(txtTaiKhoan_DK.Text))
+                {
+                    int kq = db_Dk.ThemTaiKHoan(txtTaiKhoan_DK.Text, txtMatKhau_DK.Text);
+                    if (kq > 0)
+                    {
+                        lbl_ThongBao.Text = "Đăng kí tài khoản thành công";
+                        lbl_ThongBao.ForeColor = Color.Green;
+                        return;
+
+                    }
+                }
+                else
+                {
+                    lbl_ThongBao.Text = "Tài khoản đã tồn tại";
+                    return;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                lbl_ThongBao.Text = "Thêm  thất bại";
+                return;
+
+            }
+        }
+        private void txtTaiKhoan_DK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

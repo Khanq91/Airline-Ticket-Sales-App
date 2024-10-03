@@ -8,11 +8,12 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DB;
 namespace BanVeMayBay
 {
     public partial class frmDangNhap : Form
     {
+        DangNhap db_DN = new DangNhap();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -83,9 +84,24 @@ namespace BanVeMayBay
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain frmMain = new frmMain();
-            frmMain.Show();
+            if(txtMatKhau_DN.Text.Length<=0 || txtTaiKhoan_DN.Text.Length <= 0)
+            {
+                lbl_ThongBao.Text = "Vui lòng nhập đầy đủ thông tin.";
+                return;
+            }
+            string Taikhoan = txtTaiKhoan_DN.Text.Trim();
+            string MatKhau = txtMatKhau_DN.Text.Trim();
+            string TenNguoiDung = db_DN.KTraTaiKhoan(Taikhoan, MatKhau);
+            if (TenNguoiDung != null)
+            {
+                this.Hide();
+                frmMain frmMain = new frmMain(TenNguoiDung);
+                frmMain.Show();
+            }
+            else
+            {
+                lbl_ThongBao.Text = "Tài khoản hoặc mật khẩu không chính xác.";
+            }
         }
     }
 }

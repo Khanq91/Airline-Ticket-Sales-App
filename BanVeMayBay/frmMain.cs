@@ -12,9 +12,12 @@ namespace BanVeMayBay
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        string tennguoidung;
+        public frmMain(string Tennguoidung)
         {
             InitializeComponent();
+            this.tennguoidung = Tennguoidung;
+            lblChaoNguoiDung.Text = "Xin chào " + tennguoidung;
         }
 
 
@@ -34,7 +37,6 @@ namespace BanVeMayBay
             pnlThanGiaoDien.Location = new Point(0, 140);
             frmDangNhap frmdn = new frmDangNhap();
             frmdn.Close();
-            lblChaoNguoiDung.Text = "Xin chào + tên người dùng";
             pnlDuoiGiaoDien.Visible = false;
             pnlThanGiaoDien.Height += 171;
 
@@ -59,7 +61,7 @@ namespace BanVeMayBay
         {
             //phương thức reset form khi ấn nút reset
             this.Hide();
-            Form frmm = new frmMain();
+            Form frmm = new frmMain(tennguoidung);
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
         }
