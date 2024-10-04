@@ -50,7 +50,7 @@ CREATE TABLE NHANVIEN
 	TenNV NVARCHAR(50),
 	GioiTinh NVARCHAR(4) CHECK(GioiTinh IN (N'Nam', N'Nữ')),
 	Luong MONEY,
-	NgaySinhNV DATETIME,
+	NgaySinhNV DATE,
 	DiaChiNV NVARCHAR(50),
 	SDTnv CHAR(11) CHECK (SDTnv LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 	MaSB CHAR(10) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE HANHKHACH
 	SDT CHAR(11) DEFAULT '' CHECK (SDT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),-- Mặc định là chuỗi rỗng (nếu muốn)
 	CCCD CHAR(20) UNIQUE DEFAULT '',    -- Mặc định là chuỗi rỗng (nếu muốn)
 	HoChieu CHAR(20) UNIQUE DEFAULT '', -- Mặc định là chuỗi rỗng (nếu muốn)
-	NgaySinh DATETIME DEFAULT NULL,     -- Có thể để NULL nếu không cung cấp giá trị
+	NgaySinh DATE DEFAULT NULL,     -- Có thể để NULL nếu không cung cấp giá trị
 	IDTaiKhoan CHAR(20) NOT NULL,
 	CONSTRAINT PK_HK_MaHK PRIMARY KEY(MaHK),
 	CONSTRAINT FK_HK_IDtk FOREIGN KEY(IDTaiKhoan) REFERENCES QLTaiKhoan(IDTaiKhoan)
@@ -121,31 +121,32 @@ CREATE TABLE GIAVE
 	CONSTRAINT FK_GV_MaHangVe FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe)
 );
 
+CREATE TABLE DATVE
+(
+	MaDV CHAR(10) NOT NULL,
+	ThanhTien MONEY DEFAULT 0,
+	SoVeDat INT DEFAULT 0,
+	--MaVe CHAR(10) NOT NULL,
+	MaCB CHAR(10) NOT NULL,
+	MaHK CHAR(10) NOT NULL,
+	CONSTRAINT PK_DV_MaDV PRIMARY KEY(MaDV),
+	--CONSTRAINT FK_DV_MaVe FOREIGN KEY(MaVe) REFERENCES VE(MaVe),
+	CONSTRAINT FK_DV_MaHK FOREIGN KEY(MaHK) REFERENCES HANHKHACH(MaHK),
+	CONSTRAINT FK_DV_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB)
+);
+
 CREATE TABLE VE 
 (
 	MaVe CHAR(10) NOT NULL,
 	DonViTien NCHAR(10),
 	ViTriGhe CHAR(10),
 	MaHK CHAR(10) NOT NULL, 
-	--MaDV CHAR(10) NOT NULL,
+	MaDV CHAR(10) NOT NULL,
 	MaGiaVe CHAR(10) NOT NULL,
 	CONSTRAINT PK_VE_MaVe PRIMARY KEY(MaVe),
 	CONSTRAINT FK_VE_MaHK FOREIGN KEY(MaHK) REFERENCES HANHKHACH(MaHK),
-	--CONSTRAINT FK_VE_MaDV FOREIGN KEY(MaDV) REFERENCES DATVE(MaDV),
+	CONSTRAINT FK_VE_MaDV FOREIGN KEY(MaDV) REFERENCES DATVE(MaDV),
 	CONSTRAINT FK_VE_MaGiaVe FOREIGN KEY(MaGiaVe) REFERENCES GIAVE(MaGiaVe)
-);
-
-CREATE TABLE DATVE
-(
-	MaDV CHAR(10) NOT NULL,
-	ThanhTien MONEY DEFAULT 0,
-	MaVe CHAR(10) NOT NULL,
-	MaCB CHAR(10) NOT NULL,
-	MaHK CHAR(10) NOT NULL,
-	CONSTRAINT PK_DV_MaDV PRIMARY KEY(MaDV),
-	CONSTRAINT FK_DV_MaVe FOREIGN KEY(MaVe) REFERENCES VE(MaVe),
-	CONSTRAINT FK_DV_MaHK FOREIGN KEY(MaHK) REFERENCES HANHKHACH(MaHK),
-	CONSTRAINT FK_DV_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB)
 );
 
 CREATE TABLE NHANXET
@@ -264,23 +265,23 @@ VALUES
     ('GV003', 5000000, 0, 0, 0, 'CB003', 'HV003', '2024-10-03'),
     ('GV004', 4000000, 0, 0, 0, 'CB004', 'HV004', '2024-10-04'),
     ('GV005', 1500000, 0, 0, 0, 'CB005', 'HV004', '2024-10-05');
-
-INSERT INTO VE (MaVe, DonViTien, ViTriGhe, MaHK, MaGiaVe) 
+----------------------------------------------------
+INSERT INTO DATVE (MaDV, ThanhTien, SoVeDat, MaCB, MaHK)
 VALUES 
-	('VE001', 'VND', 'A1', 'HK001', 'GV001'),
-	('VE002', 'VND', 'B2', 'HK002', 'GV002'),
-	('VE003', 'VND', 'C3', 'HK003', 'GV003'),
-	('VE004', 'VND', 'D4', 'HK004', 'GV004'),
-	('VE005', 'VND', 'E5', 'HK005', 'GV005');
-
-INSERT INTO DATVE (MaDV, ThanhTien, MaVe, MaCB, MaHK)
+    ('DV001', 0, 1, 'CB001', 'HK001'),
+    ('DV002', 0, 1, 'CB002', 'HK002'),
+    ('DV003', 0, 1, 'CB003', 'HK003'),
+    ('DV004', 0, 1, 'CB004', 'HK004'),
+    ('DV005', 0, 1, 'CB005', 'HK005');
+----------------------------------------------------
+INSERT INTO VE (MaVe, DonViTien, ViTriGhe, MaHK, MaDV, MaGiaVe) 
 VALUES 
-    ('DV001', 0, 'VE001', 'CB001', 'HK001'),
-    ('DV002', 0, 'VE002', 'CB002', 'HK002'),
-    ('DV003', 0, 'VE003', 'CB003', 'HK003'),
-    ('DV004', 0, 'VE004', 'CB004', 'HK004'),
-    ('DV005', 0, 'VE005', 'CB005', 'HK005');
-
+	('VE001', 'VND', 'A1', 'HK001', 'DV001', 'GV001'),
+	('VE002', 'VND', 'B2', 'HK002', 'DV002', 'GV002'),
+	('VE003', 'VND', 'C3', 'HK003', 'DV003', 'GV003'),
+	('VE004', 'VND', 'D4', 'HK004', 'DV004', 'GV004'),
+	('VE005', 'VND', 'E5', 'HK005', 'DV005', 'GV005');
+----------------------------------------------------
 INSERT INTO NHANXET (MaHK, MaCB, NDNhanXet, DiemDanhGia)
 VALUES 
     ('HK001', 'CB001', N'Trải nghiệm tuyệt vời, rất hài lòng.', 5),
@@ -288,7 +289,7 @@ VALUES
     ('HK003', 'CB003', N'Chuyến bay ổn, nhưng ghế hơi chật.', 3),
     ('HK004', 'CB004', N'Trễ chuyến bay, nhưng nhân viên hỗ trợ tốt.', 4),
     ('HK005', 'CB005', N'Chuyến bay hoàn hảo, không có gì để chê.', 5);
-
+----------------------------------------------------
 INSERT INTO HANHLY (MaHL, SoKG, LoaiHanhLy, MaPhuPhi, MaHK, MaCB)
 VALUES 
     ('HL001', 20, N'Hành lý ký gửi', 'PP001', 'HK001', 'CB001'),
@@ -313,3 +314,345 @@ SELECT * FROM VE
 SELECT * FROM DATVE
 SELECT * FROM NHANXET
 SELECT * FROM HANHLY
+
+-----------------------------------------------------------------------
+--						CÀI ĐẶT CÁC TRIGGER
+-----------------------------------------------------------------------
+--TRIGGER
+--1. Tính giá vé (GIAVE)
+--2. Tính thành tiền (DATVE)
+--3. Tính phụ phí
+--4. Check tuổi
+-------------------------
+--		SANBAY
+-------------------------
+-- Trigger kiểm tra mã sân bay không được trùng khi cập nhật
+CREATE TRIGGER trg_SANBAY_CHECK_MaSB
+ON SANBAY
+FOR INSERT, UPDATE 
+AS
+BEGIN
+    IF EXISTS (
+		SELECT 1
+		FROM INSERTED i
+		WHERE EXISTS (
+			SELECT 1 
+			FROM SANBAY sb
+			WHERE sb.MaSB = i.MaSB 
+				  AND MaSB NOT IN (SELECT MaSB FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'Mã sân bay đã tồn tại ở bản ghi khác!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+-- Trigger để kiểm tra trước khi chèn và cập nhật vào SANBAY
+CREATE TRIGGER trg_SANBAY_ThemMoi
+ON SANBAY
+FOR INSERT, UPDATE 
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM INSERTED WHERE TenSB = '')
+		BEGIN
+			PRINT N'Tên sân bay không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-- Trigger để ghi log khi xóa SANBAY
+CREATE TRIGGER trg_SANBAY_DELETE
+ON SANBAY
+FOR DELETE
+AS
+BEGIN
+    DECLARE @MaSB CHAR(10);
+    SELECT @MaSB = MaSB FROM DELETED;
+    
+    PRINT N'Sân bay có mã ' + @MaSB + N' đã bị xóa khỏi hệ thống.';
+END;
+
+-------------------------
+--		MAYBAY
+-------------------------
+-- Trigger kiểm tra mã máy bay không được trùng khi cập nhật
+CREATE TRIGGER trg_MAYBAY_CHECK_MaMB
+ON MAYBAY
+FOR INSERT, UPDATE 
+AS
+BEGIN
+    -- Kiểm tra nếu mã đã tồn tại ở bản ghi khác
+    IF EXISTS (
+		SELECT 1
+		FROM INSERTED i
+		WHERE EXISTS (
+			SELECT 1 
+			FROM MAYBAY mb
+			WHERE mb.MaMB = i.MaMB 
+				  AND MaMB NOT IN (SELECT MaMB FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'Mã máy bay đã tồn tại ở bản ghi khác!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+-- Trigger kiểm tra khi chèn và cập nhật dữ liệu vào bảng MAYBAY
+CREATE TRIGGER trg_MAYBAY_ThemMoi
+ON MAYBAY
+FOR INSERT, UPDATE
+AS
+BEGIN
+    -- Kiểm tra nếu LoaiMB để trống
+    IF EXISTS (SELECT 1 FROM INSERTED WHERE LoaiMB = '')
+		BEGIN
+			PRINT N'Loại máy bay không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+
+    -- Kiểm tra nếu HangBay để trống
+    IF EXISTS (SELECT 1 FROM INSERTED WHERE HangBay = '')
+		BEGIN
+			PRINT N'Hãng bay không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+
+    -- Kiểm tra nếu TongSoGhe không hợp lệ (ví dụ: nhỏ hơn hoặc bằng 0)
+    IF EXISTS (SELECT 1 FROM INSERTED WHERE TongSoGhe <= 0)
+		BEGIN
+			PRINT N'Tổng số ghế phải lớn hơn 0!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-- Trigger để ghi log khi xóa MAYBAY
+CREATE TRIGGER trg_MAYBAY_DELETE
+ON MAYBAY
+FOR DELETE
+AS
+BEGIN
+    DECLARE @MaMB CHAR(10);
+    SELECT @MaMB = MaMB FROM DELETED;
+
+    PRINT N'Máy bay có mã ' + @MaMB + N' đã bị xóa khỏi hệ thống.';
+END;
+
+-------------------------
+--		CHANGBAY
+-------------------------
+-- Trigger kiểm tra mã chặng bay không được trùng khi cập nhật
+CREATE TRIGGER trg_CHANGBAY_CHECK_MaChangBay
+ON CHANGBAY
+FOR INSERT, UPDATE 
+AS
+BEGIN
+    -- Kiểm tra nếu mã đã tồn tại ở bản ghi khác
+    IF EXISTS (
+		SELECT 1
+		FROM INSERTED i
+		WHERE EXISTS(
+			SELECT 1 
+			FROM CHANGBAY chb
+			WHERE chb.MaChangBay = i.MaChangBay 
+				  AND MaChangBay NOT IN (SELECT MaChangBay FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'Mã chặng bay đã tồn tại ở bản ghi khác!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+-- Trigger để kiểm tra trước khi chèn và cập nhật vào CHANGBAY
+CREATE TRIGGER trg_CHANGBAY_ThemMoi
+ON CHANGBAY
+FOR INSERT, UPDATE
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM INSERTED WHERE MaSBdi = MaSBden)
+		BEGIN
+			PRINT N'Mã sân bay đi và sân bay đến không được trùng nhau!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-- Trigger để ghi log khi xóa CHANGBAY
+CREATE TRIGGER trg_CHANGBAY_DELETE
+ON CHANGBAY
+FOR DELETE
+AS
+BEGIN
+    DECLARE @MaChangBay CHAR(10);
+    SELECT @MaChangBay = MaChangBay FROM DELETED;
+
+    PRINT N'Chặng bay có mã ' + @MaChangBay + N' đã bị xóa khỏi hệ thống.';
+END;
+
+-------------------------
+--		CHUCVU
+-------------------------
+-- Trigger kiểm tra giá trị của TenChucVu chỉ là 'Nhân viên đặt vé' hoặc 'Quản lý'
+CREATE TRIGGER trg_CHUCVU_TenChucVu
+ON CHUCVU
+FOR INSERT, UPDATE
+AS
+BEGIN
+    -- Kiểm tra nếu có bất kỳ bản ghi nào trong INSERTED có TenChucVu không hợp lệ
+    IF EXISTS (
+        SELECT 1 
+        FROM INSERTED 
+        WHERE TenChucVu NOT IN (N'Nhân viên đặt vé', N'Quản lý')
+    )
+		BEGIN
+			PRINT N'Tên chức vụ không hợp lệ! Chỉ được phép là "Nhân viên đặt vé" hoặc "Quản lý".';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+-------------------------
+--		QLTaiKhoan
+-------------------------
+-- Trigger kiểm tra ID tài khoản không được trùng khi cập nhật
+CREATE TRIGGER trg_QLTaiKhoan_CHECK_IDTaiKhoan
+ON QLTaiKhoan
+FOR INSERT, UPDATE 
+AS
+BEGIN
+    -- Kiểm tra nếu mã đã tồn tại ở bản ghi khác
+    IF EXISTS (
+		SELECT 1 
+		FROM INSERTED i
+		WHERE EXISTS (
+			SELECT 1 
+			FROM QLTaiKhoan qltk
+			WHERE qltk.IDTaiKhoan = i.IDTaiKhoan
+				  AND qltk.IDTaiKhoan NOT IN (SELECT IDTaiKhoan FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'ID tài khoản đã tồn tại ở bản ghi khác!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+--Trigger kiểm tra khi thêm mới vào QLTaiKhoan
+CREATE TRIGGER trg_QLTaiKhoan_ThemMoi
+ON QLTaiKhoan
+FOR INSERT, UPDATE
+AS
+BEGIN
+	IF EXISTS (SELECT 1 FROM INSERTED WHERE TenTaiKhoan = '')
+		BEGIN
+			PRINT N'Tên tài khoản không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF EXISTS (SELECT 1 FROM INSERTED WHERE TenDangNhap = '')
+		BEGIN
+			PRINT N'Tên đăng nhập không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF EXISTS (SELECT 1 FROM INSERTED WHERE MatKhau = '')
+		BEGIN
+			PRINT N'Mật khẩu không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-------------------------
+--		NHANVIEN
+-------------------------
+--Trigger kiểm tra mã nhân viên không được trùng khi thêm mới và cập nhật dữ liệu
+CREATE TRIGGER trg_NHANVIEN_CHECK_MaNV
+ON NHANVIEN 
+FOR INSERT, UPDATE
+AS
+BEGIN
+	IF EXISTS (
+		SELECT 1 
+		FROM INSERTED i
+		WHERE EXISTS (
+			SELECT 1 
+			FROM NHANVIEN nv
+			WHERE nv.MaNV = i.MaNV
+				  AND nv.MaNV NOT IN (SELECT MaNV FROM DELETED)  -- Đảm bảo không kiểm tra chính bản ghi đang cập nhật
+		)
+	)
+		BEGIN
+			PRINT N'Mã nhân viên này đã tồn tại!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+--Trigger kiểm tra khi thêm mới vào NHANVIEN
+CREATE TRIGGER trg_NHANVIEN_ThemMoi
+ON NHANVIEN
+FOR INSERT, UPDATE
+AS 
+BEGIN
+	DECLARE @TenNV NVARCHAR(50);
+	DECLARE @GioiTinh NVARCHAR(4);
+	DECLARE @Luong MONEY;
+	DECLARE @NgaySinhNV DATE;
+	DECLARE @DiaChiNV NVARCHAR(50);
+	DECLARE @SDTnv CHAR(11);
+	
+	SELECT @TenNV = TenNV, 
+		   @GioiTinh = GioiTinh, 
+		   @Luong = Luong, 
+		   @NgaySinhNV = NgaySinhNV, 
+		   @DiaChiNV = DiaChiNV, 
+		   @SDTnv = SDTnv 
+	FROM INSERTED;
+
+	IF @TenNV = ''
+		BEGIN
+			PRINT N'Tên nhân viên không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF @GioiTinh NOT IN (N'Nam', N'Nữ')
+		BEGIN
+			PRINT N'Giới tính của nhân viên phải là "Nam" hoặc "Nữ"!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF @Luong IS NULL OR @Luong <= 0
+		BEGIN
+			PRINT N'Lương của nhân viên phải lớn hơn 0!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF @NgaySinhNV IS NULL OR @NgaySinhNV >= GETDATE()
+		BEGIN
+			PRINT N'Ngày sinh của nhân viên phải nhỏ hơn ngày hiện tại!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	IF @DiaChiNV = ''
+		BEGIN
+			PRINT N'Địa chỉ nhân viên không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	-- Kiểm tra Số điện thoại nhân viên (phải là 10 chữ số)
+    IF LEN(@SDTnv) <> 10
+		BEGIN
+			PRINT N'Số điện thoại nhân viên phải có đúng 10 chữ số!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-------------------------
+--		CHUYENBAY
+-------------------------
