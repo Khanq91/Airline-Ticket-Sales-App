@@ -158,3 +158,5 @@ C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMay.AB427FA6.Up2Date
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.exe
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachVe.resources
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources

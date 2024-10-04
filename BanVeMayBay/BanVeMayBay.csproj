@@ -70,6 +70,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhSachVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachVe.Designer.cs">
+      <DependentUpon>frmDanhSachVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHanhLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="frmTTVeDat.Designer.cs">
       <DependentUpon>frmTTVeDat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVe.Designer.cs">
+      <DependentUpon>frmVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -145,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachVe.resx">
+      <DependentUpon>frmDanhSachVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHanhLy.resx">
       <DependentUpon>frmHanhLy.cs</DependentUpon>
@@ -172,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTTVeDat.resx">
       <DependentUpon>frmTTVeDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVe.resx">
+      <DependentUpon>frmVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
