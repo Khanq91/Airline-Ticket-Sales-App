@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.lblThongTin_EB = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,8 +43,15 @@
             this.cboGioiTinh_EB = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.picNguoi = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseTool1
@@ -57,7 +65,7 @@
             this.lblThongTin_EB.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThongTin_EB.ForeColor = System.Drawing.Color.Black;
             this.lblThongTin_EB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblThongTin_EB.Location = new System.Drawing.Point(254, 9);
+            this.lblThongTin_EB.Location = new System.Drawing.Point(244, 9);
             this.lblThongTin_EB.Name = "lblThongTin_EB";
             this.lblThongTin_EB.Size = new System.Drawing.Size(97, 38);
             this.lblThongTin_EB.TabIndex = 27;
@@ -67,6 +75,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.txtBayCung_EB);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtHo_EB);
@@ -77,7 +90,7 @@
             this.panel1.Controls.Add(this.dateTimePickerNgaySinh_EB);
             this.panel1.Controls.Add(this.cboGioiTinh_EB);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(211, 54);
+            this.panel1.Location = new System.Drawing.Point(201, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(879, 300);
@@ -88,8 +101,9 @@
             this.txtBayCung_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBayCung_EB.Location = new System.Drawing.Point(13, 48);
             this.txtBayCung_EB.Name = "txtBayCung_EB";
-            this.txtBayCung_EB.Size = new System.Drawing.Size(849, 39);
+            this.txtBayCung_EB.Size = new System.Drawing.Size(840, 39);
             this.txtBayCung_EB.TabIndex = 20;
+            this.txtBayCung_EB.Leave += new System.EventHandler(this.txtBayCung_EB_Leave);
             // 
             // label5
             // 
@@ -106,8 +120,9 @@
             this.txtHo_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHo_EB.Location = new System.Drawing.Point(13, 143);
             this.txtHo_EB.Name = "txtHo_EB";
-            this.txtHo_EB.Size = new System.Drawing.Size(420, 39);
+            this.txtHo_EB.Size = new System.Drawing.Size(411, 39);
             this.txtHo_EB.TabIndex = 12;
+            this.txtHo_EB.Leave += new System.EventHandler(this.txtHo_EB_Leave);
             // 
             // label1
             // 
@@ -124,8 +139,9 @@
             this.txtTenDemvaTen_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDemvaTen_EB.Location = new System.Drawing.Point(442, 143);
             this.txtTenDemvaTen_EB.Name = "txtTenDemvaTen_EB";
-            this.txtTenDemvaTen_EB.Size = new System.Drawing.Size(420, 39);
+            this.txtTenDemvaTen_EB.Size = new System.Drawing.Size(411, 39);
             this.txtTenDemvaTen_EB.TabIndex = 13;
+            this.txtTenDemvaTen_EB.Leave += new System.EventHandler(this.txtTenDemvaTen_EB_Leave);
             // 
             // label2
             // 
@@ -152,7 +168,7 @@
             this.dateTimePickerNgaySinh_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgaySinh_EB.Location = new System.Drawing.Point(13, 241);
             this.dateTimePickerNgaySinh_EB.Name = "dateTimePickerNgaySinh_EB";
-            this.dateTimePickerNgaySinh_EB.Size = new System.Drawing.Size(420, 39);
+            this.dateTimePickerNgaySinh_EB.Size = new System.Drawing.Size(411, 39);
             this.dateTimePickerNgaySinh_EB.TabIndex = 14;
             // 
             // cboGioiTinh_EB
@@ -168,8 +184,9 @@
             this.cboGioiTinh_EB.Location = new System.Drawing.Point(442, 240);
             this.cboGioiTinh_EB.MaxDropDownItems = 5;
             this.cboGioiTinh_EB.Name = "cboGioiTinh_EB";
-            this.cboGioiTinh_EB.Size = new System.Drawing.Size(420, 40);
+            this.cboGioiTinh_EB.Size = new System.Drawing.Size(411, 40);
             this.cboGioiTinh_EB.TabIndex = 16;
+            this.cboGioiTinh_EB.Leave += new System.EventHandler(this.cboGioiTinh_EB_Leave);
             // 
             // label4
             // 
@@ -184,18 +201,77 @@
             // picNguoi
             // 
             this.picNguoi.Image = global::BanVeMayBay.Properties.Resources.baby1;
-            this.picNguoi.Location = new System.Drawing.Point(211, 9);
+            this.picNguoi.Location = new System.Drawing.Point(201, 9);
             this.picNguoi.Name = "picNguoi";
             this.picNguoi.Size = new System.Drawing.Size(38, 38);
             this.picNguoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNguoi.TabIndex = 28;
             this.picNguoi.TabStop = false;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(117, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 28);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "(*)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(54, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 28);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "(*)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(617, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 28);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "(*)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(129, 206);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 28);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "(*)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(539, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 28);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "(*)";
+            // 
+            // erpNhapTT
+            // 
+            this.erpNhapTT.ContainerControl = this;
+            // 
             // frmNhapTT_EmBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 373);
+            this.ClientSize = new System.Drawing.Size(1280, 373);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_EB);
             this.Controls.Add(this.panel1);
@@ -207,6 +283,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +305,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBayCung_EB;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider erpNhapTT;
     }
 }

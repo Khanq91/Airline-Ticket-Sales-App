@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rdoGioiTinhNam_NL = new System.Windows.Forms.RadioButton();
             this.rdoGioiTinhNu_NL = new System.Windows.Forms.RadioButton();
             this.rdoGioiTinhKhac_NL = new System.Windows.Forms.RadioButton();
@@ -52,8 +53,16 @@
             this.lblThongTin_NL = new System.Windows.Forms.Label();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.picNguoi = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
             this.SuspendLayout();
             // 
             // rdoGioiTinhNam_NL
@@ -97,8 +106,9 @@
             this.txtHo_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHo_NL.Location = new System.Drawing.Point(15, 108);
             this.txtHo_NL.Name = "txtHo_NL";
-            this.txtHo_NL.Size = new System.Drawing.Size(420, 39);
+            this.txtHo_NL.Size = new System.Drawing.Size(411, 39);
             this.txtHo_NL.TabIndex = 1;
+            this.txtHo_NL.Leave += new System.EventHandler(this.txtHo_NL_Leave);
             // 
             // label1
             // 
@@ -125,8 +135,9 @@
             this.txtTenDemvaTen_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDemvaTen_NL.Location = new System.Drawing.Point(445, 108);
             this.txtTenDemvaTen_NL.Name = "txtTenDemvaTen_NL";
-            this.txtTenDemvaTen_NL.Size = new System.Drawing.Size(420, 39);
+            this.txtTenDemvaTen_NL.Size = new System.Drawing.Size(411, 39);
             this.txtTenDemvaTen_NL.TabIndex = 2;
+            this.txtTenDemvaTen_NL.Leave += new System.EventHandler(this.txtTenDemvaTen_NL_Leave);
             // 
             // label3
             // 
@@ -143,7 +154,7 @@
             this.dateTimePickerNgaySinh_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgaySinh_NL.Location = new System.Drawing.Point(15, 206);
             this.dateTimePickerNgaySinh_NL.Name = "dateTimePickerNgaySinh_NL";
-            this.dateTimePickerNgaySinh_NL.Size = new System.Drawing.Size(420, 39);
+            this.dateTimePickerNgaySinh_NL.Size = new System.Drawing.Size(411, 39);
             this.dateTimePickerNgaySinh_NL.TabIndex = 3;
             // 
             // cboQuocGia_NL
@@ -352,14 +363,15 @@
             this.cboQuocGia_NL.Location = new System.Drawing.Point(445, 205);
             this.cboQuocGia_NL.MaxDropDownItems = 5;
             this.cboQuocGia_NL.Name = "cboQuocGia_NL";
-            this.cboQuocGia_NL.Size = new System.Drawing.Size(420, 40);
+            this.cboQuocGia_NL.Size = new System.Drawing.Size(411, 40);
             this.cboQuocGia_NL.TabIndex = 4;
+            this.cboQuocGia_NL.Leave += new System.EventHandler(this.cboQuocGia_NL_Leave);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(445, 161);
+            this.label4.Location = new System.Drawing.Point(445, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 32);
             this.label4.TabIndex = 11;
@@ -380,8 +392,9 @@
             this.txtSDT_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT_NL.Location = new System.Drawing.Point(15, 304);
             this.txtSDT_NL.Name = "txtSDT_NL";
-            this.txtSDT_NL.Size = new System.Drawing.Size(420, 39);
+            this.txtSDT_NL.Size = new System.Drawing.Size(411, 39);
             this.txtSDT_NL.TabIndex = 5;
+            this.txtSDT_NL.Leave += new System.EventHandler(this.txtSDT_NL_Leave);
             // 
             // label6
             // 
@@ -398,8 +411,9 @@
             this.txtEmail_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail_NL.Location = new System.Drawing.Point(445, 303);
             this.txtEmail_NL.Name = "txtEmail_NL";
-            this.txtEmail_NL.Size = new System.Drawing.Size(420, 39);
+            this.txtEmail_NL.Size = new System.Drawing.Size(411, 39);
             this.txtEmail_NL.TabIndex = 6;
+            this.txtEmail_NL.Leave += new System.EventHandler(this.txtEmail_NL_Leave);
             // 
             // label7
             // 
@@ -416,7 +430,7 @@
             this.txtNoiO_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiO_NL.Location = new System.Drawing.Point(15, 400);
             this.txtNoiO_NL.Name = "txtNoiO_NL";
-            this.txtNoiO_NL.Size = new System.Drawing.Size(850, 39);
+            this.txtNoiO_NL.Size = new System.Drawing.Size(841, 39);
             this.txtNoiO_NL.TabIndex = 7;
             // 
             // label8
@@ -434,7 +448,7 @@
             this.txtMaHoiVien_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHoiVien_NL.Location = new System.Drawing.Point(15, 497);
             this.txtMaHoiVien_NL.Name = "txtMaHoiVien_NL";
-            this.txtMaHoiVien_NL.Size = new System.Drawing.Size(850, 39);
+            this.txtMaHoiVien_NL.Size = new System.Drawing.Size(841, 39);
             this.txtMaHoiVien_NL.TabIndex = 8;
             // 
             // chkNhanThongTin_NL
@@ -451,6 +465,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.rdoGioiTinhNu_NL);
             this.panel1.Controls.Add(this.chkNhanThongTin_NL);
             this.panel1.Controls.Add(this.rdoGioiTinhNam_NL);
@@ -471,7 +491,7 @@
             this.panel1.Controls.Add(this.txtSDT_NL);
             this.panel1.Controls.Add(this.cboQuocGia_NL);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(211, 54);
+            this.panel1.Location = new System.Drawing.Point(201, 54);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(879, 609);
@@ -483,7 +503,7 @@
             this.lblThongTin_NL.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThongTin_NL.ForeColor = System.Drawing.Color.Black;
             this.lblThongTin_NL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblThongTin_NL.Location = new System.Drawing.Point(254, 9);
+            this.lblThongTin_NL.Location = new System.Drawing.Point(244, 9);
             this.lblThongTin_NL.Name = "lblThongTin_NL";
             this.lblThongTin_NL.Size = new System.Drawing.Size(144, 38);
             this.lblThongTin_NL.TabIndex = 22;
@@ -498,19 +518,89 @@
             // picNguoi
             // 
             this.picNguoi.Image = global::BanVeMayBay.Properties.Resources.adult;
-            this.picNguoi.Location = new System.Drawing.Point(211, 9);
+            this.picNguoi.Location = new System.Drawing.Point(201, 9);
             this.picNguoi.Name = "picNguoi";
             this.picNguoi.Size = new System.Drawing.Size(38, 38);
             this.picNguoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNguoi.TabIndex = 23;
             this.picNguoi.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(52, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 28);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "(*)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(616, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 28);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "(*)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(126, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 28);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "(*)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(547, 171);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 28);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "(*)";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(164, 269);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 28);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "(*)";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(511, 262);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 28);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "(*)";
+            // 
+            // erpNhapTT
+            // 
+            this.erpNhapTT.ContainerControl = this;
+            // 
             // frmNhapTT_NguoiLon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1300, 682);
+            this.ClientSize = new System.Drawing.Size(1280, 682);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_NL);
             this.Controls.Add(this.panel1);
@@ -522,6 +612,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,5 +644,12 @@
         private System.Windows.Forms.Label lblThongTin_NL;
         private System.Windows.Forms.PictureBox picNguoi;
         private Tool.ElipseTool elipseTool1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ErrorProvider erpNhapTT;
     }
 }

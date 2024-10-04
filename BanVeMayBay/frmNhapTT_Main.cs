@@ -12,9 +12,6 @@ namespace BanVeMayBay
 {
     public partial class frmNhapTT_Main : Form
     {
-        frmNhapTT_NguoiLon frmNL = new frmNhapTT_NguoiLon();
-        frmNhapTT_TreEm frmTE = new frmNhapTT_TreEm();
-        frmNhapTT_EmBe frmEB = new frmNhapTT_EmBe();
         public frmNhapTT_Main()
         {
             InitializeComponent();
@@ -25,20 +22,24 @@ namespace BanVeMayBay
         }
         public void ShowTTHK(int slNL, int slTE, int slEB)
         {
-            for (int i = 0;i < slNL; i++)
+            int i;
+            for (i = 0;i < slNL; i++)
             {
+                frmNhapTT_NguoiLon frmNL = new frmNhapTT_NguoiLon();
                 frmNL.TopLevel = false;
                 flowLayoutPanelTT.Controls.Add(frmNL);
                 frmNL.Show();
             }
-            for (int i = 0; i < slTE; i++)
+            for (i = 0; i < slTE; i++)
             {
+                frmNhapTT_TreEm frmTE = new frmNhapTT_TreEm();
                 frmTE.TopLevel = false;
                 flowLayoutPanelTT.Controls.Add(frmTE);
                 frmTE.Show();
             }
-            for (int i = 0; i < slEB; i++)
+            for (i = 0; i < slEB; i++)
             {
+                frmNhapTT_EmBe frmEB = new frmNhapTT_EmBe();
                 frmEB.TopLevel = false;
                 flowLayoutPanelTT.Controls.Add(frmEB);
                 frmEB.Show();

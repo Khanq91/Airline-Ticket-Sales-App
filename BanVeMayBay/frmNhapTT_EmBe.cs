@@ -22,5 +22,42 @@ namespace BanVeMayBay
             txtBayCung_EB.Focus();
             dateTimePickerNgaySinh_EB.MaxDate = DateTime.Now;
         }
+
+        private void txtBayCung_EB_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (txtBayCung_EB.Text.Trim().Length == 0)
+                this.erpNhapTT.SetError(ctr, "Bạn hãy cho biết người bay cùng bé!");
+            else
+                this.erpNhapTT.Clear();
+        }
+
+        private void txtHo_EB_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (txtHo_EB.Text.Trim().Length == 0)
+                this.erpNhapTT.SetError(ctr, "Bạn hãy cho biết họ của bé!");
+            else
+                this.erpNhapTT.Clear();
+        }
+
+        private void txtTenDemvaTen_EB_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (txtTenDemvaTen_EB.Text.Trim().Length == 0)
+                this.erpNhapTT.SetError(ctr, "Bạn hãy cho biết tên và tên đệm của bé!");
+            else
+                this.erpNhapTT.Clear();
+
+        }
+
+        private void cboGioiTinh_EB_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (cboGioiTinh_EB.Text.Trim().Length == 0)
+                this.erpNhapTT.SetError(ctr, "Bạn hãy cho biết giới tính của bé!");
+            else
+                this.erpNhapTT.Clear();
+        }
     }
 }

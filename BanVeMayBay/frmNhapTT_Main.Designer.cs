@@ -40,24 +40,25 @@
             this.pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl.Location = new System.Drawing.Point(0, 0);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(1092, 775);
+            this.pnl.Size = new System.Drawing.Size(1322, 602);
             this.pnl.TabIndex = 0;
             // 
             // flowLayoutPanelTT
             // 
             this.flowLayoutPanelTT.AutoScroll = true;
             this.flowLayoutPanelTT.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanelTT.Location = new System.Drawing.Point(37, 37);
+            this.flowLayoutPanelTT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelTT.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelTT.Name = "flowLayoutPanelTT";
             this.flowLayoutPanelTT.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelTT.Size = new System.Drawing.Size(1000, 701);
+            this.flowLayoutPanelTT.Size = new System.Drawing.Size(1322, 602);
             this.flowLayoutPanelTT.TabIndex = 0;
             // 
             // frmNhapTT_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1092, 775);
+            this.ClientSize = new System.Drawing.Size(1322, 602);
             this.Controls.Add(this.pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNhapTT_Main";
