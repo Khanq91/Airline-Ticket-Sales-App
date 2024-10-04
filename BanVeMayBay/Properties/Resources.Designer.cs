@@ -223,6 +223,16 @@ namespace BanVeMayBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dangkinew2 {
+            get {
+                object obj = ResourceManager.GetObject("dangkinew2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exchange {
             get {
                 object obj = ResourceManager.GetObject("exchange", resourceCulture);
@@ -246,6 +256,16 @@ namespace BanVeMayBay.Properties {
         internal static System.Drawing.Bitmap frmDangKi_final {
             get {
                 object obj = ResourceManager.GetObject("frmDangKi-final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap frmdangkinew {
+            get {
+                object obj = ResourceManager.GetObject("frmdangkinew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

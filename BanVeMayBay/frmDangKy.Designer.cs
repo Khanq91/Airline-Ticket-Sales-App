@@ -35,29 +35,30 @@
             this.btnDangKi = new System.Windows.Forms.Button();
             this.erpTKMK = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
+            this.lbl_ThongBao = new System.Windows.Forms.Label();
+            this.txtTenNguoiDung = new System.Windows.Forms.TextBox();
+            this.picThoat = new System.Windows.Forms.PictureBox();
             this.picMayBay = new System.Windows.Forms.PictureBox();
             this.picTroLaiDN = new System.Windows.Forms.PictureBox();
             this.picDangKi = new System.Windows.Forms.PictureBox();
             this.picNenDK = new System.Windows.Forms.PictureBox();
-            this.picThoat = new System.Windows.Forms.PictureBox();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
-            this.lbl_ThongBao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erpTKMK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMayBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTroLaiDN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDangKi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNenDK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTaiKhoan_DK
             // 
             this.txtTaiKhoan_DK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaiKhoan_DK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan_DK.Location = new System.Drawing.Point(863, 287);
-            this.txtTaiKhoan_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTaiKhoan_DK.Location = new System.Drawing.Point(1036, 385);
+            this.txtTaiKhoan_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtTaiKhoan_DK.Name = "txtTaiKhoan_DK";
-            this.txtTaiKhoan_DK.Size = new System.Drawing.Size(274, 27);
+            this.txtTaiKhoan_DK.Size = new System.Drawing.Size(329, 32);
             this.txtTaiKhoan_DK.TabIndex = 0;
             this.txtTaiKhoan_DK.Leave += new System.EventHandler(this.txtTaiKhoan_DK_Leave);
             // 
@@ -65,10 +66,10 @@
             // 
             this.txtMatKhau_DK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau_DK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau_DK.Location = new System.Drawing.Point(863, 398);
-            this.txtMatKhau_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatKhau_DK.Location = new System.Drawing.Point(1036, 509);
+            this.txtMatKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhau_DK.Name = "txtMatKhau_DK";
-            this.txtMatKhau_DK.Size = new System.Drawing.Size(274, 27);
+            this.txtMatKhau_DK.Size = new System.Drawing.Size(329, 32);
             this.txtMatKhau_DK.TabIndex = 1;
             this.txtMatKhau_DK.UseSystemPasswordChar = true;
             this.txtMatKhau_DK.Leave += new System.EventHandler(this.txtMatKhau_DK_Leave);
@@ -77,10 +78,10 @@
             // 
             this.txtNhapLaiMatKhau_DK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNhapLaiMatKhau_DK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau_DK.Location = new System.Drawing.Point(863, 511);
-            this.txtNhapLaiMatKhau_DK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNhapLaiMatKhau_DK.Location = new System.Drawing.Point(1036, 633);
+            this.txtNhapLaiMatKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtNhapLaiMatKhau_DK.Name = "txtNhapLaiMatKhau_DK";
-            this.txtNhapLaiMatKhau_DK.Size = new System.Drawing.Size(274, 27);
+            this.txtNhapLaiMatKhau_DK.Size = new System.Drawing.Size(329, 32);
             this.txtNhapLaiMatKhau_DK.TabIndex = 2;
             this.txtNhapLaiMatKhau_DK.UseSystemPasswordChar = true;
             this.txtNhapLaiMatKhau_DK.Leave += new System.EventHandler(this.txtNhapLaiMatKhau_DK_Leave);
@@ -91,10 +92,10 @@
             this.btnDangKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKi.ForeColor = System.Drawing.Color.White;
-            this.btnDangKi.Location = new System.Drawing.Point(849, 600);
-            this.btnDangKi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangKi.Location = new System.Drawing.Point(1019, 714);
+            this.btnDangKi.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKi.Name = "btnDangKi";
-            this.btnDangKi.Size = new System.Drawing.Size(305, 77);
+            this.btnDangKi.Size = new System.Drawing.Size(366, 92);
             this.btnDangKi.TabIndex = 3;
             this.btnDangKi.Text = "Đăng kí";
             this.btnDangKi.UseVisualStyleBackColor = false;
@@ -109,74 +110,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 44F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(36, 121);
+            this.label1.Location = new System.Drawing.Point(43, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(693, 297);
+            this.label1.Size = new System.Drawing.Size(822, 348);
             this.label1.TabIndex = 6;
             this.label1.Text = "HỆ THỐNG\r\nBÁN VÉ MÁY BAY\r\nDuoKT_Jet\r\n";
-            // 
-            // picMayBay
-            // 
-            this.picMayBay.BackColor = System.Drawing.Color.DarkCyan;
-            this.picMayBay.Image = global::BanVeMayBay.Properties.Resources.airplane_pic;
-            this.picMayBay.Location = new System.Drawing.Point(65, 413);
-            this.picMayBay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picMayBay.Name = "picMayBay";
-            this.picMayBay.Size = new System.Drawing.Size(614, 208);
-            this.picMayBay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMayBay.TabIndex = 10;
-            this.picMayBay.TabStop = false;
-            // 
-            // picTroLaiDN
-            // 
-            this.picTroLaiDN.BackColor = System.Drawing.Color.White;
-            this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.angle_left;
-            this.picTroLaiDN.Location = new System.Drawing.Point(839, 127);
-            this.picTroLaiDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picTroLaiDN.Name = "picTroLaiDN";
-            this.picTroLaiDN.Size = new System.Drawing.Size(41, 29);
-            this.picTroLaiDN.TabIndex = 5;
-            this.picTroLaiDN.TabStop = false;
-            this.picTroLaiDN.Click += new System.EventHandler(this.picTroLaiDN_Click);
-            this.picTroLaiDN.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
-            // 
-            // picDangKi
-            // 
-            this.picDangKi.BackColor = System.Drawing.Color.DimGray;
-            this.picDangKi.Image = global::BanVeMayBay.Properties.Resources.frmDangKi_final;
-            this.picDangKi.Location = new System.Drawing.Point(735, 0);
-            this.picDangKi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picDangKi.Name = "picDangKi";
-            this.picDangKi.Size = new System.Drawing.Size(535, 817);
-            this.picDangKi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picDangKi.TabIndex = 0;
-            this.picDangKi.TabStop = false;
-            // 
-            // picNenDK
-            // 
-            this.picNenDK.BackColor = System.Drawing.Color.White;
-            this.picNenDK.Image = global::BanVeMayBay.Properties.Resources.cloudPicture1;
-            this.picNenDK.Location = new System.Drawing.Point(0, 0);
-            this.picNenDK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picNenDK.Name = "picNenDK";
-            this.picNenDK.Size = new System.Drawing.Size(738, 817);
-            this.picNenDK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picNenDK.TabIndex = 1;
-            this.picNenDK.TabStop = false;
-            // 
-            // picThoat
-            // 
-            this.picThoat.Image = global::BanVeMayBay.Properties.Resources.close;
-            this.picThoat.Location = new System.Drawing.Point(1226, 8);
-            this.picThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picThoat.Name = "picThoat";
-            this.picThoat.Size = new System.Drawing.Size(33, 33);
-            this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picThoat.TabIndex = 11;
-            this.picThoat.TabStop = false;
-            this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
-            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
             // 
             // elipseTool1
             // 
@@ -189,16 +128,91 @@
             this.lbl_ThongBao.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_ThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ThongBao.ForeColor = System.Drawing.Color.Red;
-            this.lbl_ThongBao.Location = new System.Drawing.Point(846, 571);
+            this.lbl_ThongBao.Location = new System.Drawing.Point(1015, 685);
+            this.lbl_ThongBao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ThongBao.Name = "lbl_ThongBao";
-            this.lbl_ThongBao.Size = new System.Drawing.Size(0, 18);
+            this.lbl_ThongBao.Size = new System.Drawing.Size(0, 22);
             this.lbl_ThongBao.TabIndex = 12;
+            // 
+            // txtTenNguoiDung
+            // 
+            this.txtTenNguoiDung.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenNguoiDung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNguoiDung.Location = new System.Drawing.Point(1036, 263);
+            this.txtTenNguoiDung.Name = "txtTenNguoiDung";
+            this.txtTenNguoiDung.Size = new System.Drawing.Size(329, 32);
+            this.txtTenNguoiDung.TabIndex = 13;
+            // 
+            // picThoat
+            // 
+            this.picThoat.Image = global::BanVeMayBay.Properties.Resources.close;
+            this.picThoat.Location = new System.Drawing.Point(1471, 10);
+            this.picThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.picThoat.Name = "picThoat";
+            this.picThoat.Size = new System.Drawing.Size(40, 40);
+            this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picThoat.TabIndex = 11;
+            this.picThoat.TabStop = false;
+            this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
+            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
+            // 
+            // picMayBay
+            // 
+            this.picMayBay.BackColor = System.Drawing.Color.DarkCyan;
+            this.picMayBay.Image = global::BanVeMayBay.Properties.Resources.airplane_pic;
+            this.picMayBay.Location = new System.Drawing.Point(78, 496);
+            this.picMayBay.Margin = new System.Windows.Forms.Padding(2);
+            this.picMayBay.Name = "picMayBay";
+            this.picMayBay.Size = new System.Drawing.Size(737, 250);
+            this.picMayBay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMayBay.TabIndex = 10;
+            this.picMayBay.TabStop = false;
+            // 
+            // picTroLaiDN
+            // 
+            this.picTroLaiDN.BackColor = System.Drawing.Color.White;
+            this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.angle_left;
+            this.picTroLaiDN.Location = new System.Drawing.Point(1007, 115);
+            this.picTroLaiDN.Margin = new System.Windows.Forms.Padding(2);
+            this.picTroLaiDN.Name = "picTroLaiDN";
+            this.picTroLaiDN.Size = new System.Drawing.Size(49, 35);
+            this.picTroLaiDN.TabIndex = 5;
+            this.picTroLaiDN.TabStop = false;
+            this.picTroLaiDN.Click += new System.EventHandler(this.picTroLaiDN_Click);
+            this.picTroLaiDN.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
+            // 
+            // picDangKi
+            // 
+            this.picDangKi.BackColor = System.Drawing.Color.DimGray;
+            this.picDangKi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picDangKi.Image = global::BanVeMayBay.Properties.Resources.dangkinew2;
+            this.picDangKi.Location = new System.Drawing.Point(878, 0);
+            this.picDangKi.Margin = new System.Windows.Forms.Padding(2);
+            this.picDangKi.Name = "picDangKi";
+            this.picDangKi.Size = new System.Drawing.Size(642, 980);
+            this.picDangKi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDangKi.TabIndex = 0;
+            this.picDangKi.TabStop = false;
+            // 
+            // picNenDK
+            // 
+            this.picNenDK.BackColor = System.Drawing.Color.White;
+            this.picNenDK.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picNenDK.Image = global::BanVeMayBay.Properties.Resources.cloudPicture1;
+            this.picNenDK.Location = new System.Drawing.Point(0, 0);
+            this.picNenDK.Margin = new System.Windows.Forms.Padding(2);
+            this.picNenDK.Name = "picNenDK";
+            this.picNenDK.Size = new System.Drawing.Size(886, 980);
+            this.picNenDK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picNenDK.TabIndex = 1;
+            this.picNenDK.TabStop = false;
             // 
             // frmDangKy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1267, 817);
+            this.ClientSize = new System.Drawing.Size(1520, 980);
+            this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.lbl_ThongBao);
             this.Controls.Add(this.picThoat);
             this.Controls.Add(this.picMayBay);
@@ -211,17 +225,17 @@
             this.Controls.Add(this.picDangKi);
             this.Controls.Add(this.picNenDK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangKy";
             this.Load += new System.EventHandler(this.frmDangKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpTKMK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMayBay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTroLaiDN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDangKi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNenDK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThoat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +256,6 @@
         private System.Windows.Forms.PictureBox picMayBay;
         private System.Windows.Forms.PictureBox picThoat;
         private System.Windows.Forms.Label lbl_ThongBao;
+        private System.Windows.Forms.TextBox txtTenNguoiDung;
     }
 }
