@@ -35,7 +35,6 @@
             this.btnDangKi = new System.Windows.Forms.Button();
             this.erpTKMK = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.lbl_ThongBao = new System.Windows.Forms.Label();
             this.txtTenNguoiDung = new System.Windows.Forms.TextBox();
             this.picThoat = new System.Windows.Forms.PictureBox();
@@ -43,6 +42,7 @@
             this.picTroLaiDN = new System.Windows.Forms.PictureBox();
             this.picDangKi = new System.Windows.Forms.PictureBox();
             this.picNenDK = new System.Windows.Forms.PictureBox();
+            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             ((System.ComponentModel.ISupportInitialize)(this.erpTKMK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMayBay)).BeginInit();
@@ -59,7 +59,7 @@
             this.txtTaiKhoan_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtTaiKhoan_DK.Name = "txtTaiKhoan_DK";
             this.txtTaiKhoan_DK.Size = new System.Drawing.Size(329, 32);
-            this.txtTaiKhoan_DK.TabIndex = 0;
+            this.txtTaiKhoan_DK.TabIndex = 1;
             this.txtTaiKhoan_DK.Leave += new System.EventHandler(this.txtTaiKhoan_DK_Leave);
             // 
             // txtMatKhau_DK
@@ -70,7 +70,7 @@
             this.txtMatKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhau_DK.Name = "txtMatKhau_DK";
             this.txtMatKhau_DK.Size = new System.Drawing.Size(329, 32);
-            this.txtMatKhau_DK.TabIndex = 1;
+            this.txtMatKhau_DK.TabIndex = 2;
             this.txtMatKhau_DK.UseSystemPasswordChar = true;
             this.txtMatKhau_DK.Leave += new System.EventHandler(this.txtMatKhau_DK_Leave);
             // 
@@ -82,7 +82,7 @@
             this.txtNhapLaiMatKhau_DK.Margin = new System.Windows.Forms.Padding(2);
             this.txtNhapLaiMatKhau_DK.Name = "txtNhapLaiMatKhau_DK";
             this.txtNhapLaiMatKhau_DK.Size = new System.Drawing.Size(329, 32);
-            this.txtNhapLaiMatKhau_DK.TabIndex = 2;
+            this.txtNhapLaiMatKhau_DK.TabIndex = 3;
             this.txtNhapLaiMatKhau_DK.UseSystemPasswordChar = true;
             this.txtNhapLaiMatKhau_DK.Leave += new System.EventHandler(this.txtNhapLaiMatKhau_DK_Leave);
             // 
@@ -96,7 +96,7 @@
             this.btnDangKi.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKi.Name = "btnDangKi";
             this.btnDangKi.Size = new System.Drawing.Size(366, 92);
-            this.btnDangKi.TabIndex = 3;
+            this.btnDangKi.TabIndex = 4;
             this.btnDangKi.Text = "Đăng kí";
             this.btnDangKi.UseVisualStyleBackColor = false;
             this.btnDangKi.Click += new System.EventHandler(this.btnDangKi_Click);
@@ -117,11 +117,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "HỆ THỐNG\r\nBÁN VÉ MÁY BAY\r\nDuoKT_Jet\r\n";
             // 
-            // elipseTool1
-            // 
-            this.elipseTool1.CornerRadius = 40;
-            this.elipseTool1.TargetControl = this;
-            // 
             // lbl_ThongBao
             // 
             this.lbl_ThongBao.AutoSize = true;
@@ -141,7 +136,8 @@
             this.txtTenNguoiDung.Location = new System.Drawing.Point(1036, 263);
             this.txtTenNguoiDung.Name = "txtTenNguoiDung";
             this.txtTenNguoiDung.Size = new System.Drawing.Size(329, 32);
-            this.txtTenNguoiDung.TabIndex = 13;
+            this.txtTenNguoiDung.TabIndex = 0;
+            this.txtTenNguoiDung.Leave += new System.EventHandler(this.txtTenNguoiDung_Leave);
             // 
             // picThoat
             // 
@@ -172,7 +168,7 @@
             // 
             this.picTroLaiDN.BackColor = System.Drawing.Color.White;
             this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.angle_left;
-            this.picTroLaiDN.Location = new System.Drawing.Point(1007, 115);
+            this.picTroLaiDN.Location = new System.Drawing.Point(1002, 119);
             this.picTroLaiDN.Margin = new System.Windows.Forms.Padding(2);
             this.picTroLaiDN.Name = "picTroLaiDN";
             this.picTroLaiDN.Size = new System.Drawing.Size(49, 35);
@@ -206,6 +202,11 @@
             this.picNenDK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picNenDK.TabIndex = 1;
             this.picNenDK.TabStop = false;
+            // 
+            // elipseTool1
+            // 
+            this.elipseTool1.CornerRadius = 40;
+            this.elipseTool1.TargetControl = this;
             // 
             // frmDangKy
             // 

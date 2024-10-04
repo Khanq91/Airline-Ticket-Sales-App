@@ -54,10 +54,10 @@ namespace BanVeMayBay
             // 
             this.txtMatKhau_DN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau_DN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau_DN.Location = new System.Drawing.Point(862, 397);
-            this.txtMatKhau_DN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatKhau_DN.Location = new System.Drawing.Point(1034, 476);
+            this.txtMatKhau_DN.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhau_DN.Name = "txtMatKhau_DN";
-            this.txtMatKhau_DN.Size = new System.Drawing.Size(278, 27);
+            this.txtMatKhau_DN.Size = new System.Drawing.Size(334, 32);
             this.txtMatKhau_DN.TabIndex = 2;
             this.txtMatKhau_DN.UseSystemPasswordChar = true;
             this.txtMatKhau_DN.Leave += new System.EventHandler(this.txtMatKhau_Leave);
@@ -66,10 +66,10 @@ namespace BanVeMayBay
             // 
             this.txtTaiKhoan_DN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaiKhoan_DN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan_DN.Location = new System.Drawing.Point(862, 282);
-            this.txtTaiKhoan_DN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTaiKhoan_DN.Location = new System.Drawing.Point(1034, 338);
+            this.txtTaiKhoan_DN.Margin = new System.Windows.Forms.Padding(2);
             this.txtTaiKhoan_DN.Name = "txtTaiKhoan_DN";
-            this.txtTaiKhoan_DN.Size = new System.Drawing.Size(278, 27);
+            this.txtTaiKhoan_DN.Size = new System.Drawing.Size(334, 32);
             this.txtTaiKhoan_DN.TabIndex = 1;
             this.txtTaiKhoan_DN.Leave += new System.EventHandler(this.txtTaiKhoan_Leave);
             // 
@@ -77,10 +77,10 @@ namespace BanVeMayBay
             // 
             this.picDangNhap.BackColor = System.Drawing.Color.DimGray;
             this.picDangNhap.Image = global::BanVeMayBay.Properties.Resources.frmDangNhap_final;
-            this.picDangNhap.Location = new System.Drawing.Point(735, 0);
-            this.picDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picDangNhap.Location = new System.Drawing.Point(882, 0);
+            this.picDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.picDangNhap.Name = "picDangNhap";
-            this.picDangNhap.Size = new System.Drawing.Size(535, 817);
+            this.picDangNhap.Size = new System.Drawing.Size(642, 980);
             this.picDangNhap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDangNhap.TabIndex = 0;
             this.picDangNhap.TabStop = false;
@@ -95,10 +95,10 @@ namespace BanVeMayBay
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(847, 500);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangNhap.Location = new System.Drawing.Point(1016, 578);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(308, 71);
+            this.btnDangNhap.Size = new System.Drawing.Size(370, 85);
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -110,10 +110,10 @@ namespace BanVeMayBay
             this.btnDangKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKi.ForeColor = System.Drawing.Color.White;
-            this.btnDangKi.Location = new System.Drawing.Point(886, 599);
-            this.btnDangKi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangKi.Location = new System.Drawing.Point(1063, 719);
+            this.btnDangKi.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKi.Name = "btnDangKi";
-            this.btnDangKi.Size = new System.Drawing.Size(232, 71);
+            this.btnDangKi.Size = new System.Drawing.Size(278, 85);
             this.btnDangKi.TabIndex = 4;
             this.btnDangKi.Text = "Đăng kí tài khoản";
             this.btnDangKi.UseVisualStyleBackColor = false;
@@ -124,9 +124,9 @@ namespace BanVeMayBay
             this.picNenDN.BackColor = System.Drawing.Color.DarkCyan;
             this.picNenDN.Image = global::BanVeMayBay.Properties.Resources.cloudPicture1;
             this.picNenDN.Location = new System.Drawing.Point(0, 0);
-            this.picNenDN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picNenDN.Margin = new System.Windows.Forms.Padding(2);
             this.picNenDN.Name = "picNenDN";
-            this.picNenDN.Size = new System.Drawing.Size(738, 817);
+            this.picNenDN.Size = new System.Drawing.Size(886, 980);
             this.picNenDN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picNenDN.TabIndex = 5;
             this.picNenDN.TabStop = false;
@@ -137,10 +137,10 @@ namespace BanVeMayBay
             this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 44F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(36, 121);
+            this.label1.Location = new System.Drawing.Point(43, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(693, 297);
+            this.label1.Size = new System.Drawing.Size(822, 348);
             this.label1.TabIndex = 6;
             this.label1.Text = "HỆ THỐNG\r\nBÁN VÉ MÁY BAY\r\nDuoKT_Jet\r\n";
             // 
@@ -153,10 +153,10 @@ namespace BanVeMayBay
             // 
             this.picMayBay.BackColor = System.Drawing.Color.DarkCyan;
             this.picMayBay.Image = global::BanVeMayBay.Properties.Resources.airplane_pic;
-            this.picMayBay.Location = new System.Drawing.Point(65, 413);
-            this.picMayBay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMayBay.Location = new System.Drawing.Point(78, 496);
+            this.picMayBay.Margin = new System.Windows.Forms.Padding(2);
             this.picMayBay.Name = "picMayBay";
-            this.picMayBay.Size = new System.Drawing.Size(614, 208);
+            this.picMayBay.Size = new System.Drawing.Size(737, 250);
             this.picMayBay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMayBay.TabIndex = 9;
             this.picMayBay.TabStop = false;
@@ -164,10 +164,10 @@ namespace BanVeMayBay
             // picThoat
             // 
             this.picThoat.Image = global::BanVeMayBay.Properties.Resources.close;
-            this.picThoat.Location = new System.Drawing.Point(1226, 8);
-            this.picThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picThoat.Location = new System.Drawing.Point(1471, 10);
+            this.picThoat.Margin = new System.Windows.Forms.Padding(2);
             this.picThoat.Name = "picThoat";
-            this.picThoat.Size = new System.Drawing.Size(33, 33);
+            this.picThoat.Size = new System.Drawing.Size(40, 40);
             this.picThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picThoat.TabIndex = 10;
             this.picThoat.TabStop = false;
@@ -179,17 +179,18 @@ namespace BanVeMayBay
             this.lbl_ThongBao.AutoSize = true;
             this.lbl_ThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ThongBao.ForeColor = System.Drawing.Color.Red;
-            this.lbl_ThongBao.Location = new System.Drawing.Point(844, 461);
+            this.lbl_ThongBao.Location = new System.Drawing.Point(1013, 553);
+            this.lbl_ThongBao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ThongBao.Name = "lbl_ThongBao";
-            this.lbl_ThongBao.Size = new System.Drawing.Size(0, 20);
+            this.lbl_ThongBao.Size = new System.Drawing.Size(0, 25);
             this.lbl_ThongBao.TabIndex = 11;
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1267, 817);
+            this.ClientSize = new System.Drawing.Size(1520, 980);
             this.Controls.Add(this.lbl_ThongBao);
             this.Controls.Add(this.picThoat);
             this.Controls.Add(this.btnDangNhap);
@@ -201,7 +202,7 @@ namespace BanVeMayBay
             this.Controls.Add(this.picDangNhap);
             this.Controls.Add(this.picNenDN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";

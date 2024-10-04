@@ -36,6 +36,8 @@ namespace BanVeMayBay
         }
         private void frmDangKy_Load(object sender, EventArgs e)
         {
+            txtTenNguoiDung.Focus();
+            txtTenNguoiDung.Clear();
             txtTaiKhoan_DK.Clear();
             txtMatKhau_DK.Clear();
             txtNhapLaiMatKhau_DK.Clear();
@@ -43,8 +45,8 @@ namespace BanVeMayBay
 
         private void picTroLaiDN_Click(object sender, EventArgs e)
         {
-            this.Close();
             frmDangNhap fdn = new frmDangNhap();
+            this.Hide();
             fdn.Show();
         }
 
@@ -79,6 +81,15 @@ namespace BanVeMayBay
                 this.erpTKMK.SetError(ctr, "Bạn phải nhập lại mật khẩu!");
             else
                 this.erpTKMK.Clear();
+        }
+        private void txtTenNguoiDung_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (txtNhapLaiMatKhau_DK.Text.Trim().Length == 0)
+                this.erpTKMK.SetError(ctr, "Bạn phải nhập tên người dùng!");
+            else
+                this.erpTKMK.Clear();
+
         }
 
         private void picThoat_Click(object sender, EventArgs e)
@@ -121,7 +132,7 @@ namespace BanVeMayBay
             }
             catch (Exception ex)
             {
-                lbl_ThongBao.Text = "Thêm  thất bại";
+                lbl_ThongBao.Text = "Thêm thất bại";
                 return;
 
             }
@@ -133,5 +144,6 @@ namespace BanVeMayBay
                 e.Handled = true;
             }
         }
+
     }
 }
