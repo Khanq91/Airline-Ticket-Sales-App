@@ -65,7 +65,7 @@ namespace BanVeMayBay
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
         }
-        public void ShowTTCB(int slNL, int slTE, int slEB)
+        public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
             pnlTTCB.Visible = true; 
             pnlThanGiaoDien.Location = new Point(0, 229);
@@ -77,8 +77,10 @@ namespace BanVeMayBay
             pnlTTVeDat.Visible = true;
             flowLayoutPanelTTVeDat.Visible = true;
 
-            //frmTTDatVe xuất hiện
-            frmTTVeDat frmttvd = new frmTTVeDat();
+            //frmTTDatVe xuất hiện 
+            //string tvv, string ngaybay, string tgdi, string tgden,
+            //string machuyenbay, string hangve, string diemkhoihanh, string diemden
+            frmTTVeDat frmttvd = new frmTTVeDat("1.000", ngaybay, "", "", "","BUSINESS1",diemkhoihanh,diemden);
             frmttvd.TopLevel = false;
             flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
             frmttvd.Show();

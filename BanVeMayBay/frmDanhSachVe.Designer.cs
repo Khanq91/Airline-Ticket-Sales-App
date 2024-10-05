@@ -41,18 +41,19 @@
             // 
             this.pnlThanGiaoDien.BackColor = System.Drawing.Color.LightGray;
             this.pnlThanGiaoDien.Controls.Add(this.flowLayoutPnlDSVe);
-            this.pnlThanGiaoDien.Location = new System.Drawing.Point(202, 132);
+            this.pnlThanGiaoDien.Location = new System.Drawing.Point(200, 132);
             this.pnlThanGiaoDien.Name = "pnlThanGiaoDien";
-            this.pnlThanGiaoDien.Size = new System.Drawing.Size(948, 470);
+            this.pnlThanGiaoDien.Size = new System.Drawing.Size(982, 470);
             this.pnlThanGiaoDien.TabIndex = 0;
             // 
             // flowLayoutPnlDSVe
             // 
+            this.flowLayoutPnlDSVe.AutoScroll = true;
             this.flowLayoutPnlDSVe.BackColor = System.Drawing.Color.LightGray;
             this.flowLayoutPnlDSVe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPnlDSVe.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPnlDSVe.Name = "flowLayoutPnlDSVe";
-            this.flowLayoutPnlDSVe.Size = new System.Drawing.Size(948, 470);
+            this.flowLayoutPnlDSVe.Size = new System.Drawing.Size(982, 470);
             this.flowLayoutPnlDSVe.TabIndex = 0;
             // 
             // lblHangVe1
