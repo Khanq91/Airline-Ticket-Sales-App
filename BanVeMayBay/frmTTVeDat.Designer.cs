@@ -34,9 +34,6 @@
             this.lblDiemKhoiHanh = new System.Windows.Forms.Label();
             this.lblDiemDen = new System.Windows.Forms.Label();
             this.lblNgayBay = new System.Windows.Forms.Label();
-            this.lblTGBay_Den = new System.Windows.Forms.Label();
-            this.lblMaCB = new System.Windows.Forms.Label();
-            this.lblHangVeTren = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGiaVe = new System.Windows.Forms.Button();
             this.btnThuePhi = new System.Windows.Forms.Button();
@@ -128,39 +125,6 @@
             this.lblNgayBay.TabIndex = 4;
             this.lblNgayBay.Text = "Ngày bay |";
             this.lblNgayBay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTGBay_Den
-            // 
-            this.lblTGBay_Den.AutoSize = true;
-            this.lblTGBay_Den.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTGBay_Den.Location = new System.Drawing.Point(142, 179);
-            this.lblTGBay_Den.Name = "lblTGBay_Den";
-            this.lblTGBay_Den.Size = new System.Drawing.Size(152, 21);
-            this.lblTGBay_Den.TabIndex = 5;
-            this.lblTGBay_Den.Text = "Thời gian bay - đến |";
-            this.lblTGBay_Den.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMaCB
-            // 
-            this.lblMaCB.AutoSize = true;
-            this.lblMaCB.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaCB.Location = new System.Drawing.Point(292, 179);
-            this.lblMaCB.Name = "lblMaCB";
-            this.lblMaCB.Size = new System.Drawing.Size(123, 21);
-            this.lblMaCB.TabIndex = 6;
-            this.lblMaCB.Text = "Mã chuyến bay |";
-            this.lblMaCB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHangVeTren
-            // 
-            this.lblHangVeTren.AutoSize = true;
-            this.lblHangVeTren.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHangVeTren.Location = new System.Drawing.Point(413, 179);
-            this.lblHangVeTren.Name = "lblHangVeTren";
-            this.lblHangVeTren.Size = new System.Drawing.Size(67, 21);
-            this.lblHangVeTren.TabIndex = 7;
-            this.lblHangVeTren.Text = "Hạng vé";
-            this.lblHangVeTren.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -466,9 +430,6 @@
             this.Controls.Add(this.btnThuePhi);
             this.Controls.Add(this.btnGiaVe);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblHangVeTren);
-            this.Controls.Add(this.lblMaCB);
-            this.Controls.Add(this.lblTGBay_Den);
             this.Controls.Add(this.lblNgayBay);
             this.Controls.Add(this.lblDiemDen);
             this.Controls.Add(this.lblDiemKhoiHanh);
@@ -509,9 +470,6 @@
         private System.Windows.Forms.Label lblDiemKhoiHanh;
         private System.Windows.Forms.Label lblDiemDen;
         private System.Windows.Forms.Label lblNgayBay;
-        private System.Windows.Forms.Label lblTGBay_Den;
-        private System.Windows.Forms.Label lblMaCB;
-        private System.Windows.Forms.Label lblHangVeTren;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGiaVe;
         private System.Windows.Forms.Button btnThuePhi;
