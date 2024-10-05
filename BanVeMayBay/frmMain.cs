@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,11 @@ namespace BanVeMayBay
     public partial class frmMain : Form
     {
         string tennguoidung;
-        public frmMain(string Tennguoidung)
+        public frmMain(string TenNguoiDung)
         {
+            this.tennguoidung = TenNguoiDung;
             InitializeComponent();
-            this.tennguoidung = Tennguoidung;
-            lblChaoNguoiDung.Text = "Xin chào " + tennguoidung;
+            lblChaoNguoiDung.Text = "Xin Chào" + tennguoidung;
         }
 
 
@@ -98,6 +99,11 @@ namespace BanVeMayBay
             flowLayoutPnlThanGianDien.Controls.Clear();
             //frmChonDV frmDV = new frmChonDV();
             //frmDV.TopLevel = false;
+            foreach()
+            TTKhachHang kh=new TTKhachHang();
+
+
+
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

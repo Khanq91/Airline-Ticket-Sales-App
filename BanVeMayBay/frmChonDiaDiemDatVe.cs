@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -14,11 +15,32 @@ namespace BanVeMayBay
 {
     public partial class frmChonDiaDiemDatVe : Form
     {
+        SanBay sb = new SanBay();
+       
         public frmChonDiaDiemDatVe()
         {
             InitializeComponent();
+            LoadSanBayDi();
+            LoadSanBayDen();
         }
-
+        public void LoadSanBayDi()
+        {
+            List<string> lstSanBay = sb.GetSanBay();
+            foreach (string sanbay in lstSanBay)
+            {
+                cboDiemKhoiHanh.Items.Add(sanbay);
+            }
+            cboDiemKhoiHanh.SelectedIndex = 0;
+        }
+        public void LoadSanBayDen()
+        {
+            List<string> lstSanBay = sb.GetSanBay();
+            foreach (string sanbay in lstSanBay)
+            {
+                cboDiemDen.Items.Add(sanbay);
+            }
+            cboDiemDen.SelectedIndex = 0;
+        }
         private void frmChonDiaDiemDatVe_Load(object sender, EventArgs e)
         {
             dateTimePickerNgayDi.MinDate = DateTime.Now;
@@ -125,13 +147,13 @@ namespace BanVeMayBay
                 {
                     if(dateTimePickerNgayDi.Value == dateTimePickerNgayDi.MinDate)
                     {
-                        MessageBox.Show("Vui lòng chọn ngày đi!");
+                        lblDiemDen.Text = "Vui lòng chọn ngày đi!";
                         return;
                     }    
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập thông tin trước khi tìm chuyến bay!");
+                    lblDiemDen.Text = "Vui lòng nhập thông tin trước khi tìm chuyến bay!";
                     return;
                 }
             }
@@ -139,12 +161,12 @@ namespace BanVeMayBay
             {
                 if(dateTimePickerNgayVe.Value == dateTimePickerNgayVe.MinDate)
                 {
-                    MessageBox.Show("Vui lòng chọn ngày về!");
+                    lblDiemDen.Text = "Vui lòng chọn ngày về!";
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập thông tin trước khi tìm chuyến bay!");
+                    lblDiemDen.Text = "Vui lòng nhập thông tin trước khi tìm chuyến bay!";
                     return;
                 }
             }

@@ -160,3 +160,30 @@ C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachVe.resources
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\4-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.exe.config
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.exe
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\bin\Debug\BanVeMayBay.pdb
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\bin\Debug\DB.dll
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\bin\Debug\DB.pdb
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDiaDiemDatVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmCon_frmChonDiaDiemDatVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangKy.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDangNhap.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmHanhLy.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmMain.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT_EmBe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT_NguoiLon.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT_Main.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmNhapTT_TreEm.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmThanhToan.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmChonDV.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmTTVeDat.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.Properties.Resources.resources
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.GenerateResource.cache
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMay.AB427FA6.Up2Date
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.exe
+D:\Tong_hop_Tieu_Luan\.NET\BaoCaoCuoiKi\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb

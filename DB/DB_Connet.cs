@@ -46,5 +46,18 @@ namespace DB
             CloseSql();
             return kq;
         }
+        public List<string> GetExecuteReader(string caulenh, string col)
+        {
+            List<string> result = new List<string>();
+            OpenSql();
+            SqlCommand cmd = new SqlCommand(caulenh, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                result.Add(rd[col].ToString());
+            }
+            CloseSql();
+            return result;
+        }
     }
 }

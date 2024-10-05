@@ -114,7 +114,7 @@ namespace BanVeMayBay
                 }
                 if (db_Dk.KTTaiKhoan(txtTaiKhoan_DK.Text))
                 {
-                    int kq = db_Dk.ThemTaiKHoan(txtTaiKhoan_DK.Text, txtMatKhau_DK.Text);
+                    int kq = db_Dk.ThemTaiKHoan(txtTenNguoiDung.Text,txtTaiKhoan_DK.Text, txtMatKhau_DK.Text);
                     if (kq > 0)
                     {
                         lbl_ThongBao.Text = "Đăng kí tài khoản thành công";

@@ -28,7 +28,8 @@ namespace BanVeMayBay
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDanhSachVe());
+            string tennguoidung = "aa";
+            Application.Run(new frmMain(tennguoidung));
         }
     }
 }

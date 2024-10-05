@@ -56,6 +56,8 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.lbl_ChuyenBaydi = new System.Windows.Forms.Label();
+            this.lbl_ChuyenBayDen = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHanhKhachDropDown)).BeginInit();
@@ -79,8 +81,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1890, 775);
+            this.panel1.Size = new System.Drawing.Size(1575, 646);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -88,6 +91,8 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BackgroundImage = global::BanVeMayBay.Properties.Resources.cloudPicture1;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.lbl_ChuyenBayDen);
+            this.panel2.Controls.Add(this.lbl_ChuyenBaydi);
             this.panel2.Controls.Add(this.lblTTHanhKhach);
             this.panel2.Controls.Add(this.rdoMotChieu);
             this.panel2.Controls.Add(this.rdoKhuHoi);
@@ -116,8 +121,9 @@
             this.panel2.Controls.Add(this.pictureBox20);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1890, 775);
+            this.panel2.Size = new System.Drawing.Size(1575, 646);
             this.panel2.TabIndex = 13;
             // 
             // lblTTHanhKhach
@@ -125,9 +131,10 @@
             this.lblTTHanhKhach.AutoSize = true;
             this.lblTTHanhKhach.BackColor = System.Drawing.Color.White;
             this.lblTTHanhKhach.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTTHanhKhach.Location = new System.Drawing.Point(1245, 431);
+            this.lblTTHanhKhach.Location = new System.Drawing.Point(1038, 359);
+            this.lblTTHanhKhach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTTHanhKhach.Name = "lblTTHanhKhach";
-            this.lblTTHanhKhach.Size = new System.Drawing.Size(47, 30);
+            this.lblTTHanhKhach.Size = new System.Drawing.Size(44, 25);
             this.lblTTHanhKhach.TabIndex = 25;
             this.lblTTHanhKhach.Text = "null";
             this.lblTTHanhKhach.Visible = false;
@@ -137,9 +144,10 @@
             this.rdoMotChieu.AutoSize = true;
             this.rdoMotChieu.BackColor = System.Drawing.Color.LimeGreen;
             this.rdoMotChieu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoMotChieu.Location = new System.Drawing.Point(1354, 107);
+            this.rdoMotChieu.Location = new System.Drawing.Point(1128, 89);
+            this.rdoMotChieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdoMotChieu.Name = "rdoMotChieu";
-            this.rdoMotChieu.Size = new System.Drawing.Size(149, 36);
+            this.rdoMotChieu.Size = new System.Drawing.Size(125, 32);
             this.rdoMotChieu.TabIndex = 1;
             this.rdoMotChieu.TabStop = true;
             this.rdoMotChieu.Text = "Một chiều";
@@ -150,9 +158,10 @@
             this.rdoKhuHoi.AutoSize = true;
             this.rdoKhuHoi.BackColor = System.Drawing.Color.LimeGreen;
             this.rdoKhuHoi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoKhuHoi.Location = new System.Drawing.Point(1214, 107);
+            this.rdoKhuHoi.Location = new System.Drawing.Point(1012, 89);
+            this.rdoKhuHoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdoKhuHoi.Name = "rdoKhuHoi";
-            this.rdoKhuHoi.Size = new System.Drawing.Size(124, 36);
+            this.rdoKhuHoi.Size = new System.Drawing.Size(104, 32);
             this.rdoKhuHoi.TabIndex = 1;
             this.rdoKhuHoi.TabStop = true;
             this.rdoKhuHoi.Text = "Khứ hồi";
@@ -167,9 +176,10 @@
             this.cboDiemDen.Items.AddRange(new object[] {
             "Hà Nội - HAN",
             "TP. Hồ Chí Minh - SGN"});
-            this.cboDiemDen.Location = new System.Drawing.Point(1245, 316);
+            this.cboDiemDen.Location = new System.Drawing.Point(1038, 263);
+            this.cboDiemDen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboDiemDen.Name = "cboDiemDen";
-            this.cboDiemDen.Size = new System.Drawing.Size(213, 40);
+            this.cboDiemDen.Size = new System.Drawing.Size(178, 36);
             this.cboDiemDen.TabIndex = 24;
             // 
             // cboDiemKhoiHanh
@@ -180,9 +190,10 @@
             this.cboDiemKhoiHanh.Items.AddRange(new object[] {
             "Hà Nội - HAN",
             "TP. Hồ Chí Minh - SGN"});
-            this.cboDiemKhoiHanh.Location = new System.Drawing.Point(1245, 206);
+            this.cboDiemKhoiHanh.Location = new System.Drawing.Point(1038, 172);
+            this.cboDiemKhoiHanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboDiemKhoiHanh.Name = "cboDiemKhoiHanh";
-            this.cboDiemKhoiHanh.Size = new System.Drawing.Size(213, 40);
+            this.cboDiemKhoiHanh.Size = new System.Drawing.Size(178, 36);
             this.cboDiemKhoiHanh.TabIndex = 23;
             this.cboDiemKhoiHanh.SelectionChangeCommitted += new System.EventHandler(this.cboDiemKhoiHanh_SelectionChangeCommitted);
             // 
@@ -191,9 +202,10 @@
             this.picHanhKhachDropDown.BackColor = System.Drawing.Color.White;
             this.picHanhKhachDropDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picHanhKhachDropDown.Image = global::BanVeMayBay.Properties.Resources.caret_down;
-            this.picHanhKhachDropDown.Location = new System.Drawing.Point(1591, 427);
+            this.picHanhKhachDropDown.Location = new System.Drawing.Point(1326, 356);
+            this.picHanhKhachDropDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picHanhKhachDropDown.Name = "picHanhKhachDropDown";
-            this.picHanhKhachDropDown.Size = new System.Drawing.Size(25, 25);
+            this.picHanhKhachDropDown.Size = new System.Drawing.Size(21, 21);
             this.picHanhKhachDropDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHanhKhachDropDown.TabIndex = 22;
             this.picHanhKhachDropDown.TabStop = false;
@@ -203,9 +215,10 @@
             // 
             this.txtMaKhuyenMai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhuyenMai.Location = new System.Drawing.Point(1245, 536);
+            this.txtMaKhuyenMai.Location = new System.Drawing.Point(1038, 447);
+            this.txtMaKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-            this.txtMaKhuyenMai.Size = new System.Drawing.Size(374, 32);
+            this.txtMaKhuyenMai.Size = new System.Drawing.Size(312, 27);
             this.txtMaKhuyenMai.TabIndex = 3;
             // 
             // dateTimePickerNgayVe
@@ -214,9 +227,10 @@
             this.dateTimePickerNgayVe.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dateTimePickerNgayVe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgayVe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgayVe.Location = new System.Drawing.Point(1464, 317);
+            this.dateTimePickerNgayVe.Location = new System.Drawing.Point(1220, 264);
+            this.dateTimePickerNgayVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerNgayVe.Name = "dateTimePickerNgayVe";
-            this.dateTimePickerNgayVe.Size = new System.Drawing.Size(155, 39);
+            this.dateTimePickerNgayVe.Size = new System.Drawing.Size(130, 34);
             this.dateTimePickerNgayVe.TabIndex = 21;
             // 
             // lblNgayVe
@@ -224,9 +238,10 @@
             this.lblNgayVe.AutoSize = true;
             this.lblNgayVe.BackColor = System.Drawing.Color.White;
             this.lblNgayVe.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayVe.Location = new System.Drawing.Point(1475, 291);
+            this.lblNgayVe.Location = new System.Drawing.Point(1229, 242);
+            this.lblNgayVe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNgayVe.Name = "lblNgayVe";
-            this.lblNgayVe.Size = new System.Drawing.Size(67, 21);
+            this.lblNgayVe.Size = new System.Drawing.Size(59, 19);
             this.lblNgayVe.TabIndex = 20;
             this.lblNgayVe.Text = "Ngày về";
             // 
@@ -235,9 +250,10 @@
             this.lblNgayDi.AutoSize = true;
             this.lblNgayDi.BackColor = System.Drawing.Color.White;
             this.lblNgayDi.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayDi.Location = new System.Drawing.Point(1475, 181);
+            this.lblNgayDi.Location = new System.Drawing.Point(1229, 151);
+            this.lblNgayDi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNgayDi.Name = "lblNgayDi";
-            this.lblNgayDi.Size = new System.Drawing.Size(64, 21);
+            this.lblNgayDi.Size = new System.Drawing.Size(56, 19);
             this.lblNgayDi.TabIndex = 19;
             this.lblNgayDi.Text = "Ngày đi";
             // 
@@ -247,9 +263,10 @@
             this.dateTimePickerNgayDi.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dateTimePickerNgayDi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgayDi.Location = new System.Drawing.Point(1464, 207);
+            this.dateTimePickerNgayDi.Location = new System.Drawing.Point(1220, 172);
+            this.dateTimePickerNgayDi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerNgayDi.Name = "dateTimePickerNgayDi";
-            this.dateTimePickerNgayDi.Size = new System.Drawing.Size(152, 39);
+            this.dateTimePickerNgayDi.Size = new System.Drawing.Size(127, 34);
             this.dateTimePickerNgayDi.TabIndex = 18;
             this.dateTimePickerNgayDi.CloseUp += new System.EventHandler(this.dateTimePickerNgayDi_CloseUp);
             // 
@@ -258,9 +275,10 @@
             this.lblMaKhuyenMai.AutoSize = true;
             this.lblMaKhuyenMai.BackColor = System.Drawing.Color.White;
             this.lblMaKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaKhuyenMai.Location = new System.Drawing.Point(1254, 511);
+            this.lblMaKhuyenMai.Location = new System.Drawing.Point(1045, 426);
+            this.lblMaKhuyenMai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaKhuyenMai.Name = "lblMaKhuyenMai";
-            this.lblMaKhuyenMai.Size = new System.Drawing.Size(117, 21);
+            this.lblMaKhuyenMai.Size = new System.Drawing.Size(104, 19);
             this.lblMaKhuyenMai.TabIndex = 15;
             this.lblMaKhuyenMai.Text = "Mã khuyến mại";
             // 
@@ -269,9 +287,10 @@
             this.lblHanhKhach.AutoSize = true;
             this.lblHanhKhach.BackColor = System.Drawing.Color.White;
             this.lblHanhKhach.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHanhKhach.Location = new System.Drawing.Point(1254, 401);
+            this.lblHanhKhach.Location = new System.Drawing.Point(1045, 334);
+            this.lblHanhKhach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHanhKhach.Name = "lblHanhKhach";
-            this.lblHanhKhach.Size = new System.Drawing.Size(92, 21);
+            this.lblHanhKhach.Size = new System.Drawing.Size(82, 19);
             this.lblHanhKhach.TabIndex = 14;
             this.lblHanhKhach.Text = "Hành khách";
             // 
@@ -280,9 +299,10 @@
             this.lblDiemDen.AutoSize = true;
             this.lblDiemDen.BackColor = System.Drawing.Color.White;
             this.lblDiemDen.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemDen.Location = new System.Drawing.Point(1254, 291);
+            this.lblDiemDen.Location = new System.Drawing.Point(1045, 242);
+            this.lblDiemDen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiemDen.Name = "lblDiemDen";
-            this.lblDiemDen.Size = new System.Drawing.Size(77, 21);
+            this.lblDiemDen.Size = new System.Drawing.Size(68, 19);
             this.lblDiemDen.TabIndex = 13;
             this.lblDiemDen.Text = "Điểm đến";
             // 
@@ -291,9 +311,10 @@
             this.picDoiViTri.BackColor = System.Drawing.Color.LimeGreen;
             this.picDoiViTri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picDoiViTri.Image = global::BanVeMayBay.Properties.Resources.exchange_1_;
-            this.picDoiViTri.Location = new System.Drawing.Point(1151, 262);
+            this.picDoiViTri.Location = new System.Drawing.Point(959, 218);
+            this.picDoiViTri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picDoiViTri.Name = "picDoiViTri";
-            this.picDoiViTri.Size = new System.Drawing.Size(25, 25);
+            this.picDoiViTri.Size = new System.Drawing.Size(21, 21);
             this.picDoiViTri.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDoiViTri.TabIndex = 12;
             this.picDoiViTri.TabStop = false;
@@ -303,9 +324,10 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.White;
             this.pictureBox12.Image = global::BanVeMayBay.Properties.Resources.voucher;
-            this.pictureBox12.Location = new System.Drawing.Point(1193, 532);
+            this.pictureBox12.Location = new System.Drawing.Point(994, 443);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox12.Size = new System.Drawing.Size(33, 33);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 11;
             this.pictureBox12.TabStop = false;
@@ -314,9 +336,10 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.White;
             this.pictureBox13.Image = global::BanVeMayBay.Properties.Resources.user__1_;
-            this.pictureBox13.Location = new System.Drawing.Point(1193, 426);
+            this.pictureBox13.Location = new System.Drawing.Point(994, 355);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox13.Size = new System.Drawing.Size(33, 33);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 10;
             this.pictureBox13.TabStop = false;
@@ -325,9 +348,10 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.White;
             this.pictureBox14.Image = global::BanVeMayBay.Properties.Resources.plane_arrival;
-            this.pictureBox14.Location = new System.Drawing.Point(1193, 316);
+            this.pictureBox14.Location = new System.Drawing.Point(994, 263);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox14.Size = new System.Drawing.Size(33, 33);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 9;
             this.pictureBox14.TabStop = false;
@@ -336,9 +360,10 @@
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.White;
             this.pictureBox15.Image = global::BanVeMayBay.Properties.Resources.plane_departure;
-            this.pictureBox15.Location = new System.Drawing.Point(1193, 206);
+            this.pictureBox15.Location = new System.Drawing.Point(994, 172);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox15.Size = new System.Drawing.Size(33, 33);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 8;
             this.pictureBox15.TabStop = false;
@@ -348,9 +373,10 @@
             this.lblDiemKhoiHanh.AutoSize = true;
             this.lblDiemKhoiHanh.BackColor = System.Drawing.Color.White;
             this.lblDiemKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemKhoiHanh.Location = new System.Drawing.Point(1254, 181);
+            this.lblDiemKhoiHanh.Location = new System.Drawing.Point(1045, 151);
+            this.lblDiemKhoiHanh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiemKhoiHanh.Name = "lblDiemKhoiHanh";
-            this.lblDiemKhoiHanh.Size = new System.Drawing.Size(121, 21);
+            this.lblDiemKhoiHanh.Size = new System.Drawing.Size(106, 19);
             this.lblDiemKhoiHanh.TabIndex = 7;
             this.lblDiemKhoiHanh.Text = "Điểm khởi hành";
             // 
@@ -359,9 +385,10 @@
             this.btnTimChuyenBay.BackColor = System.Drawing.Color.Orange;
             this.btnTimChuyenBay.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimChuyenBay.ForeColor = System.Drawing.Color.White;
-            this.btnTimChuyenBay.Location = new System.Drawing.Point(1258, 609);
+            this.btnTimChuyenBay.Location = new System.Drawing.Point(1048, 508);
+            this.btnTimChuyenBay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTimChuyenBay.Name = "btnTimChuyenBay";
-            this.btnTimChuyenBay.Size = new System.Drawing.Size(290, 84);
+            this.btnTimChuyenBay.Size = new System.Drawing.Size(242, 70);
             this.btnTimChuyenBay.TabIndex = 6;
             this.btnTimChuyenBay.Text = "Tìm chuyến bay";
             this.btnTimChuyenBay.UseVisualStyleBackColor = false;
@@ -371,9 +398,10 @@
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.LimeGreen;
             this.pictureBox16.Image = global::BanVeMayBay.Properties.Resources.textbox;
-            this.pictureBox16.Location = new System.Drawing.Point(1176, 510);
+            this.pictureBox16.Location = new System.Drawing.Point(980, 425);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(459, 79);
+            this.pictureBox16.Size = new System.Drawing.Size(382, 66);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 5;
             this.pictureBox16.TabStop = false;
@@ -382,9 +410,10 @@
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.LimeGreen;
             this.pictureBox17.Image = global::BanVeMayBay.Properties.Resources.textbox;
-            this.pictureBox17.Location = new System.Drawing.Point(1176, 400);
+            this.pictureBox17.Location = new System.Drawing.Point(980, 333);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(459, 79);
+            this.pictureBox17.Size = new System.Drawing.Size(382, 66);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 4;
             this.pictureBox17.TabStop = false;
@@ -393,9 +422,10 @@
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.LimeGreen;
             this.pictureBox18.Image = global::BanVeMayBay.Properties.Resources.textbox;
-            this.pictureBox18.Location = new System.Drawing.Point(1176, 290);
+            this.pictureBox18.Location = new System.Drawing.Point(980, 242);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(459, 79);
+            this.pictureBox18.Size = new System.Drawing.Size(382, 66);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 3;
             this.pictureBox18.TabStop = false;
@@ -404,9 +434,10 @@
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.LimeGreen;
             this.pictureBox19.Image = global::BanVeMayBay.Properties.Resources.textbox;
-            this.pictureBox19.Location = new System.Drawing.Point(1176, 180);
+            this.pictureBox19.Location = new System.Drawing.Point(980, 150);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(459, 79);
+            this.pictureBox19.Size = new System.Drawing.Size(382, 66);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox19.TabIndex = 2;
             this.pictureBox19.TabStop = false;
@@ -414,19 +445,41 @@
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.LimeGreen;
-            this.pictureBox20.Location = new System.Drawing.Point(1142, 88);
+            this.pictureBox20.Location = new System.Drawing.Point(952, 73);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(523, 637);
+            this.pictureBox20.Size = new System.Drawing.Size(436, 531);
             this.pictureBox20.TabIndex = 0;
             this.pictureBox20.TabStop = false;
             // 
+            // lbl_ChuyenBaydi
+            // 
+            this.lbl_ChuyenBaydi.AutoSize = true;
+            this.lbl_ChuyenBaydi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ChuyenBaydi.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ChuyenBaydi.Location = new System.Drawing.Point(991, 223);
+            this.lbl_ChuyenBaydi.Name = "lbl_ChuyenBaydi";
+            this.lbl_ChuyenBaydi.Size = new System.Drawing.Size(0, 18);
+            this.lbl_ChuyenBaydi.TabIndex = 26;
+            // 
+            // lbl_ChuyenBayDen
+            // 
+            this.lbl_ChuyenBayDen.AutoSize = true;
+            this.lbl_ChuyenBayDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ChuyenBayDen.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ChuyenBayDen.Location = new System.Drawing.Point(991, 313);
+            this.lbl_ChuyenBayDen.Name = "lbl_ChuyenBayDen";
+            this.lbl_ChuyenBayDen.Size = new System.Drawing.Size(0, 18);
+            this.lbl_ChuyenBayDen.TabIndex = 27;
+            // 
             // frmChonDiaDiemDatVe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1890, 775);
+            this.ClientSize = new System.Drawing.Size(1575, 646);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmChonDiaDiemDatVe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChonDiaDiemDatVe";
@@ -479,5 +532,7 @@
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTTHanhKhach;
+        private System.Windows.Forms.Label lbl_ChuyenBaydi;
+        private System.Windows.Forms.Label lbl_ChuyenBayDen;
     }
 }
