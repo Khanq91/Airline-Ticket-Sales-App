@@ -101,14 +101,16 @@ CREATE TABLE HANGVE
 
 CREATE TABLE HANHLY 
 (
-	MaHL CHAR(10) NOT NULL,
-	SoKG FLOAT,
-	LoaiHanhLy NVARCHAR(30),
-	MaHK CHAR(10) NOT NULL,
-	MaCB CHAR(10) NOT NULL,
-	CONSTRAINT PK_HL_MaHL PRIMARY KEY(MaHL),
-	CONSTRAINT FK_HL_MaHK FOREIGN KEY(MaHK) REFERENCES HANHKHACH(MaHK),
-	CONSTRAINT FK_HL_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB)
+    MaHL CHAR(10) NOT NULL, -- Định nghĩa là UNIQUEIDENTIFIER
+    SoKG FLOAT,
+    LoaiHanhLy NVARCHAR(30),
+	MaHangVe CHAR(10) NOT NULL,  
+    MaHK CHAR(10) NOT NULL,
+    MaCB CHAR(10) NOT NULL,
+    CONSTRAINT PK_HL_MaHL PRIMARY KEY(MaHL),
+	CONSTRAINT FK_HL_MaHangVe FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe),
+    CONSTRAINT FK_HL_MaHK FOREIGN KEY(MaHK) REFERENCES HANHKHACH(MaHK),
+    CONSTRAINT FK_HL_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB)
 );
 
 CREATE TABLE CHITIETPHUPHI
@@ -246,18 +248,28 @@ VALUES
 
 INSERT INTO HANGVE (MaHangVe, TenHangVe) 
 VALUES 
-	('HV001', N'Hạng nhất'),
-	('HV002', N'Hạng thương gia'),
-	('HV003', N'Hạng phổ thông đặc biệt'),
-	('HV004', N'Hạng phổ thông');
+	('HV001', N'Hạng thương gia'),
+	('HV002', N'Hạng phổ thông');
 
-INSERT INTO CHITIETPHUPHI (MaPhuPhi, PhuPhi, LoaiPhuPhi)
+----------------------------------------------------
+INSERT INTO HANHLY (MaHL, SoKG, LoaiHanhLy, MaHangVe, MaHK, MaCB) 
+VALUES 
+    ('HL001', 35, N'Hành lý ký gửi', 'HV001', 'HK001', 'CB001'), 
+    ('HL002', 25, N'Hành lý ký gửi', 'HV002', 'HK002', 'CB002'),
+    ('HL003', 5, N'Hành lý xách tay', 'HV001', 'HK001', 'CB001'),
+    ('HL004', 8, N'Hành lý xách tay', 'HV002', 'HK002', 'CB002'),
+    ('HL005', 30, N'Hành lý ký gửi', 'HV002', 'HK005', 'CB005');
+
+
+INSERT INTO CHITIETPHUPHI (MaPhuPhi, PhuPhi, LoaiPhuPhi, MaHL)
 VALUES
-    ('PP001', 200000, N'Hành lý quá cân'),
-    ('PP002', 250000, N'Hành lý quá cân'),
-    ('PP003', 300000, N'Hành lý quá cân'),
-    ('PP004', 350000, N'Hành lý quá cân'),
-    ('PP005', 400000, N'Hành lý quá cân');
+    ('PP001', 0, N'Hành lý', 'HL001'),
+    ('PP002', 200000, N'Hành lý', 'HL002'),
+    ('PP003', 0, N'Hành lý', 'HL003'),
+    ('PP004', 70000, N'Hành lý', 'HL004'),
+    ('PP005', 350000, N'Hành lý', 'HL005');
+
+
 
 INSERT INTO GIAVE (MaGiaVe, GiaCoBan, TongGiaVe, PhuPhi, GiamGia, MaCB, MaHangVe, NgayDatVe)
 VALUES 
@@ -290,14 +302,6 @@ VALUES
     ('HK003', 'CB003', N'Chuyến bay ổn, nhưng ghế hơi chật.', 3),
     ('HK004', 'CB004', N'Trễ chuyến bay, nhưng nhân viên hỗ trợ tốt.', 4),
     ('HK005', 'CB005', N'Chuyến bay hoàn hảo, không có gì để chê.', 5);
-----------------------------------------------------
-INSERT INTO HANHLY (MaHL, SoKG, LoaiHanhLy, MaPhuPhi, MaHK, MaCB)
-VALUES 
-    ('HL001', 20, N'Hành lý ký gửi', 'PP001', 'HK001', 'CB001'),
-    ('HL002', 15, N'Hành lý xách tay', 'PP002', 'HK002', 'CB002'),
-    ('HL003', 25, N'Hành lý ký gửi', 'PP001', 'HK003', 'CB003'),
-    ('HL004', 10, N'Hành lý xách tay', 'PP003', 'HK004', 'CB004'),
-    ('HL005', 30, N'Hành lý ký gửi', 'PP004', 'HK005', 'CB005');
 
 --	XEM DỮ LIỆU BẢNG
 SELECT * FROM SANBAY
@@ -309,12 +313,28 @@ SELECT * FROM NHANVIEN
 SELECT * FROM CHUYENBAY
 SELECT * FROM HANHKHACH
 SELECT * FROM HANGVE
+SELECT * FROM HANHLY
 SELECT * FROM CHITIETPHUPHI
 SELECT * FROM GIAVE
 SELECT * FROM VE
 SELECT * FROM DATVE
 SELECT * FROM NHANXET
-SELECT * FROM HANHLY
+
+DELETE FROM SANBAY
+DELETE FROM MAYBAY
+DELETE FROM CHANGBAY
+DELETE FROM CHUCVU
+DELETE FROM QLTaiKhoan
+DELETE FROM NHANVIEN
+DELETE FROM CHUYENBAY
+DELETE FROM HANHKHACH
+DELETE FROM HANGVE
+DELETE FROM HANHLY
+DELETE FROM CHITIETPHUPHI
+DELETE FROM GIAVE
+DELETE FROM VE
+DELETE FROM DATVE
+DELETE FROM NHANXET
 
 -----------------------------------------------------------------------
 --						CÀI ĐẶT CÁC TRIGGER
@@ -903,6 +923,65 @@ BEGIN
 END;
 
 -------------------------
+--		HANHLY
+-------------------------
+--Trigger kiểm tra trùng MaHL
+CREATE TRIGGER trg_HANHLY_MaHL
+ON HANHLY
+FOR INSERT, UPDATE 
+AS
+BEGIN
+	IF EXISTS (
+		SELECT 1 
+		FROM INSERTED i
+		WHERE EXISTS (
+			SELECT 1
+			FROM HANHLY hl
+			WHERE hl.MaHL = i.MaHL
+				  AND hl.MaHL NOT IN (SELECT 1 FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'Mã hành lý đã tồn tại ở bản ghi khác!';
+			ROLLBACK TRANSACTION;
+		END
+END;
+
+--Trigger kiểm tra khi thêm mới 
+CREATE TRIGGER trg_HANHLY_ThemMoi
+ON HANHLY
+FOR INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @SoKG FLOAT,
+			@LoaiHanhLy NVARCHAR(30);
+
+	SELECT @SoKG = SoKG,
+		   @LoaiHanhLy = LoaiHanhLy
+	FROM INSERTED;
+
+	IF @SoKG = 0
+		BEGIN 
+			PRINT N'Số kg không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+
+	IF @LoaiHanhLy = ''
+		BEGIN 
+			PRINT N'Loại hành lý không được để trống!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+	ELSE IF @LoaiHanhLy = N'Hành lý ký gửi' OR @LoaiHanhLy = N'Hành lý xách tay'
+		BEGIN
+			PRINT N'Loại hành lý chỉ có "Hành lý ký gửi" và "Hành lý xách tay"!';
+			ROLLBACK TRANSACTION;
+			RETURN;
+		END
+END;
+
+-------------------------
 --	  CHITIETPHUPHI
 -------------------------
 --Trigger kiểm tra trùng MaPhuPhi
@@ -928,59 +1007,69 @@ BEGIN
 END;
 
 --Trigger tính phụ phí
-CREATE TRIGGER trg_CHITIETPHUPHI_TinhPhuPhi
-ON HANHLY 
+CREATE TRIGGER trg_UpdatePhuPhi
+ON CHITIETPHUPHI
 AFTER INSERT, UPDATE
 AS
 BEGIN
-    DECLARE @MaHangVe CHAR(10),      
-            @SoKG FLOAT,            
-            @TenHangVe NVARCHAR(50), 
-            @PhuPhi MONEY;           
+    -- Cập nhật phụ phí dựa trên loại hành lý và hạng vé
+    UPDATE CHITIETPHUPHI
+    SET PhuPhi = 
+        CASE 
+            -- Hành lý ký gửi, hạng phổ thông
+            WHEN h.LoaiHanhLy = N'Hành lý ký gửi' 
+                 AND hv.TenHangVe = N'Hạng phổ thông' 
+                 AND h.SoKG > 23 
+            THEN (h.SoKG - 23) * 70000
 
-    -- Lặp qua từng bản ghi trong INSERTED để tính toán phụ phí
-    DECLARE curPhuPhi CURSOR FOR
-    SELECT h.MaHangVe, h.SoKG, v.TenHangVe
-    FROM INSERTED h
-    JOIN HANGVE v ON h.MaHangVe = v.MaHangVe;  -- Thực hiện phép JOIN giữa HANHLY và HANGVE
+            -- Hành lý ký gửi, hạng thương gia
+            WHEN h.LoaiHanhLy = N'Hành lý ký gửi' 
+                 AND hv.TenHangVe = N'Hạng thương gia' 
+                 AND h.SoKG > 32 
+            THEN (h.SoKG - 32) * 70000
 
-    OPEN curPhuPhi;  -- Mở con trỏ curPhuPhi
-    FETCH NEXT FROM curPhuPhi INTO @MaHangVe, @SoKG, @TenHangVe;
+            -- Hành lý xách tay, hạng phổ thông
+            WHEN h.LoaiHanhLy = N'Hành lý xách tay' 
+                 AND hv.TenHangVe = N'Hạng phổ thông' 
+                 AND h.SoKG > 7 
+            THEN (h.SoKG - 7) * 70000
 
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        -- Tính phụ phí dựa vào tên hạng vé và số kg hành lý
-        IF @TenHangVe = N'Thương gia'
-        BEGIN
-            IF @SoKG > 32
-            BEGIN
-                SET @PhuPhi = (@SoKG - 32) * 70000;  -- Tính phụ phí cho mỗi kg vượt quá 32 kg
-            END
-            ELSE
-            BEGIN
-                SET @PhuPhi = 0;  -- Miễn phí nếu trong giới hạn 32 kg
-            END
+            -- Hành lý xách tay, hạng thương gia
+            WHEN h.LoaiHanhLy = N'Hành lý xách tay' 
+                 AND hv.TenHangVe = N'Hạng thương gia' 
+                 AND h.SoKG > 10 
+            THEN (h.SoKG - 10) * 70000
+
+            -- Không vượt quá giới hạn, phụ phí là 0
+            ELSE 0
         END
-        ELSE IF @TenHangVe = N'Phổ thông'
-        BEGIN
-            IF @SoKG > 23
-            BEGIN
-                SET @PhuPhi = (@SoKG - 23) * 70000;  -- Tính phụ phí cho mỗi kg vượt quá 23 kg
-            END
-            ELSE
-            BEGIN
-                SET @PhuPhi = 0;  -- Miễn phí nếu trong giới hạn 23 kg
-            END
-        END
+    FROM CHITIETPHUPHI ctp
+    JOIN HANHLY h ON ctp.MaHL = h.MaHL
+    JOIN HANGVE hv ON h.MaHangVe = hv.MaHangVe
+    INNER JOIN inserted i ON ctp.MaPhuPhi = i.MaPhuPhi;
+END;
 
-        -- Cập nhật phụ phí vào bảng CHITIETPHUPHI
-        UPDATE CHITIETPHUPHI
-        SET PhuPhi = @PhuPhi
-        WHERE MaHangVe = @MaHangVe AND SoKG = @SoKG;
-
-        FETCH NEXT FROM curPhuPhi INTO @MaHangVe, @SoKG, @TenHangVe;  -- Lặp tiếp
-    END;
-
-    CLOSE curPhuPhi;  -- Đóng con trỏ
-    DEALLOCATE curPhuPhi;  -- Giải phóng con trỏ
+-------------------------
+--		   GIAVE
+-------------------------
+--Trigger kiểm tra trùng MaGiaVe
+CREATE TRIGGER trg_GIAVE_MaGiaVe
+ON GIAVE
+FOR INSERT, UPDATE
+AS
+BEGIN 
+	IF EXISTS (
+		SELECT 1 
+		FROM INSSERTED i
+		WHERE EXISTS (
+			SELECT 1 
+			FROM GIAVE gv
+			WHERE gv.MaGiaVe = i.MaGiaVe
+				  AND gv.MaGiaVe NOT IN (SELECT 1 FROM DELETED)
+		)
+	)
+		BEGIN
+			PRINT N'Mã giá vé không được trùng!';
+			ROLLBACK TRANSACTION;
+		END
 END;
