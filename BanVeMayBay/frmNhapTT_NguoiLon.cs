@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,12 @@ namespace BanVeMayBay
 {
     public partial class frmNhapTT_NguoiLon : Form
     {
+        public TTNguoiLon KhachHangData { get; private set; }
         public frmNhapTT_NguoiLon()
         {
             InitializeComponent();
+            KhachHangData = new TTNguoiLon();
         }
-
         private void frmNhapTT_Load(object sender, EventArgs e)
         {
             txtHo_NL.Focus();
@@ -71,7 +73,38 @@ namespace BanVeMayBay
         }
         private void dateTimePickerNgaySinh_NL_Validating(object sender, CancelEventArgs e)
         {
-
+        }
+      
+        public TTNguoiLon GetKhachHang()
+        {
+            TTNguoiLon tt =new TTNguoiLon();
+            if (rdoGioiTinhNam_NL.Checked)
+            {
+                tt.Gioitinh = rdoGioiTinhKhac_NL.Text;
+            }
+            else if (rdoGioiTinhNu_NL.Checked)
+            {
+                tt.Gioitinh = rdoGioiTinhNu_NL.Text;
+            }
+            else
+            {
+                tt.Gioitinh = rdoGioiTinhKhac_NL.Text;
+            }
+            tt.TenKH=txtHo_NL.Text +txtTenDemvaTen_NL.Text;
+            tt.NgaySinh = dateTimePickerNgaySinh_NL.Value;
+            tt.QuocGia=cboQuocGia_NL.Text;
+            tt.SDT = txtSDT_NL.Text;
+            tt.DiaChi = txtNoiO_NL.Text;
+            tt.MaHoiVien=txtMaHoiVien_NL.Text;
+            return tt;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TTKhachHang khachHang = GetKhachHang();
+            MessageBox.Show(khachHang.TenKH); // Display customer information
         }
     }
 }
+
+
+     

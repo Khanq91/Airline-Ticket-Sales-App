@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,10 @@ namespace BanVeMayBay
 {
     public partial class frmMain : Form
     {
+        public List<TTNguoiLon> ListNguoiLon { get; private set; } = new List<TTNguoiLon>();
+        public List<TTEmBe> ListEmBe { get; private set; } = new List<TTEmBe>();
+        public List<TTTreEm> ListTreEm { get; private set; } = new List<TTTreEm>();
+
         string tennguoidung;
         public frmMain(string TenNguoiDung)
         {
@@ -96,15 +101,29 @@ namespace BanVeMayBay
             frmtt.ShowTTHK(slNL, slTE, slEB);
         }
 
+
+
+        public void NhapKhachHang(List<TTNguoiLon> nguoiLon, List<TTEmBe> emBe, List<TTTreEm> treEm)
+        {
+            ListNguoiLon = nguoiLon;
+            ListEmBe = emBe;
+            ListTreEm = treEm;
+
+            // Có thể hiển thị thông tin hoặc xử lý dữ liệu ở đây
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var khachHang in ListNguoiLon)
+            {
+                sb.AppendLine($"Tên: {khachHang.TenKH}\nGiới tính: {khachHang.Gioitinh}\nNgày sinh: {khachHang.NgaySinh.ToShortDateString()}\n");
+            }
+            MessageBox.Show(sb.ToString(), "Thông tin khách hàng");
+        }
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
+            NhapKhachHang(ListNguoiLon, ListEmBe,ListTreEm );
             flowLayoutPnlThanGianDien.Controls.Clear();
             //frmChonDV frmDV = new frmChonDV();
             //frmDV.TopLevel = false;
-            foreach()
-            TTKhachHang kh=new TTKhachHang();
-
-
 
         }
         //private void button1_Click(object sender, EventArgs e)

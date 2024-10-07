@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace BanVeMayBay
 {
     public partial class frmNhapTT_TreEm : Form
     {
+        public TTTreEm KhachHangData { get; private set; }
         public frmNhapTT_TreEm()
         {
             InitializeComponent();
+            KhachHangData = new TTTreEm();
+
         }
 
         private void frmNhapTT_TreEm_Load(object sender, EventArgs e)
@@ -49,5 +53,14 @@ namespace BanVeMayBay
             else
                 this.erpNhapTT.Clear();
         }
+        public TTTreEm GetKhachHang()
+        {
+            TTTreEm tt = new TTTreEm();
+            tt.TenKH = txtHo_TE.Text + txtTenDemvaTen_TE.Text;
+            tt.NgaySinh = dateTimePickerNgaySinh_TE.Value;
+            tt.Gioitinh = cboGioiTinh_TE.Text;
+            return tt; 
+        }
+
     }
 }

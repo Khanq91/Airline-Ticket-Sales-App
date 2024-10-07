@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace BanVeMayBay
 {
     public partial class frmNhapTT_EmBe : Form
     {
+        private TTEmBe ttEmBe;
+
+        public TTEmBe TtEmBe { get => ttEmBe; set => ttEmBe = value; }
+
         public frmNhapTT_EmBe()
         {
             InitializeComponent();
+            ttEmBe = new TTEmBe();
+
         }
 
         private void frmNhapTT_EmBe_Load(object sender, EventArgs e)
@@ -50,7 +57,6 @@ namespace BanVeMayBay
                 this.erpNhapTT.Clear();
 
         }
-
         private void cboGioiTinh_EB_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
@@ -58,6 +64,15 @@ namespace BanVeMayBay
                 this.erpNhapTT.SetError(ctr, "Bạn hãy cho biết giới tính của bé!");
             else
                 this.erpNhapTT.Clear();
+        }
+        public TTEmBe GetKhachHang()
+        {
+            TTEmBe ttembe = new TTEmBe();
+            ttembe.NguoiBayCung = txtBayCung_EB.Text;
+            ttembe.TenKH = txtHo_EB.Text + txtTenDemvaTen_EB.Text;
+            ttembe.NgaySinh = dateTimePickerNgaySinh_EB.Value;
+            ttembe.Gioitinh = cboGioiTinh_EB.Text;
+            return ttembe;
         }
     }
 }

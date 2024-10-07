@@ -26,14 +26,10 @@ namespace BanVeMayBay
             }
 
 
-            Application.EnableVisualStyles();
+        
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             string tennguoidung = "aa";
-            Application.Run(new frmMain(tennguoidung));
-=======
-            Application.Run(new frmMain("Khang"));
->>>>>>> afd0abc912289219a716a6dfaa7c4a3858af10e6
+            Application.Run(new frmNhapTT_Main());
         }
     }
 }

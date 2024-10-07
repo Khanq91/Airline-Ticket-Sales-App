@@ -46,7 +46,10 @@
     <Compile Include="DB_Connet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanBay.cs" />
+    <Compile Include="TTEmBe.cs" />
     <Compile Include="TTKhachHang.cs" />
+    <Compile Include="TTNguoiLon.cs" />
+    <Compile Include="TTTreEm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

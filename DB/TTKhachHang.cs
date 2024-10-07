@@ -6,30 +6,26 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-    public class TTKhachHang
+    public abstract class TTKhachHang
     {
+        string _Gioitinh;
         string _MaKh;
         string _TenKH;
-        string _DiaChi;
-        string _Email;
-        string _SDT;
-        string _CCCD;
-        string _HoChieu;
-        DateTime _NgaySinh;
         string _IDTaiKhoan;
-
+        DateTime _NgaySinh;
+   
+        public string Gioitinh { get => _Gioitinh; set => _Gioitinh = value; }
         public string MaKh { get => _MaKh; set => _MaKh = value; }
         public string TenKH { get => _TenKH; set => _TenKH = value; }
-        public string DiaChi { get => _DiaChi; set => _DiaChi = value; }
-        public string Email { get => _Email; set => _Email = value; }
-        public string SDT { get => _SDT; set => _SDT = value; }
-        public string CCCD { get => _CCCD; set => _CCCD = value; }
-        public string HoChieu { get => _HoChieu; set => _HoChieu = value; }
-        public DateTime NgaySinh { get => _NgaySinh; set => _NgaySinh = value; }
         public string IDTaiKhoan { get => _IDTaiKhoan; set => _IDTaiKhoan = value; }
+        public DateTime NgaySinh { get => _NgaySinh; set => _NgaySinh = value; }
         public TTKhachHang()
         {
-
+            Gioitinh = "Nam";
+            MaKh = "001";
+            TenKH = "NguyenVana";
+            IDTaiKhoan = "Tk001";
+            NgaySinh = DateTime.Parse("12/12/2004");
         }
     }
 }
