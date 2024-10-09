@@ -75,7 +75,6 @@
             this.flowLayoutPnlThanGianDien.AutoScroll = true;
             this.flowLayoutPnlThanGianDien.BackColor = System.Drawing.Color.LightGray;
             this.flowLayoutPnlThanGianDien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPnlThanGianDien.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPnlThanGianDien.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPnlThanGianDien.Name = "flowLayoutPnlThanGianDien";
             this.flowLayoutPnlThanGianDien.Size = new System.Drawing.Size(1900, 610);

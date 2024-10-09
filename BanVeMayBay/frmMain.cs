@@ -83,25 +83,53 @@ namespace BanVeMayBay
             pnlTTVeDat.Visible = true;
             flowLayoutPanelTTVeDat.Visible = true;
 
+            //pnlThanGiaoDien.Size = new Size(1322, 602);
+            flowLayoutPnlThanGianDien.Padding = new Padding(20, 20, 20, 10);
+            xuatDSTTHK(slNL, slTE, slEB);
             //frmTTDatVe xuất hiện 
             //string tvv, string ngaybay, string tgdi, string tgden,
             //string machuyenbay, string hangve, string diemkhoihanh, string diemden
-            frmTTVeDat frmttvd = new frmTTVeDat("1.000", ngaybay, "", "", "","BUSINESS1",diemkhoihanh,diemden);
-            frmttvd.TopLevel = false;
-            flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
-            frmttvd.Show();
+            //frmTTVeDat frmttvd = new frmTTVeDat("1.000", ngaybay, "", "", "","BUSINESS1",diemkhoihanh,diemden);
+            //frmttvd.TopLevel = false;
+            //flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+            //frmttvd.Show();
 
             //flowLayoutPnlThanGianDien.Size = new Size(920, 610);
             //pnlThanGiaoDien.Size = new Size(920, 610);
             //flowLayoutPnlThanGianDien.Location = new Point(0, 300);
-            frmNhapTT_Main frmtt = new frmNhapTT_Main();
-            frmtt.TopLevel = false;
-            flowLayoutPnlThanGianDien.Controls.Add(frmtt);
-            frmtt.Show();
-            frmtt.ShowTTHK(slNL, slTE, slEB);
+
+            //frmNhapTT_Main frmtt = new frmNhapTT_Main();
+            //frmtt.TopLevel = false;
+            //flowLayoutPnlThanGianDien.Controls.Add(frmtt);
+            //frmtt.Show();
+            //frmtt.ShowTTHK(slNL, slTE, slEB);
         }
 
-
+        public void xuatDSTTHK(int slNL, int slTE, int slEB)
+        {
+            int i;
+            for (i = 0; i < slNL; i++)
+            {
+                frmNhapTT_NguoiLon frmNL = new frmNhapTT_NguoiLon();
+                frmNL.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmNL);
+                frmNL.Show();
+            }
+            for (i = 0; i < slTE; i++)
+            {
+                frmNhapTT_TreEm frmTE = new frmNhapTT_TreEm();
+                frmTE.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmTE);
+                frmTE.Show();
+            }
+            for (i = 0; i < slEB; i++)
+            {
+                frmNhapTT_EmBe frmEB = new frmNhapTT_EmBe();
+                frmEB.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmEB);
+                frmEB.Show();
+            }
+        }
 
         public void NhapKhachHang(List<TTNguoiLon> nguoiLon, List<TTEmBe> emBe, List<TTTreEm> treEm)
         {

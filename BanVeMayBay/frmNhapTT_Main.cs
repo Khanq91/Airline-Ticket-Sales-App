@@ -68,7 +68,7 @@ namespace BanVeMayBay
             }
         }
 
-            private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             show();
         }
@@ -82,7 +82,7 @@ namespace BanVeMayBay
             }
             MessageBox.Show(sb.ToString(), "Thông tin khách hàng");
         }
-       public void TTTreEm()
+        public void TTTreEm()
         {
             foreach (Control control in flowLayoutPanelTT.Controls)
             {

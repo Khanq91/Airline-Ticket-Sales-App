@@ -29,7 +29,7 @@ namespace BanVeMayBay
         
             Application.SetCompatibleTextRenderingDefault(false);
             string tennguoidung = "aa";
-            Application.Run(new frmNhapTT_Main());
+            Application.Run(new frmMain("Khang"));
         }
     }
 }

@@ -44,7 +44,7 @@
             this.pnl.Location = new System.Drawing.Point(0, 0);
             this.pnl.Margin = new System.Windows.Forms.Padding(2);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(1102, 502);
+            this.pnl.Size = new System.Drawing.Size(1322, 602);
             this.pnl.TabIndex = 0;
             // 
             // flowLayoutPanelTT
@@ -57,15 +57,16 @@
             this.flowLayoutPanelTT.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelTT.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelTT.Name = "flowLayoutPanelTT";
-            this.flowLayoutPanelTT.Padding = new System.Windows.Forms.Padding(8);
-            this.flowLayoutPanelTT.Size = new System.Drawing.Size(1102, 502);
+            this.flowLayoutPanelTT.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.flowLayoutPanelTT.Size = new System.Drawing.Size(1322, 602);
             this.flowLayoutPanelTT.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 11);
+            this.button1.Location = new System.Drawing.Point(14, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,9 +74,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(92, 11);
+            this.button2.Location = new System.Drawing.Point(112, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(90, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -83,13 +85,14 @@
             // 
             // frmNhapTT_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1102, 502);
+            this.ClientSize = new System.Drawing.Size(1322, 602);
             this.Controls.Add(this.pnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNhapTT_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmNhapTT_Main";
             this.Load += new System.EventHandler(this.frmNhapTT_Main_Load);
             this.pnl.ResumeLayout(false);
