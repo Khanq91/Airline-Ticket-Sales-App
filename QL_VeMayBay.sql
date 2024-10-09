@@ -69,6 +69,9 @@ CREATE TABLE CHUYENBAY
 	GioBay TIME,
 	GioDen TIME,
 	ThoiGianBay TIME,
+	SoVeConLai INT,                   -- Số vé còn lại trên chuyến bay
+	SoVeDaBan INT,
+    TrangThaiChuyenBay NVARCHAR(20),           -- Tình trạng vé (VD: 'Còn vé', 'Hết vé')
 	MaMB CHAR(10) NOT NULL,
 	MaChangBay CHAR(10) NOT NULL,
 	CONSTRAINT PK_CB_MaCB PRIMARY KEY(MaCB),
@@ -103,7 +106,7 @@ CREATE TABLE HANHLY
 (
     MaHL CHAR(10) NOT NULL, -- Định nghĩa là UNIQUEIDENTIFIER
     SoKG FLOAT,
-    LoaiHanhLy NVARCHAR(30),
+    LoaiHanhLy NVARCHAR(30) CHECK (LoaiHanhLy IN (N'Hành lý ký gửi', N'Hành lý xách tay')),
 	MaHangVe CHAR(10) NOT NULL,  
     MaHK CHAR(10) NOT NULL,
     MaCB CHAR(10) NOT NULL,
@@ -128,12 +131,12 @@ CREATE TABLE GIAVE
 	MaGiaVe CHAR(10) NOT NULL,
 	GiaCoBan MONEY,
 	TongGiaVe MONEY DEFAULT 0,
-	PhuPhi MONEY DEFAULT 0,
 	GiamGia MONEY DEFAULT 0,
+	MaPhuPhi CHAR(10) NOT NULL,
 	MaCB CHAR(10) NOT NULL,
 	MaHangVe CHAR(10) NOT NULL,
-	NgayDatVe DATE,  -- Ngày đặt vé (nếu có)
 	CONSTRAINT PK_GV_MaGiaVe PRIMARY KEY(MaGiaVe),
+	CONSTRAINT FK_GV_MaPhuPhi FOREIGN KEY (MaPhuPhi) REFERENCES CHITIETPHUPHI(MaPhuPhi),
 	CONSTRAINT FK_GV_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB),
 	CONSTRAINT FK_GV_MaHangVe FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe)
 );
@@ -143,6 +146,7 @@ CREATE TABLE DATVE
 	MaDV CHAR(10) NOT NULL,
 	ThanhTien MONEY DEFAULT 0,
 	SoVeDat INT DEFAULT 0,
+	NgayDatVe DATE,  
 	--MaVe CHAR(10) NOT NULL,
 	MaCB CHAR(10) NOT NULL,
 	MaHK CHAR(10) NOT NULL,
@@ -152,11 +156,34 @@ CREATE TABLE DATVE
 	CONSTRAINT FK_DV_MaCB FOREIGN KEY(MaCB) REFERENCES CHUYENBAY(MaCB)
 );
 
+CREATE TABLE HOADON
+(
+    MaHD CHAR(10) NOT NULL,
+    MaDV CHAR(10) NOT NULL,            
+    NgayLapHD DATE NOT NULL,                    
+    TongTien MONEY DEFAULT 0,                    
+    HinhThucThanhToan NVARCHAR(20),    -- Hình thức thanh toán (VD: 'Tiền mặt', 'Chuyển khoản')
+	TrangThai NVARCHAR(20) CHECK (TrangThai IN (N'Đã thanh toán', N'Chưa thanh toán', N'Đã hoàn tiền')),  -- Trạng      thái thanh toán
+    CONSTRAINT PK_HD PRIMARY KEY(MaHD),
+    CONSTRAINT FK_HD_MaDV FOREIGN KEY(MaDV) REFERENCES DATVE(MaDV)
+);
+
+CREATE TABLE LICHSUGIAODICH
+(
+    MaGD CHAR(10) NOT NULL,            
+    MaHD CHAR(10) NOT NULL,            
+    NgayGiaoDich DATETIME NOT NULL,    -- Ngày và giờ giao dịch         
+    TrangThaiDatVe NVARCHAR(20),          -- Trạng thái đặt vé (VD: 'Đã xác nhận', 'Đã hủy')
+    CONSTRAINT PK_LSGD_MaGD PRIMARY KEY(MaGD),
+    CONSTRAINT FK_LSGD_MaHD FOREIGN KEY(MaHD) REFERENCES HOADON(MaHD)  
+);
+
 CREATE TABLE VE 
 (
 	MaVe CHAR(10) NOT NULL,
 	DonViTien NCHAR(10),
 	ViTriGhe CHAR(10),
+	--TrangThai NVARCHAR(20),
 	MaHK CHAR(10) NOT NULL, 
 	MaDV CHAR(10) NOT NULL,
 	MaGiaVe CHAR(10) NOT NULL,
@@ -178,7 +205,7 @@ CREATE TABLE NHANXET
 );
 
 -----------------------------------------------------------------------
---								DỮ LIỆU
+--				DỮ LIỆU
 -----------------------------------------------------------------------
 INSERT INTO SANBAY (MaSB, TenSB)
 VALUES 
@@ -207,7 +234,7 @@ VALUES
 INSERT INTO CHUCVU (MaChucVu, TenChucVu)
 VALUES 
     ('CV001', N'Quản lý'),
-    ('CV002', N'Nhân viên đặt vé');
+    ('CV002', N'Nhân viên');
 
 INSERT INTO QLTaiKhoan (IDTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTK)
 VALUES 
@@ -230,13 +257,13 @@ VALUES
 	('NV004', N'Phạm Thị M', N'Nữ', 18000000, '1982-04-04', N'Hải Phòng', '0908123456', 'SB004', 'CV002', 'TK004'),
 	('NV005', N'Hoàng Văn N', N'Nam', 19000000, '1987-05-05', N'Cần Thơ', '0909123456', 'SB005', 'CV002', 'TK005');
 
-INSERT INTO CHUYENBAY (MaCB, NgayBay, GioBay, GioDen, ThoiGianBay, MaMB, MaChangBay)
+INSERT INTO CHUYENBAY (MaCB, NgayBay, GioBay, GioDen, ThoiGianBay, SoVeConLai, SoVeDaBan, TrangThaiChuyenBay, MaMB, MaChangBay)
 VALUES 
-    ('CB001', '2024-10-15', '08:00', '10:00', '02:00', 'MB001', 'CBY001'),
-    ('CB002', '2024-10-16', '14:00', '16:30', '02:30', 'MB002', 'CBY002'),
-    ('CB003', '2024-10-17', '09:00', '11:30', '02:30', 'MB003', 'CBY003'),
-    ('CB004', '2024-10-18', '13:00', '15:30', '02:30', 'MB004', 'CBY004'),
-    ('CB005', '2024-10-19', '17:00', '19:30', '02:30', 'MB005', 'CBY005');
+    ('CB001', '2024-10-15', '08:00', '10:00', '02:00', 100, 80, N'Còn vé', 'MB001', 'CBY001'),
+    ('CB002', '2024-10-16', '14:00', '16:30', '02:30', 50, 250, N'Hết vé', 'MB002', 'CBY002'),
+    ('CB003', '2024-10-17', '09:00', '11:30', '02:30', 120, 100, N'Còn vé', 'MB003', 'CBY003'),
+    ('CB004', '2024-10-18', '13:00', '15:30', '02:30', 90, 260, N'Còn vé', 'MB004', 'CBY004'),
+    ('CB005', '2024-10-19', '17:00', '19:30', '02:30', 200, 60, N'Còn vé', 'MB005', 'CBY005');
 
 INSERT INTO HANHKHACH (MaHK, TenHK, GioiTinhHK, NgaySinhHK, DiaChiHK, EmailHK, SDThk, CCCD, HoChieu, IDTaiKhoan) 
 VALUES 
@@ -266,26 +293,24 @@ VALUES
     ('PP001', 0, N'Hành lý', 'HL001'),
     ('PP002', 200000, N'Hành lý', 'HL002'),
     ('PP003', 0, N'Hành lý', 'HL003'),
-    ('PP004', 70000, N'Hành lý', 'HL004'),
-    ('PP005', 350000, N'Hành lý', 'HL005');
+    ('PP004', 0, N'Hành lý', 'HL004'),
+    ('PP005', 150000, N'Hành lý', 'HL005');
 
-
-
-INSERT INTO GIAVE (MaGiaVe, GiaCoBan, TongGiaVe, PhuPhi, GiamGia, MaCB, MaHangVe, NgayDatVe)
-VALUES 
-    ('GV001', 2000000, 0, 0, 0, 'CB001', 'HV001', '2024-10-01'),
-    ('GV002', 3500000, 0, 0, 0, 'CB002', 'HV002', '2024-10-02'),
-    ('GV003', 5000000, 0, 0, 0, 'CB003', 'HV003', '2024-10-03'),
-    ('GV004', 4000000, 0, 0, 0, 'CB004', 'HV004', '2024-10-04'),
-    ('GV005', 1500000, 0, 0, 0, 'CB005', 'HV004', '2024-10-05');
+INSERT INTO GIAVE (MaGiaVe, GiaCoBan, TongGiaVe, GiamGia, MaPhuPhi, MaCB, MaHangVe)
+VALUES
+    ('VE001', 3000000, 0, 0, 'PP001', 'CB001', 'HV001'),
+    ('VE002', 2000000, 0, 0, 'PP002', 'CB002', 'HV002'),
+    ('VE003', 3000000, 0, 0, 'PP003', 'CB003', 'HV001'),
+    ('VE004', 2000000, 0, 0, 'PP004', 'CB004', 'HV002'),
+    ('VE005', 2000000, 0, 0, 'PP005', 'CB005', 'HV002');
 ----------------------------------------------------
-INSERT INTO DATVE (MaDV, ThanhTien, SoVeDat, MaCB, MaHK)
-VALUES 
-    ('DV001', 0, 1, 'CB001', 'HK001'),
-    ('DV002', 0, 1, 'CB002', 'HK002'),
-    ('DV003', 0, 1, 'CB003', 'HK003'),
-    ('DV004', 0, 1, 'CB004', 'HK004'),
-    ('DV005', 0, 1, 'CB005', 'HK005');
+INSERT INTO DATVE (MaDV, NgayDatVe, SoVeDat, MaCB, MaHK)
+VALUES
+    ('DV001', '2024-10-10', 1, 'CB001', 'HK001'),
+    ('DV002', '2024-10-11', 2, 'CB002', 'HK002'),
+    ('DV003', '2024-10-12', 1, 'CB003', 'HK003'),
+    ('DV004', '2024-10-13', 1, 'CB004', 'HK004'),
+    ('DV005', '2024-10-14', 1, 'CB005', 'HK005');
 ----------------------------------------------------
 INSERT INTO VE (MaVe, DonViTien, ViTriGhe, MaHK, MaDV, MaGiaVe) 
 VALUES 
