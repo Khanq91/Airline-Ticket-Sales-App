@@ -73,14 +73,16 @@ namespace BanVeMayBay
         }
         public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
-            pnlTTCB.Visible = true; 
-            pnlThanGiaoDien.Location = new Point(0, 229);
+            pnlTTCB.Visible = true;
+            pnlTTCB.Location = new Point(0, 144);
+            //pnlThanGiaoDien.Location = new Point(0, 229);
+            pnlThanGiaoDien.Location = new Point(0, 313);
             //pnlThanGiaoDien.Height -= 200;
-            pnlThanGiaoDien.Height -= 84;
+            //pnlThanGiaoDien.Height -= 84;
 
             //xuất hiện footer chứa nút đi tiếp
-            //pnlThanGiaoDien.Height -= 171;
-            //pnlDuoiGiaoDien.Visible = true;
+            pnlThanGiaoDien.Height -= 171;
+            pnlDuoiGiaoDien.Visible = true;
 
             pnlThanGiaoDien.Width -= 555;
             flowLayoutPnlThanGianDien.Width -= 555;
@@ -136,14 +138,7 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Controls.Add(frmEB);
                 frmEB.Show();
             }
-            //Tạo một nút
-            Button btnTTHK = new Button();
-            btnTTHK.Size = new Size(1280, 78);
-            btnTTHK.Text = "Đi tiếp";
-            btnTTHK.ForeColor = Color.LimeGreen;
-            btnTTHK.BackColor = Color.LimeGreen;
-            //Thêm nút
-            flowLayoutPnlThanGianDien.Controls.Add(btnTTHK);
+            btnNhapTTHK.Visible = true;
         }
 
         public void NhapKhachHang(List<TTNguoiLon> nguoiLon, List<TTEmBe> emBe, List<TTTreEm> treEm)

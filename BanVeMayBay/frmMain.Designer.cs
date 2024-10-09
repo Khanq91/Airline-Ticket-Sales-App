@@ -50,6 +50,7 @@
             this.lblChuyenBayKHMC = new System.Windows.Forms.Label();
             this.pnlTTVeDat = new System.Windows.Forms.Panel();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
+            this.btnNhapTTHK = new System.Windows.Forms.Button();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -206,7 +207,7 @@
             this.pnlTTCB.Controls.Add(this.lblDiemKhoiHanh);
             this.pnlTTCB.Controls.Add(this.label1);
             this.pnlTTCB.Controls.Add(this.lblChuyenBayKHMC);
-            this.pnlTTCB.Location = new System.Drawing.Point(0, 144);
+            this.pnlTTCB.Location = new System.Drawing.Point(875, 150);
             this.pnlTTCB.Name = "pnlTTCB";
             this.pnlTTCB.Size = new System.Drawing.Size(1898, 84);
             this.pnlTTCB.TabIndex = 13;
@@ -302,6 +303,19 @@
             this.elipseTool1.CornerRadius = 40;
             this.elipseTool1.TargetControl = this;
             // 
+            // btnNhapTTHK
+            // 
+            this.btnNhapTTHK.BackColor = System.Drawing.Color.White;
+            this.btnNhapTTHK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapTTHK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnNhapTTHK.Location = new System.Drawing.Point(13, 235);
+            this.btnNhapTTHK.Name = "btnNhapTTHK";
+            this.btnNhapTTHK.Size = new System.Drawing.Size(1316, 71);
+            this.btnNhapTTHK.TabIndex = 8;
+            this.btnNhapTTHK.Text = "Tiếp tục";
+            this.btnNhapTTHK.UseVisualStyleBackColor = false;
+            this.btnNhapTTHK.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -309,6 +323,7 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTTCB);
+            this.Controls.Add(this.btnNhapTTHK);
             this.Controls.Add(this.pnlTTVeDat);
             this.Controls.Add(this.pnlDuoiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
@@ -358,6 +373,7 @@
         private System.Windows.Forms.Label lblChuyenBayKHMC;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTTVeDat;
         private System.Windows.Forms.Panel pnlTTVeDat;
+        private System.Windows.Forms.Button btnNhapTTHK;
     }
 }
 

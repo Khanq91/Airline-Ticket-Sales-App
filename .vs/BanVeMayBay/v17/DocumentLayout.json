@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\9-10-2024\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmnhaptt_nguoilon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_nguoilon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmnhaptt_nguoilon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_nguoilon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|solutionrelative:db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\banvemaybay\\frmnhaptt_embe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmnhaptt_embe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\9-10-2024\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\9-10-2024\\banvemaybay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\9-10-2024\\banvemaybay\\banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|c:\\users\\pc\\onedrive\\m\u00E1y t\u00EDnh\\t\u1ED5ng h\u1EE3p cntt\\flighttickerbooking-app.net\\9-10-2024\\banvemaybay\\banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,20 +30,21 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\Program.cs",
               "RelativeDocumentMoniker": "BanVeMayBay\\Program.cs",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\Program.cs",
               "RelativeToolTip": "BanVeMayBay\\Program.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwB8AAAAuAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T14:19:26.016Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -67,101 +52,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DB_Connet.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\DB\\DB_Connet.cs",
-              "RelativeDocumentMoniker": "DB\\DB_Connet.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\DB\\DB_Connet.cs",
-              "RelativeToolTip": "DB\\DB_Connet.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAqwA8AAAB4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T10:29:28.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmNhapTT_EmBe.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_EmBe.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_EmBe.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_EmBe.cs [Design]",
-              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_EmBe.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T08:41:10.462Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "frmNhapTT_NguoiLon.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "frmQuanLi.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmQuanLi.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmQuanLi.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAwBQAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:28:54.472Z",
+              "WhenOpened": "2024-10-09T11:22:52.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmNhapTT_NguoiLon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_NguoiLon.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_NguoiLon.cs [Design]",
-              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_NguoiLon.cs [Design]",
+              "Title": "frmQuanLi.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmQuanLi.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmQuanLi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:28:53.421Z",
+              "WhenOpened": "2024-10-09T11:20:00.889Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmNhapTT_Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_Main.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs [Design]",
-              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_Main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:02:23.023Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmNhapTT_Main.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmNhapTT_Main.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmNhapTT_Main.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmNhapTT_Main.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAACAAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T06:54:37.716Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmMain.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAAAIwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T11:50:54.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
               "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
               "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs [Design]",
               "RelativeToolTip": "BanVeMayBay\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T08:09:13.832Z",
+              "WhenOpened": "2024-10-09T11:22:31.067Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
-              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
-              "ToolTip": "C:\\Users\\PC\\OneDrive\\M\u00E1y t\u00EDnh\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App.Net\\9-10-2024\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
-              "RelativeToolTip": "BanVeMayBay\\frmMain.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAFkAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T08:14:48.553Z",
-              "EditorCaption": ""
             }
           ]
         }
