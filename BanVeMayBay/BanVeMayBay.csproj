@@ -335,5 +335,17 @@
   <ItemGroup>
     <None Include="Resources\arrow-up.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-interface-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-button-32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-button-32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-button-32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
