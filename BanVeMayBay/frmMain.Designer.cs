@@ -141,6 +141,7 @@
             // 
             // flowLayoutPanelTTVeDat
             // 
+            this.flowLayoutPanelTTVeDat.AutoScroll = true;
             this.flowLayoutPanelTTVeDat.BackColor = System.Drawing.Color.LightGray;
             this.flowLayoutPanelTTVeDat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelTTVeDat.Location = new System.Drawing.Point(0, 0);
@@ -305,9 +306,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1898, 924);
-            this.Controls.Add(this.pnlTTVeDat);
             this.Controls.Add(this.pnlTTCB);
+            this.Controls.Add(this.pnlTTVeDat);
             this.Controls.Add(this.pnlDuoiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
             this.Controls.Add(this.pnlThanGiaoDien);
