@@ -51,6 +51,8 @@ namespace BanVeMayBay
                 kt = true;
                 if (result == DialogResult.OK)
                 {
+                    lblGoiHanhLy.Visible = true;
+                    lblTienHL.Visible = true;
                     TenGoi = frmHL.TenGoi;
                     GiaGoi = frmHL.GiaGoi;
                     lblGoiHanhLy.Text = TenGoi;
@@ -60,7 +62,8 @@ namespace BanVeMayBay
                 {
                     lblGoiHanhLy.Visible = false;
                     lblTienHL.Visible = false;
-
+                    TenGoi = "";
+                    GiaGoi = "";
                 }
                     
             }

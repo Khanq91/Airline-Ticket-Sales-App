@@ -58,10 +58,6 @@ namespace BanVeMayBay
             Application.Exit();
         }
 
-        private void picThoat_MouseMove(object sender, MouseEventArgs e)
-        {
-            Cursor.Current = Cursors.Hand;
-        }
 
         private void picReset_Click(object sender, EventArgs e)
         {
@@ -95,13 +91,13 @@ namespace BanVeMayBay
 
 
 
-            //frmTTDatVe xuất hiện 
+            //frmTTDatVe xuất hiện
             //string tvv, string ngaybay, string tgdi, string tgden,
             //string machuyenbay, string hangve, string diemkhoihanh, string diemden
-            //frmTTVeDat frmttvd = new frmTTVeDat("1.000", ngaybay, "", "", "","BUSINESS1",diemkhoihanh,diemden);
-            //frmttvd.TopLevel = false;
-            //flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
-            //frmttvd.Show();
+            frmTTVeDat frmttvd = new frmTTVeDat("", ngaybay, "", "", "", "BUSINESS1", diemkhoihanh, diemden);
+            frmttvd.TopLevel = false;
+            flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+            frmttvd.Show();
 
             //flowLayoutPnlThanGianDien.Size = new Size(920, 610);
             //pnlThanGiaoDien.Size = new Size(920, 610);

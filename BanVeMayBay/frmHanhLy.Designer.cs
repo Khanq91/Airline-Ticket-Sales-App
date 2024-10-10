@@ -66,6 +66,7 @@
             this.picGoi4 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
             this.pnlDuoiGiaoDien.SuspendLayout();
@@ -125,6 +126,7 @@
             // pnlDuoiGiaoDien
             // 
             this.pnlDuoiGiaoDien.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlDuoiGiaoDien.Controls.Add(this.btnHuy);
             this.pnlDuoiGiaoDien.Controls.Add(this.lblGiaGoi);
             this.pnlDuoiGiaoDien.Controls.Add(this.lblTenGoi);
             this.pnlDuoiGiaoDien.Controls.Add(this.btnXacNhan);
@@ -160,7 +162,7 @@
             // 
             this.btnXacNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnXacNhan.FlatAppearance.BorderSize = 0;
-            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhan.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnXacNhan.Location = new System.Drawing.Point(430, 9);
             this.btnXacNhan.Name = "btnXacNhan";
@@ -515,6 +517,18 @@
             this.btnCancel.Text = "button1";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnHuy.Location = new System.Drawing.Point(297, 9);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(127, 56);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.picCancel_Click);
+            // 
             // frmHanhLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -608,5 +622,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblGiaGoi;
         private System.Windows.Forms.Label lblTenGoi;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

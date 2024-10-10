@@ -242,3 +242,4 @@ C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\bin\Debug\System.Text.Json.xml
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\bin\Debug\System.ValueTuple.xml
+C:\Users\PC\OneDrive\Máy tính\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmViTriGhe.resources

@@ -31,7 +31,6 @@ namespace BanVeMayBay
         {
             btnCancel.PerformClick();
         }
-
         private void picGoi1_Click(object sender, EventArgs e)
         {
             foreach (PictureBox picc in pices)
@@ -64,7 +63,6 @@ namespace BanVeMayBay
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
         }
-
         private void picGoi3_Click(object sender, EventArgs e)
         {
             foreach (PictureBox picc in pices)
@@ -81,7 +79,6 @@ namespace BanVeMayBay
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
         }
-
         private void picGoi4_Click(object sender, EventArgs e)
         {
             foreach (PictureBox picc in pices)
@@ -98,7 +95,6 @@ namespace BanVeMayBay
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
         }
-
         private void picGoi5_Click(object sender, EventArgs e)
         {
             foreach (PictureBox picc in pices)
@@ -115,7 +111,6 @@ namespace BanVeMayBay
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
         }
-
         private void picGoi6_Click(object sender, EventArgs e)
         {
             foreach (PictureBox picc in pices)
@@ -132,5 +127,6 @@ namespace BanVeMayBay
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
         }
+
     }
 }

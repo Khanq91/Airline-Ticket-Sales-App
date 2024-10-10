@@ -51,6 +51,10 @@
             this.pnlTTVeDat = new System.Windows.Forms.Panel();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.btnNhapTTHK = new System.Windows.Forms.Button();
+            this.lblHangVe4 = new System.Windows.Forms.Label();
+            this.lblHangVe3 = new System.Windows.Forms.Label();
+            this.lblHangVe2 = new System.Windows.Forms.Label();
+            this.lblHangVe1 = new System.Windows.Forms.Label();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -108,6 +112,7 @@
             // 
             // picThoat
             // 
+            this.picThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picThoat.Image = global::BanVeMayBay.Properties.Resources.circle_cross;
             this.picThoat.Location = new System.Drawing.Point(1846, 9);
             this.picThoat.Name = "picThoat";
@@ -116,7 +121,6 @@
             this.picThoat.TabIndex = 11;
             this.picThoat.TabStop = false;
             this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
-            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picThoat_MouseMove);
             // 
             // lblChaoNguoiDung
             // 
@@ -316,12 +320,72 @@
             this.btnNhapTTHK.UseVisualStyleBackColor = false;
             this.btnNhapTTHK.Visible = false;
             // 
+            // lblHangVe4
+            // 
+            this.lblHangVe4.BackColor = System.Drawing.Color.Gold;
+            this.lblHangVe4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHangVe4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHangVe4.ForeColor = System.Drawing.Color.White;
+            this.lblHangVe4.Location = new System.Drawing.Point(594, 237);
+            this.lblHangVe4.Name = "lblHangVe4";
+            this.lblHangVe4.Size = new System.Drawing.Size(160, 51);
+            this.lblHangVe4.TabIndex = 17;
+            this.lblHangVe4.Text = "BusineSS";
+            this.lblHangVe4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHangVe4.Visible = false;
+            // 
+            // lblHangVe3
+            // 
+            this.lblHangVe3.BackColor = System.Drawing.Color.Red;
+            this.lblHangVe3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHangVe3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHangVe3.ForeColor = System.Drawing.Color.White;
+            this.lblHangVe3.Location = new System.Drawing.Point(760, 237);
+            this.lblHangVe3.Name = "lblHangVe3";
+            this.lblHangVe3.Size = new System.Drawing.Size(160, 51);
+            this.lblHangVe3.TabIndex = 16;
+            this.lblHangVe3.Text = "skyBOSS";
+            this.lblHangVe3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHangVe3.Visible = false;
+            // 
+            // lblHangVe2
+            // 
+            this.lblHangVe2.BackColor = System.Drawing.Color.Peru;
+            this.lblHangVe2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHangVe2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHangVe2.ForeColor = System.Drawing.Color.White;
+            this.lblHangVe2.Location = new System.Drawing.Point(926, 237);
+            this.lblHangVe2.Name = "lblHangVe2";
+            this.lblHangVe2.Size = new System.Drawing.Size(160, 51);
+            this.lblHangVe2.TabIndex = 15;
+            this.lblHangVe2.Text = "Deluxe";
+            this.lblHangVe2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHangVe2.Visible = false;
+            // 
+            // lblHangVe1
+            // 
+            this.lblHangVe1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.lblHangVe1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblHangVe1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHangVe1.ForeColor = System.Drawing.Color.White;
+            this.lblHangVe1.Location = new System.Drawing.Point(1092, 237);
+            this.lblHangVe1.Name = "lblHangVe1";
+            this.lblHangVe1.Size = new System.Drawing.Size(160, 51);
+            this.lblHangVe1.TabIndex = 14;
+            this.lblHangVe1.Text = "Eco";
+            this.lblHangVe1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHangVe1.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1898, 924);
+            this.Controls.Add(this.lblHangVe4);
+            this.Controls.Add(this.lblHangVe3);
+            this.Controls.Add(this.lblHangVe2);
+            this.Controls.Add(this.lblHangVe1);
             this.Controls.Add(this.pnlTTCB);
             this.Controls.Add(this.btnNhapTTHK);
             this.Controls.Add(this.pnlTTVeDat);
@@ -374,6 +438,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTTVeDat;
         private System.Windows.Forms.Panel pnlTTVeDat;
         private System.Windows.Forms.Button btnNhapTTHK;
+        private System.Windows.Forms.Label lblHangVe4;
+        private System.Windows.Forms.Label lblHangVe3;
+        private System.Windows.Forms.Label lblHangVe2;
+        private System.Windows.Forms.Label lblHangVe1;
     }
 }
 

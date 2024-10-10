@@ -213,12 +213,21 @@ namespace BanVeMayBay
             //----------------------------------------------------------------------
             //      Tiền vé và thuế 10% của tiền vé
             //----------------------------------------------------------------------
-            lblTienVe.Text = TienVeVao;   //số tiền của vé được truyền frmVe
-            float tienve = float.Parse(lblTienVe.Text.Replace(".", ""));
-            GiaVe = tienve.ToString();  //dùng để truyền dữ liệu qua form khác
-            float vat10 = 10000 * 0.1f;
-            VAT1 = vat10.ToString();    //Lấy thông tin số tiền VAT của vé
-            lblTienVATVe.Text = vat10.ToString();  // số tiền thuế 10% của giá vé
+            if(TienVeVao == "")
+            { 
+                lblTienVe.Visible = false;
+                lblTienVATVe.Visible = false;
+            }    
+            else
+            {
+                lblTienVe.Text = TienVeVao;   //số tiền của vé được truyền frmVe
+                string temp = lblTienVe.Text.Replace(".", "");
+                float tienve = float.Parse(temp);
+                GiaVe = tienve.ToString();  //dùng để truyền dữ liệu qua form khác
+                float vat10 = 10000 * 0.1f;
+                VAT1 = vat10.ToString();    //Lấy thông tin số tiền VAT của vé
+                lblTienVATVe.Text = vat10.ToString();  // số tiền thuế 10% của giá vé
+            }    
 
             //----------------------------------------------------------------------
             //      Các loại phụ phí cố định và thuế phụ phí
