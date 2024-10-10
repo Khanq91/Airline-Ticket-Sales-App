@@ -150,7 +150,6 @@
             this.picThoat.TabIndex = 11;
             this.picThoat.TabStop = false;
             this.picThoat.Click += new System.EventHandler(this.picThoat_Click);
-            this.picThoat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
             // 
             // picMayBay
             // 
@@ -167,6 +166,7 @@
             // picTroLaiDN
             // 
             this.picTroLaiDN.BackColor = System.Drawing.Color.White;
+            this.picTroLaiDN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTroLaiDN.Image = global::BanVeMayBay.Properties.Resources.angle_left;
             this.picTroLaiDN.Location = new System.Drawing.Point(1002, 119);
             this.picTroLaiDN.Margin = new System.Windows.Forms.Padding(2);
@@ -175,7 +175,6 @@
             this.picTroLaiDN.TabIndex = 5;
             this.picTroLaiDN.TabStop = false;
             this.picTroLaiDN.Click += new System.EventHandler(this.picTroLaiDN_Click);
-            this.picTroLaiDN.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picTroLaiDN_MouseMove);
             // 
             // picDangKi
             // 

@@ -32,7 +32,6 @@ namespace BanVeMayBay
             x.Parent = nenX;
             x.Location = a;
             x.BackColor = Color.Transparent;
-
         }
         private void frmDangKy_Load(object sender, EventArgs e)
         {
@@ -49,12 +48,6 @@ namespace BanVeMayBay
             this.Hide();
             fdn.Show();
         }
-
-        private void picTroLaiDN_MouseMove(object sender, MouseEventArgs e)
-        {
-            Cursor.Current = Cursors.Hand;
-        }
-
         private void txtTaiKhoan_DK_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
@@ -63,7 +56,6 @@ namespace BanVeMayBay
             else
                 this.erpTKMK.Clear();
         }
-
         private void txtMatKhau_DK_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
@@ -72,10 +64,8 @@ namespace BanVeMayBay
             else
                 this.erpTKMK.Clear();
         }
-
         private void txtNhapLaiMatKhau_DK_Leave(object sender, EventArgs e)
         {
-
             Control ctr = (Control)sender;
             if (txtNhapLaiMatKhau_DK.Text.Trim().Length == 0)
                 this.erpTKMK.SetError(ctr, "Bạn phải nhập lại mật khẩu!");
@@ -108,7 +98,7 @@ namespace BanVeMayBay
                 }
                 if (txtMatKhau_DK.Text != txtNhapLaiMatKhau_DK.Text)
                 {
-                    lbl_ThongBao.Text = "Mật khẩu không chính xác";
+                    lbl_ThongBao.Text = "Mật khẩu nhập lại không chính xác";
                     return;
 
                 }

@@ -33,7 +33,7 @@ namespace BanVeMayBay
 
 
             string tennguoidung = "aa";
-            Application.Run(new frmQuanLi("Khang", "Quản lý"));
+            Application.Run(new frmQuanLi("Khang", "Nhân viên đặt vé"));
         }
     }
 }
