@@ -94,7 +94,7 @@ namespace BanVeMayBay
             //frmTTDatVe xuất hiện
             //string tvv, string ngaybay, string tgdi, string tgden,
             //string machuyenbay, string hangve, string diemkhoihanh, string diemden
-            frmTTVeDat frmttvd = new frmTTVeDat("", ngaybay, "", "", "", "BUSINESS1", diemkhoihanh, diemden);
+            frmTTVeDat frmttvd = new frmTTVeDat("", ngaybay, "", "", "", "", diemkhoihanh, diemden);
             frmttvd.TopLevel = false;
             flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
             frmttvd.Show();
@@ -158,7 +158,6 @@ namespace BanVeMayBay
             flowLayoutPnlThanGianDien.Controls.Clear();
             //frmChonDV frmDV = new frmChonDV();
             //frmDV.TopLevel = false;
-
         }
         //private void button1_Click(object sender, EventArgs e)
         //{

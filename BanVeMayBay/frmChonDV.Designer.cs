@@ -91,13 +91,14 @@
             this.lblTienHL.TabIndex = 13;
             this.lblTienHL.Text = "1.000.000.000";
             this.lblTienHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTienHL.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(150, 78);
+            this.label6.Location = new System.Drawing.Point(150, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(486, 21);
             this.label6.TabIndex = 12;
@@ -105,13 +106,14 @@
             // 
             // lblGoiHanhLy
             // 
-            this.lblGoiHanhLy.AutoSize = true;
             this.lblGoiHanhLy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGoiHanhLy.Location = new System.Drawing.Point(150, 110);
             this.lblGoiHanhLy.Name = "lblGoiHanhLy";
-            this.lblGoiHanhLy.Size = new System.Drawing.Size(86, 25);
+            this.lblGoiHanhLy.Size = new System.Drawing.Size(130, 25);
             this.lblGoiHanhLy.TabIndex = 10;
             this.lblGoiHanhLy.Text = "Gói 20kg";
+            this.lblGoiHanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGoiHanhLy.Visible = false;
             // 
             // label2
             // 
@@ -190,13 +192,14 @@
             this.lblTienGhe.TabIndex = 12;
             this.lblTienGhe.Text = "1.000.000.000";
             this.lblTienGhe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTienGhe.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(150, 78);
+            this.label5.Location = new System.Drawing.Point(150, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(486, 21);
             this.label5.TabIndex = 11;
@@ -204,13 +207,14 @@
             // 
             // lblMaGhe
             // 
-            this.lblMaGhe.AutoSize = true;
             this.lblMaGhe.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaGhe.Location = new System.Drawing.Point(150, 113);
             this.lblMaGhe.Name = "lblMaGhe";
-            this.lblMaGhe.Size = new System.Drawing.Size(115, 25);
+            this.lblMaGhe.Size = new System.Drawing.Size(130, 25);
             this.lblMaGhe.TabIndex = 9;
             this.lblMaGhe.Text = "Mã chỗ ngồi";
+            this.lblMaGhe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMaGhe.Visible = false;
             // 
             // label3
             // 
