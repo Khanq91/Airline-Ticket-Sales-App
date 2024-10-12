@@ -10,12 +10,13 @@ CREATE TABLE SANBAY
 
 CREATE TABLE MAYBAY
 (
-	STTmb INT NOT NULL IDENTITY(1,1),
-	MaMB CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaMB CHAR(10) NOT NULL,
+	--  'VN-[A-Z][0-9][0-9][0-9]'
+	-- Kiểm tra định dạng mã máy bay phải bắt đầu bằng "VN-" và theo sau là 1 chữ cái + 3 số
 	LoaiMB NVARCHAR(50),
 	HangBay NVARCHAR(50),
 	TongSoGhe INT,
-	CONSTRAINT PK_MB_STTmb PRIMARY KEY(STTmb)
+	CONSTRAINT PK_MB_MaMB PRIMARY KEY(MaMB)
 );
 
 CREATE TABLE CHANGBAY
@@ -32,17 +33,17 @@ CREATE TABLE CHANGBAY
 CREATE TABLE CHUCVU
 (
 	MaChucVu CHAR(6) NOT NULL,
-	TenChucVu NVARCHAR(30),
+	TenChucVu NVARCHAR(30) CHECK (TenChucVu IN (N'Nhân viên', N'Quản lý')),
 	CONSTRAINT PK_CV PRIMARY KEY(MaChucVu)
 );
 
 CREATE TABLE QLTaiKhoan
 (
-	IDTaiKhoan CHAR(10) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 10),
+	IDTaiKhoan CHAR(10) NOT NULL DEFAULT RIGHT('0000000000' + CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 10),
 	TenTaiKhoan NVARCHAR(50) NOT NULL,
-    TenDangNhap VARCHAR(50) NOT NULL,
+    	TenDangNhap VARCHAR(50) NOT NULL,
 	MatKhau VARCHAR(50) NOT NULL,
-	LoaiTK NVARCHAR(30) CHECK (LoaiTK IN (N'HANHKHACH', N'NHANVIEN')), 
+	LoaiTK NVARCHAR(30) NOT NULL CHECK (LoaiTK IN (N'Hành khách', N'Nhân viên')), 
 	CONSTRAINT PK_TK PRIMARY KEY(IDTaiKhoan)
 );
 
@@ -68,32 +69,33 @@ CREATE TABLE NHANVIEN
 CREATE TABLE CHUYENBAY
 (
 	STTcb INT NOT NULL IDENTITY(1,1),
-	MaCB CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
-	NgayBay DATE,  
-	GioBay TIME,
-	GioDen TIME,
+	MaCB CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
+	NgayBay DATE NOT NULL,  
+	GioBay TIME NOT NULL,
+	GioDen TIME NOT NULL,
 	ThoiGianBay TIME,
-	SoVeConLai INT,                   -- Số vé còn lại trên chuyến bay
-	SoVeDaBan INT,
-    TrangThaiChuyenBay NVARCHAR(20) NOT NULL,           -- Tình trạng vé (VD: 'Còn vé', 'Hết vé')
-	STTmb INT NOT NULL,
+	SoVeConLai INT,                  
+	SoVeDaBan INT DEFAULT 0,
+    	TrangThaiChuyenBay NVARCHAR(20) NOT NULL,           -- Tình trạng vé (VD: 'Còn vé', 'Hết vé')
+	MaMB CHAR(10) NOT NULL,
 	STTchangbay INT NOT NULL,
 	CONSTRAINT PK_CB_STTcb PRIMARY KEY(STTcb),
-	CONSTRAINT FK_CB_STTmb FOREIGN KEY(STTmb) REFERENCES MAYBAY(STTmb),
-	CONSTRAINT FK_CB_STTchangbay FOREIGN KEY(STTchangbay) REFERENCES CHANGBAY(STTchangbay)
+	CONSTRAINT FK_CB_MaMB FOREIGN KEY(MaMB) REFERENCES MAYBAY(MaMB),
+	CONSTRAINT FK_CB_STTchangbay FOREIGN KEY(STTchangbay) REFERENCES CHANGBAY(STTchangbay) 
 );
 
 CREATE TABLE HANHKHACH 
 (
 	STThk INT NOT NULL IDENTITY(1,1),
-	MaHK CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
-	TenHK NVARCHAR(50) DEFAULT '',      
-	GioiTinhHK NVARCHAR(4) CHECK(GioiTinhHK IN (N'Nam', N'Nữ',N'Khác')),
-	NgaySinhHK DATE DEFAULT NULL,     -- Có thể để NULL nếu không cung cấp giá trị
-	DiaChiHK NVARCHAR(50) DEFAULT '',     
-	EmailHK VARCHAR(30) DEFAULT '',       
-	SDThk CHAR(11) DEFAULT '' CHECK (SDThk LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-	CCCD CHAR(20) UNIQUE DEFAULT '',    
+	MaHK CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
+	TenHK NVARCHAR(50) NOT NULL,      
+	GioiTinhHK NVARCHAR(4) CHECK(GioiTinhHK IN (N'Nam', N'Nữ')),
+	NgaySinhHK DATE NOT NULL,    
+	DiaChiHK NVARCHAR(50) NOT NULL,     
+	EmailHK VARCHAR(30) NOT NULL,       
+	SDThk CHAR(11) CHECK (SDThk LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	CCCD CHAR(20) UNIQUE NOT NULL,    
+	HoChieu CHAR(20) UNIQUE NOT NULL, 
 	IDTaiKhoan CHAR(10) NOT NULL,
 	CONSTRAINT PK_HK_STThk PRIMARY KEY(STThk),
 	CONSTRAINT FK_HK_IDtk FOREIGN KEY(IDTaiKhoan) REFERENCES QLTaiKhoan(IDTaiKhoan)
@@ -109,7 +111,7 @@ CREATE TABLE HANGVE
 CREATE TABLE HANHLY 
 (
 	STThl INT NOT NULL IDENTITY(1,1),
-    MaHL CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6), 
+    MaHL CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6), 
     SoKG FLOAT NOT NULL,
     LoaiHanhLy NVARCHAR(30) CHECK (LoaiHanhLy IN (N'Hành lý ký gửi', N'Hành lý xách tay')),
 	MaHangVe CHAR(6) NOT NULL,  
@@ -117,7 +119,7 @@ CREATE TABLE HANHLY
     STTcb INT NOT NULL,
     CONSTRAINT PK_HL_STThl PRIMARY KEY(STThl),
 	CONSTRAINT FK_HL_MaHangVe FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe),
-    CONSTRAINT FK_HL_STThk FOREIGN KEY(STThk) REFERENCES HANHKHACH(STThk),
+    CONSTRAINT FK_HL_STThk FOREIGN KEY(STThk) REFERENCES HANHKHACH(STThk), 
     CONSTRAINT FK_HL_STTcb FOREIGN KEY(STTcb) REFERENCES CHUYENBAY(STTcb)
 );
 
@@ -223,13 +225,13 @@ VALUES
     ('SB004', N'Sân bay Cam Ranh'),
     ('SB005', N'Sân bay Phú Quốc');
 
-INSERT INTO MAYBAY (LoaiMB, HangBay, TongSoGhe)
+INSERT INTO MAYBAY (MaMB, LoaiMB, HangBay, TongSoGhe)
 VALUES 
-    (N'Airbus A320', N'VietJet Air', 180),
-    (N'Boeing 787', N'Vietnam Airlines', 300),
-    (N'Airbus A321', N'Bamboo Airways', 220),
-    (N'Boeing 777', N'Vietnam Airlines', 350),
-    (N'Airbus A330', N'Bamboo Airways', 260);
+    ('VN-A123', N'Airbus A320', N'VietJet Air', 180),
+    ('VN-B123', N'Boeing 787', N'Vietnam Airlines', 300),
+    ('VN-C123', N'Airbus A321', N'Bamboo Airways', 220),
+    ('VN-D123', N'Boeing 777', N'Vietnam Airlines', 350),
+    ('VN-E123', N'Airbus A330', N'Bamboo Airways', 260);
 
 INSERT INTO CHANGBAY (MaSBdi, MaSBden)
 VALUES 
@@ -246,40 +248,40 @@ VALUES
 
 INSERT INTO QLTaiKhoan (TenTaiKhoan, TenDangNhap, MatKhau, LoaiTK)
 VALUES 
-    (N'Nguyễn Văn A', 'nguyenvana', 'password123', N'NHANVIEN'),
-    (N'Trần Thị B', 'tranthib', 'password456', N'NHANVIEN'),
-    (N'Lê Văn C', 'levanc', 'pass789', N'NHANVIEN'),
-    (N'Phạm Thị D', 'phamthid', 'secret123', N'NHANVIEN'),
-    (N'Hoàng Văn E', 'hoangvane', 'secure456', N'NHANVIEN'),
-    (N'Nguyễn Văn F', 'nguyenvanf1', 'password123', N'HANHKHACH'),
-    (N'Trần Thị G', 'tranthig1', 'password456', N'HANHKHACH'),
-    (N'Lê Văn H', 'levanh1', 'pass789', N'HANHKHACH'),
-    (N'Phạm Thị K', 'phamthik1', 'secret123', N'HANHKHACH'),
-    (N'Hoàng Văn L', 'hoangvanl1', 'secure456', N'HANHKHACH');
+    (N'Nguyễn Văn A', 'nguyenvana', 'password123', N'Nhân viên'),
+    (N'Trần Thị B', 'tranthib', 'password456', N'Nhân viên'),
+    (N'Lê Văn C', 'levanc', 'pass789', N'Nhân viên'),
+    (N'Phạm Thị D', 'phamthid', 'secret123', N'Nhân viên'),
+    (N'Hoàng Văn E', 'hoangvane', 'secure456', N'Nhân viên'),
+    (N'Nguyễn Văn F', 'nguyenvanf1', 'password123', N'Hành khách'),
+    (N'Trần Thị G', 'tranthig1', 'password456', N'Hành khách'),
+    (N'Lê Văn H', 'levanh1', 'pass789', N'Hành khách'),
+    (N'Phạm Thị K', 'phamthik1', 'secret123', N'Hành khách'),
+    (N'Hoàng Văn L', 'hoangvanl1', 'secure456', N'Hành khách');
 
 --INSERT INTO NHANVIEN (TenNV, GioiTinhNV, LuongNV, NgaySinhNV, DiaChiNV, SDTnv, MaSB, MaChucVu, IDTaiKhoan) 
 --VALUES 
---	(N'Nguyễn Văn X', N'Nam', 15000000, '1980-01-01', N'Thành phố Hồ Chí Minh', '0905123456', 'SB001', 'CV001', 'TK001'),
---	(N'Trần Thị Y', N'Nữ', 16000000, '1985-02-02', N'Hà Nội', '0906123456', 'SB002', 'CV002', 'TK002'),
---	(N'Lê Văn Z', N'Nam', 17000000, '1990-03-03', N'Đà Nẵng', '0907123456', 'SB003', 'CV002', 'TK003'),
---	(N'Phạm Thị M', N'Nữ', 18000000, '1982-04-04', N'Hải Phòng', '0908123456', 'SB004', 'CV002', 'TK004'),
---	(N'Hoàng Văn N', N'Nam', 19000000, '1987-05-05', N'Cần Thơ', '0909123456', 'SB005', 'CV002', 'TK005');
+--	(N'Nguyễn Văn A', N'Nam', 15000000, '1980-01-01', N'Thành phố Hồ Chí Minh', '0905123456', 'SB001', 'CV001', '1997323421'),
+--	(N'Trần Thị B', N'Nữ', 16000000, '1985-02-02', N'Hà Nội', '0906123456', 'SB002', 'CV002', '0632057652'),
+--	(N'Lê Văn C', N'Nam', 17000000, '1990-03-03', N'Đà Nẵng', '0907123456', 'SB003', 'CV002', '1890553715'),
+--	(N'Phạm Thị D', N'Nữ', 18000000, '1982-04-04', N'Hải Phòng', '0908123456', 'SB004', 'CV002', '0429002524'),
+--	(N'Hoàng Văn E', N'Nam', 19000000, '1987-05-05', N'Cần Thơ', '0909123456', 'SB005', 'CV002', '1196146236');
 
-INSERT INTO CHUYENBAY (NgayBay, GioBay, GioDen, ThoiGianBay, SoVeConLai, SoVeDaBan, TrangThaiChuyenBay, STTmb, STTchangbay)
+INSERT INTO CHUYENBAY (NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiChuyenBay, MaMB, STTchangbay)
 VALUES 
-	('2024-10-10', '08:00', '10:00', '02:00', 50, 100, N'Còn vé', 1, 1),
-    ('2024-10-11', '14:00', '16:00', '02:00', 30, 130, N'Hết vé', 2, 2),
-    ('2024-10-12', '10:00', '12:00', '02:00', 60, 90, N'Còn vé', 3, 3),
-    ('2024-10-13', '15:00', '17:00', '02:00', 70, 80, N'Còn vé', 4, 4),
-    ('2024-10-14', '18:00', '20:00', '02:00', 40, 110, N'Còn vé', 5, 5);
+	('2024-10-13', '08:00', '10:00', 180, 0, N'Còn vé', 'VN-A123', 1),
+    ('2024-10-14', '14:30', '16:45', 300, 0, N'Còn vé', 'VN-B123', 2),
+	('2024-10-15', '10:15', '12:00', 220, 0, N'Còn vé', 'VN-C123', 3),
+    ('2024-10-16', '15:00', '17:00', 350, 0, N'Còn vé', 'VN-D123', 4),
+    ('2024-10-17', '18:00', '20:00', 260, 0, N'Còn vé', 'VN-E123', 5);
 
 --INSERT INTO HANHKHACH (TenHK, GioiTinhHK, NgaySinhHK, DiaChiHK, EmailHK, SDThk, CCCD, HoChieu, IDTaiKhoan) 
 --VALUES 
---    (N'Nguyễn Văn F', N'Nam', '1990-01-01', N'Thành phố Hồ Chí Minh', 'f.nguyen@example.com', '0909123456', '0123456789', 'A1234567', 'TK006'),
---    (N'Trần Thị G', N'Nữ', '1992-02-02', N'Bến Tre', 'g.tran@example.com', '0912123456', '9876543210', 'B1234567', 'TK007'),
---    (N'Lê Văn H', N'Nam', '1988-03-03', N'Phú Quốc', 'h.le@example.com', '0903123456', '1234567890', 'C1234567', 'TK008'),
---    (N'Phạm Thị K', N'Nữ', '1991-04-04', N'Tiền Giang', 'k.pham@example.com', '0918123456', '0987654321', 'D1234567', 'TK009'),
---    (N'Hoàng Văn L', N'Nam', '1985-05-05', N'Yên Bái', 'l.hoang@example.com', '0904123456', '2345678901', 'E1234567', 'TK010');
+--    (N'Nguyễn Văn F', N'Nam', '1990-01-01', N'Thành phố Hồ Chí Minh', 'f.nguyen@example.com', '0909123456', '0123456789', 'A1234567', '1216970441'),
+--    (N'Trần Thị G', N'Nữ', '1992-02-02', N'Bến Tre', 'g.tran@example.com', '0912123456', '9876543210', 'B1234567', '0810891894'),
+--	(N'Lê Văn H', N'Nam', '1988-03-03', N'Phú Quốc', 'h.le@example.com', '0903123456', '1234567890', 'C1234567', '1829804762'),
+--    (N'Phạm Thị K', N'Nữ', '1991-04-04', N'Tiền Giang', 'k.pham@example.com', '0918123456', '0987654321', 'D1234567', '0491677625'),
+--    (N'Hoàng Văn L', N'Nam', '1985-05-05', N'Yên Bái', 'l.hoang@example.com', '0904123456', '2345678901', 'E1234567', '0229233613');
 
 INSERT INTO HANGVE (MaHangVe, TenHangVe)
 VALUES 
@@ -349,6 +351,7 @@ VALUES
 --    (3, 3, N'Hành lý xách tay hơi ít, nhưng chất lượng tốt.', 4),
 --    (4, 4, N'Dịch vụ tốt nhưng cần cải thiện độ trễ.', 4),
 --    (5, 5, N'Thích hợp với giá tiền.', 5);
+
 select * from QLTaiKhoan
 select * from HANHKHACH
 SELECT GioiTinhHK FROM HANHKHACH
