@@ -65,8 +65,25 @@ namespace BanVeMayBay
             else
                 this.erpNhapTT.Clear();
         }
+        public bool Isvalid()
+        {
+            if (txtBayCung_EB.Text.Length < 0
+               || txtHo_EB.Text.Length < 0
+               || txtTenDemvaTen_EB.Text.Length < 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public TTEmBe GetKhachHang()
         {
+            if (!Isvalid())
+            {
+                return null;
+            }
             TTEmBe ttembe = new TTEmBe();
             ttembe.NguoiBayCung = txtBayCung_EB.Text;
             ttembe.TenKH = txtHo_EB.Text + txtTenDemvaTen_EB.Text;

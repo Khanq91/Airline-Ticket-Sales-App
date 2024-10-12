@@ -53,8 +53,26 @@ namespace BanVeMayBay
             else
                 this.erpNhapTT.Clear();
         }
+        public bool IsValid()
+        {
+            if (txtHo_TE.Text.Length < 0
+               || txtTenDemvaTen_TE.Text.Length < 0
+               || string.IsNullOrWhiteSpace(cboGioiTinh_TE.Text)
+               )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public TTTreEm GetKhachHang()
         {
+            if (!IsValid())
+            {
+                return null;
+            }
             TTTreEm tt = new TTTreEm();
             tt.TenKH = txtHo_TE.Text + txtTenDemvaTen_TE.Text;
             tt.NgaySinh = dateTimePickerNgaySinh_TE.Value;

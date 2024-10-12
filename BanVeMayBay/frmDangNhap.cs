@@ -84,18 +84,18 @@ namespace BanVeMayBay
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if(txtMatKhau_DN.Text.Length<=0 || txtTaiKhoan_DN.Text.Length <= 0)
+            if (txtMatKhau_DN.Text.Length <= 0 || txtTaiKhoan_DN.Text.Length <= 0)
             {
                 lbl_ThongBao.Text = "Vui lòng nhập đầy đủ thông tin.";
                 return;
             }
             string Taikhoan = txtTaiKhoan_DN.Text.Trim();
             string MatKhau = txtMatKhau_DN.Text.Trim();
-            string TenNguoiDung = db_DN.KTraTaiKhoan(Taikhoan, MatKhau);
-            if (TenNguoiDung != null)
+            var (Tennguoidung, idtaikhoan) = db_DN.KTraTaiKhoan(Taikhoan, MatKhau);
+            if (Tennguoidung != null)
             {
                 this.Hide();
-                frmMain frmMain = new frmMain(TenNguoiDung);
+                frmMain frmMain = new frmMain(Tennguoidung, idtaikhoan);
                 frmMain.Show();
             }
             else

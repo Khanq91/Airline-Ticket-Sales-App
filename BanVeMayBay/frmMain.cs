@@ -14,15 +14,31 @@ namespace BanVeMayBay
 {
     public partial class frmMain : Form
     {
+        DB_Connet DB = new DB_Connet();
+        TTNguoiLon DBNL = new TTNguoiLon();
+        TTTreEm DBTE = new TTTreEm();
+        TTEmBe DBEB = new TTEmBe();
+
+        List<TTNguoiLon> lstNguoiLon = new List<TTNguoiLon>();
+        List<TTEmBe> lstEmBe = new List<TTEmBe>();
+        List<TTTreEm> lstTreEm = new List<TTTreEm>();
+
+        frmNhapTT_NguoiLon frmNL;
+        frmNhapTT_TreEm frmTreEm;
+        frmNhapTT_EmBe frmEmBe;
+
         public List<TTNguoiLon> ListNguoiLon { get; private set; } = new List<TTNguoiLon>();
         public List<TTEmBe> ListEmBe { get; private set; } = new List<TTEmBe>();
         public List<TTTreEm> ListTreEm { get; private set; } = new List<TTTreEm>();
-        public List<frmVe> frmVes = new List<frmVe> ();
+        public List<frmVe> frmVes = new List<frmVe>();
 
+
+        string idtaikhoan;
         string tennguoidung;
-        public frmMain(string TenNguoiDung)
+        public frmMain(string TenNguoiDung, string idtaikhoan)
         {
             this.tennguoidung = TenNguoiDung;
+            this.idtaikhoan = idtaikhoan;
             InitializeComponent();
             lblChaoNguoiDung.Text = "Xin Chào" + tennguoidung;
         }
@@ -62,7 +78,7 @@ namespace BanVeMayBay
         {
             //phương thức reset form khi ấn nút reset
             this.Hide();
-            Form frmm = new frmMain(tennguoidung);
+            Form frmm = new frmMain(tennguoidung, idtaikhoan);
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
         }
@@ -119,22 +135,6 @@ namespace BanVeMayBay
             }
             //btnNhapTTHK.Visible = true;
         }
-        public void NhapKhachHang(List<TTNguoiLon> nguoiLon, List<TTEmBe> emBe, List<TTTreEm> treEm)
-        {
-            ListNguoiLon = nguoiLon;
-            ListEmBe = emBe;
-            ListTreEm = treEm;
-
-            // Có thể hiển thị thông tin hoặc xử lý dữ liệu ở đây
-
-            StringBuilder sb = new StringBuilder();
-            foreach (var khachHang in ListNguoiLon)
-            {
-                sb.AppendLine($"Tên: {khachHang.TenKH}\nGiới tính: {khachHang.Gioitinh}\nNgày sinh: {khachHang.NgaySinh.ToShortDateString()}\n");
-            }
-            //MessageBox.Show(sb.ToString(), "Thông tin khách hàng");
-        }
-        //thêm thông tin vé tại đây
         private void loadd_DSfrmVe(int soluong)
         {
             //thông tin test cho các vé máy bay trong 1 ngày
@@ -258,9 +258,105 @@ namespace BanVeMayBay
                 flag = 4;
             }
         }
+
+        bool check = true;
+
+        public void NhapKhachHang()
+        {
+            foreach (Control control in flowLayoutPnlThanGianDien.Controls) // Lặp qua các điều khiển trong flowLayoutPanelTT
+            {
+                if (control is frmNhapTT_NguoiLon frmNL)
+                {
+                    TTNguoiLon nl = new TTNguoiLon();
+                    nl = frmNL.GetKhachHang(); // Gọi phương thức GetKhachHang để lấy thông tin
+                    if (nl == null)
+                    {
+                        check = false;
+                        MessageBox.Show("Thông tin người lớn không hợp lệ."); // Hiển thị thông báo lỗi
+                        return; // Dừng quá trình nếu thông tin là null
+                    }
+                    lstNguoiLon.Add(nl); // Thêm vào danh sách
+                }
+                else if (control is frmNhapTT_TreEm frmTE)
+                {
+                    TTTreEm trem = frmTE.GetKhachHang(); // Gọi phương thức GetKhachHang để lấy thông tin
+                    if (trem == null)
+                    {
+                        check = false;
+                        MessageBox.Show("Thông tin trẻ em không hợp lệ."); // Hiển thị thông báo lỗi
+                        return; // Dừng quá trình nếu thông tin là null
+                    }
+                    lstTreEm.Add(trem); // Thêm vào danh sách
+                }
+                else if (control is frmNhapTT_EmBe frmEB)
+                {
+                    TTEmBe EMBE = frmEB.GetKhachHang(); // Gọi phương thức GetKhachHang để lấy thông tin
+                    if (EMBE == null)
+                    {
+                        check = false;
+                        MessageBox.Show("Thông tin em bé không hợp lệ."); // Hiển thị thông báo lỗi
+                        return; // Dừng quá trình nếu thông tin là null
+                    }
+                    lstEmBe.Add(EMBE); // Thêm vào danh sách
+                }
+            }
+        }
+        public void AddTTKhachHangVaoSql()
+        {
+            if (lstNguoiLon.Count > 0)
+            {
+                foreach (TTNguoiLon nl in lstNguoiLon)
+                {
+
+                    int result = DBNL.ThemTaiKHoan(nl, idtaikhoan);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                }
+                foreach (TTTreEm treem in lstTreEm)
+                {
+                    int result = DBTE.ThemTaiKHoan(treem, idtaikhoan);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                }
+                foreach (TTEmBe embe in lstEmBe)
+                {
+                    int result = DBEB.ThemTaiKHoan(embe, idtaikhoan);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
-            NhapKhachHang(ListNguoiLon, ListEmBe, ListTreEm);
+            NhapKhachHang();
+            if (check)
+            {
+                AddTTKhachHangVaoSql();
+                flowLayoutPnlThanGianDien.Controls.Clear();
+                frmChonDV frmDV = new frmChonDV();
+                frmDV.TopLevel = false;
+            }
+            lstNguoiLon.Clear();
+            lstTreEm.Clear();
+            lstEmBe.Clear();
             XuLy_btnDiTiep(flag);
         }
     }

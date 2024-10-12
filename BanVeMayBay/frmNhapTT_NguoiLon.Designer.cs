@@ -38,8 +38,6 @@
             this.txtTenDemvaTen_NL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePickerNgaySinh_NL = new System.Windows.Forms.DateTimePicker();
-            this.cboQuocGia_NL = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSDT_NL = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,15 +50,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblThongTin_NL = new System.Windows.Forms.Label();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.picNguoi = new System.Windows.Forms.PictureBox();
             this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lbl_SDT = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
@@ -167,228 +170,6 @@
             this.dateTimePickerNgaySinh_NL.Size = new System.Drawing.Size(343, 34);
             this.dateTimePickerNgaySinh_NL.TabIndex = 3;
             // 
-            // cboQuocGia_NL
-            // 
-            this.cboQuocGia_NL.DropDownHeight = 160;
-            this.cboQuocGia_NL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboQuocGia_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboQuocGia_NL.FormattingEnabled = true;
-            this.cboQuocGia_NL.IntegralHeight = false;
-            this.cboQuocGia_NL.Items.AddRange(new object[] {
-            "Afghanistan",
-            "Albania",
-            "Algeria",
-            "Andorra",
-            "Angola",
-            "Antigua and Barbuda",
-            "Argentina",
-            "Armenia",
-            "Australia",
-            "Austria",
-            "Azerbaijan",
-            "Bahamas",
-            "Bahrain",
-            "Bangladesh",
-            "Barbados",
-            "Belarus",
-            "Belgium",
-            "Belize",
-            "Benin",
-            "Bhutan",
-            "Bolivia",
-            "Bosnia and Herzegovina",
-            "Botswana",
-            "Brazil",
-            "Brunei",
-            "Bulgaria",
-            "Burkina Faso",
-            "Burundi",
-            "Cabo Verde",
-            "Cambodia",
-            "Cameroon",
-            "Canada",
-            "Central African Republic",
-            "Chad",
-            "Chile",
-            "China",
-            "Colombia",
-            "Comoros",
-            "Congo, Democratic Republic of the",
-            "Congo, Republic of the",
-            "Costa Rica",
-            "Croatia",
-            "Cuba",
-            "Cyprus",
-            "Czech Republic",
-            "Denmark",
-            "Djibouti",
-            "Dominica",
-            "Dominican Republic",
-            "East Timor (Timor-Leste)",
-            "Ecuador",
-            "Egypt",
-            "El Salvador",
-            "Equatorial Guinea",
-            "Eritrea",
-            "Estonia",
-            "Eswatini",
-            "Ethiopia",
-            "Fiji",
-            "Finland",
-            "France",
-            "Gabon",
-            "Gambia",
-            "Georgia",
-            "Germany",
-            "Ghana",
-            "Greece",
-            "Grenada",
-            "Guatemala",
-            "Guinea",
-            "Guinea-Bissau",
-            "Guyana",
-            "Haiti",
-            "Honduras",
-            "Hungary",
-            "Iceland",
-            "India",
-            "Indonesia",
-            "Iran",
-            "Iraq",
-            "Ireland",
-            "Israel",
-            "Italy",
-            "Jamaica",
-            "Japan",
-            "Jordan",
-            "Kazakhstan",
-            "Kenya",
-            "Kiribati",
-            "Korea, North",
-            "Korea, South",
-            "Kosovo",
-            "Kuwait",
-            "Kyrgyzstan",
-            "Laos",
-            "Latvia",
-            "Lebanon",
-            "Lesotho",
-            "Liberia",
-            "Libya",
-            "Liechtenstein",
-            "Lithuania",
-            "Luxembourg",
-            "Madagascar",
-            "Malawi",
-            "Malaysia",
-            "Maldives",
-            "Mali",
-            "Malta",
-            "Marshall Islands",
-            "Mauritania",
-            "Mauritius",
-            "Mexico",
-            "Micronesia",
-            "Moldova",
-            "Monaco",
-            "Mongolia",
-            "Montenegro",
-            "Morocco",
-            "Mozambique",
-            "Myanmar",
-            "Namibia",
-            "Nauru",
-            "Nepal",
-            "Netherlands",
-            "New Zealand",
-            "Nicaragua",
-            "Niger",
-            "Nigeria",
-            "North Macedonia",
-            "Norway",
-            "Oman",
-            "Pakistan",
-            "Palau",
-            "Panama",
-            "Papua New Guinea",
-            "Paraguay",
-            "Peru",
-            "Philippines",
-            "Poland",
-            "Portugal",
-            "Qatar",
-            "Romania",
-            "Russia",
-            "Rwanda",
-            "Saint Kitts and Nevis",
-            "Saint Lucia",
-            "Saint Vincent and the Grenadines",
-            "Samoa",
-            "San Marino",
-            "Sao Tome and Principe",
-            "Saudi Arabia",
-            "Senegal",
-            "Serbia",
-            "Seychelles",
-            "Sierra Leone",
-            "Singapore",
-            "Slovakia",
-            "Slovenia",
-            "Solomon Islands",
-            "Somalia",
-            "South Africa",
-            "South Sudan",
-            "Spain",
-            "Sri Lanka",
-            "Sudan",
-            "Suriname",
-            "Sweden",
-            "Switzerland",
-            "Syria",
-            "Taiwan",
-            "Tajikistan",
-            "Tanzania",
-            "Thailand",
-            "Togo",
-            "Tonga",
-            "Trinidad and Tobago",
-            "Tunisia",
-            "Turkey",
-            "Turkmenistan",
-            "Tuvalu",
-            "Uganda",
-            "Ukraine",
-            "United Arab Emirates",
-            "United Kingdom",
-            "United States",
-            "Uruguay",
-            "Uzbekistan",
-            "Vanuatu",
-            "Vatican City (Holy See)",
-            "Venezuela",
-            "Vietnam",
-            "Yemen",
-            "Zambia",
-            "Zimbabwe"});
-            this.cboQuocGia_NL.Location = new System.Drawing.Point(371, 171);
-            this.cboQuocGia_NL.Margin = new System.Windows.Forms.Padding(2);
-            this.cboQuocGia_NL.MaxDropDownItems = 5;
-            this.cboQuocGia_NL.Name = "cboQuocGia_NL";
-            this.cboQuocGia_NL.Size = new System.Drawing.Size(343, 36);
-            this.cboQuocGia_NL.TabIndex = 4;
-            this.cboQuocGia_NL.Leave += new System.EventHandler(this.cboQuocGia_NL_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(371, 142);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 28);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Quốc gia";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -408,6 +189,7 @@
             this.txtSDT_NL.Name = "txtSDT_NL";
             this.txtSDT_NL.Size = new System.Drawing.Size(343, 34);
             this.txtSDT_NL.TabIndex = 5;
+            this.txtSDT_NL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_NL_KeyPress);
             this.txtSDT_NL.Leave += new System.EventHandler(this.txtSDT_NL_Leave);
             // 
             // label6
@@ -486,9 +268,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblEmail);
+            this.panel1.Controls.Add(this.lbl_SDT);
+            this.panel1.Controls.Add(this.lbl_Email);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.txtCCCD);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
@@ -510,13 +297,12 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dateTimePickerNgaySinh_NL);
             this.panel1.Controls.Add(this.txtSDT_NL);
-            this.panel1.Controls.Add(this.cboQuocGia_NL);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(168, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(732, 508);
             this.panel1.TabIndex = 21;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label14
             // 
@@ -541,18 +327,6 @@
             this.label13.Size = new System.Drawing.Size(27, 23);
             this.label13.TabIndex = 24;
             this.label13.Text = "(*)";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(456, 142);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(27, 23);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "(*)";
             // 
             // label11
             // 
@@ -604,11 +378,6 @@
             this.lblThongTin_NL.Text = "Người lớn";
             this.lblThongTin_NL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // elipseTool1
-            // 
-            this.elipseTool1.CornerRadius = 30;
-            this.elipseTool1.TargetControl = this;
-            // 
             // picNguoi
             // 
             this.picNguoi.Image = global::BanVeMayBay.Properties.Resources.adult;
@@ -624,14 +393,69 @@
             // 
             this.erpNhapTT.ContainerControl = this;
             // 
-            // button2
+            // elipseTool1
             // 
-            this.button2.Location = new System.Drawing.Point(926, 505);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(8, 13);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.elipseTool1.CornerRadius = 30;
+            this.elipseTool1.TargetControl = this;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(431, 140);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 23);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "(*)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(376, 140);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 28);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "CCCD";
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(376, 174);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(343, 34);
+            this.txtCCCD.TabIndex = 26;
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Email.Location = new System.Drawing.Point(376, 292);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(0, 16);
+            this.lbl_Email.TabIndex = 29;
+            // 
+            // lbl_SDT
+            // 
+            this.lbl_SDT.AutoSize = true;
+            this.lbl_SDT.ForeColor = System.Drawing.Color.Red;
+            this.lbl_SDT.Location = new System.Drawing.Point(17, 291);
+            this.lbl_SDT.Name = "lbl_SDT";
+            this.lbl_SDT.Size = new System.Drawing.Size(0, 16);
+            this.lbl_SDT.TabIndex = 30;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblEmail.Location = new System.Drawing.Point(379, 292);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(0, 16);
+            this.lblEmail.TabIndex = 31;
             // 
             // frmNhapTT_NguoiLon
             // 
@@ -639,7 +463,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1067, 568);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_NL);
             this.Controls.Add(this.panel1);
@@ -669,8 +492,6 @@
         private System.Windows.Forms.TextBox txtTenDemvaTen_NL;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh_NL;
-        private System.Windows.Forms.ComboBox cboQuocGia_NL;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSDT_NL;
         private System.Windows.Forms.Label label6;
@@ -684,13 +505,18 @@
         private System.Windows.Forms.Label lblThongTin_NL;
         private System.Windows.Forms.PictureBox picNguoi;
         private Tool.ElipseTool elipseTool1;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ErrorProvider erpNhapTT;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCCCD;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lbl_SDT;
+        private System.Windows.Forms.Label lbl_Email;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

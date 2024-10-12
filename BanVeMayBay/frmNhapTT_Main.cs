@@ -124,15 +124,5 @@ namespace BanVeMayBay
                 }
             }
         }
-        public void LayTatCaThongTinKhachHang()
-        {
-            TTNguoiLon();
-            TTEmBe();
-            TTTreEm();
-
-            // Gọi phương thức từ Form 1 để truyền dữ liệu
-            frmMain mainForm = (frmMain)this.Owner; // Lấy tham chiếu đến Form 1
-            mainForm.NhapKhachHang(lstNguoiLon, lstEmBe, lstTreEm);
-        }
     }
 }

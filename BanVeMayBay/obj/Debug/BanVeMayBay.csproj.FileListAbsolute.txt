@@ -299,3 +299,34 @@ D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayB
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\bin\Debug\System.ValueTuple.xml
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\9-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMay.AB427FA6.Up2Date
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmDanhSachVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmQuanLi.resources
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmVe.resources
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmViTriGhe.resources
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\EPPlus.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\EPPlus.Interfaces.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\EPPlus.System.Drawing.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Buffers.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Formats.Asn1.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Memory.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Numerics.Vectors.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Text.Encodings.Web.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Text.Json.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.ValueTuple.dll
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\EPPlus.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Buffers.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Formats.Asn1.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Memory.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Numerics.Vectors.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Text.Encodings.Web.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Text.Json.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Tong_hop_Tieu_Luan\.NET\baocao\BanVeMayBay\BanVeMayBay\bin\Debug\System.ValueTuple.xml

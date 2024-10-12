@@ -88,13 +88,12 @@ CREATE TABLE HANHKHACH
 	STThk INT NOT NULL IDENTITY(1,1),
 	MaHK CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
 	TenHK NVARCHAR(50) DEFAULT '',      
-	GioiTinhHK NVARCHAR(4) CHECK(GioiTinhHK IN (N'Nam', N'Nữ')),
+	GioiTinhHK NVARCHAR(4) CHECK(GioiTinhHK IN (N'Nam', N'Nữ',N'Khác')),
 	NgaySinhHK DATE DEFAULT NULL,     -- Có thể để NULL nếu không cung cấp giá trị
 	DiaChiHK NVARCHAR(50) DEFAULT '',     
 	EmailHK VARCHAR(30) DEFAULT '',       
 	SDThk CHAR(11) DEFAULT '' CHECK (SDThk LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
 	CCCD CHAR(20) UNIQUE DEFAULT '',    
-	HoChieu CHAR(20) UNIQUE DEFAULT '', 
 	IDTaiKhoan CHAR(10) NOT NULL,
 	CONSTRAINT PK_HK_STThk PRIMARY KEY(STThk),
 	CONSTRAINT FK_HK_IDtk FOREIGN KEY(IDTaiKhoan) REFERENCES QLTaiKhoan(IDTaiKhoan)
@@ -350,3 +349,6 @@ VALUES
 --    (3, 3, N'Hành lý xách tay hơi ít, nhưng chất lượng tốt.', 4),
 --    (4, 4, N'Dịch vụ tốt nhưng cần cải thiện độ trễ.', 4),
 --    (5, 5, N'Thích hợp với giá tiền.', 5);
+select * from QLTaiKhoan
+select * from HANHKHACH
+SELECT GioiTinhHK FROM HANHKHACH
