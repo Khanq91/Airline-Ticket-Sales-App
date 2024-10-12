@@ -18,9 +18,17 @@ namespace BanVeMayBay
             InitializeComponent();
         }
         bool kt = false;
+        string _TenViTriGhe;
+        string _GiaViTriGhe;
+        string _TenGoi;
+        string _GiaGoi;
+        public string TenViTriGhe { get => _TenViTriGhe; set => _TenViTriGhe = value; }
+        public string GiaViTriGhe { get => _GiaViTriGhe; set => _GiaViTriGhe = value; }
+        public string TenGoi { get => _TenGoi; set => _TenGoi = value; }
+        public string GiaGoi { get => _GiaGoi; set => _GiaGoi = value; }
+
+
         frmViTriGhe frmGhe = new frmViTriGhe();
-        public string TenViTriGhe;
-        public string GiaViTriGhe;
         private void btnChonGhe_Click(object sender, EventArgs e)
         {
             if(kt)
@@ -42,8 +50,8 @@ namespace BanVeMayBay
                     lblMaGhe.Visible = true;
                     lblTienGhe.Visible = true;
 
-                    TenViTriGhe = frmGhe.ViTriGhe;
-                    GiaViTriGhe = frmGhe.GiaGhe;
+                    this.TenViTriGhe = frmGhe.ViTriGhe;
+                    this.GiaViTriGhe = frmGhe.GiaGhe;
 
                     lblMaGhe.Text = TenViTriGhe;
                     lblTienGhe.Text = GiaViTriGhe;
@@ -59,8 +67,7 @@ namespace BanVeMayBay
             }    
         }
         frmHanhLy frmHL = new frmHanhLy();
-        public string TenGoi;
-        public string GiaGoi;
+
         private void btnGoiHanhLy_Click(object sender, EventArgs e)
         {
             if(kt)
@@ -83,8 +90,8 @@ namespace BanVeMayBay
                     lblGoiHanhLy.Visible = true;
                     lblTienHL.Visible = true;
 
-                    TenGoi = frmHL.TenGoi;
-                    GiaGoi = frmHL.GiaGoi;
+                    this.TenGoi = frmHL.TenGoi;
+                    this.GiaGoi = frmHL.GiaGoi;
 
                     lblGoiHanhLy.Text = TenGoi;
                     lblTienHL.Text = GiaGoi;
@@ -98,6 +105,10 @@ namespace BanVeMayBay
                 }
                     
             }
+        }
+        public void output()
+        {
+
         }
     }
 }

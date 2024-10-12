@@ -49,12 +49,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblChuyenBayKHMC = new System.Windows.Forms.Label();
             this.pnlTTVeDat = new System.Windows.Forms.Panel();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
-            this.btnNhapTTHK = new System.Windows.Forms.Button();
             this.lblHangVe4 = new System.Windows.Forms.Label();
             this.lblHangVe3 = new System.Windows.Forms.Label();
             this.lblHangVe2 = new System.Windows.Forms.Label();
             this.lblHangVe1 = new System.Windows.Forms.Label();
+            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -153,7 +152,6 @@
             this.flowLayoutPanelTTVeDat.Name = "flowLayoutPanelTTVeDat";
             this.flowLayoutPanelTTVeDat.Size = new System.Drawing.Size(555, 610);
             this.flowLayoutPanelTTVeDat.TabIndex = 0;
-            this.flowLayoutPanelTTVeDat.Visible = false;
             // 
             // pnlDuoiGiaoDien
             // 
@@ -211,7 +209,7 @@
             this.pnlTTCB.Controls.Add(this.lblDiemKhoiHanh);
             this.pnlTTCB.Controls.Add(this.label1);
             this.pnlTTCB.Controls.Add(this.lblChuyenBayKHMC);
-            this.pnlTTCB.Location = new System.Drawing.Point(875, 150);
+            this.pnlTTCB.Location = new System.Drawing.Point(0, 144);
             this.pnlTTCB.Name = "pnlTTCB";
             this.pnlTTCB.Size = new System.Drawing.Size(1898, 84);
             this.pnlTTCB.TabIndex = 13;
@@ -302,24 +300,6 @@
             this.pnlTTVeDat.TabIndex = 7;
             this.pnlTTVeDat.Visible = false;
             // 
-            // elipseTool1
-            // 
-            this.elipseTool1.CornerRadius = 40;
-            this.elipseTool1.TargetControl = this;
-            // 
-            // btnNhapTTHK
-            // 
-            this.btnNhapTTHK.BackColor = System.Drawing.Color.White;
-            this.btnNhapTTHK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapTTHK.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnNhapTTHK.Location = new System.Drawing.Point(13, 235);
-            this.btnNhapTTHK.Name = "btnNhapTTHK";
-            this.btnNhapTTHK.Size = new System.Drawing.Size(1316, 71);
-            this.btnNhapTTHK.TabIndex = 8;
-            this.btnNhapTTHK.Text = "Tiếp tục";
-            this.btnNhapTTHK.UseVisualStyleBackColor = false;
-            this.btnNhapTTHK.Visible = false;
-            // 
             // lblHangVe4
             // 
             this.lblHangVe4.BackColor = System.Drawing.Color.Gold;
@@ -376,6 +356,11 @@
             this.lblHangVe1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblHangVe1.Visible = false;
             // 
+            // elipseTool1
+            // 
+            this.elipseTool1.CornerRadius = 40;
+            this.elipseTool1.TargetControl = this;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -387,7 +372,6 @@
             this.Controls.Add(this.lblHangVe2);
             this.Controls.Add(this.lblHangVe1);
             this.Controls.Add(this.pnlTTCB);
-            this.Controls.Add(this.btnNhapTTHK);
             this.Controls.Add(this.pnlTTVeDat);
             this.Controls.Add(this.pnlDuoiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
@@ -437,7 +421,6 @@
         private System.Windows.Forms.Label lblChuyenBayKHMC;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTTVeDat;
         private System.Windows.Forms.Panel pnlTTVeDat;
-        private System.Windows.Forms.Button btnNhapTTHK;
         private System.Windows.Forms.Label lblHangVe4;
         private System.Windows.Forms.Label lblHangVe3;
         private System.Windows.Forms.Label lblHangVe2;

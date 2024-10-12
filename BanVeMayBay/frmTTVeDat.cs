@@ -20,7 +20,7 @@ namespace BanVeMayBay
         string _TienPPHT;
         string _TienPAN;
 
-        string _TienVeVao, _tg_di, _tg_den, _ma_cb, _hangve, _Ngaybay, _DiemKH, _DiemDen;//Được truyền từ frmVe vào
+        string _TienVeVao, _tg_di, _tg_den, _ma_cb, _hangve, _Ngaybay, _DiemKH, _DiemDen, _ViTriGhe, _TienViTriGhe, _GoiHanhLy, _TienGoiHanhLy;//Được truyền từ frmVe vào
 
         public string GiaVe { get => _GiaVe; set => _GiaVe = value; }
         public string TienVeVao { get => _TienVeVao; set => _TienVeVao = value; }
@@ -35,27 +35,22 @@ namespace BanVeMayBay
         public string Ngaybay { get => _Ngaybay; set => _Ngaybay = value; }
         public string DiemKH { get => _DiemKH; set => _DiemKH = value; }
         public string DiemDen { get => _DiemDen; set => _DiemDen = value; }
+        public string ViTriGhe { get => _ViTriGhe; set => _ViTriGhe = value; }
+        public string TienViTriGhe { get => _TienViTriGhe; set => _TienViTriGhe = value; }
+        public string GoiHanhLy { get => _GoiHanhLy; set => _GoiHanhLy = value; }
+        public string TienGoiHanhLy { get => _TienGoiHanhLy; set => _TienGoiHanhLy = value; }
 
-        public frmTTVeDat(string tvv, string ngaybay, string tgdi, string tgden, string machuyenbay, string hangve, string diemkhoihanh, string diemden)
+        public frmTTVeDat(string tvv, string ngaybay, string tgdi, string tgden, string machuyenbay, string hangve, string diemkhoihanh, string diemden, string viTriGhe, string tienViTriGhe, string goiHanhLy, string tienGoiHanhLy)
         {
             InitializeComponent();
-            //if (tvv == "")
-            //{
-            //    TienVeVao = tvv;
-            //    tg_di = tgdi;
-            //    tg_den = tgden;
-            //    ma_cb = machuyenbay;
-            //    Hangve = hangve;
-            //}
-
-            TienVeVao = tvv;
-            tg_di = tgdi;
-            tg_den = tgden;
-            ma_cb = machuyenbay;
-            Hangve = hangve;
-            Ngaybay = ngaybay;
-            DiemKH = diemkhoihanh;
-            DiemDen = diemden;
+            this.TienVeVao = tvv;
+            this.tg_di = tgdi;
+            this.tg_den = tgden;
+            this.ma_cb = machuyenbay;
+            this.Hangve = hangve;
+            this.Ngaybay = ngaybay;
+            this.DiemKH = diemkhoihanh;
+            this.DiemDen = diemden;
             //load thông tin điểm khởi hành được người dùng chọn từ csdl
             lblDiemKhoiHanh.Text = DiemKH;
             //load thông tin điểm đến được người dùng chọn từ csdl
@@ -68,6 +63,24 @@ namespace BanVeMayBay
             //lblMaCB.Text = ;//"CB001" + " |";
             ////hạng vé được người dùng chọn từ vé
             //lblHangVeTren.Text = ;//"BUSSINESS1";
+            this.ViTriGhe = viTriGhe;
+            this.TienViTriGhe = tienViTriGhe;
+            this.GoiHanhLy = goiHanhLy;
+            this.TienGoiHanhLy = tienGoiHanhLy;
+
+            lblGhe.Text = ViTriGhe;
+            lblTienGhe.Text = TienViTriGhe;
+            this.TienViTriGhe = lblTienGhe.Text.Replace(".", "");
+            lblGoiHanhLy.Text = GoiHanhLy;
+            lblTienHL.Text = TienGoiHanhLy;
+            this.TienGoiHanhLy = lblTienHL.Text.Replace(".", "");
+            if(TienViTriGhe != "0")
+            {
+                lblGhe.Visible = true;
+                lblTienGhe.Visible = true;
+                lblGoiHanhLy.Visible = true;
+                lblTienHL.Visible = true;
+            }    
         }
         //size frm ban đầu 550, 536, khi ấn nút dịch vụ 550, 622
         //pnlDuoiGiaoDien khi chưa bấm nút 0, 473, sau khi ấn nút dịch vụ 0, 559
@@ -103,7 +116,6 @@ namespace BanVeMayBay
             lblGoiHanhLy.Visible = kq;
             lblTienHL.Visible = kq;
             lblGachNgang.Visible = kq;
-
         }
 
         private void btnGiaVe_Click(object sender, EventArgs e)
@@ -172,39 +184,44 @@ namespace BanVeMayBay
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            lblGoiHanhLy.Location = new Point(58, 533);
-            lblTienHL.Location = new Point(419, 533);
-            Point ViTriBanDau = new Point(13, 386);
-            if (btnDichVu.Location != ViTriBanDau)
-                btnDichVu.Location = ViTriBanDau;
+            if (lblTienGhe.Text != "0")
+            { 
+                lblGoiHanhLy.Location = new Point(58, 533);
+                lblTienHL.Location = new Point(419, 533);
+                Point ViTriBanDau = new Point(13, 386);
+                if (btnDichVu.Location != ViTriBanDau)
+                    btnDichVu.Location = ViTriBanDau;
 
-            if (lblChonGhe.Visible == false)
-            {
-                TTDichVu(true);
+                if (lblGhe.Visible == false)
+                {
+                    TTDichVu(true);
 
-                //lblGhe.Text = mã vị trí ghế
-                //lblTienGhe.Text = giá của mã vị trí ghế trên
-                //lblGoiHanhLy.Text = tên của gói hành lý (VD: 30kg)
-                //lblTienHL.Text = giá của của gói hành lý trên
+                    //lblGhe.Text = ViTriGhe;//mã vị trí ghế
+                    //lblTienGhe.Text = TienViTriGhe;//giá của mã vị trí ghế trên
+                    //lblGoiHanhLy.Text = GoiHanhLy;//tên của gói hành lý(VD: 30kg)
+                    //lblTienHL.Text = TienGoiHanhLy;//giá của của gói hành lý trên
 
-                btnThuePhi.Location = new Point(13, 300);
-                this.Size = new Size(550, 622);
-                pnlDuoiGiaoDien.Location = new Point(0, 559);
+                    btnThuePhi.Location = new Point(13, 300);
+                    this.Size = new Size(550, 622);
+                    pnlDuoiGiaoDien.Location = new Point(0, 559);
 
-                TTGiaVe(false);
-                TTThuePhi(false);
+                    TTGiaVe(false);
+                    TTThuePhi(false);
+                }
+                else
+                {
+                    TTDichVu(false);
+
+                    btnThuePhi.Location = new Point(13, 300);
+                    this.Size = new Size(550, 536);
+                    pnlDuoiGiaoDien.Location = new Point(0, 473);
+
+                    TTGiaVe(false);
+                    TTThuePhi(false);
+                }
             }
             else
-            {
                 TTDichVu(false);
-
-                btnThuePhi.Location = new Point(13, 300);
-                this.Size = new Size(550, 536);
-                pnlDuoiGiaoDien.Location = new Point(0, 473);
-
-                TTGiaVe(false);
-                TTThuePhi(false);
-            }
         }
 
         private void frmTTVeDat_Load(object sender, EventArgs e)
@@ -213,7 +230,7 @@ namespace BanVeMayBay
             //----------------------------------------------------------------------
             //      Tiền vé và thuế 10% của tiền vé
             //----------------------------------------------------------------------
-            if(TienVeVao == "")
+            if(TienVeVao == null)
             { 
                 lblTienVe.Visible = false;
                 lblTienVATVe.Visible = false;
@@ -224,9 +241,10 @@ namespace BanVeMayBay
                 string temp = lblTienVe.Text.Replace(".", "");
                 float tienve = float.Parse(temp);
                 GiaVe = tienve.ToString();  //dùng để truyền dữ liệu qua form khác
-                float vat10 = 10000 * 0.1f;
+                float vat10 = float.Parse(GiaVe) * 0.1f;
+                float vat10xuathien = vat10 / 1000;
                 VAT1 = vat10.ToString();    //Lấy thông tin số tiền VAT của vé
-                lblTienVATVe.Text = vat10.ToString();  // số tiền thuế 10% của giá vé
+                lblTienVATVe.Text = vat10xuathien.ToString() + ".000";  // số tiền thuế 10% của giá vé
             }    
 
             //----------------------------------------------------------------------
@@ -244,15 +262,25 @@ namespace BanVeMayBay
             //Lấy thông tin từ Tiền VAT của các loại thuế phí riêng
             VAT2 = lblTienVATTP.Text.Replace(".", "");
         }
-        public float TinhThanhTien()
+        public void TinhThanhTien()
         {
             float thanhtien = 0;
             //Tiền vé và thuế 10% của vé
-            //if(GiaVe =)
             thanhtien += float.Parse(GiaVe) + float.Parse(VAT1);
             //Các loại phụ phí riêng và VAT của phụ phí (không tính vé)
             thanhtien += float.Parse(TienPPHT) + float.Parse(TienPAN) + float.Parse(VAT2);
-            return thanhtien;
+            //Tiền ghế và hành lý(nếu có)
+            thanhtien += float.Parse(TienViTriGhe) + float.Parse(TienGoiHanhLy);
+            if (thanhtien < 1000000)
+            { 
+                thanhtien /= 1000;
+                lblTongTien.Text = thanhtien.ToString() + ".000";
+            }
+            else
+            {
+                thanhtien /= 1000000;
+                lblTongTien.Text = thanhtien.ToString() + ".000.000";
+            }
         }
     }
 }

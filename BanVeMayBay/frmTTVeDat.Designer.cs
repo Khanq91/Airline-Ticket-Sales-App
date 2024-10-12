@@ -362,9 +362,8 @@
             this.lblTienGhe.Name = "lblTienGhe";
             this.lblTienGhe.Size = new System.Drawing.Size(100, 22);
             this.lblTienGhe.TabIndex = 27;
-            this.lblTienGhe.Text = "100.000";
+            this.lblTienGhe.Text = "0";
             this.lblTienGhe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTienGhe.Visible = false;
             // 
             // lblGhe
             // 
@@ -377,7 +376,6 @@
             this.lblGhe.TabIndex = 25;
             this.lblGhe.Text = "Ghế cửa số";
             this.lblGhe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblGhe.Visible = false;
             // 
             // lblChonGhe
             // 
@@ -400,9 +398,8 @@
             this.lblTienHL.Name = "lblTienHL";
             this.lblTienHL.Size = new System.Drawing.Size(100, 22);
             this.lblTienHL.TabIndex = 31;
-            this.lblTienHL.Text = "300.000";
+            this.lblTienHL.Text = "0";
             this.lblTienHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTienHL.Visible = false;
             // 
             // lblGoiHanhLy
             // 
@@ -415,7 +412,6 @@
             this.lblGoiHanhLy.TabIndex = 29;
             this.lblGoiHanhLy.Text = "Gói 20kg";
             this.lblGoiHanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblGoiHanhLy.Visible = false;
             // 
             // lblHanhLy
             // 

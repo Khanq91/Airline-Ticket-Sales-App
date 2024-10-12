@@ -25,7 +25,7 @@ namespace BanVeMayBay
         string _diem_den;
         string _ngay_kh;
         string _Hangve;
-
+        private frmMain ParentForm;
         public string Hangve { get => _Hangve; set => _Hangve = value; }
         public string Tienve { get => _tienve; set => _tienve = value; }
         public string tg_di { get => _tg_di; set => _tg_di = value; }
@@ -58,6 +58,15 @@ namespace BanVeMayBay
             lblDiemKhoiHanh.Text = diem_kh;
             lblDiemDen.Text = diem_den;
         }
+        public frmVe ()
+        {
+            InitializeComponent();
+
+        }
+        public void SetParentForm(frmMain parent)
+        {
+            ParentForm = parent;
+        }
 
         private void frmVe_Load(object sender, EventArgs e)
         {
@@ -69,6 +78,7 @@ namespace BanVeMayBay
             lblGiaHV3.Text = "1.500";
             lblGiaHV4.Text = "2.000";
         }
+        #region Hàm xử lý giao diện
         //Các hàm xuất thông tin các dịch vụ trên frm
         public void lblDichVu1(bool kq, string KLDV1, string KLDV2)
         {
@@ -221,7 +231,17 @@ namespace BanVeMayBay
             lblDiemKhoiHanh.Visible = kq;
             lblDiemDen.Visible = kq;
         }
-
+        public void XuLy()
+        {
+            pnlHangVe1.BackColor = Color.White;
+            picCTVe1.BackColor = Color.White;
+            pnlHangVe2.BackColor = Color.White;
+            picCTVe2.BackColor = Color.White;
+            pnlHangVe3.BackColor = Color.White;
+            picCTVe3.BackColor = Color.White;
+            pnlHangVe4.BackColor = Color.White;
+            picCTVe4.BackColor = Color.White;
+        }
         //Hàm xuất thông tin trên frm
         public void showDV(bool kq, int DV)
         {
@@ -287,18 +307,37 @@ namespace BanVeMayBay
             }
             else
             {
+                lblTTCB(false);
+                lblDichVu3_4(false, "", "", 3);
                 this.Height = 160;
                 pnlChiTiet.Visible = kq;
                 picCTCB.Image = Resources.arrow_up;
 
-                lblTTCB(false);
-                lblDichVu3_4(false, "", "", 3);
-            }    
+            }
         }
+        public void resetForm()
+        {
+            showDV(false, 0);
+            XuLy();
+            picCTCB.Image = Resources.arrow_down;
+            co = 0;
+            pnlHangVe1.BackColor = Color.White;
+            pnlHangVe2.BackColor = Color.White;
+            pnlHangVe3.BackColor = Color.White;
+            pnlHangVe4.BackColor = Color.White;
 
+            picCTVe1.BackColor = Color.White;
+            picCTVe2.BackColor = Color.White;
+            picCTVe3.BackColor = Color.White;
+            picCTVe4.BackColor = Color.White;
+        }
+        #endregion
+
+        #region Phương thức của form
         //Phương thức click cho mỗi hạng vé
         private void pnlHangVe1_Click(object sender, EventArgs e)
         {
+            ParentForm.resetAllform();
             if(pnlHangVe1.BackColor == Color.White)
             {
                 pnlHangVe1.BackColor = Color.PaleTurquoise;
@@ -315,25 +354,18 @@ namespace BanVeMayBay
             }
             else
             {
-                pnlHangVe1.BackColor = Color.White;
                 pnlChiTiet.BackColor = Color.White;
-                picCTVe1.BackColor = Color.White;
                 showDV(false, 1);
                 showDV(false, 0);
-
-                pnlHangVe4.BackColor = Color.White;
-                picCTVe4.BackColor = Color.White;
-                pnlHangVe3.BackColor = Color.White;
-                picCTVe3.BackColor = Color.White;
-                pnlHangVe2.BackColor = Color.White;
-                picCTVe2.BackColor = Color.White;
+                XuLy();
             }
             Tienve = lblGiaHV1.Text + ".000";
             Hangve = "HV001";
-            frmTTVeDat frmtt = new frmTTVeDat(Tienve,ngay_kh,tg_di,tg_den,ma_chuyenbay,Hangve,diem_kh,diem_den);
+            ParentForm.HandleButtonClick(this, Hangve, Tienve, tg_di, tg_den, ma_chuyenbay);
         }
         private void pnlHangVe2_Click(object sender, EventArgs e)
         {
+            ParentForm.resetAllform();
             if (pnlHangVe2.BackColor == Color.White)
             {
                 pnlHangVe2.BackColor = Color.PeachPuff;
@@ -350,25 +382,18 @@ namespace BanVeMayBay
             }
             else
             {
-                pnlHangVe2.BackColor = Color.White;
                 pnlChiTiet.BackColor = Color.White;
-                picCTVe2.BackColor = Color.White;
                 showDV(false, 2);
                 showDV(false, 0);
-
-                pnlHangVe4.BackColor = Color.White;
-                picCTVe4.BackColor = Color.White;
-                pnlHangVe3.BackColor = Color.White;
-                picCTVe3.BackColor = Color.White;
-                pnlHangVe1.BackColor = Color.White;
-                picCTVe1.BackColor = Color.White;
+                XuLy();
             }
             Tienve = lblGiaHV2.Text + ".000";
             Hangve = "HV002";
-            frmTTVeDat frmtt = new frmTTVeDat(Tienve, ngay_kh, tg_di, tg_den, ma_chuyenbay, Hangve, diem_kh, diem_den);
+            ParentForm.HandleButtonClick(this, Hangve, Tienve, tg_di, tg_den, ma_chuyenbay);
         }
         private void pnlHangVe3_Click(object sender, EventArgs e)
         {
+            ParentForm.resetAllform();
             if (pnlHangVe3.BackColor == Color.White)
             {
                 pnlHangVe3.BackColor = Color.LightSalmon;
@@ -385,28 +410,18 @@ namespace BanVeMayBay
             }
             else
             {
-                pnlHangVe3.BackColor = Color.White;
                 pnlChiTiet.BackColor = Color.White;
-                picCTVe3.BackColor = Color.White;
                 showDV(false, 3);
                 showDV(false, 0);
-
-                pnlHangVe4.BackColor = Color.White;
-                pnlChiTiet.BackColor = Color.White;
-                picCTVe4.BackColor = Color.White;
-                pnlHangVe2.BackColor = Color.White;
-                pnlChiTiet.BackColor = Color.White;
-                picCTVe2.BackColor = Color.White;
-                pnlHangVe1.BackColor = Color.White;
-                pnlChiTiet.BackColor = Color.White;
-                picCTVe1.BackColor = Color.White;
+                XuLy();
             }
             Tienve = lblGiaHV3.Text + ".000";
             Hangve = "HV003";
-            frmTTVeDat frmtt = new frmTTVeDat(Tienve, ngay_kh, tg_di, tg_den, ma_chuyenbay, Hangve, diem_kh, diem_den);
+            ParentForm.HandleButtonClick(this, Hangve, Tienve, tg_di, tg_den, ma_chuyenbay);
         }
         private void pnlHangVe4_Click(object sender, EventArgs e)
         {
+            ParentForm.resetAllform();
             if (pnlHangVe4.BackColor == Color.White)
             {
                 pnlHangVe4.BackColor = Color.Wheat;
@@ -423,22 +438,14 @@ namespace BanVeMayBay
             }
             else
             {
-                pnlHangVe4.BackColor = Color.White;
                 pnlChiTiet.BackColor = Color.White;
-                picCTVe4.BackColor = Color.White;
                 showDV(false, 4);
                 showDV(false, 0);
-
-                pnlHangVe3.BackColor = Color.White;
-                picCTVe3.BackColor = Color.White;
-                pnlHangVe2.BackColor = Color.White;
-                picCTVe2.BackColor = Color.White;
-                pnlHangVe1.BackColor = Color.White;
-                picCTVe1.BackColor = Color.White;
+                XuLy();
             }
             Tienve = lblGiaHV4.Text + ".000";
             Hangve = "HV004";
-            frmTTVeDat frmtt = new frmTTVeDat(Tienve, ngay_kh, tg_di, tg_den, ma_chuyenbay, Hangve, diem_kh, diem_den);
+            ParentForm.HandleButtonClick(this, Hangve, Tienve, tg_di, tg_den, ma_chuyenbay);
         }
         int co = 0;
         private void pnlTTCB_Click(object sender, EventArgs e)
@@ -482,5 +489,6 @@ namespace BanVeMayBay
                 picCTVe1.BackColor = Color.White;
             }
         }
+        #endregion
     }
 }
