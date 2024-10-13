@@ -22,7 +22,7 @@ CREATE TABLE MAYBAY
 CREATE TABLE CHANGBAY
 (
 	STTchangbay INT NOT NULL IDENTITY(1,1),
-	MaChangBay CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6), -- Chỉ lấy chữ và số từ NEWID
+	MaChangBay CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6), -- Chỉ lấy chữ và số từ NEWID
 	MaSBdi CHAR(6) NOT NULL,
 	MaSBden CHAR(6) NOT NULL,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 	CONSTRAINT PK_ChB_STTchangbay PRIMARY KEY(STTchangbay),
@@ -50,7 +50,7 @@ CREATE TABLE QLTaiKhoan
 CREATE TABLE NHANVIEN 
 (
 	STTnv INT NOT NULL IDENTITY(1,1),
-	MaNV CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaNV CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
 	TenNV NVARCHAR(50) NOT NULL,
 	GioiTinhNV NVARCHAR(4) CHECK(GioiTinhNV IN (N'Nam', N'Nữ')),
 	LuongNV MONEY NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE HANHLY
 CREATE TABLE CHITIETPHUPHI
 (
 	STTpp INT NOT NULL IDENTITY(1,1),
-	MaPhuPhi CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaPhuPhi CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
 	PhuPhi MONEY DEFAULT 0,
 	LoaiPhuPhi NVARCHAR(50) NOT NULL,  -- Thêm loại phụ phí(phụ phí của hành lý hoặc phụ phí của dịch vụ (nếu có))
 	STThl INT NOT NULL,
@@ -137,10 +137,11 @@ CREATE TABLE CHITIETPHUPHI
 CREATE TABLE GIAVE
 (
 	STTgiave INT NOT NULL IDENTITY(1,1),
-	MaGiaVe CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaGiaVe CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
 	GiaCoBan MONEY,
 	TongGiaVe MONEY DEFAULT 0,
-	GiamGia MONEY DEFAULT 0,
+	GiamGia DECIMAL(3, 2),
+	Thue MONEY,
 	STTpp INT NOT NULL,
 	STTcb INT NOT NULL,
 	MaHangVe CHAR(6) NOT NULL,
@@ -153,7 +154,7 @@ CREATE TABLE GIAVE
 CREATE TABLE DATVE
 (
 	STTdv INT NOT NULL IDENTITY(1,1),
-	MaDV CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaDV CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
 	ThanhTien MONEY DEFAULT 0,
 	SoVeDat INT DEFAULT 0,
 	NgayDatVe DATE,  
@@ -167,7 +168,7 @@ CREATE TABLE DATVE
 CREATE TABLE HOADON
 (
 	STThd INT NOT NULL IDENTITY(1,1),
-    MaHD CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),         
+    MaHD CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),         
     NgayLapHD DATE NOT NULL,                    
     TongTien MONEY DEFAULT 0,                    
     HinhThucThanhToan NVARCHAR(20),    -- Hình thức thanh toán (VD: 'Tiền mặt', 'Chuyển khoản')
@@ -180,7 +181,7 @@ CREATE TABLE HOADON
 CREATE TABLE LICHSUGIAODICH
 (
 	STTgd INT NOT NULL IDENTITY(1,1),
-    MaGD CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),                        
+    MaGD CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),                        
     NgayGiaoDich DATETIME NOT NULL,    -- Ngày và giờ giao dịch         
     TrangThaiDatVe NVARCHAR(20),          -- Trạng thái đặt vé (VD: 'Đã xác nhận', 'Đã hủy')
 	STThd INT NOT NULL,
@@ -191,7 +192,7 @@ CREATE TABLE LICHSUGIAODICH
 CREATE TABLE VE 
 (
 	STTve INT NOT NULL IDENTITY(1,1),
-	MaVe CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID(), 2), 6),
+	MaVe CHAR(6) DEFAULT LEFT(CONVERT(VARCHAR(36), NEWID()), 6),
 	DonViTien NCHAR(10),
 	ViTriGhe CHAR(10),
 	STThk INT NOT NULL, 
