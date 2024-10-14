@@ -33,7 +33,7 @@ namespace BanVeMayBay
 
 
             string tennguoidung = "aa";
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmMain("Khang", "1"));
         }
     }
 }

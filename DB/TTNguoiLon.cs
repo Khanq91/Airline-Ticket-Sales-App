@@ -29,7 +29,7 @@ namespace DB
     public int ThemTaiKHoan(TTNguoiLon nl, string idtaikhoan)
     {
 
-        string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,DiaChiHK,CCCD,SDThk,EmailHK,IDTaiKhoan) values(N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("dd/MM/yyyy") + "',N'" + nl.DiaChi + "'," + nl.CCCD + ",'" + nl.SDT + "','" + nl.Email + "','" + idtaikhoan + "')";
+        string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,DiaChiHK,CCCD,SDThk,EmailHK,IDTaiKhoan) values(N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + nl.DiaChi + "'," + nl.CCCD + ",'" + nl.SDT + "','" + nl.Email + "','" + idtaikhoan + "')";
         int kq = db.GetExecuteNonQuery(caulenh);
         return kq;
     }

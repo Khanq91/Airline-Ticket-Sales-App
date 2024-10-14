@@ -16,6 +16,7 @@ namespace BanVeMayBay
     public partial class frmChonDiaDiemDatVe : Form
     {
         SanBay sb = new SanBay();
+        DB_Connet db=new DB_Connet();
        
         public frmChonDiaDiemDatVe()
         {
@@ -24,22 +25,20 @@ namespace BanVeMayBay
             LoadSanBayDen();
         }
         public void LoadSanBayDi()
-        {
-            List<string> lstSanBay = sb.GetSanBay();
-            foreach (string sanbay in lstSanBay)
-            {
-                cboDiemKhoiHanh.Items.Add(sanbay);
-            }
-            cboDiemKhoiHanh.SelectedIndex = 0;
+        { 
+            DataTable sanabaydi=new DataTable();
+            sanabaydi = db.GetDataAdapter("SanBay");
+            cboDiemKhoiHanh.DataSource =sanabaydi ;
+            cboDiemKhoiHanh.DisplayMember = "TenSB";
+            cboDiemKhoiHanh.ValueMember = "MaSB";
         }
         public void LoadSanBayDen()
         {
-            List<string> lstSanBay = sb.GetSanBay();
-            foreach (string sanbay in lstSanBay)
-            {
-                cboDiemDen.Items.Add(sanbay);
-            }
-            cboDiemDen.SelectedIndex = 0;
+            DataTable sanabaydi = new DataTable();
+            sanabaydi = db.GetDataAdapter("SanBay");
+            cboDiemDen.DataSource = sanabaydi;
+            cboDiemDen.DisplayMember = "TenSB";
+            cboDiemDen.ValueMember = "MaSB";
         }
         private void frmChonDiaDiemDatVe_Load(object sender, EventArgs e)
         {
@@ -172,7 +171,7 @@ namespace BanVeMayBay
             }
             frmMain frmmain = (frmMain)this.Parent.Parent.Parent;
             string date = dateTimePickerNgayDi.Value.ToString("dd/mm/yyyy");
-            frmmain.ShowTTCB(slNL, slTE, slEB, date, cboDiemKhoiHanh.Text, cboDiemDen.Text);
+            frmmain.ShowTTCB(slNL, slTE, slEB, date, cboDiemKhoiHanh.SelectedValue.ToString(), cboDiemDen.SelectedValue.ToString());
             this.Hide();
         }
     }

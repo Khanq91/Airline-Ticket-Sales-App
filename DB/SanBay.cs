@@ -13,12 +13,5 @@ namespace DB
         {
 
         }
-        public List<string> GetSanBay()
-        {
-            List<string> result = new List<string>();
-            string caulenh = "select * from SANBAY";
-            result = db.GetExecuteReader(caulenh, "TenSB");
-            return result;
-        }
     }
 }

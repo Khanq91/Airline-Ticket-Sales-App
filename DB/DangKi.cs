@@ -9,15 +9,10 @@ namespace DB
     public class DangKi
     {
         DB_Connet db = new DB_Connet();
-        public int ThemTaiKHoan(string tennguoidung,string TK, string Mk)
+        public int ThemTaiKHoan(string tennguoidung, string TK, string Mk)
         {
-            string caulenhIDMax = "select MAX(IDTaiKhoan) from QLTaiKhoan";
-            string IDMax = (string)(db.GetExecuteScalar(caulenhIDMax) ?? 0);
-            string NumberID = IDMax.Substring(2);
-            int Number = int.Parse(NumberID) + 1;
-            NumberID = "TK" + Number.ToString("D3");
-            string caulenhInsert = "INSERT INTO QLTaiKhoan (IDTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTK) VALUES ('" + NumberID + "',N'"+tennguoidung+"','" + TK + "','" + Mk + "',N'HANHKHACH')";
-            int kq = db.GetExecuteNonQuery(caulenhInsert);
+            string caulenh = "insert into QLTaiKhoan(TenTaiKhoan,TenDangNhap,MatKhau,LoaiTK) values(N'" + tennguoidung + "','" + TK + "','" + Mk + "','HANHKHACH') ";
+            int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }
         public bool KTTaiKhoan(string TK)

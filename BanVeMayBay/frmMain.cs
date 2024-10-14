@@ -14,24 +14,27 @@ namespace BanVeMayBay
 {
     public partial class frmMain : Form
     {
+        #region Khai báo các Data
         DB_Connet DB = new DB_Connet();
         TTNguoiLon DBNL = new TTNguoiLon();
         TTTreEm DBTE = new TTTreEm();
         TTEmBe DBEB = new TTEmBe();
+        TTCHUYENBAY dbCB=new TTCHUYENBAY();
+
 
         List<TTNguoiLon> lstNguoiLon = new List<TTNguoiLon>();
         List<TTEmBe> lstEmBe = new List<TTEmBe>();
         List<TTTreEm> lstTreEm = new List<TTTreEm>();
+        List<TTCHUYENBAY> lstCB=new List<TTCHUYENBAY>();
 
         frmNhapTT_NguoiLon frmNL;
         frmNhapTT_TreEm frmTreEm;
         frmNhapTT_EmBe frmEmBe;
-
         public List<TTNguoiLon> ListNguoiLon { get; private set; } = new List<TTNguoiLon>();
         public List<TTEmBe> ListEmBe { get; private set; } = new List<TTEmBe>();
         public List<TTTreEm> ListTreEm { get; private set; } = new List<TTTreEm>();
         public List<frmVe> frmVes = new List<frmVe>();
-
+        #endregion
 
         string idtaikhoan;
         string tennguoidung;
@@ -44,18 +47,9 @@ namespace BanVeMayBay
         }
 
 
-        //void LamTrongSuotNenChu(Control x, PictureBox nenX) //x là textbox, nenX là pictureBox nằm dưới textbox
-        //{
-        //    var a = this.PointToScreen(x.Location);
-        //    a = nenX.PointToClient(a);
-        //    x.Parent = nenX;
-        //    x.Location = a;
-        //    x.BackColor = Color.Transparent;
-        //}
+       
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //nếu phân quyền là admin thì nút quản lý dữ liệu xuất hiện
-            //btnQuanLy.Visible = true;
             pnlTTCB.Visible = false;
             pnlThanGiaoDien.Location = new Point(0, 140);
             frmDangNhap frmdn = new frmDangNhap();
@@ -132,26 +126,19 @@ namespace BanVeMayBay
                 frmEB.TopLevel = false;
                 flowLayoutPnlThanGianDien.Controls.Add(frmEB);
                 frmEB.Show();
-            }
+            } 
             //btnNhapTTHK.Visible = true;
         }
-        private void loadd_DSfrmVe(int soluong)
+        public void GetLstDSVe(string diemkhoihanh, string diemden, string ngaybay)
         {
-            //thông tin test cho các vé máy bay trong 1 ngày
-            string[] diemkh_test = { "TP. HCM", "Cần Thơ", "Trà Vinh", "Hà Nội", "Vĩnh Long", "Nha Trang", "Huế", "Hải Phòng", "Cao Bằng", "Phú Quốc" };
-            string[] diemden_test = { "Phú Quốc", "Cao Bằng", "Hải Phòng", "Huế", "Nha Trang", "Vĩnh Long", "Hà Nội", "Trà Vinh", "Cần Thơ", "TP. HCM" };
-            string ngaykh_test = "9/1/2004";
-            string[] tgdi_test = { "8:30", "9:30", "10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30" };
-            string[] tgden_test = { "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30" };
-            string[] macb_test = { "CBDuo01", "CBDuo02", "CBDuo03", "CBDuo04", "CBDuo05", "CBDuo06", "CBDuo07", "CBDuo08", "CBDuo09", "CBDuo10", };
-            string[] mamb_test = { "MBDuo01", "MBDuo02", "MBDuo03", "MBDuo04", "MBDuo05", "MBDuo06", "MBDuo07", "MBDuo08", "MBDuo09", "MBDuo10", };
-            //Nhập số lượng vé từ sql vào n
-            //còn thông tin của vé nhập bên form frmVe
-            int n = soluong; //tỏng số lượng vé sẽ xuất hiện trên form
-            for (int i = 0; i < n; i++)
+            lstCB = dbCB.GetLSTChuyenBay(diemkhoihanh, diemden, ngaybay);
+
+        }
+        private void loadd_DSfrmVe(int sl)
+        {
+            foreach (var item in lstCB)
             {
-                //Truyền thông tin của vé vào (thời gian đi, thời gian đến, mã chuyến bay, mã máy bay)
-                frmVe frmv = new frmVe(diemkh_test[i], diemden_test[i], ngaykh_test, tgdi_test[i], tgden_test[i], macb_test[i], mamb_test[i]);
+                frmVe frmv = new frmVe(item.DIemKhoiHanh, item.DiemDen, __ngaybay, item.ThoiGianDi.ToString(), item.ThoiGianDen.ToString(), item.MaChuyenBay, item.MaMayBay);
                 frmv.SetParentForm(this);
                 frmv.TopLevel = false;
                 flowLayoutPnlThanGianDien.Controls.Add(frmv);
@@ -202,6 +189,7 @@ namespace BanVeMayBay
         {
             if (index == 1)
             {
+                GetLstDSVe(__diemkhoihanh, __diemden, __ngaybay);
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 flowLayoutPnlThanGianDien.Padding = new Padding(0, 0, 0, 0);
                 pnlThanGiaoDien.Location = new Point(312, 285);
@@ -210,7 +198,7 @@ namespace BanVeMayBay
                 lblHangVe2.Visible = true;
                 lblHangVe3.Visible = true;
                 lblHangVe4.Visible = true;
-                loadd_DSfrmVe(10);
+                loadd_DSfrmVe(lstCB.Count());
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
                 frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
@@ -258,9 +246,8 @@ namespace BanVeMayBay
                 flag = 4;
             }
         }
-
+        #region Lấy dữ liệu khách hàng
         bool check = true;
-
         public void NhapKhachHang()
         {
             foreach (Control control in flowLayoutPnlThanGianDien.Controls) // Lặp qua các điều khiển trong flowLayoutPanelTT
@@ -344,6 +331,7 @@ namespace BanVeMayBay
                 }
             }
         }
+        #endregion
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
             NhapKhachHang();
@@ -353,11 +341,11 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
+                XuLy_btnDiTiep(flag);   
             }
-            lstNguoiLon.Clear();
+             lstNguoiLon.Clear();
             lstTreEm.Clear();
             lstEmBe.Clear();
-            XuLy_btnDiTiep(flag);
         }
     }
 }

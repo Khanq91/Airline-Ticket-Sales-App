@@ -66,5 +66,13 @@ namespace DB
             CloseSql();
             return result;
         }
+
+        public DataTable GetDataAdapter(string caulenh)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter sql_Dt = new SqlDataAdapter("select * from " + caulenh, con);
+            sql_Dt.Fill(dt);
+            return dt;
+        }
     }
 }
