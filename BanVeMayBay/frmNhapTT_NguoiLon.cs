@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,7 +24,6 @@ namespace BanVeMayBay
         private void frmNhapTT_Load(object sender, EventArgs e)
         {
             txtHo_NL.Focus();
-            dateTimePickerNgaySinh_NL.MaxDate = DateTime.Now;
         }
 
         private void txtHo_NL_Leave(object sender, EventArgs e)
@@ -56,7 +56,14 @@ namespace BanVeMayBay
             else
                 this.erpNhapTT.Clear();
         }
-
+        private void mtxtNgaySinh_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (mtxtNgaySinh.Text.Trim().Length == 0)
+                this.erpNhapTT.SetError(ctr, "Bạn hãy nhập ngày sinh của hành khách!");
+            else
+                this.erpNhapTT.Clear();
+        }
         private void txtEmail_NL_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
@@ -64,9 +71,6 @@ namespace BanVeMayBay
                 this.erpNhapTT.SetError(ctr, "Bạn hãy nhập Email của hành khách!");
             else
                 this.erpNhapTT.Clear();
-        }
-        private void dateTimePickerNgaySinh_NL_Validating(object sender, CancelEventArgs e)
-        {
         }
         public bool IsValidEmail(string email)
         {
@@ -120,8 +124,24 @@ namespace BanVeMayBay
             {
                 tt.Gioitinh = rdoGioiTinhKhac_NL.Text;
             }
-            tt.TenKH=txtHo_NL.Text +txtTenDemvaTen_NL.Text;
-            tt.NgaySinh = dateTimePickerNgaySinh_NL.Value;
+            tt.TenKH = txtHo_NL.Text + " " + txtTenDemvaTen_NL.Text;
+
+            string dateString = mtxtNgaySinh.Text;
+            DateTime dateValue;
+            try
+            {
+                if (DateTime.TryParse(dateString, out dateValue))
+                {
+                    tt.NgaySinh = dateValue;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi chuyển đổi ngày sinh" + ex.Message);
+            }
+            
+            //tt.NgaySinh = mtxtNgaySinh.Text.ToString("yyyy-MM-dd");
+
             tt.SDT = txtSDT_NL.Text;
             tt.DiaChi = txtNoiO_NL.Text;
             tt.CCCD=txtCCCD.Text;
@@ -145,6 +165,7 @@ namespace BanVeMayBay
                 e.Handled = true; // Ngăn không cho ký tự này được nhập
             }
         }
+
     }
 }
 

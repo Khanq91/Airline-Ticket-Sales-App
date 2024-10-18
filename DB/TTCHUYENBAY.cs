@@ -37,29 +37,37 @@ namespace DB
 
         public List<TTCHUYENBAY> GetLSTChuyenBay(string masbdi,string masbden,string ngaybay)
         {
-            SqlConnection con;
-            String conn = "Data Source=DESKTOP-MMVLGPG\\SQL2012;Initial Catalog=QL_VeMayBay;Integrated Security=True";
-            con = new SqlConnection(conn);
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
+            //SqlConnection con;
+            //String conn = "Data Source=DESKTOP-MMVLGPG\\SQL2012;Initial Catalog=QL_VeMayBay;Integrated Security=True";
+            //con = new SqlConnection(conn);
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //db.OpenSql();
             List<TTCHUYENBAY> lstCB = new List<TTCHUYENBAY>();
-           
             //string caulenh = "select MaSBden,MaSBdi,NgayBay,GioBay,GioDen,MaCB from CHUYENBAY ,CHANGBAY where CHUYENBAY.STTcb=CHANGBAY.STTchangbay and MaSBdi='"+masbdi+"' and MaSBden='"+masbden+"' and NgayBay='"+ngaybay+"'";
             string caulenh = "select MaSBden,MaSBdi,NgayBay,GioBay,GioDen,MaCB from CHUYENBAY ,CHANGBAY where CHUYENBAY.STTcb=CHANGBAY.STTchangbay and MaSBdi='SB001' and MaSBden='SB005' and NgayBay='2024-10-14'";
 
-            SqlCommand cmd = new SqlCommand(caulenh, con);
-            SqlDataReader reader = cmd.ExecuteReader();
+            //SqlCommand cmd = new SqlCommand(caulenh, con);
+            //SqlDataReader reader = cmd.ExecuteReader();
+            SqlDataReader reader = db.GetExecuteReader(caulenh);
             while (reader.Read()){
                 TTCHUYENBAY cb= new TTCHUYENBAY();
-                cb.DIemKhoiHanh = TenSanBay(masbdi);
-                cb.DiemDen=TenSanBay(masbden);
+                //cb.DIemKhoiHanh = TenSanBay(masbdi);
+                //cb.DiemDen = TenSanBay(masbden);
                 cb.NgayKhoiHanh = Convert.ToDateTime(reader["NgayBay"]).ToString();
                 cb.ThoiGianDi = (TimeSpan)reader["GioBay"];
                 cb.ThoiGianDen = (TimeSpan)reader["GioDen"];
                 cb.MaChuyenBay = reader["MaCB"].ToString();
                 lstCB.Add(cb);
+            }
+            reader.Close();
+            db.CloseSql();
+            foreach(var cb in lstCB)
+            {
+                cb.DIemKhoiHanh = TenSanBay(masbdi);
+                cb.DiemDen = TenSanBay(masbden);
             }
             return lstCB;
         }

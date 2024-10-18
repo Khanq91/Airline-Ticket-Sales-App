@@ -80,13 +80,31 @@ namespace BanVeMayBay
         public string __ngaybay;
         public string __diemkhoihanh;
         public string __diemden;
+        TTCHUYENBAY ttcb = new TTCHUYENBAY();
         public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
+            string TTHK = "1 NGƯỜI LỚN";
+            if(slNL != 1)
+            {
+                TTHK = slNL.ToString() + " NGƯỜI LỚN";
+            }   
+            if(slTE != 0)
+            {
+                TTHK += ", " + slTE.ToString() + " TRẺ EM";
+            }    
+            if(slEB != 0)
+            {
+                TTHK += ", " + slTE.ToString() + " EM BÉ";
+            }
+            lblChuyenBayKHMC.Text = "CHUYẾN BAY MỘT CHIỀU | " + TTHK;
+
             __ngaybay = ngaybay;
-            __diemkhoihanh = diemkhoihanh;
-            __diemden = diemden;
+            __diemkhoihanh = ttcb.TenSanBay(diemkhoihanh);
+            __diemden = ttcb.TenSanBay(diemden);
             pnlTTCB.Visible = true;
             pnlTTCB.Location = new Point(0, 144);
+            lblDiemKhoiHanh.Text = __diemkhoihanh;
+            lblDiemDen.Text = __diemden;
             pnlThanGiaoDien.Location = new Point(0, 229);
             //pnlThanGiaoDien.Height -= 200;
             //pnlThanGiaoDien.Height -= 84;
@@ -195,8 +213,6 @@ namespace BanVeMayBay
                 pnlThanGiaoDien.Location = new Point(312, 285);
                 pnlThanGiaoDien.Height -= 50;
                 lblHangVe1.Visible = true;
-                lblHangVe2.Visible = true;
-                lblHangVe3.Visible = true;
                 lblHangVe4.Visible = true;
                 loadd_DSfrmVe(lstCB.Count());
 
@@ -211,8 +227,6 @@ namespace BanVeMayBay
             if (index == 2)
             {
                 lblHangVe1.Visible = false;
-                lblHangVe2.Visible = false;
-                lblHangVe3.Visible = false;
                 lblHangVe4.Visible = false;
 
                 pnlThanGiaoDien.Location = new Point(0, 229);
@@ -220,10 +234,10 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
-                __ViTriGhe = frmDV.TenViTriGhe;
-                __TienViTriGhe = frmDV.GiaViTriGhe;
-                __GoiHanhLy = frmDV.TenGoi;
-                __TienGoiHanhLy = frmDV.GiaGoi;
+                __ViTriGhe = frmDV.output("1", "0", "0", "0");
+                __TienViTriGhe = frmDV.output("0", "1", "0", "0");
+                __GoiHanhLy = frmDV.output("0", "0", "1", "0");
+                __TienGoiHanhLy = frmDV.output("0", "0", "0", "1");
                 flowLayoutPnlThanGianDien.Controls.Add(frmDV);
                 frmDV.Show();
 
@@ -335,15 +349,15 @@ namespace BanVeMayBay
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
             NhapKhachHang();
-            if (check)
-            {
-                AddTTKhachHangVaoSql();
+            //if (check)
+            //{
+            //    AddTTKhachHangVaoSql();
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
                 XuLy_btnDiTiep(flag);   
-            }
-             lstNguoiLon.Clear();
+            //}
+            lstNguoiLon.Clear();
             lstTreEm.Clear();
             lstEmBe.Clear();
         }

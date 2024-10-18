@@ -106,9 +106,25 @@ namespace BanVeMayBay
                     
             }
         }
-        public void output()
+        public string output(string Ghe, string GiaGhe, string GoiHL, string GiaGoiHL)
         {
-
+            if (Ghe == "1")
+            {
+                return TenViTriGhe;
+            }
+            else if (GiaGhe == "1")
+            {
+                return GiaViTriGhe;
+            }
+            else if (GoiHL == "1")
+            {
+                return TenGoi;
+            }
+            else if (GiaGoiHL == "1")
+            {
+                return GiaGoi;
+            }
+            else return "0";
         }
     }
 }

@@ -101,7 +101,6 @@ namespace BanVeMayBay
                     lblTTHanhKhach.Text = SLHK;
                     //kt so luong nguoi de xuat hien tren form
                 }    
-                
             }
         }
 
@@ -113,11 +112,6 @@ namespace BanVeMayBay
             cboDiemKhoiHanh.SelectedItem = diemden;
             cboDiemDen.SelectedItem = diemdi;
                 
-        }
-
-        private void cboDiemKhoiHanh_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
         }
 
         private void rdoKhuHoi_CheckedChanged(object sender, EventArgs e)
@@ -146,13 +140,15 @@ namespace BanVeMayBay
                 {
                     if(dateTimePickerNgayDi.Value == dateTimePickerNgayDi.MinDate)
                     {
-                        lblDiemDen.Text = "Vui lòng chọn ngày đi!";
+                        //lblDiemDen.Text = "Vui lòng chọn ngày đi!";
+                        MessageBox.Show("Vui lòng chọn ngày đi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         return;
                     }    
                 }
                 else
                 {
-                    lblDiemDen.Text = "Vui lòng nhập thông tin trước khi tìm chuyến bay!";
+                    //lblDiemDen.Text = "Vui lòng nhập thông tin trước khi tìm chuyến bay!";
+                    MessageBox.Show("Vui lòng nhập thông tin trước khi tìm chuyến bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     return;
                 }
             }
