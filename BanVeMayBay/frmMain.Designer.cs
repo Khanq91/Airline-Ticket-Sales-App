@@ -168,11 +168,11 @@
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTien.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.ForeColor = System.Drawing.Color.White;
             this.lblTongTien.Location = new System.Drawing.Point(1289, 23);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(100, 38);
+            this.lblTongTien.Size = new System.Drawing.Size(103, 38);
             this.lblTongTien.TabIndex = 2;
             this.lblTongTien.Text = "0 VND";
             // 

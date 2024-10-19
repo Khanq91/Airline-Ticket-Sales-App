@@ -74,7 +74,7 @@ namespace BanVeMayBay
             lblGoiHanhLy.Text = GoiHanhLy;
             lblTienHL.Text = TienGoiHanhLy;
             this.TienGoiHanhLy = lblTienHL.Text.Replace(".", "");
-            if(TienViTriGhe != "0")
+            if (TienViTriGhe != "0" && TienViTriGhe != "") 
             {
                 lblGhe.Visible = true;
                 lblTienGhe.Visible = true;
@@ -181,10 +181,10 @@ namespace BanVeMayBay
                 TTDichVu(false);
             }
         }
-
+        string khong = "0";
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            if (lblTienGhe.Text != "0")
+            if (lblTienGhe.Text !=  khong && lblTienGhe.Text != "")
             { 
                 lblGoiHanhLy.Location = new Point(58, 533);
                 lblTienHL.Location = new Point(419, 533);
@@ -262,25 +262,46 @@ namespace BanVeMayBay
             //Lấy thông tin từ Tiền VAT của các loại thuế phí riêng
             VAT2 = lblTienVATTP.Text.Replace(".", "");
         }
-        public void TinhThanhTien()
+        public void TinhThanhTien(string ___GiaVe, string ___TienViTriGhe, string ___TienGoiHL)
         {
             float thanhtien = 0;
+            float GiaVe_ = float.Parse(___GiaVe.Replace(".", ""));
+            float GiaGhe_, GiaHL_;
+
+            if (___TienViTriGhe != "0" && ___TienViTriGhe != "")
+            {
+                GiaGhe_ = float.Parse(___TienViTriGhe.Replace(".", ""));
+            }
+            else GiaGhe_ = 0;
+            if (___TienGoiHL != "0" && ___TienGoiHL != "")
+            {
+                GiaHL_ = float.Parse(___TienGoiHL.Replace(".", ""));
+            }
+            else GiaHL_ = 0;
+
+            float VAT1_ = GiaVe_ * 0.1f;
             //Tiền vé và thuế 10% của vé
-            thanhtien += float.Parse(GiaVe) + float.Parse(VAT1);
+            thanhtien += GiaVe_ + VAT1_;
             //Các loại phụ phí riêng và VAT của phụ phí (không tính vé)
-            thanhtien += float.Parse(TienPPHT) + float.Parse(TienPAN) + float.Parse(VAT2);
+            thanhtien += 329700;
             //Tiền ghế và hành lý(nếu có)
-            thanhtien += float.Parse(TienViTriGhe) + float.Parse(TienGoiHanhLy);
+            thanhtien += GiaGhe_ + GiaHL_;
             if (thanhtien < 1000000)
             { 
-                thanhtien /= 1000;
-                lblTongTien.Text = thanhtien.ToString() + ".000";
+                //thanhtien /= 1000;
+                //lblTongTien.Text = thanhtien.ToString() + ".000"; 
+                lblTongTien.Text = string.Format("{0:n0}", thanhtien);
             }
             else
             {
-                thanhtien /= 1000000;
-                lblTongTien.Text = thanhtien.ToString() + ".000.000";
+                //thanhtien /= 1000000;
+                //lblTongTien.Text = thanhtien.ToString() + ".000.000";
+                lblTongTien.Text = string.Format("{0:n0}", thanhtien);
             }
+        }
+        public string GetThanhTien()
+        {
+            return lblTongTien.Text;
         }
     }
 }

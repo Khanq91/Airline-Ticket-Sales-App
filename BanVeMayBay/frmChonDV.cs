@@ -27,7 +27,16 @@ namespace BanVeMayBay
         public string TenGoi { get => _TenGoi; set => _TenGoi = value; }
         public string GiaGoi { get => _GiaGoi; set => _GiaGoi = value; }
 
-
+        #region test truyền dữ liệu qua form main
+        public event EventHandler<LabelDataEventArgs> LabelTextChanged;
+        public class LabelDataEventArgs : EventArgs
+        {
+            public string Event_TenViTriGhe { get; set; }
+            public string Event_GiaViTriGhe { get; set; }
+            public string Event_TenGoi { get; set; }
+            public string Event_GiaGoi { get; set; }
+        }
+        #endregion
         frmViTriGhe frmGhe = new frmViTriGhe();
         private void btnChonGhe_Click(object sender, EventArgs e)
         {
@@ -55,6 +64,13 @@ namespace BanVeMayBay
 
                     lblMaGhe.Text = TenViTriGhe;
                     lblTienGhe.Text = GiaViTriGhe;
+                    #region Test truyền dữ liệu qua form Main
+                    LabelTextChanged?.Invoke(this, new LabelDataEventArgs
+                    {
+                        Event_TenViTriGhe = TenViTriGhe,
+                        Event_GiaViTriGhe = GiaViTriGhe
+                    });
+                    #endregion
                 }
                 else
                 {
@@ -63,6 +79,16 @@ namespace BanVeMayBay
 
                     TenViTriGhe = "";
                     GiaViTriGhe = "";
+
+                    lblMaGhe.Text = TenViTriGhe;
+                    lblTienGhe.Text = GiaViTriGhe;
+                    #region Test truyền dữ liệu qua form Main
+                    LabelTextChanged?.Invoke(this, new LabelDataEventArgs
+                    {
+                        Event_TenViTriGhe = TenViTriGhe,
+                        Event_GiaViTriGhe = GiaViTriGhe
+                    });
+                    #endregion
                 }
             }    
         }
@@ -95,6 +121,14 @@ namespace BanVeMayBay
 
                     lblGoiHanhLy.Text = TenGoi;
                     lblTienHL.Text = GiaGoi;
+
+                    #region Test truyền dữ liệu qua form Main
+                    LabelTextChanged?.Invoke(this, new LabelDataEventArgs
+                    {
+                        Event_TenGoi = TenGoi,
+                        Event_GiaGoi = GiaGoi
+                    });
+                    #endregion
                 }
                 else
                 {
@@ -102,29 +136,19 @@ namespace BanVeMayBay
                     lblTienHL.Visible = false;
                     TenGoi = "";
                     GiaGoi = "";
+                    lblGoiHanhLy.Text = TenGoi;
+                    lblTienHL.Text = GiaGoi;
+
+                    #region Test truyền dữ liệu qua form Main
+                    LabelTextChanged?.Invoke(this, new LabelDataEventArgs
+                    {
+                        Event_TenGoi = TenGoi,
+                        Event_GiaGoi = GiaGoi
+                    });
+                    #endregion
                 }
-                    
+
             }
-        }
-        public string output(string Ghe, string GiaGhe, string GoiHL, string GiaGoiHL)
-        {
-            if (Ghe == "1")
-            {
-                return TenViTriGhe;
-            }
-            else if (GiaGhe == "1")
-            {
-                return GiaViTriGhe;
-            }
-            else if (GoiHL == "1")
-            {
-                return TenGoi;
-            }
-            else if (GiaGoiHL == "1")
-            {
-                return GiaGoi;
-            }
-            else return "0";
         }
     }
 }

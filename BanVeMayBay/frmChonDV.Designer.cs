@@ -89,7 +89,7 @@
             this.lblTienHL.Name = "lblTienHL";
             this.lblTienHL.Size = new System.Drawing.Size(180, 23);
             this.lblTienHL.TabIndex = 13;
-            this.lblTienHL.Text = "1.000.000.000";
+            this.lblTienHL.Text = "0";
             this.lblTienHL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTienHL.Visible = false;
             // 
@@ -190,7 +190,7 @@
             this.lblTienGhe.Name = "lblTienGhe";
             this.lblTienGhe.Size = new System.Drawing.Size(180, 23);
             this.lblTienGhe.TabIndex = 12;
-            this.lblTienGhe.Text = "1.000.000.000";
+            this.lblTienGhe.Text = "0";
             this.lblTienGhe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTienGhe.Visible = false;
             // 
@@ -304,11 +304,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblMaGhe;
-        private System.Windows.Forms.Label lblGoiHanhLy;
-        private System.Windows.Forms.Label lblTienHL;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTienGhe;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lblMaGhe;
+        public System.Windows.Forms.Label lblGoiHanhLy;
+        public System.Windows.Forms.Label lblTienHL;
+        public System.Windows.Forms.Label lblTienGhe;
     }
 }

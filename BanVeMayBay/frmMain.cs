@@ -6,9 +6,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BanVeMayBay.frmChonDV;
 
 namespace BanVeMayBay
 {
@@ -36,6 +38,8 @@ namespace BanVeMayBay
         public List<frmVe> frmVes = new List<frmVe>();
         #endregion
 
+        private frmChonDV frmDVInstance;
+
         string idtaikhoan;
         string tennguoidung;
         public frmMain(string TenNguoiDung, string idtaikhoan)
@@ -43,7 +47,9 @@ namespace BanVeMayBay
             this.tennguoidung = TenNguoiDung;
             this.idtaikhoan = idtaikhoan;
             InitializeComponent();
-            lblChaoNguoiDung.Text = "Xin Chào" + tennguoidung;
+            lblChaoNguoiDung.Text = "Xin Chào " + tennguoidung;
+            frmDVInstance = new frmChonDV();
+            frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
         }
 
 
@@ -201,10 +207,20 @@ namespace BanVeMayBay
             }
         }
         #endregion
-
+        #region test nhận dữ liệu từ formDV
+        private void FrmDVInstance_LabelTextChanged(object sender, LabelDataEventArgs e)
+        {
+            // Xử lý khi giá trị của các label trong frmDV thay đổi
+            string Event_TenViTriGhe = e.Event_TenViTriGhe;
+            string Event_GiaViTriGhe = e.Event_GiaViTriGhe;
+            string Event_TenGoi = e.Event_TenGoi;
+            string Event_GiaGoi = e.Event_GiaGoi;
+        }
+        #endregion
         int flag = 1;
         private void XuLy_btnDiTiep(int index)
         {
+            frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
                 GetLstDSVe(__diemkhoihanh, __diemden, __ngaybay);
@@ -220,6 +236,7 @@ namespace BanVeMayBay
                 frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+                lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
                 frmttvd.Show();
 
                 flag = 2;
@@ -232,29 +249,33 @@ namespace BanVeMayBay
                 pnlThanGiaoDien.Location = new Point(0, 229);
                 pnlThanGiaoDien.Height += 50;
                 flowLayoutPnlThanGianDien.Controls.Clear();
-                frmChonDV frmDV = new frmChonDV();
-                frmDV.TopLevel = false;
-                __ViTriGhe = frmDV.output("1", "0", "0", "0");
-                __TienViTriGhe = frmDV.output("0", "1", "0", "0");
-                __GoiHanhLy = frmDV.output("0", "0", "1", "0");
-                __TienGoiHanhLy = frmDV.output("0", "0", "0", "1");
-                flowLayoutPnlThanGianDien.Controls.Add(frmDV);
-                frmDV.Show();
+                frmDVInstance.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmDVInstance);
+                frmDVInstance.Show();
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
                 frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+                frmttvd.TinhThanhTien(__TienVe, "0", "0");
+                lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
                 frmttvd.Show();
 
                 flag = 3;
             }
             if(index == 3)
             {
+                __ViTriGhe = frmDVInstance.lblMaGhe.Text;
+                __TienViTriGhe = frmDVInstance.lblTienGhe.Text;
+                __GoiHanhLy = frmDVInstance.lblGoiHanhLy.Text;
+                __TienGoiHanhLy = frmDVInstance.lblTienHL.Text;
+
                 flowLayoutPanelTTVeDat.Controls.Clear();
                 frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+                frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
+                lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
                 frmttvd.Show();
 
                 flag = 4;
@@ -355,7 +376,7 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
-                XuLy_btnDiTiep(flag);   
+                XuLy_btnDiTiep(flag);
             //}
             lstNguoiLon.Clear();
             lstTreEm.Clear();

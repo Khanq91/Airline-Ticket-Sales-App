@@ -166,7 +166,7 @@ namespace BanVeMayBay
                 }
             }
             frmMain frmmain = (frmMain)this.Parent.Parent.Parent;
-            string date = dateTimePickerNgayDi.Value.ToString("dd/mm/yyyy");
+            string date = dateTimePickerNgayDi.Value.ToString("dd/MM/yyyy");
             frmmain.ShowTTCB(slNL, slTE, slEB, date, cboDiemKhoiHanh.SelectedValue.ToString(), cboDiemDen.SelectedValue.ToString());
             this.Hide();
         }

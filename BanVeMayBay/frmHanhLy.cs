@@ -42,7 +42,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi1.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND", "");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
@@ -58,7 +58,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi2.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND", "");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
@@ -74,7 +74,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi3.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND", "");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
@@ -90,7 +90,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi4.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND", "");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
@@ -106,7 +106,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi5.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND", "");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
@@ -122,7 +122,7 @@ namespace BanVeMayBay
             lblGiaGoi.Text = lblGiaGoi6.Text;
 
             TenGoi = lblTenGoi.Text;
-            GiaGoi = lblGiaGoi.Text;
+            GiaGoi = lblGiaGoi.Text.Replace(" VND","");
 
             lblTenGoi.Visible = true;
             lblGiaGoi.Visible = true;
