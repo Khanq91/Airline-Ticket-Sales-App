@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlDauGiaoDien = new System.Windows.Forms.Panel();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTraiGiaoDien = new System.Windows.Forms.Panel();
+            this.btnQL_HoaDon = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnQL_SanBay = new System.Windows.Forms.Button();
             this.btnQL_TK = new System.Windows.Forms.Button();
             this.btnQL_Ve = new System.Windows.Forms.Button();
@@ -52,6 +56,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGrV_Ve = new System.Windows.Forms.DataGridView();
+            this.btnXoa_QLVe = new System.Windows.Forms.Button();
+            this.btnSua_QLVe = new System.Windows.Forms.Button();
+            this.btnThem_QLVe = new System.Windows.Forms.Button();
             this.pnlQL_TK = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.cboPhanQuyen = new System.Windows.Forms.ComboBox();
@@ -62,7 +69,11 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.btnXoa_QLTK = new System.Windows.Forms.Button();
+            this.btnSua_QLTK = new System.Windows.Forms.Button();
+            this.btnThem_QLTK = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.picTimKiem_QLTK = new System.Windows.Forms.PictureBox();
             this.txtTimKiem_QLTK = new System.Windows.Forms.TextBox();
             this.dataGrV_TK = new System.Windows.Forms.DataGridView();
             this.pnlQL_SanBay = new System.Windows.Forms.Panel();
@@ -74,43 +85,32 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGrV_SanBay = new System.Windows.Forms.DataGridView();
-            this.btnQL_HoaDon = new System.Windows.Forms.Button();
-            this.pnlQL_HD = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dataGrV_HoaDon = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtTimKiem_QLHD = new System.Windows.Forms.TextBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.picAvatar = new System.Windows.Forms.PictureBox();
-            this.btnXuatExcel_QLHD = new System.Windows.Forms.Button();
-            this.picTimKiem_QLHD = new System.Windows.Forms.PictureBox();
-            this.btnXoa_QLVe = new System.Windows.Forms.Button();
-            this.btnSua_QLVe = new System.Windows.Forms.Button();
-            this.btnThem_QLVe = new System.Windows.Forms.Button();
-            this.btnXoa_QLTK = new System.Windows.Forms.Button();
-            this.btnSua_QLTK = new System.Windows.Forms.Button();
-            this.btnThem_QLTK = new System.Windows.Forms.Button();
-            this.picTimKiem_QLTK = new System.Windows.Forms.PictureBox();
             this.btnXoa_QLSB = new System.Windows.Forms.Button();
             this.btnSua_QLSB = new System.Windows.Forms.Button();
             this.btnThem_QLSB = new System.Windows.Forms.Button();
+            this.pnlQL_HD = new System.Windows.Forms.Panel();
+            this.btnXuatExcel_QLHD = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.picTimKiem_QLHD = new System.Windows.Forms.PictureBox();
+            this.txtTimKiem_QLHD = new System.Windows.Forms.TextBox();
+            this.dataGrV_HoaDon = new System.Windows.Forms.DataGridView();
             this.Test1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Test2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Test3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label20 = new System.Windows.Forms.Label();
             this.pnlDauGiaoDien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
             this.pnlQL_Ve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_Ve)).BeginInit();
             this.pnlQL_TK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_TK)).BeginInit();
             this.pnlQL_SanBay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_SanBay)).BeginInit();
             this.pnlQL_HD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDauGiaoDien
@@ -123,6 +123,17 @@
             this.pnlDauGiaoDien.Name = "pnlDauGiaoDien";
             this.pnlDauGiaoDien.Size = new System.Drawing.Size(1502, 144);
             this.pnlDauGiaoDien.TabIndex = 2;
+            // 
+            // picAvatar
+            // 
+            this.picAvatar.BackColor = System.Drawing.Color.LimeGreen;
+            this.picAvatar.Image = global::BanVeMayBay.Properties.Resources.profile;
+            this.picAvatar.Location = new System.Drawing.Point(963, 35);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(75, 75);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAvatar.TabIndex = 13;
+            this.picAvatar.TabStop = false;
             // 
             // lblTenNguoiDung
             // 
@@ -172,6 +183,53 @@
             this.pnlTraiGiaoDien.Name = "pnlTraiGiaoDien";
             this.pnlTraiGiaoDien.Size = new System.Drawing.Size(398, 924);
             this.pnlTraiGiaoDien.TabIndex = 14;
+            // 
+            // btnQL_HoaDon
+            // 
+            this.btnQL_HoaDon.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnQL_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQL_HoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQL_HoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnQL_HoaDon.Location = new System.Drawing.Point(-4, 361);
+            this.btnQL_HoaDon.Name = "btnQL_HoaDon";
+            this.btnQL_HoaDon.Size = new System.Drawing.Size(406, 74);
+            this.btnQL_HoaDon.TabIndex = 8;
+            this.btnQL_HoaDon.Text = "Quản lý hóa đơn";
+            this.btnQL_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQL_HoaDon.UseVisualStyleBackColor = false;
+            this.btnQL_HoaDon.Click += new System.EventHandler(this.btnQL_HoaDon_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Image = global::BanVeMayBay.Properties.Resources.refrest_64px;
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(-4, 777);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(406, 74);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Image = global::BanVeMayBay.Properties.Resources.logout;
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(-4, 850);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(406, 74);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnQL_SanBay
             // 
@@ -533,6 +591,50 @@
             this.dataGrV_Ve.Size = new System.Drawing.Size(779, 700);
             this.dataGrV_Ve.TabIndex = 0;
             // 
+            // btnXoa_QLVe
+            // 
+            this.btnXoa_QLVe.Enabled = false;
+            this.btnXoa_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnXoa_QLVe.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
+            this.btnXoa_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa_QLVe.Location = new System.Drawing.Point(486, 573);
+            this.btnXoa_QLVe.Name = "btnXoa_QLVe";
+            this.btnXoa_QLVe.Size = new System.Drawing.Size(215, 60);
+            this.btnXoa_QLVe.TabIndex = 10;
+            this.btnXoa_QLVe.Text = "Xóa";
+            this.btnXoa_QLVe.UseVisualStyleBackColor = true;
+            this.btnXoa_QLVe.Click += new System.EventHandler(this.btnXoa_QLVe_Click);
+            // 
+            // btnSua_QLVe
+            // 
+            this.btnSua_QLVe.Enabled = false;
+            this.btnSua_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnSua_QLVe.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
+            this.btnSua_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua_QLVe.Location = new System.Drawing.Point(253, 573);
+            this.btnSua_QLVe.Name = "btnSua_QLVe";
+            this.btnSua_QLVe.Size = new System.Drawing.Size(215, 60);
+            this.btnSua_QLVe.TabIndex = 9;
+            this.btnSua_QLVe.Text = "Sửa";
+            this.btnSua_QLVe.UseVisualStyleBackColor = true;
+            this.btnSua_QLVe.Click += new System.EventHandler(this.btnSua_QLVe_Click);
+            // 
+            // btnThem_QLVe
+            // 
+            this.btnThem_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnThem_QLVe.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
+            this.btnThem_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem_QLVe.Location = new System.Drawing.Point(20, 573);
+            this.btnThem_QLVe.Name = "btnThem_QLVe";
+            this.btnThem_QLVe.Size = new System.Drawing.Size(215, 60);
+            this.btnThem_QLVe.TabIndex = 6;
+            this.btnThem_QLVe.Text = "Thêm";
+            this.btnThem_QLVe.UseVisualStyleBackColor = true;
+            this.btnThem_QLVe.Click += new System.EventHandler(this.btnThem_QLVe_Click);
+            // 
             // pnlQL_TK
             // 
             this.pnlQL_TK.BackColor = System.Drawing.Color.MistyRose;
@@ -574,7 +676,7 @@
             this.cboPhanQuyen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhanQuyen.FormattingEnabled = true;
             this.cboPhanQuyen.IntegralHeight = false;
-            this.cboPhanQuyen.Location = new System.Drawing.Point(55, 384);
+            this.cboPhanQuyen.Location = new System.Drawing.Point(55, 369);
             this.cboPhanQuyen.MaxDropDownItems = 3;
             this.cboPhanQuyen.Name = "cboPhanQuyen";
             this.cboPhanQuyen.Size = new System.Drawing.Size(600, 40);
@@ -584,7 +686,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(67, 349);
+            this.label13.Location = new System.Drawing.Point(67, 334);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(85, 32);
             this.label13.TabIndex = 14;
@@ -594,7 +696,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(67, 272);
+            this.label12.Location = new System.Drawing.Point(67, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(210, 32);
             this.label12.TabIndex = 12;
@@ -603,7 +705,7 @@
             // txtNhapLaiMatKhau
             // 
             this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(55, 307);
+            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(55, 292);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
             this.txtNhapLaiMatKhau.PasswordChar = '*';
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(600, 39);
@@ -613,7 +715,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(67, 195);
+            this.label11.Location = new System.Drawing.Point(67, 180);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(115, 32);
             this.label11.TabIndex = 10;
@@ -622,7 +724,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(55, 230);
+            this.txtMatKhau.Location = new System.Drawing.Point(55, 215);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(600, 39);
@@ -632,7 +734,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(67, 118);
+            this.label10.Location = new System.Drawing.Point(67, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(115, 32);
             this.label10.TabIndex = 8;
@@ -641,10 +743,54 @@
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(55, 153);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(55, 138);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(600, 39);
             this.txtTaiKhoan.TabIndex = 0;
+            // 
+            // btnXoa_QLTK
+            // 
+            this.btnXoa_QLTK.Enabled = false;
+            this.btnXoa_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnXoa_QLTK.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
+            this.btnXoa_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa_QLTK.Location = new System.Drawing.Point(486, 573);
+            this.btnXoa_QLTK.Name = "btnXoa_QLTK";
+            this.btnXoa_QLTK.Size = new System.Drawing.Size(215, 60);
+            this.btnXoa_QLTK.TabIndex = 7;
+            this.btnXoa_QLTK.Text = "Xóa";
+            this.btnXoa_QLTK.UseVisualStyleBackColor = true;
+            this.btnXoa_QLTK.Click += new System.EventHandler(this.btnXoa_QLTK_Click);
+            // 
+            // btnSua_QLTK
+            // 
+            this.btnSua_QLTK.Enabled = false;
+            this.btnSua_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnSua_QLTK.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
+            this.btnSua_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua_QLTK.Location = new System.Drawing.Point(253, 573);
+            this.btnSua_QLTK.Name = "btnSua_QLTK";
+            this.btnSua_QLTK.Size = new System.Drawing.Size(215, 60);
+            this.btnSua_QLTK.TabIndex = 6;
+            this.btnSua_QLTK.Text = "Sửa";
+            this.btnSua_QLTK.UseVisualStyleBackColor = true;
+            this.btnSua_QLTK.Click += new System.EventHandler(this.btnSua_QLTK_Click);
+            // 
+            // btnThem_QLTK
+            // 
+            this.btnThem_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnThem_QLTK.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
+            this.btnThem_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem_QLTK.Location = new System.Drawing.Point(20, 573);
+            this.btnThem_QLTK.Name = "btnThem_QLTK";
+            this.btnThem_QLTK.Size = new System.Drawing.Size(215, 60);
+            this.btnThem_QLTK.TabIndex = 4;
+            this.btnThem_QLTK.Text = "Thêm";
+            this.btnThem_QLTK.UseVisualStyleBackColor = true;
+            this.btnThem_QLTK.Click += new System.EventHandler(this.btnThem_QLTK_Click);
             // 
             // label2
             // 
@@ -655,6 +801,16 @@
             this.label2.Size = new System.Drawing.Size(113, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tìm kiếm";
+            // 
+            // picTimKiem_QLTK
+            // 
+            this.picTimKiem_QLTK.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
+            this.picTimKiem_QLTK.Location = new System.Drawing.Point(1436, 73);
+            this.picTimKiem_QLTK.Name = "picTimKiem_QLTK";
+            this.picTimKiem_QLTK.Size = new System.Drawing.Size(39, 39);
+            this.picTimKiem_QLTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTimKiem_QLTK.TabIndex = 3;
+            this.picTimKiem_QLTK.TabStop = false;
             // 
             // txtTimKiem_QLTK
             // 
@@ -836,244 +992,6 @@
             this.dataGrV_SanBay.Size = new System.Drawing.Size(779, 700);
             this.dataGrV_SanBay.TabIndex = 11;
             // 
-            // btnQL_HoaDon
-            // 
-            this.btnQL_HoaDon.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnQL_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQL_HoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQL_HoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnQL_HoaDon.Location = new System.Drawing.Point(-4, 361);
-            this.btnQL_HoaDon.Name = "btnQL_HoaDon";
-            this.btnQL_HoaDon.Size = new System.Drawing.Size(406, 74);
-            this.btnQL_HoaDon.TabIndex = 8;
-            this.btnQL_HoaDon.Text = "Quản lý hóa đơn";
-            this.btnQL_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQL_HoaDon.UseVisualStyleBackColor = false;
-            this.btnQL_HoaDon.Click += new System.EventHandler(this.btnQL_HoaDon_Click);
-            // 
-            // pnlQL_HD
-            // 
-            this.pnlQL_HD.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.pnlQL_HD.Controls.Add(this.btnXuatExcel_QLHD);
-            this.pnlQL_HD.Controls.Add(this.label21);
-            this.pnlQL_HD.Controls.Add(this.picTimKiem_QLHD);
-            this.pnlQL_HD.Controls.Add(this.txtTimKiem_QLHD);
-            this.pnlQL_HD.Controls.Add(this.dataGrV_HoaDon);
-            this.pnlQL_HD.Controls.Add(this.label20);
-            this.pnlQL_HD.Location = new System.Drawing.Point(396, 142);
-            this.pnlQL_HD.Name = "pnlQL_HD";
-            this.pnlQL_HD.Size = new System.Drawing.Size(1502, 782);
-            this.pnlQL_HD.TabIndex = 17;
-            this.pnlQL_HD.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(15, 5);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(344, 28);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "ĐÂY LÀ PANEL QUẢN LÝ HÓA ĐƠN";
-            // 
-            // dataGrV_HoaDon
-            // 
-            this.dataGrV_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrV_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Test1,
-            this.Test2,
-            this.Test3});
-            this.dataGrV_HoaDon.Location = new System.Drawing.Point(29, 118);
-            this.dataGrV_HoaDon.Name = "dataGrV_HoaDon";
-            this.dataGrV_HoaDon.RowHeadersWidth = 62;
-            this.dataGrV_HoaDon.RowTemplate.Height = 28;
-            this.dataGrV_HoaDon.Size = new System.Drawing.Size(1457, 647);
-            this.dataGrV_HoaDon.TabIndex = 34;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(720, 76);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(113, 32);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "Tìm kiếm";
-            // 
-            // txtTimKiem_QLHD
-            // 
-            this.txtTimKiem_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem_QLHD.Location = new System.Drawing.Point(839, 73);
-            this.txtTimKiem_QLHD.Name = "txtTimKiem_QLHD";
-            this.txtTimKiem_QLHD.Size = new System.Drawing.Size(587, 39);
-            this.txtTimKiem_QLHD.TabIndex = 37;
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Image = global::BanVeMayBay.Properties.Resources.refrest_64px;
-            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(-4, 777);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(406, 74);
-            this.btnReset.TabIndex = 7;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Image = global::BanVeMayBay.Properties.Resources.logout;
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(-4, 850);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(406, 74);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // picAvatar
-            // 
-            this.picAvatar.BackColor = System.Drawing.Color.LimeGreen;
-            this.picAvatar.Image = global::BanVeMayBay.Properties.Resources.profile;
-            this.picAvatar.Location = new System.Drawing.Point(963, 35);
-            this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(75, 75);
-            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAvatar.TabIndex = 13;
-            this.picAvatar.TabStop = false;
-            // 
-            // btnXuatExcel_QLHD
-            // 
-            this.btnXuatExcel_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatExcel_QLHD.Image = global::BanVeMayBay.Properties.Resources.sheet;
-            this.btnXuatExcel_QLHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(29, 73);
-            this.btnXuatExcel_QLHD.Name = "btnXuatExcel_QLHD";
-            this.btnXuatExcel_QLHD.Size = new System.Drawing.Size(206, 39);
-            this.btnXuatExcel_QLHD.TabIndex = 38;
-            this.btnXuatExcel_QLHD.Text = "Xuất file Excel";
-            this.btnXuatExcel_QLHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXuatExcel_QLHD.UseVisualStyleBackColor = true;
-            this.btnXuatExcel_QLHD.Click += new System.EventHandler(this.btnXuatExcel_QLHD_Click);
-            // 
-            // picTimKiem_QLHD
-            // 
-            this.picTimKiem_QLHD.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
-            this.picTimKiem_QLHD.Location = new System.Drawing.Point(1432, 73);
-            this.picTimKiem_QLHD.Name = "picTimKiem_QLHD";
-            this.picTimKiem_QLHD.Size = new System.Drawing.Size(39, 39);
-            this.picTimKiem_QLHD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTimKiem_QLHD.TabIndex = 35;
-            this.picTimKiem_QLHD.TabStop = false;
-            // 
-            // btnXoa_QLVe
-            // 
-            this.btnXoa_QLVe.Enabled = false;
-            this.btnXoa_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnXoa_QLVe.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
-            this.btnXoa_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_QLVe.Location = new System.Drawing.Point(486, 573);
-            this.btnXoa_QLVe.Name = "btnXoa_QLVe";
-            this.btnXoa_QLVe.Size = new System.Drawing.Size(215, 60);
-            this.btnXoa_QLVe.TabIndex = 10;
-            this.btnXoa_QLVe.Text = "Xóa";
-            this.btnXoa_QLVe.UseVisualStyleBackColor = true;
-            this.btnXoa_QLVe.Click += new System.EventHandler(this.btnXoa_QLVe_Click);
-            // 
-            // btnSua_QLVe
-            // 
-            this.btnSua_QLVe.Enabled = false;
-            this.btnSua_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnSua_QLVe.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
-            this.btnSua_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_QLVe.Location = new System.Drawing.Point(253, 573);
-            this.btnSua_QLVe.Name = "btnSua_QLVe";
-            this.btnSua_QLVe.Size = new System.Drawing.Size(215, 60);
-            this.btnSua_QLVe.TabIndex = 9;
-            this.btnSua_QLVe.Text = "Sửa";
-            this.btnSua_QLVe.UseVisualStyleBackColor = true;
-            this.btnSua_QLVe.Click += new System.EventHandler(this.btnSua_QLVe_Click);
-            // 
-            // btnThem_QLVe
-            // 
-            this.btnThem_QLVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnThem_QLVe.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
-            this.btnThem_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_QLVe.Location = new System.Drawing.Point(20, 573);
-            this.btnThem_QLVe.Name = "btnThem_QLVe";
-            this.btnThem_QLVe.Size = new System.Drawing.Size(215, 60);
-            this.btnThem_QLVe.TabIndex = 6;
-            this.btnThem_QLVe.Text = "Thêm";
-            this.btnThem_QLVe.UseVisualStyleBackColor = true;
-            this.btnThem_QLVe.Click += new System.EventHandler(this.btnThem_QLVe_Click);
-            // 
-            // btnXoa_QLTK
-            // 
-            this.btnXoa_QLTK.Enabled = false;
-            this.btnXoa_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnXoa_QLTK.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
-            this.btnXoa_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_QLTK.Location = new System.Drawing.Point(486, 573);
-            this.btnXoa_QLTK.Name = "btnXoa_QLTK";
-            this.btnXoa_QLTK.Size = new System.Drawing.Size(215, 60);
-            this.btnXoa_QLTK.TabIndex = 7;
-            this.btnXoa_QLTK.Text = "Xóa";
-            this.btnXoa_QLTK.UseVisualStyleBackColor = true;
-            this.btnXoa_QLTK.Click += new System.EventHandler(this.btnXoa_QLTK_Click);
-            // 
-            // btnSua_QLTK
-            // 
-            this.btnSua_QLTK.Enabled = false;
-            this.btnSua_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnSua_QLTK.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
-            this.btnSua_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_QLTK.Location = new System.Drawing.Point(253, 573);
-            this.btnSua_QLTK.Name = "btnSua_QLTK";
-            this.btnSua_QLTK.Size = new System.Drawing.Size(215, 60);
-            this.btnSua_QLTK.TabIndex = 6;
-            this.btnSua_QLTK.Text = "Sửa";
-            this.btnSua_QLTK.UseVisualStyleBackColor = true;
-            this.btnSua_QLTK.Click += new System.EventHandler(this.btnSua_QLTK_Click);
-            // 
-            // btnThem_QLTK
-            // 
-            this.btnThem_QLTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem_QLTK.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnThem_QLTK.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
-            this.btnThem_QLTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_QLTK.Location = new System.Drawing.Point(20, 573);
-            this.btnThem_QLTK.Name = "btnThem_QLTK";
-            this.btnThem_QLTK.Size = new System.Drawing.Size(215, 60);
-            this.btnThem_QLTK.TabIndex = 4;
-            this.btnThem_QLTK.Text = "Thêm";
-            this.btnThem_QLTK.UseVisualStyleBackColor = true;
-            this.btnThem_QLTK.Click += new System.EventHandler(this.btnThem_QLTK_Click);
-            // 
-            // picTimKiem_QLTK
-            // 
-            this.picTimKiem_QLTK.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
-            this.picTimKiem_QLTK.Location = new System.Drawing.Point(1436, 73);
-            this.picTimKiem_QLTK.Name = "picTimKiem_QLTK";
-            this.picTimKiem_QLTK.Size = new System.Drawing.Size(39, 39);
-            this.picTimKiem_QLTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTimKiem_QLTK.TabIndex = 3;
-            this.picTimKiem_QLTK.TabStop = false;
-            // 
             // btnXoa_QLSB
             // 
             this.btnXoa_QLSB.Enabled = false;
@@ -1118,6 +1036,77 @@
             this.btnThem_QLSB.UseVisualStyleBackColor = true;
             this.btnThem_QLSB.Click += new System.EventHandler(this.btnThem_QLSB_Click);
             // 
+            // pnlQL_HD
+            // 
+            this.pnlQL_HD.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.pnlQL_HD.Controls.Add(this.btnXuatExcel_QLHD);
+            this.pnlQL_HD.Controls.Add(this.label21);
+            this.pnlQL_HD.Controls.Add(this.picTimKiem_QLHD);
+            this.pnlQL_HD.Controls.Add(this.txtTimKiem_QLHD);
+            this.pnlQL_HD.Controls.Add(this.dataGrV_HoaDon);
+            this.pnlQL_HD.Controls.Add(this.label20);
+            this.pnlQL_HD.Location = new System.Drawing.Point(396, 142);
+            this.pnlQL_HD.Name = "pnlQL_HD";
+            this.pnlQL_HD.Size = new System.Drawing.Size(1502, 782);
+            this.pnlQL_HD.TabIndex = 17;
+            this.pnlQL_HD.Visible = false;
+            // 
+            // btnXuatExcel_QLHD
+            // 
+            this.btnXuatExcel_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel_QLHD.Image = global::BanVeMayBay.Properties.Resources.sheet;
+            this.btnXuatExcel_QLHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(29, 73);
+            this.btnXuatExcel_QLHD.Name = "btnXuatExcel_QLHD";
+            this.btnXuatExcel_QLHD.Size = new System.Drawing.Size(206, 39);
+            this.btnXuatExcel_QLHD.TabIndex = 38;
+            this.btnXuatExcel_QLHD.Text = "Xuất file Excel";
+            this.btnXuatExcel_QLHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel_QLHD.UseVisualStyleBackColor = true;
+            this.btnXuatExcel_QLHD.Click += new System.EventHandler(this.btnXuatExcel_QLHD_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(720, 76);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(113, 32);
+            this.label21.TabIndex = 36;
+            this.label21.Text = "Tìm kiếm";
+            // 
+            // picTimKiem_QLHD
+            // 
+            this.picTimKiem_QLHD.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
+            this.picTimKiem_QLHD.Location = new System.Drawing.Point(1432, 73);
+            this.picTimKiem_QLHD.Name = "picTimKiem_QLHD";
+            this.picTimKiem_QLHD.Size = new System.Drawing.Size(39, 39);
+            this.picTimKiem_QLHD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTimKiem_QLHD.TabIndex = 35;
+            this.picTimKiem_QLHD.TabStop = false;
+            // 
+            // txtTimKiem_QLHD
+            // 
+            this.txtTimKiem_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem_QLHD.Location = new System.Drawing.Point(839, 73);
+            this.txtTimKiem_QLHD.Name = "txtTimKiem_QLHD";
+            this.txtTimKiem_QLHD.Size = new System.Drawing.Size(587, 39);
+            this.txtTimKiem_QLHD.TabIndex = 37;
+            // 
+            // dataGrV_HoaDon
+            // 
+            this.dataGrV_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrV_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Test1,
+            this.Test2,
+            this.Test3});
+            this.dataGrV_HoaDon.Location = new System.Drawing.Point(29, 118);
+            this.dataGrV_HoaDon.Name = "dataGrV_HoaDon";
+            this.dataGrV_HoaDon.RowHeadersWidth = 62;
+            this.dataGrV_HoaDon.RowTemplate.Height = 28;
+            this.dataGrV_HoaDon.Size = new System.Drawing.Size(1457, 647);
+            this.dataGrV_HoaDon.TabIndex = 34;
+            // 
             // Test1
             // 
             this.Test1.HeaderText = "TEST1";
@@ -1139,6 +1128,17 @@
             this.Test3.Name = "Test3";
             this.Test3.Width = 150;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(15, 5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(344, 28);
+            this.label20.TabIndex = 33;
+            this.label20.Text = "ĐÂY LÀ PANEL QUẢN LÝ HÓA ĐƠN";
+            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1147,10 +1147,10 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
-            this.Controls.Add(this.pnlQL_HD);
-            this.Controls.Add(this.pnlQL_Ve);
             this.Controls.Add(this.pnlQL_TK);
             this.Controls.Add(this.pnlQL_SanBay);
+            this.Controls.Add(this.pnlQL_HD);
+            this.Controls.Add(this.pnlQL_Ve);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1158,6 +1158,7 @@
             this.Load += new System.EventHandler(this.frmQuanLi_Load);
             this.pnlDauGiaoDien.ResumeLayout(false);
             this.pnlDauGiaoDien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.pnlTraiGiaoDien.ResumeLayout(false);
             this.pnlTraiGiaoDien.PerformLayout();
             this.pnlQL_Ve.ResumeLayout(false);
@@ -1165,16 +1166,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_Ve)).EndInit();
             this.pnlQL_TK.ResumeLayout(false);
             this.pnlQL_TK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_TK)).EndInit();
             this.pnlQL_SanBay.ResumeLayout(false);
             this.pnlQL_SanBay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_SanBay)).EndInit();
             this.pnlQL_HD.ResumeLayout(false);
             this.pnlQL_HD.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).EndInit();
             this.ResumeLayout(false);
 
         }

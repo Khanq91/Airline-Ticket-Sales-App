@@ -40,12 +40,12 @@
             this.txtTenDemvaTen_TE = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgaySinh_TE = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh_TE = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblThongTin_TE = new System.Windows.Forms.Label();
             this.picNguoi = new System.Windows.Forms.PictureBox();
             this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtNgaySinh_TE = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
@@ -59,6 +59,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.mtxtNgaySinh_TE);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -68,7 +69,6 @@
             this.panel1.Controls.Add(this.txtTenDemvaTen_TE);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePickerNgaySinh_TE);
             this.panel1.Controls.Add(this.cboGioiTinh_TE);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(201, 54);
@@ -169,14 +169,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Ngày sinh";
             // 
-            // dateTimePickerNgaySinh_TE
-            // 
-            this.dateTimePickerNgaySinh_TE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerNgaySinh_TE.Location = new System.Drawing.Point(15, 154);
-            this.dateTimePickerNgaySinh_TE.Name = "dateTimePickerNgaySinh_TE";
-            this.dateTimePickerNgaySinh_TE.Size = new System.Drawing.Size(411, 39);
-            this.dateTimePickerNgaySinh_TE.TabIndex = 2;
-            // 
             // cboGioiTinh_TE
             // 
             this.cboGioiTinh_TE.DropDownHeight = 160;
@@ -231,10 +223,21 @@
             // 
             this.erpNhapTT.ContainerControl = this;
             // 
+            // mtxtNgaySinh_TE
+            // 
+            this.mtxtNgaySinh_TE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNgaySinh_TE.Location = new System.Drawing.Point(15, 154);
+            this.mtxtNgaySinh_TE.Mask = "00/00/0000";
+            this.mtxtNgaySinh_TE.Name = "mtxtNgaySinh_TE";
+            this.mtxtNgaySinh_TE.Size = new System.Drawing.Size(411, 39);
+            this.mtxtNgaySinh_TE.TabIndex = 2;
+            this.mtxtNgaySinh_TE.ValidatingType = typeof(System.DateTime);
+            // 
             // frmNhapTT_TreEm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 294);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_TE);
@@ -264,7 +267,6 @@
         private System.Windows.Forms.TextBox txtTenDemvaTen_TE;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh_TE;
         private System.Windows.Forms.ComboBox cboGioiTinh_TE;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
@@ -272,5 +274,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ErrorProvider erpNhapTT;
+        private System.Windows.Forms.MaskedTextBox mtxtNgaySinh_TE;
     }
 }

@@ -220,6 +220,7 @@ namespace BanVeMayBay
         int flag = 1;
         private void XuLy_btnDiTiep(int index)
         {
+            string TongTien = string.Empty;
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
@@ -276,9 +277,23 @@ namespace BanVeMayBay
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
                 lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
+                TongTien = frmttvd.GetThanhTien();
                 frmttvd.Show();
+                
+                pnlThanGiaoDien.Location = new Point(25, 229);
+                flowLayoutPnlThanGianDien.Controls.Clear();
+
+                frmThanhToan frmthanhtoan = new frmThanhToan(TongTien);
+                frmthanhtoan.ThanhTien();
+                frmthanhtoan.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmthanhtoan);
+                frmthanhtoan.Show();
 
                 flag = 4;
+            }
+            if(index == 4)
+            {
+                flag = 5;
             }
         }
         #region Lấy dữ liệu khách hàng

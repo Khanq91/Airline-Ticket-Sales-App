@@ -372,9 +372,9 @@
             this.lblGhe.Location = new System.Drawing.Point(58, 482);
             this.lblGhe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGhe.Name = "lblGhe";
-            this.lblGhe.Size = new System.Drawing.Size(86, 21);
+            this.lblGhe.Size = new System.Drawing.Size(93, 21);
             this.lblGhe.TabIndex = 25;
-            this.lblGhe.Text = "Ghế cửa số";
+            this.lblGhe.Text = "Không chọn";
             this.lblGhe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblChonGhe
@@ -408,9 +408,9 @@
             this.lblGoiHanhLy.Location = new System.Drawing.Point(58, 508);
             this.lblGoiHanhLy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGoiHanhLy.Name = "lblGoiHanhLy";
-            this.lblGoiHanhLy.Size = new System.Drawing.Size(73, 21);
+            this.lblGoiHanhLy.Size = new System.Drawing.Size(96, 21);
             this.lblGoiHanhLy.TabIndex = 29;
-            this.lblGoiHanhLy.Text = "Gói 20kg";
+            this.lblGoiHanhLy.Text = "Không Chọn";
             this.lblGoiHanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHanhLy

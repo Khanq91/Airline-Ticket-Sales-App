@@ -441,5 +441,32 @@
   <ItemGroup>
     <None Include="Resources\reload.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acb-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_MBpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-agribank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-bidv-2022-dongphucsongphu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SacombankLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\techcombankpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietcombank-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-vietinbank-inkythuatso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo OCB.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

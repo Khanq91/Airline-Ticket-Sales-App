@@ -32,6 +32,11 @@
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.lblThongTin_EB = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtBayCung_EB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtHo_EB = new System.Windows.Forms.TextBox();
@@ -39,16 +44,11 @@
             this.txtTenDemvaTen_EB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgaySinh_EB = new System.Windows.Forms.DateTimePicker();
             this.cboGioiTinh_EB = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.picNguoi = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtxtNgaySinh_EB = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
@@ -75,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.mtxtNgaySinh_EB);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -87,7 +88,6 @@
             this.panel1.Controls.Add(this.txtTenDemvaTen_EB);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePickerNgaySinh_EB);
             this.panel1.Controls.Add(this.cboGioiTinh_EB);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(201, 54);
@@ -96,13 +96,68 @@
             this.panel1.Size = new System.Drawing.Size(879, 300);
             this.panel1.TabIndex = 26;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(539, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 28);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "(*)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(129, 206);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 28);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "(*)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(617, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 28);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "(*)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(54, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 28);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "(*)";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(117, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 28);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "(*)";
+            // 
             // txtBayCung_EB
             // 
             this.txtBayCung_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBayCung_EB.Location = new System.Drawing.Point(13, 48);
             this.txtBayCung_EB.Name = "txtBayCung_EB";
             this.txtBayCung_EB.Size = new System.Drawing.Size(840, 39);
-            this.txtBayCung_EB.TabIndex = 20;
+            this.txtBayCung_EB.TabIndex = 1;
             this.txtBayCung_EB.Leave += new System.EventHandler(this.txtBayCung_EB_Leave);
             // 
             // label5
@@ -121,7 +176,7 @@
             this.txtHo_EB.Location = new System.Drawing.Point(13, 143);
             this.txtHo_EB.Name = "txtHo_EB";
             this.txtHo_EB.Size = new System.Drawing.Size(411, 39);
-            this.txtHo_EB.TabIndex = 12;
+            this.txtHo_EB.TabIndex = 2;
             this.txtHo_EB.Leave += new System.EventHandler(this.txtHo_EB_Leave);
             // 
             // label1
@@ -140,7 +195,7 @@
             this.txtTenDemvaTen_EB.Location = new System.Drawing.Point(442, 143);
             this.txtTenDemvaTen_EB.Name = "txtTenDemvaTen_EB";
             this.txtTenDemvaTen_EB.Size = new System.Drawing.Size(411, 39);
-            this.txtTenDemvaTen_EB.TabIndex = 13;
+            this.txtTenDemvaTen_EB.TabIndex = 3;
             this.txtTenDemvaTen_EB.Leave += new System.EventHandler(this.txtTenDemvaTen_EB_Leave);
             // 
             // label2
@@ -163,14 +218,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Ngày sinh";
             // 
-            // dateTimePickerNgaySinh_EB
-            // 
-            this.dateTimePickerNgaySinh_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerNgaySinh_EB.Location = new System.Drawing.Point(13, 241);
-            this.dateTimePickerNgaySinh_EB.Name = "dateTimePickerNgaySinh_EB";
-            this.dateTimePickerNgaySinh_EB.Size = new System.Drawing.Size(411, 39);
-            this.dateTimePickerNgaySinh_EB.TabIndex = 14;
-            // 
             // cboGioiTinh_EB
             // 
             this.cboGioiTinh_EB.DropDownHeight = 160;
@@ -185,7 +232,7 @@
             this.cboGioiTinh_EB.MaxDropDownItems = 5;
             this.cboGioiTinh_EB.Name = "cboGioiTinh_EB";
             this.cboGioiTinh_EB.Size = new System.Drawing.Size(411, 40);
-            this.cboGioiTinh_EB.TabIndex = 16;
+            this.cboGioiTinh_EB.TabIndex = 5;
             this.cboGioiTinh_EB.Leave += new System.EventHandler(this.cboGioiTinh_EB_Leave);
             // 
             // label4
@@ -208,69 +255,25 @@
             this.picNguoi.TabIndex = 28;
             this.picNguoi.TabStop = false;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(117, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 28);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "(*)";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(54, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 28);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "(*)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(617, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 28);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "(*)";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(129, 206);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 28);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "(*)";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(539, 206);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 28);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "(*)";
-            // 
             // erpNhapTT
             // 
             this.erpNhapTT.ContainerControl = this;
+            // 
+            // mtxtNgaySinh_EB
+            // 
+            this.mtxtNgaySinh_EB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNgaySinh_EB.Location = new System.Drawing.Point(13, 241);
+            this.mtxtNgaySinh_EB.Mask = "00/00/0000";
+            this.mtxtNgaySinh_EB.Name = "mtxtNgaySinh_EB";
+            this.mtxtNgaySinh_EB.Size = new System.Drawing.Size(411, 39);
+            this.mtxtNgaySinh_EB.TabIndex = 4;
+            this.mtxtNgaySinh_EB.ValidatingType = typeof(System.DateTime);
             // 
             // frmNhapTT_EmBe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 373);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_EB);
@@ -300,7 +303,6 @@
         private System.Windows.Forms.TextBox txtTenDemvaTen_EB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh_EB;
         private System.Windows.Forms.ComboBox cboGioiTinh_EB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBayCung_EB;
@@ -311,5 +313,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ErrorProvider erpNhapTT;
+        private System.Windows.Forms.MaskedTextBox mtxtNgaySinh_EB;
     }
 }

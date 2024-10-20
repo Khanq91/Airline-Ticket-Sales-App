@@ -24,7 +24,6 @@ namespace BanVeMayBay
         private void frmNhapTT_TreEm_Load(object sender, EventArgs e)
         {
             txtHo_TE.Focus();
-            dateTimePickerNgaySinh_TE.MaxDate = DateTime.Now;
         }
 
         private void txtHo_TE_Leave(object sender, EventArgs e)
@@ -75,7 +74,21 @@ namespace BanVeMayBay
             }
             TTTreEm tt = new TTTreEm();
             tt.TenKH = txtHo_TE.Text + txtTenDemvaTen_TE.Text;
-            tt.NgaySinh = dateTimePickerNgaySinh_TE.Value;
+
+            string dateString = mtxtNgaySinh_TE.Text;
+            DateTime dateValue;
+            try
+            {
+                if (DateTime.TryParse(dateString, out dateValue))
+                {
+                    tt.NgaySinh = dateValue;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi chuyển đổi ngày sinh" + ex.Message);
+            }
+
             tt.Gioitinh = cboGioiTinh_TE.Text;
             return tt; 
         }

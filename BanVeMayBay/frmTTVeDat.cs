@@ -56,7 +56,7 @@ namespace BanVeMayBay
             //load thông tin điểm đến được người dùng chọn từ csdl
             lblDiemDen.Text = DiemDen;
             //load thông tin ngày bay sau khi người dùng chọn vé từ csdl
-            lblNgayBay.Text = Ngaybay + " |" + tg_di + " - " + tg_den + " |" + ma_cb + " |" + Hangve + " |";//"30/4/1975" + " |";
+            lblNgayBay.Text = Ngaybay + "  |  " + tg_di + " - " + tg_den + "  |  " + ma_cb + "  |  " + Hangve + "  |";//"30/4/1975" + " |";
             //load thông tin giờ bay sau khi người dùng chọn vé từ csdl
             //lblTGBay_Den.Text = ; //"9:00 - 12:00" + " |";
             ////load mã chuyến bay từ vé mà người dùng chọn từ csdl
@@ -181,14 +181,13 @@ namespace BanVeMayBay
                 TTDichVu(false);
             }
         }
-        string khong = "0";
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            if (lblTienGhe.Text !=  khong && lblTienGhe.Text != "")
+            Point ViTriBanDau = new Point(13, 386);
+            if (lblGhe.Text != "Không chọn")
             { 
                 lblGoiHanhLy.Location = new Point(58, 533);
                 lblTienHL.Location = new Point(419, 533);
-                Point ViTriBanDau = new Point(13, 386);
                 if (btnDichVu.Location != ViTriBanDau)
                     btnDichVu.Location = ViTriBanDau;
 

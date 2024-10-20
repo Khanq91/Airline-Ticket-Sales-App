@@ -33,9 +33,9 @@ namespace BanVeMayBay
 
 
             string tennguoidung = "aa";
-            Application.Run(new frmMain("Khang", "1997323421"));
+            //Application.Run(new frmMain("Khang", "1997323421"));
             //Application.Run(new frmDangNhap());
-            //Application.Run(new frmChonDV());
+            Application.Run(new frmQuanLi("Khang", "Quản lý"));
 
         }
     }

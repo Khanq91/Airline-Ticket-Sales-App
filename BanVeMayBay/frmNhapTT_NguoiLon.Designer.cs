@@ -45,6 +45,7 @@
             this.txtNoiO_NL = new System.Windows.Forms.TextBox();
             this.chkNhanThongTin_NL = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mtxtNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lbl_SDT = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.picNguoi = new System.Windows.Forms.PictureBox();
             this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.mtxtNgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
@@ -264,11 +264,22 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtSDT_NL);
             this.panel1.Location = new System.Drawing.Point(202, 54);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(878, 502);
             this.panel1.TabIndex = 21;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // mtxtNgaySinh
+            // 
+            this.mtxtNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNgaySinh.Location = new System.Drawing.Point(14, 209);
+            this.mtxtNgaySinh.Mask = "00/00/0000";
+            this.mtxtNgaySinh.Name = "mtxtNgaySinh";
+            this.mtxtNgaySinh.Size = new System.Drawing.Size(411, 39);
+            this.mtxtNgaySinh.TabIndex = 3;
+            this.mtxtNgaySinh.ValidatingType = typeof(System.DateTime);
+            this.mtxtNgaySinh.Leave += new System.EventHandler(this.mtxtNgaySinh_Leave);
             // 
             // lblEmail
             // 
@@ -421,17 +432,6 @@
             // 
             this.erpNhapTT.ContainerControl = this;
             // 
-            // mtxtNgaySinh
-            // 
-            this.mtxtNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtNgaySinh.Location = new System.Drawing.Point(14, 209);
-            this.mtxtNgaySinh.Mask = "00/00/0000";
-            this.mtxtNgaySinh.Name = "mtxtNgaySinh";
-            this.mtxtNgaySinh.Size = new System.Drawing.Size(411, 39);
-            this.mtxtNgaySinh.TabIndex = 32;
-            this.mtxtNgaySinh.ValidatingType = typeof(System.DateTime);
-            this.mtxtNgaySinh.Leave += new System.EventHandler(this.mtxtNgaySinh_Leave);
-            // 
             // elipseTool1
             // 
             this.elipseTool1.CornerRadius = 30;
@@ -441,7 +441,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 570);
             this.Controls.Add(this.picNguoi);
             this.Controls.Add(this.lblThongTin_NL);

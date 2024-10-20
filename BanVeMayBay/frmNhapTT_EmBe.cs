@@ -27,7 +27,7 @@ namespace BanVeMayBay
         private void frmNhapTT_EmBe_Load(object sender, EventArgs e)
         {
             txtBayCung_EB.Focus();
-            dateTimePickerNgaySinh_EB.MaxDate = DateTime.Now;
+            //dateTimePickerNgaySinh_EB.MaxDate = DateTime.Now;
         }
 
         private void txtBayCung_EB_Leave(object sender, EventArgs e)
@@ -87,8 +87,23 @@ namespace BanVeMayBay
             TTEmBe ttembe = new TTEmBe();
             ttembe.NguoiBayCung = txtBayCung_EB.Text;
             ttembe.TenKH = txtHo_EB.Text + txtTenDemvaTen_EB.Text;
-            ttembe.NgaySinh = dateTimePickerNgaySinh_EB.Value;
+            //ttembe.NgaySinh = dateTimePickerNgaySinh_EB.Value;
+
+            string dateString = mtxtNgaySinh_EB.Text;
+            DateTime dateValue;
+            try
+            {
+                if (DateTime.TryParse(dateString, out dateValue))
+                {
+                    ttembe.NgaySinh = dateValue;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi chuyển đổi ngày sinh" + ex.Message);
+            }
             ttembe.Gioitinh = cboGioiTinh_EB.Text;
+
             return ttembe;
         }
     }
