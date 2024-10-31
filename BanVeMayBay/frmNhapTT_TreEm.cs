@@ -24,6 +24,7 @@ namespace BanVeMayBay
         private void frmNhapTT_TreEm_Load(object sender, EventArgs e)
         {
             txtHo_TE.Focus();
+            cboGioiTinh_TE.Text = "Nam";
         }
 
         private void txtHo_TE_Leave(object sender, EventArgs e)

@@ -16,9 +16,9 @@ namespace DB
         {
             NguoiBayCung = "Nguyen van b";
         }
-        public int ThemTaiKHoan(TTEmBe emBe, string idtaikhoan)
+        public int ThemKH_EmBe(TTEmBe emBe)
         {
-            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,NguoiBayCung,IDTaiKhoan) values(N'" + emBe.Gioitinh + "',N'" + emBe.TenKH + "','" + emBe.NgaySinh.ToString("dd/MM/yyyy") + "','" + emBe.NguoiBayCung + "','" + idtaikhoan + "')";
+            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,TenNguoiDiCung) values(N'" + emBe.Gioitinh + "',N'" + emBe.TenKH + "','" + emBe.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + emBe.NguoiBayCung + "')";
             int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }

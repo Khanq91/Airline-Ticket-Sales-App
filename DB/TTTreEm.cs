@@ -13,9 +13,9 @@ namespace DB
         {
 
         }
-        public int ThemTaiKHoan(TTTreEm treem, string idtaikhoan)
+        public int ThemKH_TreEm(TTTreEm treem)
         {
-            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,IDTaiKhoan) values(N'" + treem.Gioitinh + "',N'" + treem.TenKH + "','" + treem.NgaySinh.ToString("dd/MM/yyyy") + "','" + idtaikhoan + "')";
+            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK) values (N'" + treem.Gioitinh + "',N'" + treem.TenKH + "','" + treem.NgaySinh.ToString("yyyy-MM-dd") + "')";
             int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }

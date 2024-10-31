@@ -27,7 +27,7 @@ namespace BanVeMayBay
         private void frmNhapTT_EmBe_Load(object sender, EventArgs e)
         {
             txtBayCung_EB.Focus();
-            //dateTimePickerNgaySinh_EB.MaxDate = DateTime.Now;
+            cboGioiTinh_EB.Text = "Nam";
         }
 
         private void txtBayCung_EB_Leave(object sender, EventArgs e)

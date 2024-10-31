@@ -21,17 +21,16 @@ namespace DB
 
         public TTNguoiLon() : base(){
             SDT = "00000222";
-            Email = "nguyenvana@gamil.com";
+            Email = "nguyenvana@gmail.com";
             DiaChi = "TanBinh";
             MaHoiVien = "sss";
             CCCD = "121111";
         }
-    public int ThemTaiKHoan(TTNguoiLon nl, string idtaikhoan)
-    {
-
-        string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,DiaChiHK,CCCD,SDThk,EmailHK,IDTaiKhoan) values(N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + nl.DiaChi + "'," + nl.CCCD + ",'" + nl.SDT + "','" + nl.Email + "','" + idtaikhoan + "')";
-        int kq = db.GetExecuteNonQuery(caulenh);
-        return kq;
-    }
+        public int ThemKH_NguoiLon(TTNguoiLon nl)
+        {
+            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,DiaChiHK,CCCD,SDThk,EmailHK) values (N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + nl.DiaChi + "','" + nl.CCCD + "','" + nl.SDT + "','" + nl.Email + "')";
+            int kq = db.GetExecuteNonQuery(caulenh);
+            return kq;
+        }
     }
 }

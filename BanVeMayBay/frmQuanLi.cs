@@ -19,6 +19,7 @@ namespace BanVeMayBay
     {
         string tennguoidung;
         string role;
+        string caulenh;
         public frmQuanLi(string tennguoidung, string role)
         {
             InitializeComponent();
@@ -41,14 +42,13 @@ namespace BanVeMayBay
             {
                 lblRole.Text = "Nhân viên";
                 lblTenNguoiDung.Text = tennguoidung;
-                btnQL_TK.Visible = false;
                 btnQL_SanBay.Visible = false;
             }
             dateTimePickerNgayKhoiHanh.MinDate = DateTime.Now;
             pnlQL_Ve.Visible = true;
                 
         }
-        #region Sửa lý giao diện
+        #region Xử lý giao diện
         private void btnQL_Ve_Click(object sender, EventArgs e)
         {
             if(pnlQL_Ve.Visible == false)
@@ -57,52 +57,18 @@ namespace BanVeMayBay
                 btnQL_Ve.BackColor = Color.WhiteSmoke;
                 btnQL_Ve.ForeColor = Color.ForestGreen;
 
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_SanBay.BackColor = Color.ForestGreen;
                 btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_SanBay.ForeColor = Color.WhiteSmoke;
                 btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }  
             else
             {
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_SanBay.BackColor = Color.ForestGreen;
                 btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_SanBay.ForeColor = Color.WhiteSmoke;
                 btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
-            pnlQL_TK.Visible = false;
-            pnlQL_SanBay.Visible = false;
-            pnlQL_HD.Visible = false;
-        }
-        private void btnQL_TK_Click(object sender, EventArgs e)
-        {
-            if (pnlQL_TK.Visible == false)
-            {
-                pnlQL_TK.Visible = true;
-                btnQL_TK.BackColor = Color.WhiteSmoke;
-                btnQL_TK.ForeColor = Color.ForestGreen;
-
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
-            }
-            else
-            {
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
-            }
-
-            pnlQL_Ve.Visible = false;
             pnlQL_SanBay.Visible = false;
             pnlQL_HD.Visible = false;
         }
@@ -115,24 +81,19 @@ namespace BanVeMayBay
                 btnQL_SanBay.ForeColor = Color.ForestGreen;
 
                 btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_HoaDon.BackColor = Color.ForestGreen;
                 btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
             else
             {
                 btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_HoaDon.BackColor = Color.ForestGreen;
                 btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
 
             pnlQL_Ve.Visible = false;
-            pnlQL_TK.Visible = false;
             pnlQL_HD.Visible = false;
         }
         private void btnQL_HoaDon_Click(object sender, EventArgs e)
@@ -144,9 +105,7 @@ namespace BanVeMayBay
                 btnQL_HoaDon.ForeColor = Color.ForestGreen;
 
                 btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_SanBay.BackColor = Color.ForestGreen;
                 btnQL_SanBay.ForeColor = Color.WhiteSmoke;
 
@@ -154,15 +113,12 @@ namespace BanVeMayBay
             else
             {
                 btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_TK.BackColor = Color.ForestGreen;
                 btnQL_SanBay.BackColor = Color.ForestGreen;
                 btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_TK.ForeColor = Color.WhiteSmoke;
                 btnQL_SanBay.ForeColor = Color.WhiteSmoke;
             }
             pnlQL_Ve.Visible = false;
             pnlQL_SanBay.Visible = false;
-            pnlQL_TK.Visible = false;
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -221,7 +177,19 @@ namespace BanVeMayBay
         #region Quản lí sân bay
         private void btnThem_QLSB_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(txtTenSanBay.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm sân bay: " + txtTenSanBay.Text + "\nỞ " + cboViTri.SelectedText, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
 
+                    ///thêm sân bay
+                }    
+            }
         }
 
         private void btnSua_QLSB_Click(object sender, EventArgs e)

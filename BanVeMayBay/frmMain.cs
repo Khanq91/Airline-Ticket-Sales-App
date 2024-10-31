@@ -83,14 +83,14 @@ namespace BanVeMayBay
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
             NhapKhachHang();
-            if (check)
-            {
-                AddTTKhachHangVaoSql();
+            //if (check)
+            //{
+            //    AddTTKhachHangVaoSql();
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
                 XuLy_btnDiTiep(flag);
-            }
+            //}
             lstNguoiLon.Clear();
             lstTreEm.Clear();
             lstEmBe.Clear();
@@ -182,6 +182,7 @@ namespace BanVeMayBay
                 flag = 5;
             }
         }
+
         public string __ngaybay;
         public string __diemkhoihanh;
         public string __diemden;
@@ -359,7 +360,7 @@ namespace BanVeMayBay
             {
                 foreach (TTNguoiLon nl in lstNguoiLon)
                 {
-                    int result = DBNL.ThemTaiKHoan(nl, idtaikhoan);
+                    int result = DBNL.ThemKH_NguoiLon(nl);
                     if (result == 0)
                     {
                         MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
@@ -371,7 +372,7 @@ namespace BanVeMayBay
                 }
                 foreach (TTTreEm treem in lstTreEm)
                 {
-                    int result = DBTE.ThemTaiKHoan(treem, idtaikhoan);
+                    int result = DBTE.ThemKH_TreEm(treem);
                     if (result == 0)
                     {
                         MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
@@ -383,7 +384,7 @@ namespace BanVeMayBay
                 }
                 foreach (TTEmBe embe in lstEmBe)
                 {
-                    int result = DBEB.ThemTaiKHoan(embe, idtaikhoan);
+                    int result = DBEB.ThemKH_EmBe(embe);
                     if (result == 0)
                     {
                         MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);

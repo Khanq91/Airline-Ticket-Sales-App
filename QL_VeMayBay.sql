@@ -84,12 +84,21 @@ CREATE TABLE HANHKHACH
 	TenHK NVARCHAR(50) NOT NULL,      
 	GioiTinhHK NVARCHAR(4) CHECK(GioiTinhHK IN (N'Nam', N'Nữ')),
 	NgaySinhHK DATE NOT NULL,    
-	DiaChiHK NVARCHAR(50) NOT NULL,     
-	EmailHK VARCHAR(30) NOT NULL,       
+	DiaChiHK NVARCHAR(50)-- NOT NULL,    cho null để thêm thông tin của trẻ em, em bé 
+	EmailHK VARCHAR(30)-- NOT NULL,       
 	SDThk CHAR(11) CHECK (SDThk LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-	CCCD CHAR(20) UNIQUE NOT NULL,    
+	CCCD CHAR(20) --UNIQUE NOT NULL,  
+	TenNguoiDiCung NVARCHAR(50), --Cho thông tin của trẻ em và em bíe
 	CONSTRAINT PK_HK_IDHanhKhach PRIMARY KEY(ID),
 );
+
+--alter table HANHKHACH add TenNguoiDiCung NVARCHAR(50)
+--ALTER TABLE HANHKHACH ALTER COLUMN EmailHK VARCHAR(30) NULL;
+--ALTER TABLE HANHKHACH ALTER COLUMN DiaChiHK NVARCHAR(50) NULL;
+--ALTER TABLE HANHKHACH ALTER COLUMN CCCD CHAR(20) NULL;
+--ALTER TABLE HANHKHACH DROP CONSTRAINT UQ__HANHKHAC__A955A0AA345BA3B1;
+
+
 
 CREATE TABLE VE 
 (
@@ -140,10 +149,13 @@ CREATE TABLE HOADON
     TongTien MONEY DEFAULT 0,                    
     HinhThucThanhToan NVARCHAR(20),    -- Hình thức thanh toán (VD: 'Tiền mặt', 'Chuyển khoản')
 	TrangThaiHoaDon NVARCHAR(20) CHECK (TrangThaiHoaDon IN (N'Đã thanh toán', N'Chưa thanh toán', N'Đã hoàn tiền')),  -- Trạng thái thanh toán
-	IDHanhKhach INT NOT NULL,
+	--IDHanhKhach INT NOT NULL,
     CONSTRAINT PK_HD_IDHoaDon PRIMARY KEY(ID),
-	CONSTRAINT FK_HD_IDHanhKhach FOREIGN KEY(IDHanhKhach) REFERENCES HANHKHACH(ID) ON DELETE NO ACTION,
+	--CONSTRAINT FK_HD_IDHanhKhach FOREIGN KEY(IDHanhKhach) REFERENCES HANHKHACH(ID) ON DELETE NO ACTION,
 );
+
+--ALTER TABLE HOADON DROP CONSTRAINT FK_HD_IDHanhKhach;
+--ALTER TABLE HOADON DROP COLUMN IDHanhKhach
 
 CREATE TABLE GIAVE
 (
@@ -511,3 +523,49 @@ BEGIN
     CLOSE cur;
     DEALLOCATE cur;
 END
+
+-----------------------------------------------------------------------
+--								HOADON
+-----------------------------------------------------------------------
+CREATE TRIGGER trg_AutoMaHoaDon
+ON HOADON
+INSTEAD OF INSERT
+AS
+BEGIN
+    DECLARE @currentMonthYear CHAR(6) = CONVERT(CHAR(6), GETDATE(), 112), -- Lấy tháng năm hiện tại
+            @nextID INT,
+            @newMaHoaDon CHAR(12),
+            @NgayLapHoaDon DATE,
+            @TongTien MONEY,
+            @HinhThucThanhToan NVARCHAR(20),
+            @TrangThaiHoaDon NVARCHAR(20);
+
+    -- Tìm ID tiếp theo
+    SELECT @nextID = ISNULL(MAX(CAST(SUBSTRING(MaHoaDon, 9, 3) AS INT)), 0) + 1
+    FROM HOADON
+    WHERE MaHoaDon LIKE 'HD' + @currentMonthYear + '%';
+
+    -- Khai báo con trỏ để duyệt qua các bản ghi được chèn vào
+    DECLARE cur CURSOR FOR
+    SELECT NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon 
+    FROM inserted;
+
+    OPEN cur;
+
+    FETCH NEXT FROM cur INTO @NgayLapHoaDon, @TongTien, @HinhThucThanhToan, @TrangThaiHoaDon;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SET @newMaHoaDon = 'HD' + @currentMonthYear + RIGHT('000' + CAST(@nextID AS VARCHAR(3)), 3);
+
+        INSERT INTO HOADON (MaHoaDon, NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon)
+        VALUES (@newMaHoaDon, @NgayLapHoaDon, @TongTien, @HinhThucThanhToan, @TrangThaiHoaDon);
+
+        SET @nextID = @nextID + 1;
+
+        FETCH NEXT FROM cur INTO @NgayLapHoaDon, @TongTien, @HinhThucThanhToan, @TrangThaiHoaDon;
+    END
+
+    CLOSE cur;
+    DEALLOCATE cur;
+END;

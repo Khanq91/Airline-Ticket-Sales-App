@@ -32,6 +32,7 @@
             this.picCancel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDuoiGiaoDien = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.lblGiaGoi = new System.Windows.Forms.Label();
             this.lblTenGoi = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.picGoi4 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCancel)).BeginInit();
             this.pnlDuoiGiaoDien.SuspendLayout();
@@ -136,6 +136,18 @@
             this.pnlDuoiGiaoDien.Size = new System.Drawing.Size(599, 71);
             this.pnlDuoiGiaoDien.TabIndex = 1;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnHuy.Location = new System.Drawing.Point(297, 9);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(127, 56);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.picCancel_Click);
+            // 
             // lblGiaGoi
             // 
             this.lblGiaGoi.AutoSize = true;
@@ -203,7 +215,7 @@
             this.lblTenGoi1.Name = "lblTenGoi1";
             this.lblTenGoi1.Size = new System.Drawing.Size(75, 21);
             this.lblTenGoi1.TabIndex = 2;
-            this.lblTenGoi1.Text = "Gói 30kg";
+            this.lblTenGoi1.Text = "Gói 20kg";
             // 
             // picGoi1
             // 
@@ -248,7 +260,7 @@
             this.lblGiaGoi2.Name = "lblGiaGoi2";
             this.lblGiaGoi2.Size = new System.Drawing.Size(113, 21);
             this.lblGiaGoi2.TabIndex = 3;
-            this.lblGiaGoi2.Text = "130.000 VND";
+            this.lblGiaGoi2.Text = "150.000 VND";
             // 
             // lblTenGoi2
             // 
@@ -259,7 +271,7 @@
             this.lblTenGoi2.Name = "lblTenGoi2";
             this.lblTenGoi2.Size = new System.Drawing.Size(75, 21);
             this.lblTenGoi2.TabIndex = 2;
-            this.lblTenGoi2.Text = "Gói 20kg";
+            this.lblTenGoi2.Text = "Gói 30kg";
             // 
             // picGoi2
             // 
@@ -304,7 +316,7 @@
             this.lblGiaGoi3.Name = "lblGiaGoi3";
             this.lblGiaGoi3.Size = new System.Drawing.Size(113, 21);
             this.lblGiaGoi3.TabIndex = 3;
-            this.lblGiaGoi3.Text = "140.000 VND";
+            this.lblGiaGoi3.Text = "175.000 VND";
             // 
             // lblTenGoi3
             // 
@@ -315,7 +327,7 @@
             this.lblTenGoi3.Name = "lblTenGoi3";
             this.lblTenGoi3.Size = new System.Drawing.Size(75, 21);
             this.lblTenGoi3.TabIndex = 2;
-            this.lblTenGoi3.Text = "Gói 20kg";
+            this.lblTenGoi3.Text = "Gói 40kg";
             // 
             // picGoi3
             // 
@@ -350,6 +362,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(158, 183);
             this.panel4.TabIndex = 11;
+            this.panel4.Visible = false;
             // 
             // lblGiaGoi6
             // 
@@ -406,6 +419,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(158, 183);
             this.panel5.TabIndex = 10;
+            this.panel5.Visible = false;
             // 
             // lblGiaGoi5
             // 
@@ -462,6 +476,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(158, 183);
             this.panel6.TabIndex = 9;
+            this.panel6.Visible = false;
             // 
             // lblGiaGoi4
             // 
@@ -483,7 +498,7 @@
             this.lblTenGoi4.Name = "lblTenGoi4";
             this.lblTenGoi4.Size = new System.Drawing.Size(75, 21);
             this.lblTenGoi4.TabIndex = 2;
-            this.lblTenGoi4.Text = "Gói 20kg";
+            this.lblTenGoi4.Text = "Gói 50kg";
             // 
             // picGoi4
             // 
@@ -516,18 +531,6 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "button1";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnHuy.Location = new System.Drawing.Point(297, 9);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(127, 56);
-            this.btnHuy.TabIndex = 4;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.picCancel_Click);
             // 
             // frmHanhLy
             // 

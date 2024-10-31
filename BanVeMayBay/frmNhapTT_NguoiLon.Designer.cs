@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.rdoGioiTinhNam_NL = new System.Windows.Forms.RadioButton();
             this.rdoGioiTinhNu_NL = new System.Windows.Forms.RadioButton();
-            this.rdoGioiTinhKhac_NL = new System.Windows.Forms.RadioButton();
             this.txtHo_NL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,18 +91,6 @@
             this.rdoGioiTinhNu_NL.TabIndex = 10;
             this.rdoGioiTinhNu_NL.Text = "Nữ";
             this.rdoGioiTinhNu_NL.UseVisualStyleBackColor = true;
-            // 
-            // rdoGioiTinhKhac_NL
-            // 
-            this.rdoGioiTinhKhac_NL.AutoSize = true;
-            this.rdoGioiTinhKhac_NL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoGioiTinhKhac_NL.Location = new System.Drawing.Point(266, 12);
-            this.rdoGioiTinhKhac_NL.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoGioiTinhKhac_NL.Name = "rdoGioiTinhKhac_NL";
-            this.rdoGioiTinhKhac_NL.Size = new System.Drawing.Size(90, 36);
-            this.rdoGioiTinhKhac_NL.TabIndex = 10;
-            this.rdoGioiTinhKhac_NL.Text = "Khác";
-            this.rdoGioiTinhKhac_NL.UseVisualStyleBackColor = true;
             // 
             // txtHo_NL
             // 
@@ -251,7 +238,6 @@
             this.panel1.Controls.Add(this.rdoGioiTinhNu_NL);
             this.panel1.Controls.Add(this.chkNhanThongTin_NL);
             this.panel1.Controls.Add(this.rdoGioiTinhNam_NL);
-            this.panel1.Controls.Add(this.rdoGioiTinhKhac_NL);
             this.panel1.Controls.Add(this.txtHo_NL);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label1);
@@ -465,7 +451,6 @@
 
         private System.Windows.Forms.RadioButton rdoGioiTinhNam_NL;
         private System.Windows.Forms.RadioButton rdoGioiTinhNu_NL;
-        private System.Windows.Forms.RadioButton rdoGioiTinhKhac_NL;
         private System.Windows.Forms.TextBox txtHo_NL;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

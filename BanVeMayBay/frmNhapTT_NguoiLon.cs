@@ -114,15 +114,11 @@ namespace BanVeMayBay
             TTNguoiLon tt =new TTNguoiLon();
             if (rdoGioiTinhNam_NL.Checked)
             {
-                tt.Gioitinh = rdoGioiTinhKhac_NL.Text;
+                tt.Gioitinh = "Nam";
             }
             else if (rdoGioiTinhNu_NL.Checked)
             {
-                tt.Gioitinh = rdoGioiTinhNu_NL.Text;
-            }
-            else
-            {
-                tt.Gioitinh = rdoGioiTinhKhac_NL.Text;
+                tt.Gioitinh = "Nữ";
             }
             tt.TenKH = txtHo_NL.Text + " " + txtTenDemvaTen_NL.Text;
 
@@ -141,18 +137,12 @@ namespace BanVeMayBay
             }
             
             //tt.NgaySinh = mtxtNgaySinh.Text.ToString("yyyy-MM-dd");
-
+            tt.Email = txtEmail_NL.Text;
             tt.SDT = txtSDT_NL.Text;
             tt.DiaChi = txtNoiO_NL.Text;
             tt.CCCD=txtCCCD.Text;
             return tt;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TTKhachHang khachHang = GetKhachHang();
-            MessageBox.Show(khachHang.TenKH); // Display customer information
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
