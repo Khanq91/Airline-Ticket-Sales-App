@@ -189,6 +189,7 @@
             // 
             // btnDiTiep
             // 
+            this.btnDiTiep.BackColor = System.Drawing.Color.White;
             this.btnDiTiep.FlatAppearance.BorderSize = 0;
             this.btnDiTiep.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiTiep.ForeColor = System.Drawing.Color.LimeGreen;
@@ -197,7 +198,7 @@
             this.btnDiTiep.Size = new System.Drawing.Size(196, 71);
             this.btnDiTiep.TabIndex = 0;
             this.btnDiTiep.Text = "Đi tiếp";
-            this.btnDiTiep.UseVisualStyleBackColor = true;
+            this.btnDiTiep.UseVisualStyleBackColor = false;
             this.btnDiTiep.Click += new System.EventHandler(this.btnDiTiep_Click);
             // 
             // pnlTTCB

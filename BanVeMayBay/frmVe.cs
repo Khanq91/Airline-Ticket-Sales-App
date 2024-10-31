@@ -21,6 +21,7 @@ namespace BanVeMayBay
         string _tg_den;
         string _ma_chuyenbay;
         string _ma_maybay;
+        string _loai_maybay;
         string _diem_kh;
         string _diem_den;
         string _ngay_kh;
@@ -32,17 +33,19 @@ namespace BanVeMayBay
         public string tg_den { get => _tg_den; set => _tg_den = value; }
         public string ma_chuyenbay { get => _ma_chuyenbay; set => _ma_chuyenbay = value; }
         public string ma_maybay { get => _ma_maybay; set => _ma_maybay = value; }
+        public string loai_maybay { get => _loai_maybay; set => _loai_maybay = value; }
         public string diem_kh { get => _diem_kh; set => _diem_kh = value; }
         public string diem_den { get => _diem_den; set => _diem_den = value; }
         public string ngay_kh { get => _ngay_kh; set => _ngay_kh = value; }
 
-        public frmVe(string diemkhoihanh, string diemden, string ngaykhoihanh, string ThoiGianDi, string ThoiGianDen, string MaChuyenBay, string MaMayBay)
+        public frmVe(string diemkhoihanh, string diemden, string ngaykhoihanh, string ThoiGianDi, string ThoiGianDen, string MaChuyenBay, string MaMayBay, string LoaiMB)
         {
             InitializeComponent();
             this.tg_di = ThoiGianDi;
             this.tg_den = ThoiGianDen;
             this.ma_chuyenbay = MaChuyenBay;
             this.ma_maybay = MaMayBay;
+            this.loai_maybay = LoaiMB;
             this.diem_kh = diemkhoihanh;
             this.diem_den = diemden;
             this.ngay_kh = ngaykhoihanh;
@@ -54,14 +57,13 @@ namespace BanVeMayBay
             lblMCB.Text = ma_chuyenbay;
             lblTG.Text = ngay_kh + " | " + tg_di + " - " + tg_den;
             lblMaMayBay.Text = ma_maybay;
-            lblMMB.Text = ma_maybay;
+            lblMMB.Text = ma_maybay + " - " + loai_maybay;
             lblDiemKhoiHanh.Text = diem_kh;
             lblDiemDen.Text = diem_den;
         }
         public frmVe ()
         {
             InitializeComponent();
-
         }
         public void SetParentForm(frmMain parent)
         {
@@ -74,9 +76,7 @@ namespace BanVeMayBay
             Tienve = "";
             //VD: giá của hạng vé 1 = 1000000 thì lblGiaHV1.Text bằng 1.000
             lblGiaHV1.Text = "500";
-            lblGiaHV2.Text = "1.000";
-            lblGiaHV3.Text = "1.500";
-            lblGiaHV4.Text = "2.000";
+            lblGiaHV4.Text = "1.500";
         }
         #region Hàm xử lý giao diện
         //Các hàm xuất thông tin các dịch vụ trên frm

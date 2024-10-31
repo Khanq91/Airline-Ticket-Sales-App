@@ -221,9 +221,9 @@ INSERT INTO TUYENBAY (NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiT
 VALUES 
 	('2024-10-30', '08:00', '10:00', 180, 0, N'Còn vé', 4, 1),
     ('2024-11-01', '14:30', '16:45', 300, 0, N'Còn vé', 5, 2),
-	('2024-11-02', '10:15', '12:00', 220, 0, N'Còn vé', 6, 3),
-    ('2024-11-03', '15:00', '17:00', 350, 0, N'Còn vé', 7, 4),
-    ('2024-11-04', '18:00', '20:00', 260, 0, N'Còn vé', 8, 5);
+	('2024-11-02', '10:15', '12:00', 220, 0, N'Còn vé', 1, 3),
+    ('2024-11-03', '15:00', '17:00', 350, 0, N'Còn vé', 2, 4),
+    ('2024-11-04', '18:00', '20:00', 260, 0, N'Còn vé', 3, 5);
 
 INSERT INTO HANHKHACH (TenHK, GioiTinhHK, NgaySinhHK, DiaChiHK, EmailHK, SDThk, CCCD) 
 VALUES 

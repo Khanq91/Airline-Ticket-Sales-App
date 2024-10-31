@@ -314,7 +314,7 @@
             this.lblGiaHV4.Name = "lblGiaHV4";
             this.lblGiaHV4.Size = new System.Drawing.Size(156, 45);
             this.lblGiaHV4.TabIndex = 6;
-            this.lblGiaHV4.Text = "2.000";
+            this.lblGiaHV4.Text = "1.500";
             this.lblGiaHV4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGiaHV4.Click += new System.EventHandler(this.pnlHangVe4_Click);
             // 

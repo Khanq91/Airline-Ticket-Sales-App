@@ -26,19 +26,19 @@ namespace BanVeMayBay
         }
         public void LoadSanBayDi()
         { 
-            DataTable sanabaydi=new DataTable();
-            sanabaydi = db.GetDataAdapter("SanBay");
-            cboDiemKhoiHanh.DataSource =sanabaydi ;
+            DataTable sanBayDi=new DataTable();
+            sanBayDi = db.GetDataAdapter("SanBay");
+            cboDiemKhoiHanh.DataSource = sanBayDi;
             cboDiemKhoiHanh.DisplayMember = "TenSB";
-            cboDiemKhoiHanh.ValueMember = "MaSB";
+            cboDiemKhoiHanh.ValueMember = "MaSanBay";
         }
         public void LoadSanBayDen()
         {
-            DataTable sanabaydi = new DataTable();
-            sanabaydi = db.GetDataAdapter("SanBay");
-            cboDiemDen.DataSource = sanabaydi;
+            DataTable sanBayDen = new DataTable();
+            sanBayDen = db.GetDataAdapter("SanBay");
+            cboDiemDen.DataSource = sanBayDen;
             cboDiemDen.DisplayMember = "TenSB";
-            cboDiemDen.ValueMember = "MaSB";
+            cboDiemDen.ValueMember = "MaSanBay";
         }
         private void frmChonDiaDiemDatVe_Load(object sender, EventArgs e)
         {

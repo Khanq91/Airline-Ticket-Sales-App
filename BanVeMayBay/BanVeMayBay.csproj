@@ -124,12 +124,6 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDanhSachVe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhSachVe.Designer.cs">
-      <DependentUpon>frmDanhSachVe.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHanhLy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,12 +147,6 @@
     </Compile>
     <Compile Include="frmNhapTT_NguoiLon.Designer.cs">
       <DependentUpon>frmNhapTT_NguoiLon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmNhapTT_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNhapTT_Main.Designer.cs">
-      <DependentUpon>frmNhapTT_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhapTT_TreEm.cs">
       <SubType>Form</SubType>
@@ -224,9 +212,6 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhSachVe.resx">
-      <DependentUpon>frmDanhSachVe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHanhLy.resx">
       <DependentUpon>frmHanhLy.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,9 +223,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapTT_NguoiLon.resx">
       <DependentUpon>frmNhapTT_NguoiLon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapTT_Main.resx">
-      <DependentUpon>frmNhapTT_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapTT_TreEm.resx">
       <DependentUpon>frmNhapTT_TreEm.cs</DependentUpon>

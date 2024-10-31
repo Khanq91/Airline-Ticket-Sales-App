@@ -28,3 +28,9 @@ D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\18-10-2024\BanVeMayBay\DB\obj\D
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\18-10-2024\BanVeMayBay\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\18-10-2024\BanVeMayBay\DB\obj\Debug\DB.dll
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\18-10-2024\BanVeMayBay\DB\obj\Debug\DB.pdb
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\bin\Debug\DB.dll
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\bin\Debug\DB.pdb
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\obj\Debug\DB.csproj.AssemblyReference.cache
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\obj\Debug\DB.dll
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\DB\obj\Debug\DB.pdb

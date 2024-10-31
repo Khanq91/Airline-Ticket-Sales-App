@@ -51,9 +51,7 @@ namespace BanVeMayBay
             frmDVInstance = new frmChonDV();
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
         }
-
-
-       
+        #region Xử lý trên giao diện
         private void frmMain_Load(object sender, EventArgs e)
         {
             pnlTTCB.Visible = false;
@@ -69,7 +67,6 @@ namespace BanVeMayBay
             flowLayoutPnlThanGianDien.Controls.Add(frmCDDDV);
             frmCDDDV.Show();
         }
-
         private void picThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -82,156 +79,40 @@ namespace BanVeMayBay
             frmm.FormClosed += (s, args) => this.Close();
             frmm.Show();
         }
-        #region Phương xử lý thông tin
-        public string __ngaybay;
-        public string __diemkhoihanh;
-        public string __diemden;
-        TTCHUYENBAY ttcb = new TTCHUYENBAY();
-        public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
-        {
-            string TTHK = "1 NGƯỜI LỚN";
-            if(slNL != 1)
-            {
-                TTHK = slNL.ToString() + " NGƯỜI LỚN";
-            }   
-            if(slTE != 0)
-            {
-                TTHK += ", " + slTE.ToString() + " TRẺ EM";
-            }    
-            if(slEB != 0)
-            {
-                TTHK += ", " + slTE.ToString() + " EM BÉ";
-            }
-            lblChuyenBayKHMC.Text = "CHUYẾN BAY MỘT CHIỀU | " + TTHK;
-
-            __ngaybay = ngaybay;
-            __diemkhoihanh = ttcb.TenSanBay(diemkhoihanh);
-            __diemden = ttcb.TenSanBay(diemden);
-            pnlTTCB.Visible = true;
-            pnlTTCB.Location = new Point(0, 144);
-            lblDiemKhoiHanh.Text = __diemkhoihanh;
-            lblDiemDen.Text = __diemden;
-            pnlThanGiaoDien.Location = new Point(0, 229);
-            //pnlThanGiaoDien.Height -= 200;
-            //pnlThanGiaoDien.Height -= 84;
-
-            //xuất hiện footer chứa nút đi tiếp
-            pnlThanGiaoDien.Height -= 171;
-            pnlDuoiGiaoDien.Visible = true;
-
-            pnlThanGiaoDien.Width -= 555;
-            flowLayoutPnlThanGianDien.Width -= 555;
-            pnlTTVeDat.Visible = true;
-            //flowLayoutPanelTTVeDat.Visible = true;
-            //pnlThanGiaoDien.Size = new Size(1322, 602);
-            flowLayoutPnlThanGianDien.Padding = new Padding(20, 20, 20, 20);
-            xuatDSTTHK(slNL, slTE, slEB);
-        }
-        public void xuatDSTTHK(int slNL, int slTE, int slEB)
-        {
-            int i;
-            for (i = 0; i < slNL; i++)
-            {
-                frmNhapTT_NguoiLon frmNL = new frmNhapTT_NguoiLon();
-                frmNL.TopLevel = false;
-                flowLayoutPnlThanGianDien.Controls.Add(frmNL);
-                frmNL.Show();
-            }
-            for (i = 0; i < slTE; i++)
-            {
-                frmNhapTT_TreEm frmTE = new frmNhapTT_TreEm();
-                frmTE.TopLevel = false;
-                flowLayoutPnlThanGianDien.Controls.Add(frmTE);
-                frmTE.Show();
-            }
-            for (i = 0; i < slEB; i++)
-            {
-                frmNhapTT_EmBe frmEB = new frmNhapTT_EmBe();
-                frmEB.TopLevel = false;
-                flowLayoutPnlThanGianDien.Controls.Add(frmEB);
-                frmEB.Show();
-            } 
-            //btnNhapTTHK.Visible = true;
-        }
-        public void GetLstDSVe(string diemkhoihanh, string diemden, string ngaybay)
-        {
-            lstCB = dbCB.GetLSTChuyenBay(diemkhoihanh, diemden, ngaybay);
-
-        }
-        private void loadd_DSfrmVe(int sl)
-        {
-            foreach (var item in lstCB)
-            {
-                frmVe frmv = new frmVe(item.DIemKhoiHanh, item.DiemDen, __ngaybay, item.ThoiGianDi.ToString(), item.ThoiGianDen.ToString(), item.MaChuyenBay, item.MaMayBay);
-                frmv.SetParentForm(this);
-                frmv.TopLevel = false;
-                flowLayoutPnlThanGianDien.Controls.Add(frmv);
-                frmVes.Add(frmv);
-                frmv.Show();
-            }
-        }
-        public void resetAllform()
-        {
-            foreach (Control crtl in flowLayoutPnlThanGianDien.Controls)
-            {
-                if (crtl is frmVe)
-                {
-                    frmVe frmv = (frmVe)crtl;
-                    frmv.resetForm();
-                }
-            }
-        }
-        public string __Hangve;
-        public string __TienVe;
-        public string __tgdi;
-        public string __tgden;
-        public string __machuyenbay;
-        public string __ViTriGhe;
-        public string __TienViTriGhe;
-        public string __GoiHanhLy;
-        public string __TienGoiHanhLy;
-
-        //kiểm tra xem form vé nào được click, lấy thông tin hạng vé và tiền vé
-        public void HandleButtonClick(frmVe clickedForm, string hangve, string tienve, string tgdi, string tgden, string machuyenbay)
-        {
-            foreach (var item in frmVes)
-            {
-                if (item == clickedForm)
-                {
-                    __Hangve = hangve;
-                    __TienVe = tienve;
-                    __tgdi = tgdi;
-                    __tgden = tgden;
-                    __machuyenbay = machuyenbay;
-                }
-            }
-        }
-        #endregion
-        #region test nhận dữ liệu từ formDV
-        private void FrmDVInstance_LabelTextChanged(object sender, LabelDataEventArgs e)
-        {
-            // Xử lý khi giá trị của các label trong frmDV thay đổi
-            string Event_TenViTriGhe = e.Event_TenViTriGhe;
-            string Event_GiaViTriGhe = e.Event_GiaViTriGhe;
-            string Event_TenGoi = e.Event_TenGoi;
-            string Event_GiaGoi = e.Event_GiaGoi;
-        }
-        #endregion
         int flag = 1;
+        private void btnDiTiep_Click(object sender, EventArgs e)
+        {
+            NhapKhachHang();
+            if (check)
+            {
+                AddTTKhachHangVaoSql();
+                flowLayoutPnlThanGianDien.Controls.Clear();
+                frmChonDV frmDV = new frmChonDV();
+                frmDV.TopLevel = false;
+                XuLy_btnDiTiep(flag);
+            }
+            lstNguoiLon.Clear();
+            lstTreEm.Clear();
+            lstEmBe.Clear();
+        }
+
+        #endregion
+        #region Phương thức xử lý thông tin
         private void XuLy_btnDiTiep(int index)
         {
             string TongTien = string.Empty;
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
-                GetLstDSVe(__diemkhoihanh, __diemden, __ngaybay);
+                GetDanhSachVe(__diemkhoihanh, __diemden, __ngaybay);
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 flowLayoutPnlThanGianDien.Padding = new Padding(0, 0, 0, 0);
                 pnlThanGiaoDien.Location = new Point(312, 285);
                 pnlThanGiaoDien.Height -= 50;
+
                 lblHangVe1.Visible = true;
                 lblHangVe4.Visible = true;
-                loadd_DSfrmVe(lstCB.Count());
+                Load_DanhSachtoFrmVe(lstCB.Count());
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
                 frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
@@ -264,7 +145,7 @@ namespace BanVeMayBay
 
                 flag = 3;
             }
-            if(index == 3)
+            if (index == 3)
             {
                 __ViTriGhe = frmDVInstance.lblMaGhe.Text;
                 __TienViTriGhe = frmDVInstance.lblTienGhe.Text;
@@ -279,9 +160,14 @@ namespace BanVeMayBay
                 lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
                 TongTien = frmttvd.GetThanhTien();
                 frmttvd.Show();
-                
+
                 pnlThanGiaoDien.Location = new Point(25, 229);
                 flowLayoutPnlThanGianDien.Controls.Clear();
+
+                btnDiTiep.BackColor = Color.Gold;
+                btnDiTiep.Text = "Thanh Toán";
+                btnDiTiep.ForeColor = Color.Black;
+                btnDiTiep.Font = new Font(btnDiTiep.Font, FontStyle.Bold | FontStyle.Italic);
 
                 frmThanhToan frmthanhtoan = new frmThanhToan(TongTien);
                 frmthanhtoan.ThanhTien();
@@ -291,12 +177,141 @@ namespace BanVeMayBay
 
                 flag = 4;
             }
-            if(index == 4)
+            if (index == 4)
             {
                 flag = 5;
             }
         }
-        #region Lấy dữ liệu khách hàng
+        public string __ngaybay;
+        public string __diemkhoihanh;
+        public string __diemden;
+        TTCHUYENBAY ttcb = new TTCHUYENBAY();
+        public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
+        {
+            string TTHK = "1 NGƯỜI LỚN";
+            if(slNL != 1)
+            {
+                TTHK = slNL.ToString() + " NGƯỜI LỚN";
+            }   
+            if(slTE != 0)
+            {
+                TTHK += ", " + slTE.ToString() + " TRẺ EM";
+            }    
+            if(slEB != 0)
+            {
+                TTHK += ", " + slTE.ToString() + " EM BÉ";
+            }
+            lblChuyenBayKHMC.Text = "CHUYẾN BAY MỘT CHIỀU | " + TTHK;
+
+            __ngaybay = ngaybay;
+            __diemkhoihanh = ttcb.TenSanBay(diemkhoihanh);
+            __diemden = ttcb.TenSanBay(diemden);
+            pnlTTCB.Visible = true;
+            pnlTTCB.Location = new Point(0, 144);
+            lblDiemKhoiHanh.Text = __diemkhoihanh;
+            lblDiemDen.Text = __diemden;
+            pnlThanGiaoDien.Location = new Point(0, 229);
+
+            //xuất hiện footer chứa nút đi tiếp
+            pnlThanGiaoDien.Height -= 171;
+            pnlDuoiGiaoDien.Visible = true;
+
+            pnlThanGiaoDien.Width -= 555;
+            flowLayoutPnlThanGianDien.Width -= 555;
+            pnlTTVeDat.Visible = true;
+            flowLayoutPnlThanGianDien.Padding = new Padding(20, 20, 20, 20);
+            xuatDSTTHK(slNL, slTE, slEB);
+        }
+        public void xuatDSTTHK(int slNL, int slTE, int slEB)
+        {
+            int i;
+            for (i = 0; i < slNL; i++)
+            {
+                frmNhapTT_NguoiLon frmNL = new frmNhapTT_NguoiLon();
+                frmNL.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmNL);
+                frmNL.Show();
+            }
+            for (i = 0; i < slTE; i++)
+            {
+                frmNhapTT_TreEm frmTE = new frmNhapTT_TreEm();
+                frmTE.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmTE);
+                frmTE.Show();
+            }
+            for (i = 0; i < slEB; i++)
+            {
+                frmNhapTT_EmBe frmEB = new frmNhapTT_EmBe();
+                frmEB.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmEB);
+                frmEB.Show();
+            } 
+            //btnNhapTTHK.Visible = true;
+        }
+        public void GetDanhSachVe(string diemkhoihanh, string diemden, string ngaybay)
+        {
+            lstCB = dbCB.GetLSTChuyenBay(diemkhoihanh, diemden, ngaybay);
+
+        }
+        private void Load_DanhSachtoFrmVe(int sl)
+        {
+            foreach (var item in lstCB)
+            {
+                frmVe frmv = new frmVe(item.DiemKhoiHanh, item.DiemDen, __ngaybay, item.ThoiGianDi.ToString(), item.ThoiGianDen.ToString(), item.MaChuyenBay, item.MaMayBay, item.LoaiMB);
+                frmv.SetParentForm(this);
+                frmv.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmv);
+                frmVes.Add(frmv);
+                frmv.Show();
+            }
+        }
+        public void resetAllform()
+        {
+            foreach (Control crtl in flowLayoutPnlThanGianDien.Controls)
+            {
+                if (crtl is frmVe)
+                {
+                    frmVe frmv = (frmVe)crtl;
+                    frmv.resetForm();
+                }
+            }
+        }
+        public string __Hangve;
+        public string __TienVe;
+        public string __tgdi;
+        public string __tgden;
+        public string __machuyenbay;
+        public string __ViTriGhe;
+        public string __TienViTriGhe;
+        public string __GoiHanhLy;
+        public string __TienGoiHanhLy;
+        //kiểm tra xem form vé nào được click, lấy thông tin hạng vé và tiền vé
+        public void HandleButtonClick(frmVe clickedForm, string hangve, string tienve, string tgdi, string tgden, string machuyenbay)
+        {
+            foreach (var item in frmVes)
+            {
+                if (item == clickedForm)
+                {
+                    __Hangve = hangve;
+                    __TienVe = tienve;
+                    __tgdi = tgdi;
+                    __tgden = tgden;
+                    __machuyenbay = machuyenbay;
+                }
+            }
+        }
+        #endregion
+        #region Nhận dữ liệu từ formDV
+        private void FrmDVInstance_LabelTextChanged(object sender, LabelDataEventArgs e)
+        {
+            // Xử lý khi giá trị của các label trong frmDV thay đổi
+            string Event_TenViTriGhe = e.Event_TenViTriGhe;
+            string Event_GiaViTriGhe = e.Event_GiaViTriGhe;
+            string Event_TenGoi = e.Event_TenGoi;
+            string Event_GiaGoi = e.Event_GiaGoi;
+        }
+        #endregion
+        #region Xử lý dữ liệu khách hàng
         bool check = true;
         public void NhapKhachHang()
         {
@@ -344,7 +359,6 @@ namespace BanVeMayBay
             {
                 foreach (TTNguoiLon nl in lstNguoiLon)
                 {
-
                     int result = DBNL.ThemTaiKHoan(nl, idtaikhoan);
                     if (result == 0)
                     {
@@ -382,20 +396,5 @@ namespace BanVeMayBay
             }
         }
         #endregion
-        private void btnDiTiep_Click(object sender, EventArgs e)
-        {
-            NhapKhachHang();
-            //if (check)
-            //{
-            //    AddTTKhachHangVaoSql();
-                flowLayoutPnlThanGianDien.Controls.Clear();
-                frmChonDV frmDV = new frmChonDV();
-                frmDV.TopLevel = false;
-                XuLy_btnDiTiep(flag);
-            //}
-            lstNguoiLon.Clear();
-            lstTreEm.Clear();
-            lstEmBe.Clear();
-        }
     }
 }
