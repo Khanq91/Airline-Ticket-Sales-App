@@ -6,9 +6,11 @@ CREATE TABLE SANBAY
 	ID INT NOT NULL IDENTITY(1,1),
 	MaSanBay CHAR(6) NOT NULL,
 	TenSB NVARCHAR(50),
+	DiaDiem NVARCHAR(50),
 	CONSTRAINT PK_SB_IDSanBay PRIMARY KEY(ID)
 );
 
+--alter table SANBAY add DiaDiem NVARCHAR(50)
 CREATE TABLE MAYBAY
 (
 	ID INT NOT NULL IDENTITY(1,1),
@@ -189,13 +191,13 @@ CREATE TABLE NHANXET
 -----------------------------------------------------------------------
 --								DỮ LIỆU
 -----------------------------------------------------------------------
-INSERT INTO SANBAY (MaSanBay, TenSB)
+INSERT INTO SANBAY (MaSanBay, TenSB, DiaDiem)
 VALUES 
-    ('SB001', N'Sân bay Tân Sơn Nhất'),
-    ('SB002', N'Sân bay Nội Bài'),
-    ('SB003', N'Sân bay Đà Nẵng'),
-    ('SB004', N'Sân bay Cam Ranh'),
-    ('SB005', N'Sân bay Phú Quốc');
+    ('SB001', N'Sân bay Tân Sơn Nhất', N'TP.HCM'),
+    ('SB002', N'Sân bay Nội Bài', N'Hà Nội'),
+    ('SB003', N'Sân bay Đà Nẵng', N'Đà Nẵng'),
+    ('SB004', N'Sân bay Cam Ranh' N'Cam Ranh'),
+    ('SB005', N'Sân bay Phú Quốc', N'Phú Quốc');
 
 INSERT INTO MAYBAY (MaMayBay, LoaiMB, HangBay, TongSoGhe)
 VALUES 

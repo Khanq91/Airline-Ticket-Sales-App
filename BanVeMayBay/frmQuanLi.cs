@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DB;
 //Thư viện cho chức năng xuất file Excel
 using System.IO;
 using OfficeOpenXml;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml.ConditionalFormatting.Contracts;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BanVeMayBay
 {
@@ -20,11 +22,19 @@ namespace BanVeMayBay
         string tennguoidung;
         string role;
         string caulenh;
+        DB_Connet db = new DB_Connet();
+        DataTable dt_SanBay = new DataTable();
+        DataTable dt_Ve = new DataTable();
+        DataTable dt_HoaDon = new DataTable();
+
+        bool LoadDuLieu = false;
         public frmQuanLi(string tennguoidung, string role)
         {
             InitializeComponent();
             this.tennguoidung = tennguoidung;
             this.role = role;
+            Load_SanBay();
+            LoadDuLieu = true;
         }
         //startPosition cho thân giao diện (396, 142), Size(1502, 782)
         //startPosition for panel 707, 65, size 779, 700
@@ -139,6 +149,7 @@ namespace BanVeMayBay
                 e.Handled = true;
             }    
         }
+
         #region Quản lý vé
         private void btnThem_QLVe_Click(object sender, EventArgs e)
         {
@@ -175,31 +186,165 @@ namespace BanVeMayBay
         #endregion
 
         #region Quản lí sân bay
+        private void dataGrV_SanBay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGrV_SanBay.Rows[e.RowIndex];
+                txtMaSanBay.Text = row.Cells["MaSanBay"].Value.ToString();
+                txtTenSanBay.Text = row.Cells["TenSB"].Value.ToString();
+                string diaDiem = row.Cells["DiaDiem"].Value.ToString();
+                int index = cboViTri.FindStringExact(diaDiem);
+                if (index != -1)
+                    cboViTri.SelectedIndex = index;
+                else
+                    cboViTri.SelectedIndex = -1;
+                cboViTri.Refresh();
+                btnXoa_QLSB.Enabled = true;
+                return;
+            }
+        }
+        private void txtTaoMaSB_Click(object sender, EventArgs e)
+        {
+            string caulenh = "SELECT MAX(CAST(SUBSTRING(MaSanBay, 3, 3) AS INT)) " +
+                "FROM SANBAY " +
+                "WHERE MaSanBay LIKE 'SB%'";    //Kiẻm tra mã sân bay 
+            int KTRAmaSB;
+            var result = db.GetExecuteScalar(caulenh);
+            if (result != DBNull.Value)
+            {
+                KTRAmaSB = Convert.ToInt32(result) + 1;
+            }
+            else
+            {
+                KTRAmaSB = 1;
+            }
+            string maSB = $"SB{KTRAmaSB:D3}";
+            txtMaSanBay.Text = maSB;
+        }
         private void btnThem_QLSB_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(txtTenSanBay.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
+            else if(string.IsNullOrEmpty(txtMaSanBay.Text))
+            {
+                MessageBox.Show("Vui lòng tạo mã sân bay trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else if(cboViTri.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn vị trí của sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
             else
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm sân bay: " + txtTenSanBay.Text + "\nỞ " + cboViTri.SelectedText, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(result == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm \nSân bay: '" + txtTenSanBay.Text + "'\nỞ '" + cboViTri.SelectedItem.ToString() +"'", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-
-                    ///thêm sân bay
-                }    
+                    string caulenh = "insert into SANBAY(MaSanBay, TenSB, DiaDiem) values (" +
+                        "'" + txtMaSanBay.Text +
+                        "', N'" + txtTenSanBay.Text +
+                        "', N'" + cboViTri.SelectedItem.ToString() + "')";
+                    try
+                    {
+                        int kq = db.GetExecuteNonQuery(caulenh);
+                        if (kq > 0)
+                        {
+                            MessageBox.Show("Thêm thành công!");
+                            Load_SanBay();
+                            txtMaSanBay.Clear();
+                            txtTenSanBay.Clear();
+                            txtTenSanBay.Focus();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Thêm thất bại! \nLỗi:" + ex.Message);
+                        return;
+                    }
+                }
+                else return;
             }
         }
-
         private void btnSua_QLSB_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(txtTenSanBay.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else if (string.IsNullOrEmpty(txtMaSanBay.Text))
+            {
+                MessageBox.Show("Vui lòng tạo mã sân bay trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else if (cboViTri.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn vị trí của sân bay!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                if (dataGrV_SanBay.SelectedRows.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có muốn sửa lại thông tin của sân bay có mã '" + txtMaSanBay.Text + "'!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        string caulenh = "update SANBAY " +
+                            "set DiaDiem = N'" + cboViTri.SelectedItem.ToString() + "', " +
+                            "TenSB = N'" + txtTenSanBay.Text + "' " +
+                            "where MaSanBay = '" + txtMaSanBay.Text + "'";
+                        try
+                        {
+                            var kq = db.GetExecuteNonQuery(caulenh);
+                            if (kq > 0)
+                            {
+                                MessageBox.Show("Sửa thành công!");
+                                Load_SanBay();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Sửa thất bại!" + ex.Message);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn 1 hàng dữ liệu trong bảng để sửa thông tin!");
+                }    
+            }    
         }
-
         private void btnXoa_QLSB_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn XÓA sân bay có mã '" + txtMaSanBay.Text + "'", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                if (dataGrV_SanBay.SelectedRows.Count > 0)
+                {
+                    string caulenh = "delete from SANBAY where MaSanBay = '" + txtMaSanBay.Text + "'";
+                    try
+                    {
+                        var kq = db.GetExecuteNonQuery(caulenh);
+                        if (kq > 0)
+                        {
+                            MessageBox.Show("Xóa thành công sân bay có mã là '" + txtMaSanBay.Text + "'");
+                            Load_SanBay();
+                            txtMaSanBay.Clear();
+                            txtTenSanBay.Clear();
+                            cboViTri.Text = "";
+                            txtTenSanBay.Focus();
+                            btnXoa_QLSB.Enabled = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Xóa thất bại! \nLỗi: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn 1 hàng dữ liệu trong bảng để xóa thông tin!");
+                }
+            }
+            else return;
         }
         #endregion
 
@@ -243,5 +388,13 @@ namespace BanVeMayBay
         }
         #endregion
 
+        #region Phương thức chức năng
+        private void Load_SanBay()
+        {
+            dt_SanBay = db.GetDataTable("select MaSanBay, TenSB, DiaDiem from SANBAY");
+            dataGrV_SanBay.DataSource = dt_SanBay;
+        }
+        #endregion
+        
     }
 }

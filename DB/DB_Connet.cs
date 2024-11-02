@@ -67,10 +67,17 @@ namespace DB
             return result;
         }
 
-        public DataTable GetDataAdapter(string caulenh)
+        public DataTable GetDataAdapter(string TenBang)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter sql_Dt = new SqlDataAdapter("select * from " + caulenh, con);
+            SqlDataAdapter sql_Dt = new SqlDataAdapter("select * from " + TenBang, con);
+            sql_Dt.Fill(dt);
+            return dt;
+        }
+        public DataTable GetDataTable(string caulenh)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter sql_Dt = new SqlDataAdapter(caulenh, con);
             sql_Dt.Fill(dt);
             return dt;
         }

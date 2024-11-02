@@ -80,6 +80,10 @@
             this.Test2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Test3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
+            this.txtTaoMaSB = new System.Windows.Forms.Button();
+            this.MaSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
@@ -604,6 +608,7 @@
             // pnlQL_SanBay
             // 
             this.pnlQL_SanBay.BackColor = System.Drawing.Color.PeachPuff;
+            this.pnlQL_SanBay.Controls.Add(this.txtTaoMaSB);
             this.pnlQL_SanBay.Controls.Add(this.cboViTri);
             this.pnlQL_SanBay.Controls.Add(this.label19);
             this.pnlQL_SanBay.Controls.Add(this.txtTenSanBay);
@@ -730,7 +735,7 @@
             this.txtMaSanBay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSanBay.Location = new System.Drawing.Point(55, 100);
             this.txtMaSanBay.Name = "txtMaSanBay";
-            this.txtMaSanBay.Size = new System.Drawing.Size(600, 39);
+            this.txtMaSanBay.Size = new System.Drawing.Size(452, 39);
             this.txtMaSanBay.TabIndex = 34;
             // 
             // label17
@@ -757,12 +762,18 @@
             // dataGrV_SanBay
             // 
             this.dataGrV_SanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrV_SanBay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSanBay,
+            this.TenSB,
+            this.DiaDiem});
             this.dataGrV_SanBay.Location = new System.Drawing.Point(707, 65);
             this.dataGrV_SanBay.Name = "dataGrV_SanBay";
             this.dataGrV_SanBay.RowHeadersWidth = 62;
             this.dataGrV_SanBay.RowTemplate.Height = 28;
+            this.dataGrV_SanBay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrV_SanBay.Size = new System.Drawing.Size(779, 700);
             this.dataGrV_SanBay.TabIndex = 11;
+            this.dataGrV_SanBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_SanBay_CellClick);
             // 
             // btnXoa_QLSB
             // 
@@ -782,7 +793,6 @@
             // 
             // btnSua_QLSB
             // 
-            this.btnSua_QLSB.Enabled = false;
             this.btnSua_QLSB.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua_QLSB.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnSua_QLSB.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
@@ -914,6 +924,46 @@
             this.label20.TabIndex = 33;
             this.label20.Text = "ĐÂY LÀ PANEL QUẢN LÝ HÓA ĐƠN";
             // 
+            // txtTaoMaSB
+            // 
+            this.txtTaoMaSB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaoMaSB.ForeColor = System.Drawing.Color.Lime;
+            this.txtTaoMaSB.Image = global::BanVeMayBay.Properties.Resources.refresh;
+            this.txtTaoMaSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTaoMaSB.Location = new System.Drawing.Point(513, 100);
+            this.txtTaoMaSB.Name = "txtTaoMaSB";
+            this.txtTaoMaSB.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.txtTaoMaSB.Size = new System.Drawing.Size(142, 40);
+            this.txtTaoMaSB.TabIndex = 38;
+            this.txtTaoMaSB.Text = "Tạo mã";
+            this.txtTaoMaSB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTaoMaSB.UseVisualStyleBackColor = true;
+            this.txtTaoMaSB.Click += new System.EventHandler(this.txtTaoMaSB_Click);
+            // 
+            // MaSanBay
+            // 
+            this.MaSanBay.DataPropertyName = "MaSanBay";
+            this.MaSanBay.HeaderText = "Mã sân bay";
+            this.MaSanBay.MinimumWidth = 8;
+            this.MaSanBay.Name = "MaSanBay";
+            this.MaSanBay.Width = 150;
+            // 
+            // TenSB
+            // 
+            this.TenSB.DataPropertyName = "TenSB";
+            this.TenSB.HeaderText = "Tên sân bay";
+            this.TenSB.MinimumWidth = 8;
+            this.TenSB.Name = "TenSB";
+            this.TenSB.Width = 327;
+            // 
+            // DiaDiem
+            // 
+            this.DiaDiem.DataPropertyName = "DiaDiem";
+            this.DiaDiem.HeaderText = "Địa điểm";
+            this.DiaDiem.MinimumWidth = 8;
+            this.DiaDiem.Name = "DiaDiem";
+            this.DiaDiem.Width = 238;
+            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -922,9 +972,9 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
-            this.Controls.Add(this.pnlQL_SanBay);
             this.Controls.Add(this.pnlQL_HD);
             this.Controls.Add(this.pnlQL_Ve);
+            this.Controls.Add(this.pnlQL_SanBay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1003,5 +1053,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Test1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Test2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Test3;
+        private System.Windows.Forms.Button txtTaoMaSB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSanBay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiem;
     }
 }
