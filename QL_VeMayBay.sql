@@ -188,6 +188,24 @@ CREATE TABLE NHANXET
 	CONSTRAINT FK_NX_IDTuyenBay FOREIGN KEY(IDTuyenBay) REFERENCES TUYENBAY(ID) ON DELETE NO ACTION
 );
 
+CREATE TABLE CHITIETHOADON
+(
+	ID INT,
+    MaHoaDon CHAR(12),
+	Ve MONEY,
+	Thue MONEY,
+	PhuPhiHeThong MONEY,
+	PhuPhiAnNinh MONEY,
+	Ghe MONEY,
+	HanhLy MONEY,
+	KM_ThanhVienLauNam MONEY,
+	KM_MaKhuyenMai MONEY,
+	TenNhanVienTruc NVARCHAR(30)
+	CONSTRAINT PK_CTHD PRIMARY KEY(ID),
+	CONSTRAINT FK_CTHD_HD FOREIGN KEY(ID) REFERENCES HOADON(ID)
+);
+
+--alter table CHITIETHOADON add SL_Ve int
 -----------------------------------------------------------------------
 --								DỮ LIỆU
 -----------------------------------------------------------------------
@@ -298,7 +316,6 @@ VALUES
 -----------------------------------------------------------------------
 --								CHANGBAY
 -----------------------------------------------------------------------
-
 CREATE TRIGGER trg_AutoMaChangBay
 ON CHANGBAY
 INSTEAD OF INSERT
@@ -571,3 +588,17 @@ BEGIN
     CLOSE cur;
     DEALLOCATE cur;
 END;
+
+CREATE TRIGGER trg_setTrangThaiTUYENBAY
+ON TUYENBAY
+FOR INSERT, UPDATE
+AS
+BEGIN
+    UPDATE TB
+    SET TrangThaiTuyenBay = CASE 
+                                WHEN (ins.SoVeConLai - ins.SoVeDaBan) = 0 THEN N'Hết vé'
+                                ELSE N'Còn vé'
+                            END
+    FROM TUYENBAY TB
+    INNER JOIN inserted ins ON TB.MaTuyenBay = ins.MaTuyenBay;
+END

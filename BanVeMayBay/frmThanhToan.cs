@@ -14,8 +14,15 @@ namespace BanVeMayBay
     public partial class frmThanhToan : Form
     {
         string _TamTinh;
+        string _HinhThucThanhToan;
+        string _TrangThaiHoaDon;
+        string _TenNganHang;
         List<Label> labels = new List<Label>();
         public string TamTinh { get => _TamTinh; set => _TamTinh = value; }
+        public string HinhThucThanhToan { get => _HinhThucThanhToan; set => _HinhThucThanhToan = value; }
+        public string TrangThaiHoaDon { get => _TrangThaiHoaDon; set => _TrangThaiHoaDon = value; }
+        public string TenNganHang { get => _TenNganHang; set => _TenNganHang = value; }
+
         public frmThanhToan(string tamtinh)
         {
             InitializeComponent();
@@ -33,75 +40,74 @@ namespace BanVeMayBay
         {
             lblTamTinh.Text = TamTinh;
         }
-        public void ThanhTien()
-        {
-            #region Vì là không có giảm giá gì cả, nên không tính nhá
-            //float tamtinh = float.Parse(TamTinh.Replace(".", ""));
-            //float giamgia = float.Parse(lblKhuyenMai.Text.Replace(".", ""));
-            //float tongtien = tamtinh - giamgia;
-            //lblTongTien.Text = string.Format("{0:n0}", tongtien);
-            //lblTongTien.Text = string.Format("{0:n0}", tamtinh);
-            #endregion
-            lblTongTien.Text = TamTinh;
-        }
-
         private void pnlMB_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineMB);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "MB";
         }
 
         private void pnlSacombank_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineSacombank);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "Sacombank";
         }
 
         private void pnlAgribank_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineAgribank);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "Agribank";
         }
 
         private void pnlVietcombank_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineVietcombank);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "Vietcombank";
         }
 
         private void pnlVietinbank_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineVietinbank);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "Vietinbank";
         }
 
         private void pnlACB_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineACB);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "ACB";
         }
 
         private void pnlBIDV_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineBIDV);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "BIDV";
         }
 
         private void pnlTechcombank_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineTechcombank);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "Techcombank";
         }
 
         private void pnlOCB_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineOCB);
-
+            setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
+            this.TenNganHang = "OCB";
         }
+
 
         private void pnlTienMat_Click(object sender, EventArgs e)
         {
             XulyLine(lbl_LineTienMat);
+            setTrangThaiHD_HinhThucTT("Trả tiền mặt", "Đã thanh toán");
         }
         public void XulyLine(object sender)
         {
@@ -111,6 +117,33 @@ namespace BanVeMayBay
                 item.Visible = false;
             }
             lbl_click.Visible = true;
+        }
+        #endregion
+        #region Phương thức chức năng
+        public void ThanhTien()
+        {
+            #region Vì là không có giảm giá gì cả, nên không tính nhá
+            //float tamtinh = float.Parse(TamTinh.Replace(".", ""));
+            //float giamgia = float.Parse(lblKhuyenMai.Text.Replace(".", ""));
+            //float tongtien = tamtinh - giamgia;
+            //lblTongTien.Text = string.Format("{0:n0}", tongtien);
+            //lblTongTien.Text = string.Format("{0:n0}", tamtinh);
+            #endregion
+
+            lblTongTien.Text = TamTinh;
+        }
+        private void setTrangThaiHD_HinhThucTT(string __HinhThucThanhToan, string __TrangThaiHoaDon)
+        {
+            HinhThucThanhToan = __HinhThucThanhToan;
+            TrangThaiHoaDon = __TrangThaiHoaDon;
+        }
+        public string getHinhThucTT()
+        {
+            return HinhThucThanhToan;
+        }
+        public string getTenNganHang()
+        {
+            return TenNganHang;
         }
         #endregion
     }

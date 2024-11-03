@@ -19,10 +19,11 @@ namespace BanVeMayBay
         string _VAT2;
         string _TienPPHT;
         string _TienPAN;
-
+        string _SL_Ve;
         string _TienVeVao, _tg_di, _tg_den, _ma_cb, _hangve, _Ngaybay, _DiemKH, _DiemDen, _ViTriGhe, _TienViTriGhe, _GoiHanhLy, _TienGoiHanhLy;//Được truyền từ frmVe vào
 
         public string GiaVe { get => _GiaVe; set => _GiaVe = value; }
+        public string SL_Ve { get => _SL_Ve; set => _SL_Ve = value; }
         public string TienVeVao { get => _TienVeVao; set => _TienVeVao = value; }
         public string VAT1 { get => _VAT1; set => _VAT1 = value; }
         public string VAT2 { get => _VAT2; set => _VAT2 = value; }
@@ -40,9 +41,10 @@ namespace BanVeMayBay
         public string GoiHanhLy { get => _GoiHanhLy; set => _GoiHanhLy = value; }
         public string TienGoiHanhLy { get => _TienGoiHanhLy; set => _TienGoiHanhLy = value; }
 
-        public frmTTVeDat(string tvv, string ngaybay, string tgdi, string tgden, string machuyenbay, string hangve, string diemkhoihanh, string diemden, string viTriGhe, string tienViTriGhe, string goiHanhLy, string tienGoiHanhLy)
+        public frmTTVeDat(string slVe, string tvv, string ngaybay, string tgdi, string tgden, string machuyenbay, string hangve, string diemkhoihanh, string diemden, string viTriGhe, string tienViTriGhe, string goiHanhLy, string tienGoiHanhLy)
         {
             InitializeComponent();
+            this.SL_Ve = slVe;
             this.TienVeVao = tvv;
             this.tg_di = tgdi;
             this.tg_den = tgden;
@@ -57,6 +59,7 @@ namespace BanVeMayBay
             lblDiemDen.Text = DiemDen;
             //load thông tin ngày bay sau khi người dùng chọn vé từ csdl
             lblNgayBay.Text = Ngaybay + "  |  " + tg_di + " - " + tg_den + "  |  " + ma_cb + "  |  " + Hangve + "  |";//"30/4/1975" + " |";
+            lblHangVeDuoi.Text = Hangve + " x " + SL_Ve;
             //load thông tin giờ bay sau khi người dùng chọn vé từ csdl
             //lblTGBay_Den.Text = ; //"9:00 - 12:00" + " |";
             ////load mã chuyến bay từ vé mà người dùng chọn từ csdl
@@ -236,10 +239,13 @@ namespace BanVeMayBay
             }    
             else
             {
-                lblTienVe.Text = TienVeVao;   //số tiền của vé được truyền frmVe
-                string temp = lblTienVe.Text.Replace(".", "");
-                float tienve = float.Parse(temp);
-                GiaVe = tienve.ToString();  //dùng để truyền dữ liệu qua form khác
+                string temp = TienVeVao.Replace(".", "");
+                float tienve = float.Parse(temp) * int.Parse(SL_Ve);
+                GiaVe = tienve.ToString("N0");
+                lblTienVe.Text = GiaVe;
+
+
+
                 float vat10 = float.Parse(GiaVe) * 0.1f;
                 float vat10xuathien = vat10 / 1000;
                 VAT1 = vat10.ToString();    //Lấy thông tin số tiền VAT của vé

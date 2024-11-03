@@ -22,10 +22,14 @@ namespace BanVeMayBay
         string tennguoidung;
         string role;
         string caulenh;
+        bool ThemChangBay = false;
         DB_Connet db = new DB_Connet();
         DataTable dt_SanBay = new DataTable();
+        DataTable dt_DiemKH = new DataTable();
+        DataTable dt_DiemDen = new DataTable();
         DataTable dt_Ve = new DataTable();
         DataTable dt_HoaDon = new DataTable();
+        DataTable dt_CTHoaDon = new DataTable();
 
         bool LoadDuLieu = false;
         public frmQuanLi(string tennguoidung, string role)
@@ -34,6 +38,9 @@ namespace BanVeMayBay
             this.tennguoidung = tennguoidung;
             this.role = role;
             Load_SanBay();
+            Load_HoaDon();
+            Load_DiemKH(); 
+            Load_Ve();
             LoadDuLieu = true;
         }
         //startPosition cho thân giao diện (396, 142), Size(1502, 782)
@@ -151,9 +158,58 @@ namespace BanVeMayBay
         }
 
         #region Quản lý vé
+
+        private void cboDiemDen_DropDown(object sender, EventArgs e)
+        {
+            if (cboDiemKhoiHanh.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn điểm khởi hành trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void cboDiemKhoiHanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDiemKhoiHanh.SelectedIndex != -1)
+            {
+                Load_DiemDen(cboDiemKhoiHanh.Text);
+            }
+        }
         private void btnThem_QLVe_Click(object sender, EventArgs e)
         {
-
+            if (cboDiemKhoiHanh.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn 'Điểm khởi hành' cho chuyến bay!", "Thông báo");
+            }
+            else if (cboDiemDen.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn 'Điểm đến' cho chuyến bay!", "Thông báo");
+            }
+            else if (dateTimePickerNgayKhoiHanh.Value < DateTime.Now.Date.AddDays(1))
+            {
+                MessageBox.Show("Vui lòng chọn 'Ngày khởi hành' cho chuyến bay!", "Thông báo");
+            }
+            else if (cboGio_Di.SelectedItem == null || cboPhut_Di.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn 'Thời gian khởi hành' của chuyến bay!", "Thông báo");
+            }
+            else if (cboGio_Den.SelectedItem == null || cboPhut_Den.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn 'Thời gian đến nơi' của chuyến bay!", "Thông báo");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thêm Chuyến bay " +
+                    "\nTừ " + cboDiemKhoiHanh.Text + " - " + cboDiemDen.Text + " ?",
+                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    Add_ChangBay();
+                    if(ThemChangBay)
+                    {
+                        Add_TuyenBay();
+                    }    
+                }    
+            } 
+                
         }
 
         private void btnSua_QLVe_Click(object sender, EventArgs e)
@@ -164,6 +220,17 @@ namespace BanVeMayBay
         private void btnXoa_QLVe_Click(object sender, EventArgs e)
         {
             //Khi chọn 1 item trong datagridview thì nút này được mở (btnXoa_QLVe.Enable = true;)
+
+        }
+        private void dataGrV_Ve_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                //btnSua_QLVe.Enabled = true;
+                //DataGridViewRow row = dataGrV_Ve.Rows[e.RowIndex];
+                //cboDiemKhoiHanh.Text = row.Cells["MaTuyenBay"].Value.ToString();
+                //cboDiemDen.Text = row.Cells[]
+            }
 
         }
         #endregion
@@ -386,15 +453,101 @@ namespace BanVeMayBay
             ExcApp.ActiveWorkbook.SaveCopyAs(path);
             ExcApp.ActiveWorkbook.Saved = true;
         }
+        private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGrV_HoaDon.Rows[e.RowIndex];
+            string id = selectedRow.Cells["ID"].Value.ToString();
+            Load_CTHoaDon(id);
+        }
+        
         #endregion
 
         #region Phương thức chức năng
+        private void Load_Ve()
+        {
+            dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, IDMayBay, IDChangBay from TUYENBAY");
+            dataGrV_Ve.DataSource = dt_Ve;
+        }
         private void Load_SanBay()
         {
             dt_SanBay = db.GetDataTable("select MaSanBay, TenSB, DiaDiem from SANBAY");
             dataGrV_SanBay.DataSource = dt_SanBay;
         }
+        private void Load_HoaDon()
+        {
+            dt_HoaDon = db.GetDataAdapter("HOADON");
+            dataGrV_HoaDon.DataSource = dt_HoaDon;
+        }
+        private void Load_CTHoaDon(string id)
+        {
+            string caulenh = "select VE, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, Thue, TenNhanVienTruc from CHITIETHOADON where ID = " + id + "";
+            dt_CTHoaDon = db.GetDataTable(caulenh);
+            dataGrV_CTHoaDon.DataSource = dt_CTHoaDon;
+        }
+        private void Load_DiemKH()
+        {
+            string caulenh = "select MaSanBay, DiaDiem from SANBAY";
+            dt_DiemKH = db.GetDataTable(caulenh);
+            cboDiemKhoiHanh.DataSource = dt_DiemKH;
+            cboDiemKhoiHanh.DisplayMember = "DiaDiem";
+            cboDiemKhoiHanh.ValueMember = "MaSanBay";
+            cboDiemKhoiHanh.SelectedIndex = -1;
+        }
+        private void Load_DiemDen(string DiaDiemDaChon)
+        {
+            string caulenh = "select MaSanBay, DiaDiem from SANBAY where DiaDiem != N'" + DiaDiemDaChon + "'";
+            dt_DiemDen = db.GetDataTable(caulenh);
+            cboDiemDen.DataSource = dt_DiemDen;
+            cboDiemDen.DisplayMember = "DiaDiem";
+            cboDiemDen.ValueMember = "MaSanBay";
+            cboDiemDen.SelectedIndex = -1;
+        }
+        private void Add_ChangBay()
+        {
+            string caulenh = "select ID from SANBAY where MaSanBay = '" + cboDiemKhoiHanh.SelectedValue.ToString() + "'";
+            int idDiemKH = (int)db.GetExecuteScalar(caulenh);
+            caulenh = "select ID from SANBAY where MaSanBay = '" + cboDiemDen.SelectedValue.ToString() + "'";
+            int idDiemDen = (int)db.GetExecuteScalar(caulenh);
+            caulenh = "insert into CHANGBAY(IDSanBaydi, IDSanBayden)  " +
+                "values(" + idDiemKH + "," + idDiemDen + ")";
+            try
+            {
+                var kq = db.GetExecuteNonQuery(caulenh);
+                if(kq > 0) ThemChangBay = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thêm được chặng bay!\nLỗi: " + ex.Message);
+            }
+        }
+        private void Add_TuyenBay()
+        {
+            string __GioBay = cboGio_Di.SelectedItem.ToString();
+            string __PhutBay = cboPhut_Di.SelectedItem.ToString();
+            string tgianbay = __GioBay + ":" + __PhutBay + ":00"; 
+
+            string __GioDen = cboGio_Den.SelectedItem.ToString();
+            string __PhutDen = cboPhut_Den.SelectedItem.ToString();
+            string tgianden = __GioDen + ":" + __PhutDen + ":00";
+
+            Random rd = new Random();
+            int randomMayBay = rd.Next(1, 6);
+            string caulenh = "select MAX(ID) from CHANGBAY";
+            int idChangbay = (int)db.GetExecuteScalar(caulenh);
+
+            caulenh = "insert into TUYENBAY(NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, IDMayBay, IDChangBay) " +
+                "values (GETDATE(), '" + tgianbay + "', '" + tgianden + "', 100, 0, " + randomMayBay + ", " + idChangbay + ")";
+            try
+            {
+                var kq = db.GetExecuteNonQuery(caulenh);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thêm được tuyến bay!\nLỗi: " + ex.Message);
+            }
+
+        }
         #endregion
-        
+
     }
 }

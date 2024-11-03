@@ -440,3 +440,5 @@ D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMay
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMay.AB427FA6.Up2Date
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.exe
 D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmHoaDon_ThanhToan.resources
+D:\Tổng hợp CNTT\FlightTickerBooking-App.Net\31-10-2024\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.frmQR_ThanhToan.resources

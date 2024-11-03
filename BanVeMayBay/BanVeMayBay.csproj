@@ -130,6 +130,12 @@
     <Compile Include="frmHanhLy.Designer.cs">
       <DependentUpon>frmHanhLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHoaDon_ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon_ThanhToan.Designer.cs">
+      <DependentUpon>frmHoaDon_ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,12 @@
     </Compile>
     <Compile Include="frmNhapTT_TreEm.Designer.cs">
       <DependentUpon>frmNhapTT_TreEm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQR_ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQR_ThanhToan.Designer.cs">
+      <DependentUpon>frmQR_ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLi.cs">
       <SubType>Form</SubType>
@@ -215,6 +227,9 @@
     <EmbeddedResource Include="frmHanhLy.resx">
       <DependentUpon>frmHanhLy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHoaDon_ThanhToan.resx">
+      <DependentUpon>frmHoaDon_ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapTT_TreEm.resx">
       <DependentUpon>frmNhapTT_TreEm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQR_ThanhToan.resx">
+      <DependentUpon>frmQR_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLi.resx">
       <DependentUpon>frmQuanLi.cs</DependentUpon>

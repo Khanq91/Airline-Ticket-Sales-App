@@ -98,9 +98,13 @@ namespace BanVeMayBay
 
         #endregion
         #region Phương thức xử lý thông tin
+        public string TongTien = string.Empty;
+        string __PhuongThucTT = "null";
+        string __TenNganHang = "NHnull";
+        frmThanhToan frmthanhtoan;
         private void XuLy_btnDiTiep(int index)
         {
-            string TongTien = string.Empty;
+
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
@@ -115,7 +119,7 @@ namespace BanVeMayBay
                 Load_DanhSachtoFrmVe(lstCB.Count());
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
@@ -136,7 +140,7 @@ namespace BanVeMayBay
                 frmDVInstance.Show();
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, "0", "0");
@@ -153,7 +157,7 @@ namespace BanVeMayBay
                 __TienGoiHanhLy = frmDVInstance.lblTienHL.Text;
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
@@ -169,7 +173,7 @@ namespace BanVeMayBay
                 btnDiTiep.ForeColor = Color.Black;
                 btnDiTiep.Font = new Font(btnDiTiep.Font, FontStyle.Bold | FontStyle.Italic);
 
-                frmThanhToan frmthanhtoan = new frmThanhToan(TongTien);
+                frmthanhtoan = new frmThanhToan(TongTien);
                 frmthanhtoan.ThanhTien();
                 frmthanhtoan.TopLevel = false;
                 flowLayoutPnlThanGianDien.Controls.Add(frmthanhtoan);
@@ -179,6 +183,31 @@ namespace BanVeMayBay
             }
             if (index == 4)
             {
+                //string tongtienstr = TongTien.ToString("N0");
+                __PhuongThucTT = frmthanhtoan.getHinhThucTT();
+                frmHoaDon_ThanhToan frmHDTT = new frmHoaDon_ThanhToan(tennguoidung, __slTTND, __TienVe, __TienViTriGhe, __TienGoiHanhLy, TongTien);
+                __TenNganHang = frmthanhtoan.getTenNganHang();
+                frmQR_ThanhToan frmQRTT = new frmQR_ThanhToan(__TenNganHang, TongTien);
+                string caulenh;
+                if (__PhuongThucTT == "Chuyển khoản")
+                {
+                    frmQRTT.Show();
+                    caulenh = "insert into HOADON(NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon) values (GETDATE(), " + TongTien.Replace(".","") + ", N'" + __PhuongThucTT + "', N'Đã thanh toán')";
+                }
+                else caulenh = "insert into HOADON(NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon) values (GETDATE(), " + TongTien.Replace(".", "") + ", N'" + __PhuongThucTT + "', N'Chưa thanh toán')";
+
+                try
+                {
+                    var kq = DB.GetExecuteNonQuery(caulenh);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi thêm hóa đơn: " + ex.Message);
+                }
+
+                frmHDTT.Show();
+
+
                 flag = 5;
             }
         }
@@ -186,9 +215,13 @@ namespace BanVeMayBay
         public string __ngaybay;
         public string __diemkhoihanh;
         public string __diemden;
+        public string __slTTND;
         TTCHUYENBAY ttcb = new TTCHUYENBAY();
         public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
+            int sl = slNL + slTE + slEB;
+            __slTTND = sl.ToString();
+
             string TTHK = "1 NGƯỜI LỚN";
             if(slNL != 1)
             {
