@@ -157,7 +157,7 @@ namespace BanVeMayBay
             }    
         }
 
-        #region Quản lý vé
+        #region Quản lý Chuyến bay
 
         private void cboDiemDen_DropDown(object sender, EventArgs e)
         {
@@ -216,26 +216,41 @@ namespace BanVeMayBay
         {
             //Khi chọn 1 item trong datagridview thì nút này được mở (btnSua_QLVe.Enable = true;)
         }
-
+        string MaTB = "null_nha";
         private void btnXoa_QLVe_Click(object sender, EventArgs e)
         {
             //Khi chọn 1 item trong datagridview thì nút này được mở (btnXoa_QLVe.Enable = true;)
-
+            if(MaTB != "null_nha")
+            {
+                string caulenh = "delete from TUYENBAY where MaTuyenBay = '" + MaTB + "'";
+                DialogResult result = MessageBox.Show("Bạn có chắn muốn xóa chuyến bay có mã là " + MaTB + "?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var kq = db.GetExecuteNonQuery(caulenh);
+                        Load_Ve();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Xóa thất bại!" + ex.Message);
+                    }
+                }    
+            }    
         }
         private void dataGrV_Ve_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
             {
-                //btnSua_QLVe.Enabled = true;
-                //DataGridViewRow row = dataGrV_Ve.Rows[e.RowIndex];
-                //cboDiemKhoiHanh.Text = row.Cells["MaTuyenBay"].Value.ToString();
-                //cboDiemDen.Text = row.Cells[]
+                btnXoa_QLVe.Enabled = true;
+                DataGridViewRow row = dataGrV_Ve.Rows[e.RowIndex];
+                MaTB = row.Cells["MaTuyenBay"].Value.ToString();
             }
 
         }
         #endregion
 
-        #region Quản lý tài khoản
+        #region Quản lý Tài khoản
         private void btnThem_QLTK_Click(object sender, EventArgs e)
         {
 
@@ -252,7 +267,7 @@ namespace BanVeMayBay
         }
         #endregion
 
-        #region Quản lí sân bay
+        #region Quản lí Sân bay
         private void dataGrV_SanBay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -415,7 +430,7 @@ namespace BanVeMayBay
         }
         #endregion
 
-        #region Quản lý hóa đơn
+        #region Quản lý Hóa đơn
         private void btnXuatExcel_QLHD_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFiledialog = new SaveFileDialog();
@@ -434,26 +449,50 @@ namespace BanVeMayBay
                 }
             }
         }
+        //public void XuatExcel(string path)
+        //{
+        //    Excel.Application ExcApp = new Excel.Application();
+        //    ExcApp.Application.Workbooks.Add(Type.Missing);
+        //    for(int i =0; i < dataGrV_HoaDon.Columns.Count; i++)
+        //    {
+        //        ExcApp.Cells[1, i + 1] = dataGrV_HoaDon.Columns[i].HeaderText;
+        //    }
+        //    for(int i = 0; i < dataGrV_HoaDon.Rows.Count; i++)
+        //    {
+        //        for (int j = 0; j < dataGrV_HoaDon.Columns.Count; j++)
+        //        {
+        //            ExcApp.Cells[i + 2, j + 1] = dataGrV_HoaDon.Rows[i].Cells[j].Value;
+        //        }
+        //    }
+        //    ExcApp.Columns.AutoFit();
+        //    ExcApp.ActiveWorkbook.SaveCopyAs(path);
+        //    ExcApp.ActiveWorkbook.Saved = true;
+        //}
         public void XuatExcel(string path)
         {
             Excel.Application ExcApp = new Excel.Application();
-            ExcApp.Application.Workbooks.Add(Type.Missing);
-            for(int i =0; i < dataGrV_HoaDon.Columns.Count; i++)
+            Excel.Workbook workbook = ExcApp.Workbooks.Add(Type.Missing);
+            Excel.Worksheet worksheet = workbook.ActiveSheet;
+
+            for (int i = 0; i < dataGrV_HoaDon.Columns.Count; i++)
             {
-                ExcApp.Cells[1, i + 1] = dataGrV_HoaDon.Columns[i].HeaderText;
+                worksheet.Cells[1, i + 1] = dataGrV_HoaDon.Columns[i].HeaderText;
             }
-            for(int i = 0; i < dataGrV_HoaDon.Rows.Count; i++)
+            for (int i = 0; i < dataGrV_HoaDon.Rows.Count; i++)
             {
                 for (int j = 0; j < dataGrV_HoaDon.Columns.Count; j++)
                 {
-                    ExcApp.Cells[i + 2, j + 1] = dataGrV_HoaDon.Rows[i].Cells[j].Value;
+                    worksheet.Cells[i + 2, j + 1] = dataGrV_HoaDon.Rows[i].Cells[j].Value;
                 }
             }
-            ExcApp.Columns.AutoFit();
-            ExcApp.ActiveWorkbook.SaveCopyAs(path);
-            ExcApp.ActiveWorkbook.Saved = true;
+            worksheet.Columns.AutoFit();
+            workbook.SaveCopyAs(path);
+            workbook.Saved = true;
+            workbook.Close();
+            ExcApp.Quit();
         }
-        private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+
+    private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow selectedRow = dataGrV_HoaDon.Rows[e.RowIndex];
             string id = selectedRow.Cells["ID"].Value.ToString();

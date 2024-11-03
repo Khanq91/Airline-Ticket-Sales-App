@@ -32918,8 +32918,8 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelWorkbook.MaxFontWidth">
             <summary>
-            Max font width for the workbook
-            <remarks>This method uses GDI. If you use Azure or another environment that does not support GDI, you have to set this value manually if you don't use the standard Calibri font</remarks>
+            Max font width for the workbook, used in the calculation of column widths.
+            <remarks>This property uses the static <see cref="F:OfficeOpenXml.FontSize.FontWidths"></see> dictionary to get the max font width /></remarks>
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorkbook.Protection">
@@ -67477,6 +67477,14 @@
             tbl.Columns[9].CalculatedColumnFormula = string.Format("MyDataTable[[#Totals],[{0}]]",tbl.Columns[9].Name);  //Reference to a column total        
             </example>
             </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Table.ExcelTableColumn.IsCalculatedFormulaArray">
+            <summary>
+            If the calculated formula is an array formula. 
+            This property will be set if the formula calculation evaluate the formula as an array formula. 
+            See <see cref="M:OfficeOpenXml.CalculationExtension.Calculate(OfficeOpenXml.ExcelWorkbook)"/>        
+            </summary>
+            <exception cref="T:System.InvalidOperationException">If the <see cref="P:OfficeOpenXml.Table.ExcelTableColumn.CalculatedColumnFormula"></see> is null or empty.</exception>
         </member>
         <member name="P:OfficeOpenXml.Table.ExcelTableColumn.Table">
             <summary>
