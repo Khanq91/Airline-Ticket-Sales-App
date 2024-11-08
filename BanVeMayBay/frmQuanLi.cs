@@ -149,14 +149,6 @@ namespace BanVeMayBay
             Application.Exit();
         }
         #endregion
-        private void txtTGDK_Gio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(!char.IsNumber(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }    
-        }
-
         #region Quản lý Chuyến bay
 
         private void cboDiemDen_DropDown(object sender, EventArgs e)
@@ -211,15 +203,60 @@ namespace BanVeMayBay
             } 
                 
         }
-
+        string MaTB = "null_nha";
+        string MaCB = "null_nha";
+        string _GioBay;
+        string _GioDen;
         private void btnSua_QLVe_Click(object sender, EventArgs e)
         {
-            //Khi chọn 1 item trong datagridview thì nút này được mở (btnSua_QLVe.Enable = true;)
+            string caulenh;
+            if(MaTB != "null_nha")
+            {
+                caulenh = "select count(*) from CHANGBAY ChB, SANBAY as SBDi, SANBAY as SBDen where ChB.IDSanBaydi = SBDi.ID and ChB.IDSanBayden = SBDen.ID and SBDi.MaSanBay = '" + cboDiemKhoiHanh.SelectedValue.ToString() + "' and SBDen.MaSanBay = '" + cboDiemDen.SelectedValue.ToString() + "'";
+                var kq = (int)db.GetExecuteScalar(caulenh);
+                if (kq == 1)
+                {
+                    DateTime NgayBay = dateTimePickerNgayKhoiHanh.Value;
+                    string strNgayBay = NgayBay.ToString("yyyy-MM-dd");
+                    
+                    string tgianbay;
+                    string tgianden;
+                    if (cboGio_Di.SelectedItem != null && cboPhut_Di.SelectedItem != null) 
+                    {
+                        string __GioBay = cboGio_Di.SelectedItem.ToString(); 
+                        string __PhutBay = cboPhut_Di.SelectedItem.ToString(); 
+                        tgianbay = __GioBay + ":" + __PhutBay + ":00"; 
+                    } 
+                    else 
+                    { 
+                        tgianbay = _GioBay; 
+                    }
+
+                    if (cboGio_Den.SelectedItem != null && cboPhut_Den.SelectedItem != null) 
+                    {
+                        string __GioDen = cboGio_Den.SelectedItem.ToString(); 
+                        string __PhutDen = cboPhut_Den.SelectedItem.ToString(); 
+                        tgianden = __GioDen + ":" + __PhutDen + ":00"; 
+                    } 
+                    else 
+                    { 
+                        tgianden = _GioDen; 
+                    }
+
+                    caulenh = "select ChB.ID from CHANGBAY ChB, SANBAY as SBDi, SANBAY as SBDen where ChB.IDSanBaydi = SBDi.ID and ChB.IDSanBayden = SBDen.ID and SBDi.MaSanBay = '" + cboDiemKhoiHanh.SelectedValue.ToString() + "' and SBDen.MaSanBay = '" + cboDiemDen.SelectedValue.ToString() + "'";
+                    int ID_ChB = (int)db.GetExecuteScalar(caulenh);
+                    caulenh = "update TUYENBAY set NgayBay = '" + strNgayBay + "', GioBay = '" + tgianbay + "', GioDen = '" + tgianden + "', IDChangBay = " + ID_ChB.ToString() + " where MaTuyenBay = '" + MaTB + "'";
+                    int kqSuaDoi = (int)db.GetExecuteNonQuery(caulenh);
+                    if(kqSuaDoi > 0)
+                    {
+                        MessageBox.Show("Sửa thành công Chuyến bay có mã là: " + MaTB);
+                        Load_Ve();
+                    }    
+                }
+            }    
         }
-        string MaTB = "null_nha";
         private void btnXoa_QLVe_Click(object sender, EventArgs e)
         {
-            //Khi chọn 1 item trong datagridview thì nút này được mở (btnXoa_QLVe.Enable = true;)
             if(MaTB != "null_nha")
             {
                 string caulenh = "delete from TUYENBAY where MaTuyenBay = '" + MaTB + "'";
@@ -240,11 +277,51 @@ namespace BanVeMayBay
         }
         private void dataGrV_Ve_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            cboDiemKhoiHanh.SelectedIndex = -1;
+            cboDiemDen.SelectedIndex = -1;
+            cboGio_Di.SelectedIndex = -1;
+            cboPhut_Di.SelectedIndex = -1;
+            cboGio_Den.SelectedIndex = -1;
+            cboPhut_Den.SelectedIndex = -1;
+            dateTimePickerNgayKhoiHanh.Value = DateTime.Now;
+            if (e.RowIndex >= 0)
             {
+                string caulenh;
                 btnXoa_QLVe.Enabled = true;
+                btnSua_QLVe.Enabled = true;
                 DataGridViewRow row = dataGrV_Ve.Rows[e.RowIndex];
                 MaTB = row.Cells["MaTuyenBay"].Value.ToString();
+                MaCB = row.Cells["IDChangBay"].Value.ToString();
+                DateTime NgayBay = DateTime.Parse(row.Cells["NgayBay"].Value.ToString());
+                try
+                {
+                    dateTimePickerNgayKhoiHanh.Value = NgayBay;
+                }
+                catch 
+                {
+                    dateTimePickerNgayKhoiHanh.Value = DateTime.Now;
+                }
+
+                _GioBay = row.Cells["GioBay"].Value.ToString();
+                _GioDen = row.Cells["GioDen"].Value.ToString();
+                TimeSpan ThoiGianBay = TimeSpan.Parse(_GioBay);
+                TimeSpan ThoiGianDen = TimeSpan.Parse(_GioDen);
+
+                int GioBay_int = ThoiGianBay.Hours;
+                int PhutBay_int = ThoiGianBay.Minutes;
+                cboGio_Di.Text = GioBay_int.ToString();
+                cboPhut_Di.Text = PhutBay_int.ToString();
+
+                int GioDen_int = ThoiGianDen.Hours;
+                int PhutDen_int = ThoiGianDen.Minutes;
+                cboGio_Den.Text = GioDen_int.ToString();
+                cboPhut_Den.Text = PhutDen_int.ToString();
+
+                caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBdi where ChB.ID = TnB.IDChangBay and ChB.IDSanBaydi = SBdi.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đi
+                cboDiemKhoiHanh.Text = (string)db.GetExecuteScalar(caulenh);
+
+                caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBden where ChB.ID = TnB.IDChangBay and ChB.IDSanBayden = SBden.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đến
+                cboDiemDen.Text = (string)db.GetExecuteScalar(caulenh);
             }
 
         }
@@ -504,7 +581,7 @@ namespace BanVeMayBay
         #region Phương thức chức năng
         private void Load_Ve()
         {
-            dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, IDMayBay, IDChangBay from TUYENBAY");
+            dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, LoaiMB AS IDMayBay, CONCAT(SBDi.DiaDiem, ' - ', SBDen.DiaDiem) AS IDChangBay from TUYENBAY TB, MAYBAY MB, CHANGBAY CB, SANBAY SBDi, SANBAY SBDen where TB.IDMayBay = MB.ID and TB.IDChangBay = CB.ID and CB.IDSanBaydi = SBDi.ID and CB.IDSanBayden = SBDen.ID");
             dataGrV_Ve.DataSource = dt_Ve;
         }
         private void Load_SanBay()
@@ -561,6 +638,10 @@ namespace BanVeMayBay
         }
         private void Add_TuyenBay()
         {
+            DateTime NgayBay = dateTimePickerNgayKhoiHanh.Value;
+            string strNgayBay = NgayBay.ToString("yyyy-MM-dd");
+
+
             string __GioBay = cboGio_Di.SelectedItem.ToString();
             string __PhutBay = cboPhut_Di.SelectedItem.ToString();
             string tgianbay = __GioBay + ":" + __PhutBay + ":00"; 
@@ -575,7 +656,7 @@ namespace BanVeMayBay
             int idChangbay = (int)db.GetExecuteScalar(caulenh);
 
             caulenh = "insert into TUYENBAY(NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, IDMayBay, IDChangBay) " +
-                "values (GETDATE(), '" + tgianbay + "', '" + tgianden + "', 100, 0, " + randomMayBay + ", " + idChangbay + ")";
+                "values ('" + strNgayBay + "', '" + tgianbay + "', '" + tgianden + "', 100, 0, " + randomMayBay + ", " + idChangbay + ")";
             try
             {
                 var kq = db.GetExecuteNonQuery(caulenh);

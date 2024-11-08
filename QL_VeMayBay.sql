@@ -109,12 +109,19 @@ CREATE TABLE VE
 	GiaVeCoBan MONEY,
 	HangVe NVARCHAR(50) NOT NULL,
 	DonViTien NCHAR(10),
-	ViTriGhe CHAR(10),
-	NgayGIAVE DATE,
-	IDHanhKhach INT NOT NULL, 
-	CONSTRAINT PK_VE_STTve PRIMARY KEY(ID),
-	CONSTRAINT FK_VE_IDHanhKhach FOREIGN KEY(IDHanhKhach) REFERENCES HANHKHACH(ID) ON DELETE NO ACTION,
+	CONSTRAINT PK_VE_STTve PRIMARY KEY(ID)
+
+	--ViTriGhe CHAR(10),
+	--NgayGIAVE DATE,
+	--IDHanhKhach INT NOT NULL, 
+	--,
+	--CONSTRAINT FK_VE_IDHanhKhach FOREIGN KEY(IDHanhKhach) REFERENCES HANHKHACH(ID) ON DELETE NO ACTION,
 );
+
+--ALTER TABLE VE DROP CONSTRAINT FK_VE_IDHanhKhach
+--ALTER TABLE VE DROP COLUMN ViTriGhe
+--ALTER TABLE VE DROP COLUMN NgayGIAVE
+--ALTER TABLE VE DROP COLUMN IDHanhKhach
 
 CREATE TABLE HANHLY 
 (
@@ -159,23 +166,23 @@ CREATE TABLE HOADON
 --ALTER TABLE HOADON DROP CONSTRAINT FK_HD_IDHanhKhach;
 --ALTER TABLE HOADON DROP COLUMN IDHanhKhach
 
-CREATE TABLE GIAVE
-(
-	ID INT NOT NULL IDENTITY(1,1),
-	MaGiaVe CHAR(12),
-	TongGiaVe MONEY DEFAULT 0,
-	GiamGia DECIMAL(3, 2),
-	Thue MONEY,
-	Igve INT NOT NULL,
-	IDPhuPhi INT NOT NULL,
-	IDHoaDon INT NOT NULL,
-	IDTuyenBay INT NOT NULL,
-	CONSTRAINT PK_GV_IDGiaVe PRIMARY KEY(ID),
-	CONSTRAINT FK_GV_Igve FOREIGN KEY (Igve) REFERENCES VE(ID) ON DELETE NO ACTION,
-	CONSTRAINT FK_GV_IDPhuPhi FOREIGN KEY (IDPhuPhi) REFERENCES CHITIETPHUPHI(ID) ON DELETE NO ACTION,
-	CONSTRAINT FK_GV_IDHoaDon FOREIGN KEY (IDHoaDon) REFERENCES HOADON(ID) ON DELETE NO ACTION,
-	CONSTRAINT FK_GV_IDTuyenBay FOREIGN KEY(IDTuyenBay) REFERENCES TUYENBAY(ID) ON DELETE NO ACTION,
-);
+--CREATE TABLE GIAVE
+--(
+--	ID INT NOT NULL IDENTITY(1,1),
+--	MaGiaVe CHAR(12),
+--	TongGiaVe MONEY DEFAULT 0,
+--	GiamGia DECIMAL(3, 2),
+--	Thue MONEY,
+--	Igve INT NOT NULL,
+--	IDPhuPhi INT NOT NULL,
+--	IDHoaDon INT NOT NULL,
+--	IDTuyenBay INT NOT NULL,
+--	CONSTRAINT PK_GV_IDGiaVe PRIMARY KEY(ID),
+--	CONSTRAINT FK_GV_Igve FOREIGN KEY (Igve) REFERENCES VE(ID) ON DELETE NO ACTION,
+--	CONSTRAINT FK_GV_IDPhuPhi FOREIGN KEY (IDPhuPhi) REFERENCES CHITIETPHUPHI(ID) ON DELETE NO ACTION,
+--	CONSTRAINT FK_GV_IDHoaDon FOREIGN KEY (IDHoaDon) REFERENCES HOADON(ID) ON DELETE NO ACTION,
+--	CONSTRAINT FK_GV_IDTuyenBay FOREIGN KEY(IDTuyenBay) REFERENCES TUYENBAY(ID) ON DELETE NO ACTION,
+--);
 
 CREATE TABLE NHANXET
 (
@@ -225,13 +232,28 @@ VALUES
     ('VN-D123', N'Boeing 777', N'Vietnam Airlines', 350),
     ('VN-E123', N'Airbus A330', N'Bamboo Airways', 260);
 
-INSERT INTO CHANGBAY (IDSanBaydi, IDSanBayden) 
-VALUES
-	(1, 2),
-	(2, 3),
-	(3, 4),
-	(4, 5),
-	(5, 1);
+INSERT INTO CHANGBAY(IDSanBaydi, IDSanBayden)
+VALUES 
+	(1,2),
+	(1,3),
+	(1,4),
+	(1,5),
+	(2,1),
+	(2,3),
+	(2,4),
+	(2,5),
+	(3,1),
+	(3,2),
+	(3,4),
+	(3,5),
+	(4,1),
+	(4,2),
+	(4,3),
+	(4,5),
+	(5,1),
+	(5,2),
+	(5,3),
+	(5,4)
 
 INSERT INTO QLTaiKhoan (TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan)
 VALUES 
@@ -249,14 +271,6 @@ VALUES
 	(N'Phạm Thị D', N'Nữ', 17000000, '1992-03-20', N'321 Đường JKL', '0912345681', N'Nhân viên', 4, 4),
 	(N'Hoàng Văn E', N'Nam', 15500000, '1986-06-30', N'654 Đường MNO', '0912345682', N'Nhân viên', 5, 5);
 
-INSERT INTO TUYENBAY (NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, IDMayBay, IDChangBay)
-VALUES 
-	('2024-10-30', '08:00', '10:00', 180, 0, N'Còn vé', 4, 1),
-    ('2024-11-01', '14:30', '16:45', 300, 0, N'Còn vé', 5, 2),
-	('2024-11-02', '10:15', '12:00', 220, 0, N'Còn vé', 1, 3),
-    ('2024-11-03', '15:00', '17:00', 350, 0, N'Còn vé', 2, 4),
-    ('2024-11-04', '18:00', '20:00', 260, 0, N'Còn vé', 3, 5);
-
 INSERT INTO HANHKHACH (TenHK, GioiTinhHK, NgaySinhHK, DiaChiHK, EmailHK, SDThk, CCCD) 
 VALUES 
     (N'Nguyễn Văn F', N'Nam', '1990-01-01', N'Thành phố Hồ Chí Minh', 'f.nguyen@example.com', '0909123456', '0123456789'),
@@ -264,6 +278,122 @@ VALUES
 	(N'Lê Văn H', N'Nam', '1988-03-03', N'Phú Quốc', 'h.le@example.com', '0903123456', '1234567890'),
     (N'Phạm Thị K', N'Nữ', '1991-04-04', N'Tiền Giang', 'k.pham@example.com', '0918123456', '0987654321'),
     (N'Hoàng Văn L', N'Nam', '1985-05-05', N'Yên Bái', 'l.hoang@example.com', '0904123456', '2345678901');
+
+INSERT INTO VE (MaVe, GiaVeCoBan, HangVe, DonViTien)
+VALUES 
+	('TG', 2000000, N'Thương gia', N'VNĐ'),
+	('PT', 500000, N'Phổ thông', N'VNĐ')
+
+INSERT INTO TUYENBAY (NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, IDMayBay, IDChangBay)
+VALUES 
+	-- 19 tháng 11
+    ('2024-11-19', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-19', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-19', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-19', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-19', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-19', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-19', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-19', '21:00', '23:00', 280, 0, 3, 7),
+    -- 20 tháng 11
+    ('2024-11-20', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-20', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-20', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-20', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-20', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-20', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-20', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-20', '21:00', '23:00', 280, 0, 3, 7),
+    -- 21 tháng 11
+    ('2024-11-21', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-21', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-21', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-21', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-21', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-21', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-21', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-21', '21:00', '23:00', 280, 0, 3, 7),
+    -- 22 tháng 11
+    ('2024-11-22', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-22', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-22', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-22', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-22', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-22', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-22', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-22', '21:00', '23:00', 280, 0, 3, 7),
+    -- 23 tháng 11
+    ('2024-11-23', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-23', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-23', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-23', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-23', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-23', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-23', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-23', '21:00', '23:00', 280, 0, 3, 7),
+    -- 24 tháng 11
+    ('2024-11-24', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-24', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-24', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-24', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-24', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-24', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-24', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-24', '21:00', '23:00', 280, 0, 3, 7),
+    -- 25 tháng 11
+    ('2024-11-25', '00:00', '02:00', 180, 0, 1, 7),
+    ('2024-11-25', '03:00', '05:00', 300, 0, 2, 7),
+    ('2024-11-25', '06:00', '08:00', 220, 0, 3, 7),
+    ('2024-11-25', '09:00', '11:00', 350, 0, 4, 7),
+    ('2024-11-25', '12:00', '14:00', 260, 0, 5, 7),
+    ('2024-11-25', '15:00', '17:00', 100, 0, 1, 7),
+    ('2024-11-25', '18:00', '20:00', 160, 0, 2, 7),
+    ('2024-11-25', '21:00', '23:00', 280, 0, 3, 7),
+    -- 26 tháng 11
+	('2024-11-26', '00:00', '02:00', 180, 0, 1, 7),
+	('2024-11-26', '03:00', '05:00', 300, 0, 2, 7),
+	('2024-11-26', '06:00', '08:00', 220, 0, 3, 7),
+	('2024-11-26', '09:00', '11:00', 350, 0, 4, 7),
+	('2024-11-26', '12:00', '14:00', 260, 0, 5, 7),
+	('2024-11-26', '15:00', '17:00', 100, 0, 1, 7),
+	('2024-11-26', '18:00', '20:00', 160, 0, 2, 7),
+	('2024-11-26', '21:00', '23:00', 280, 0, 3, 7),
+	-- 27 tháng 11
+	('2024-11-27', '00:00', '02:00', 180, 0, 1, 7),
+	('2024-11-27', '03:00', '05:00', 300, 0, 2, 7),
+	('2024-11-27', '06:00', '08:00', 220, 0, 3, 7),
+	('2024-11-27', '09:00', '11:00', 350, 0, 4, 7),
+	('2024-11-27', '12:00', '14:00', 260, 0, 5, 7),
+	('2024-11-27', '15:00', '17:00', 100, 0, 1, 7),
+	('2024-11-27', '18:00', '20:00', 160, 0, 2, 7),
+	('2024-11-27', '21:00', '23:00', 280, 0, 3, 7),
+	-- 28 tháng 11
+	('2024-11-28', '00:00', '02:00', 180, 0, 1, 7),
+	('2024-11-28', '03:00', '05:00', 300, 0, 2, 7),
+	('2024-11-28', '06:00', '08:00', 220, 0, 3, 7),
+	('2024-11-28', '09:00', '11:00', 350, 0, 4, 7),
+	('2024-11-28', '12:00', '14:00', 260, 0, 5, 7),
+	('2024-11-28', '15:00', '17:00', 100, 0, 1, 7),
+	('2024-11-28', '18:00', '20:00', 160, 0, 2, 7),
+	('2024-11-28', '21:00', '23:00', 280, 0, 3, 7),
+	-- 29 tháng 11
+	('2024-11-29', '00:00', '02:00', 180, 0, 1, 7),
+	('2024-11-29', '03:00', '05:00', 300, 0, 2, 7),
+	('2024-11-29', '06:00', '08:00', 220, 0, 3, 7),
+	('2024-11-29', '09:00', '11:00', 350, 0, 4, 7),
+	('2024-11-29', '12:00', '14:00', 260, 0, 5, 7),
+	('2024-11-29', '15:00', '17:00', 100, 0, 1, 7),
+	('2024-11-29', '18:00', '20:00', 160, 0, 2, 7),
+	('2024-11-29', '21:00', '23:00', 280, 0, 3, 7),
+	-- 30 tháng 11
+	('2024-11-30', '00:00', '02:00', 180, 0, 1, 7),
+	('2024-11-30', '03:00', '05:00', 300, 0, 2, 7),
+	('2024-11-30', '06:00', '08:00', 220, 0, 3, 7),
+	('2024-11-30', '09:00', '11:00', 350, 0, 4, 7),
+	('2024-11-30', '12:00', '14:00', 260, 0, 5, 7),
+	('2024-11-30', '15:00', '17:00', 100, 0, 1, 7),
+	('2024-11-30', '18:00', '20:00', 160, 0, 2, 7),
+	('2024-11-30', '21:00', '23:00', 280, 0, 3, 7);
 
 --INSERT INTO HANHLY (SoKG, LoaiHanhLy, MaHangVe, IDHanhKhach, IDTuyenBay)
 --VALUES 
@@ -297,13 +427,7 @@ VALUES
 --    ('2024-10-09', 1200000, N'Tiền mặt', N'Đã thanh toán', 4),
 --    ('2024-10-09', 2600000, N'Chuyển khoản', N'Đã thanh toán', 5);
 
---INSERT INTO VE (DonViTien, ViTriGhe, IDHanhKhach, IDGiaVe, IDGiaVe)
---VALUES 
---    (N'VND', '1A', 1, 1, 1),
---    (N'VND', '1B', 2, 2, 2),
---    (N'VND', '1C', 3, 3, 3),
---    (N'VND', '2A', 4, 4, 4),
---    (N'VND', '2B', 5, 5, 5);
+
 
 --INSERT INTO NHANXET (IDHanhKhach, IDTuyenBay, NoiDungNhanXet, DiemDanhGia)
 --VALUES 

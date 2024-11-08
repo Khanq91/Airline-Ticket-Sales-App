@@ -47,7 +47,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.cboDiemDen = new System.Windows.Forms.ComboBox();
             this.cboDiemKhoiHanh = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtMaSanBay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.dataGrV_SanBay = new System.Windows.Forms.DataGridView();
             this.MaSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSB = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +100,6 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label20 = new System.Windows.Forms.Label();
             this.MaTuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -220,6 +217,7 @@
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.Location = new System.Drawing.Point(-4, 777);
             this.btnReset.Name = "btnReset";
+            this.btnReset.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnReset.Size = new System.Drawing.Size(406, 74);
             this.btnReset.TabIndex = 7;
             this.btnReset.Text = "Reset";
@@ -236,6 +234,7 @@
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(-4, 850);
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThoat.Size = new System.Drawing.Size(406, 74);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
@@ -274,7 +273,7 @@
             // 
             // pnlQL_Ve
             // 
-            this.pnlQL_Ve.BackColor = System.Drawing.Color.RosyBrown;
+            this.pnlQL_Ve.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlQL_Ve.Controls.Add(this.cboPhut_Den);
             this.pnlQL_Ve.Controls.Add(this.cboPhut_Di);
             this.pnlQL_Ve.Controls.Add(this.cboGio_Den);
@@ -282,7 +281,6 @@
             this.pnlQL_Ve.Controls.Add(this.label11);
             this.pnlQL_Ve.Controls.Add(this.label12);
             this.pnlQL_Ve.Controls.Add(this.label13);
-            this.pnlQL_Ve.Controls.Add(this.label14);
             this.pnlQL_Ve.Controls.Add(this.cboDiemDen);
             this.pnlQL_Ve.Controls.Add(this.cboDiemKhoiHanh);
             this.pnlQL_Ve.Controls.Add(this.label8);
@@ -311,7 +309,7 @@
             "15",
             "30",
             "45"});
-            this.cboPhut_Den.Location = new System.Drawing.Point(1040, 180);
+            this.cboPhut_Den.Location = new System.Drawing.Point(1040, 156);
             this.cboPhut_Den.MaxDropDownItems = 5;
             this.cboPhut_Den.Name = "cboPhut_Den";
             this.cboPhut_Den.Size = new System.Drawing.Size(200, 40);
@@ -326,7 +324,7 @@
             "15",
             "30",
             "45"});
-            this.cboPhut_Di.Location = new System.Drawing.Point(1040, 100);
+            this.cboPhut_Di.Location = new System.Drawing.Point(1040, 76);
             this.cboPhut_Di.MaxDropDownItems = 5;
             this.cboPhut_Di.Name = "cboPhut_Di";
             this.cboPhut_Di.Size = new System.Drawing.Size(200, 40);
@@ -363,7 +361,7 @@
             "22",
             "23",
             "00"});
-            this.cboGio_Den.Location = new System.Drawing.Point(740, 180);
+            this.cboGio_Den.Location = new System.Drawing.Point(740, 156);
             this.cboGio_Den.MaxDropDownItems = 5;
             this.cboGio_Den.Name = "cboGio_Den";
             this.cboGio_Den.Size = new System.Drawing.Size(200, 40);
@@ -400,7 +398,7 @@
             "22",
             "23",
             "00"});
-            this.cboGio_Di.Location = new System.Drawing.Point(740, 100);
+            this.cboGio_Di.Location = new System.Drawing.Point(740, 76);
             this.cboGio_Di.MaxDropDownItems = 5;
             this.cboGio_Di.Name = "cboGio_Di";
             this.cboGio_Di.Size = new System.Drawing.Size(200, 40);
@@ -410,7 +408,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1263, 184);
+            this.label11.Location = new System.Drawing.Point(1263, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 32);
             this.label11.TabIndex = 36;
@@ -420,7 +418,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(963, 184);
+            this.label12.Location = new System.Drawing.Point(963, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 32);
             this.label12.TabIndex = 35;
@@ -430,22 +428,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(752, 145);
+            this.label13.Location = new System.Drawing.Point(752, 121);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 32);
             this.label13.TabIndex = 34;
             this.label13.Text = "Giờ hạ cánh";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(8, 5);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(363, 28);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "ĐÂY LÀ PANEL QUẢN LÝ VÉ MÁY BAY";
             // 
             // cboDiemDen
             // 
@@ -516,7 +503,7 @@
             "Vĩnh Long",
             "Vĩnh Phúc",
             "Yên Bái"});
-            this.cboDiemDen.Location = new System.Drawing.Point(55, 180);
+            this.cboDiemDen.Location = new System.Drawing.Point(55, 156);
             this.cboDiemDen.MaxDropDownItems = 5;
             this.cboDiemDen.Name = "cboDiemDen";
             this.cboDiemDen.Size = new System.Drawing.Size(600, 40);
@@ -592,7 +579,7 @@
             "Vĩnh Long",
             "Vĩnh Phúc",
             "Yên Bái"});
-            this.cboDiemKhoiHanh.Location = new System.Drawing.Point(55, 100);
+            this.cboDiemKhoiHanh.Location = new System.Drawing.Point(55, 76);
             this.cboDiemKhoiHanh.MaxDropDownItems = 5;
             this.cboDiemKhoiHanh.Name = "cboDiemKhoiHanh";
             this.cboDiemKhoiHanh.Size = new System.Drawing.Size(600, 40);
@@ -603,7 +590,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1263, 104);
+            this.label8.Location = new System.Drawing.Point(1263, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 32);
             this.label8.TabIndex = 25;
@@ -613,7 +600,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(963, 104);
+            this.label6.Location = new System.Drawing.Point(963, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 32);
             this.label6.TabIndex = 24;
@@ -623,7 +610,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(68, 224);
+            this.label7.Location = new System.Drawing.Point(68, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 32);
             this.label7.TabIndex = 20;
@@ -633,7 +620,7 @@
             // 
             this.dateTimePickerNgayKhoiHanh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgayKhoiHanh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgayKhoiHanh.Location = new System.Drawing.Point(56, 260);
+            this.dateTimePickerNgayKhoiHanh.Location = new System.Drawing.Point(56, 236);
             this.dateTimePickerNgayKhoiHanh.MinDate = new System.DateTime(2024, 11, 3, 0, 0, 0, 0);
             this.dateTimePickerNgayKhoiHanh.Name = "dateTimePickerNgayKhoiHanh";
             this.dateTimePickerNgayKhoiHanh.Size = new System.Drawing.Size(600, 39);
@@ -643,7 +630,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(752, 65);
+            this.label5.Location = new System.Drawing.Point(752, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 32);
             this.label5.TabIndex = 16;
@@ -653,7 +640,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 145);
+            this.label4.Location = new System.Drawing.Point(67, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 32);
             this.label4.TabIndex = 14;
@@ -663,7 +650,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 65);
+            this.label3.Location = new System.Drawing.Point(67, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 32);
             this.label3.TabIndex = 12;
@@ -683,12 +670,12 @@
             this.TrangThaiTuyenBay,
             this.IDMayBay,
             this.IDChangBay});
-            this.dataGrV_Ve.Location = new System.Drawing.Point(55, 339);
+            this.dataGrV_Ve.Location = new System.Drawing.Point(55, 315);
             this.dataGrV_Ve.Name = "dataGrV_Ve";
             this.dataGrV_Ve.RowHeadersWidth = 62;
             this.dataGrV_Ve.RowTemplate.Height = 28;
             this.dataGrV_Ve.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrV_Ve.Size = new System.Drawing.Size(1384, 426);
+            this.dataGrV_Ve.Size = new System.Drawing.Size(1345, 426);
             this.dataGrV_Ve.TabIndex = 0;
             this.dataGrV_Ve.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_Ve_CellClick);
             // 
@@ -699,7 +686,7 @@
             this.btnXoa_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnXoa_QLVe.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
             this.btnXoa_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_QLVe.Location = new System.Drawing.Point(1148, 239);
+            this.btnXoa_QLVe.Location = new System.Drawing.Point(1148, 215);
             this.btnXoa_QLVe.Name = "btnXoa_QLVe";
             this.btnXoa_QLVe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnXoa_QLVe.Size = new System.Drawing.Size(192, 60);
@@ -715,7 +702,7 @@
             this.btnSua_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnSua_QLVe.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
             this.btnSua_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_QLVe.Location = new System.Drawing.Point(944, 239);
+            this.btnSua_QLVe.Location = new System.Drawing.Point(944, 215);
             this.btnSua_QLVe.Name = "btnSua_QLVe";
             this.btnSua_QLVe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSua_QLVe.Size = new System.Drawing.Size(192, 60);
@@ -730,7 +717,7 @@
             this.btnThem_QLVe.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnThem_QLVe.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
             this.btnThem_QLVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_QLVe.Location = new System.Drawing.Point(740, 239);
+            this.btnThem_QLVe.Location = new System.Drawing.Point(740, 215);
             this.btnThem_QLVe.Name = "btnThem_QLVe";
             this.btnThem_QLVe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThem_QLVe.Size = new System.Drawing.Size(192, 60);
@@ -741,7 +728,7 @@
             // 
             // pnlQL_SanBay
             // 
-            this.pnlQL_SanBay.BackColor = System.Drawing.Color.PeachPuff;
+            this.pnlQL_SanBay.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlQL_SanBay.Controls.Add(this.txtTaoMaSB);
             this.pnlQL_SanBay.Controls.Add(this.cboViTri);
             this.pnlQL_SanBay.Controls.Add(this.label19);
@@ -749,7 +736,6 @@
             this.pnlQL_SanBay.Controls.Add(this.label18);
             this.pnlQL_SanBay.Controls.Add(this.txtMaSanBay);
             this.pnlQL_SanBay.Controls.Add(this.label17);
-            this.pnlQL_SanBay.Controls.Add(this.label16);
             this.pnlQL_SanBay.Controls.Add(this.dataGrV_SanBay);
             this.pnlQL_SanBay.Controls.Add(this.btnXoa_QLSB);
             this.pnlQL_SanBay.Controls.Add(this.btnSua_QLSB);
@@ -766,7 +752,7 @@
             this.txtTaoMaSB.ForeColor = System.Drawing.Color.Lime;
             this.txtTaoMaSB.Image = global::BanVeMayBay.Properties.Resources.refresh;
             this.txtTaoMaSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtTaoMaSB.Location = new System.Drawing.Point(513, 100);
+            this.txtTaoMaSB.Location = new System.Drawing.Point(513, 76);
             this.txtTaoMaSB.Name = "txtTaoMaSB";
             this.txtTaoMaSB.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
             this.txtTaoMaSB.Size = new System.Drawing.Size(142, 40);
@@ -845,7 +831,7 @@
             "Vĩnh Long",
             "Vĩnh Phúc",
             "Yên Bái"});
-            this.cboViTri.Location = new System.Drawing.Point(55, 255);
+            this.cboViTri.Location = new System.Drawing.Point(55, 231);
             this.cboViTri.MaxDropDownItems = 5;
             this.cboViTri.Name = "cboViTri";
             this.cboViTri.Size = new System.Drawing.Size(600, 40);
@@ -855,7 +841,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(67, 220);
+            this.label19.Location = new System.Drawing.Point(67, 196);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(64, 32);
             this.label19.TabIndex = 37;
@@ -864,7 +850,7 @@
             // txtTenSanBay
             // 
             this.txtTenSanBay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSanBay.Location = new System.Drawing.Point(55, 177);
+            this.txtTenSanBay.Location = new System.Drawing.Point(55, 153);
             this.txtTenSanBay.Name = "txtTenSanBay";
             this.txtTenSanBay.Size = new System.Drawing.Size(600, 39);
             this.txtTenSanBay.TabIndex = 1;
@@ -873,7 +859,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(67, 142);
+            this.label18.Location = new System.Drawing.Point(67, 118);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(140, 32);
             this.label18.TabIndex = 35;
@@ -883,7 +869,7 @@
             // 
             this.txtMaSanBay.Enabled = false;
             this.txtMaSanBay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSanBay.Location = new System.Drawing.Point(55, 100);
+            this.txtMaSanBay.Location = new System.Drawing.Point(55, 76);
             this.txtMaSanBay.Name = "txtMaSanBay";
             this.txtMaSanBay.Size = new System.Drawing.Size(452, 39);
             this.txtMaSanBay.TabIndex = 34;
@@ -892,22 +878,11 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(67, 65);
+            this.label17.Location = new System.Drawing.Point(67, 41);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(136, 32);
             this.label17.TabIndex = 33;
             this.label17.Text = "Mã sân bay";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(8, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(331, 28);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "ĐÂY LÀ PANEL QUẢN LÝ SÂN BAY\r\n";
             // 
             // dataGrV_SanBay
             // 
@@ -917,7 +892,7 @@
             this.MaSanBay,
             this.TenSB,
             this.DiaDiem});
-            this.dataGrV_SanBay.Location = new System.Drawing.Point(707, 65);
+            this.dataGrV_SanBay.Location = new System.Drawing.Point(707, 41);
             this.dataGrV_SanBay.Name = "dataGrV_SanBay";
             this.dataGrV_SanBay.RowHeadersWidth = 62;
             this.dataGrV_SanBay.RowTemplate.Height = 28;
@@ -957,7 +932,7 @@
             this.btnXoa_QLSB.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnXoa_QLSB.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
             this.btnXoa_QLSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_QLSB.Location = new System.Drawing.Point(486, 573);
+            this.btnXoa_QLSB.Location = new System.Drawing.Point(486, 549);
             this.btnXoa_QLSB.Name = "btnXoa_QLSB";
             this.btnXoa_QLSB.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnXoa_QLSB.Size = new System.Drawing.Size(215, 60);
@@ -972,7 +947,7 @@
             this.btnSua_QLSB.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnSua_QLSB.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
             this.btnSua_QLSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_QLSB.Location = new System.Drawing.Point(253, 573);
+            this.btnSua_QLSB.Location = new System.Drawing.Point(253, 549);
             this.btnSua_QLSB.Name = "btnSua_QLSB";
             this.btnSua_QLSB.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSua_QLSB.Size = new System.Drawing.Size(215, 60);
@@ -987,7 +962,7 @@
             this.btnThem_QLSB.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnThem_QLSB.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
             this.btnThem_QLSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_QLSB.Location = new System.Drawing.Point(20, 573);
+            this.btnThem_QLSB.Location = new System.Drawing.Point(20, 549);
             this.btnThem_QLSB.Name = "btnThem_QLSB";
             this.btnThem_QLSB.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnThem_QLSB.Size = new System.Drawing.Size(215, 60);
@@ -998,7 +973,7 @@
             // 
             // pnlQL_HD
             // 
-            this.pnlQL_HD.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.pnlQL_HD.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlQL_HD.Controls.Add(this.button1);
             this.pnlQL_HD.Controls.Add(this.label10);
             this.pnlQL_HD.Controls.Add(this.label2);
@@ -1008,7 +983,6 @@
             this.pnlQL_HD.Controls.Add(this.picTimKiem_QLHD);
             this.pnlQL_HD.Controls.Add(this.txtTimKiem_QLHD);
             this.pnlQL_HD.Controls.Add(this.dataGrV_HoaDon);
-            this.pnlQL_HD.Controls.Add(this.label20);
             this.pnlQL_HD.Location = new System.Drawing.Point(396, 142);
             this.pnlQL_HD.Name = "pnlQL_HD";
             this.pnlQL_HD.Size = new System.Drawing.Size(1502, 782);
@@ -1019,7 +993,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1121, 278);
+            this.button1.Location = new System.Drawing.Point(1121, 238);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(304, 55);
             this.button1.TabIndex = 42;
@@ -1030,7 +1004,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 556);
+            this.label10.Location = new System.Drawing.Point(23, 555);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(190, 32);
             this.label10.TabIndex = 41;
@@ -1040,7 +1014,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 102);
+            this.label2.Location = new System.Drawing.Point(23, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 32);
             this.label2.TabIndex = 40;
@@ -1060,7 +1034,7 @@
             this.KM_MaKhuyenMai,
             this.Thue,
             this.TenNhanVienTruc});
-            this.dataGrV_CTHoaDon.Location = new System.Drawing.Point(19, 594);
+            this.dataGrV_CTHoaDon.Location = new System.Drawing.Point(19, 593);
             this.dataGrV_CTHoaDon.Name = "dataGrV_CTHoaDon";
             this.dataGrV_CTHoaDon.RowHeadersWidth = 62;
             this.dataGrV_CTHoaDon.RowTemplate.Height = 28;
@@ -1144,7 +1118,7 @@
             this.btnXuatExcel_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatExcel_QLHD.Image = global::BanVeMayBay.Properties.Resources.sheet;
             this.btnXuatExcel_QLHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(1121, 177);
+            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(1121, 137);
             this.btnXuatExcel_QLHD.Name = "btnXuatExcel_QLHD";
             this.btnXuatExcel_QLHD.Size = new System.Drawing.Size(304, 55);
             this.btnXuatExcel_QLHD.TabIndex = 38;
@@ -1157,7 +1131,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(478, 103);
+            this.label21.Location = new System.Drawing.Point(478, 58);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(113, 32);
             this.label21.TabIndex = 36;
@@ -1166,7 +1140,7 @@
             // picTimKiem_QLHD
             // 
             this.picTimKiem_QLHD.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
-            this.picTimKiem_QLHD.Location = new System.Drawing.Point(976, 100);
+            this.picTimKiem_QLHD.Location = new System.Drawing.Point(976, 55);
             this.picTimKiem_QLHD.Name = "picTimKiem_QLHD";
             this.picTimKiem_QLHD.Size = new System.Drawing.Size(39, 39);
             this.picTimKiem_QLHD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1176,7 +1150,7 @@
             // txtTimKiem_QLHD
             // 
             this.txtTimKiem_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem_QLHD.Location = new System.Drawing.Point(597, 100);
+            this.txtTimKiem_QLHD.Location = new System.Drawing.Point(597, 55);
             this.txtTimKiem_QLHD.Name = "txtTimKiem_QLHD";
             this.txtTimKiem_QLHD.Size = new System.Drawing.Size(373, 39);
             this.txtTimKiem_QLHD.TabIndex = 37;
@@ -1192,12 +1166,12 @@
             this.TongTien,
             this.HinhThucThanhToan,
             this.TrangThaiHoaDon});
-            this.dataGrV_HoaDon.Location = new System.Drawing.Point(20, 146);
+            this.dataGrV_HoaDon.Location = new System.Drawing.Point(20, 106);
             this.dataGrV_HoaDon.Name = "dataGrV_HoaDon";
             this.dataGrV_HoaDon.RowHeadersWidth = 62;
             this.dataGrV_HoaDon.RowTemplate.Height = 28;
             this.dataGrV_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrV_HoaDon.Size = new System.Drawing.Size(995, 405);
+            this.dataGrV_HoaDon.Size = new System.Drawing.Size(995, 446);
             this.dataGrV_HoaDon.TabIndex = 34;
             this.dataGrV_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_HoaDon_CellClick);
             // 
@@ -1249,17 +1223,6 @@
             this.TrangThaiHoaDon.Name = "TrangThaiHoaDon";
             this.TrangThaiHoaDon.Width = 200;
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(15, 5);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(344, 28);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "ĐÂY LÀ PANEL QUẢN LÝ HÓA ĐƠN";
-            // 
             // MaTuyenBay
             // 
             this.MaTuyenBay.DataPropertyName = "MaTuyenBay";
@@ -1282,7 +1245,7 @@
             this.GioBay.HeaderText = "Giờ bay";
             this.GioBay.MinimumWidth = 8;
             this.GioBay.Name = "GioBay";
-            this.GioBay.Width = 150;
+            this.GioBay.Width = 130;
             // 
             // GioDen
             // 
@@ -1290,7 +1253,7 @@
             this.GioDen.HeaderText = "Giờ đến";
             this.GioDen.MinimumWidth = 8;
             this.GioDen.Name = "GioDen";
-            this.GioDen.Width = 150;
+            this.GioDen.Width = 130;
             // 
             // SoVeConLai
             // 
@@ -1298,7 +1261,7 @@
             this.SoVeConLai.HeaderText = "Số vé còn lại";
             this.SoVeConLai.MinimumWidth = 8;
             this.SoVeConLai.Name = "SoVeConLai";
-            this.SoVeConLai.Width = 150;
+            this.SoVeConLai.Width = 140;
             // 
             // SoVeDaBan
             // 
@@ -1306,7 +1269,7 @@
             this.SoVeDaBan.HeaderText = "Số vé đã bán";
             this.SoVeDaBan.MinimumWidth = 8;
             this.SoVeDaBan.Name = "SoVeDaBan";
-            this.SoVeDaBan.Width = 150;
+            this.SoVeDaBan.Width = 140;
             // 
             // TrangThaiTuyenBay
             // 
@@ -1314,7 +1277,7 @@
             this.TrangThaiTuyenBay.HeaderText = "Trạng thái Tuyến bay";
             this.TrangThaiTuyenBay.MinimumWidth = 8;
             this.TrangThaiTuyenBay.Name = "TrangThaiTuyenBay";
-            this.TrangThaiTuyenBay.Width = 160;
+            this.TrangThaiTuyenBay.Width = 130;
             // 
             // IDMayBay
             // 
@@ -1322,7 +1285,7 @@
             this.IDMayBay.HeaderText = "Máy Bay";
             this.IDMayBay.MinimumWidth = 8;
             this.IDMayBay.Name = "IDMayBay";
-            this.IDMayBay.Width = 130;
+            this.IDMayBay.Width = 110;
             // 
             // IDChangBay
             // 
@@ -1330,7 +1293,7 @@
             this.IDChangBay.HeaderText = "Chặng Bay";
             this.IDChangBay.MinimumWidth = 8;
             this.IDChangBay.Name = "IDChangBay";
-            this.IDChangBay.Width = 130;
+            this.IDChangBay.Width = 150;
             // 
             // frmQuanLi
             // 
@@ -1340,9 +1303,9 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
+            this.Controls.Add(this.pnlQL_HD);
             this.Controls.Add(this.pnlQL_Ve);
             this.Controls.Add(this.pnlQL_SanBay);
-            this.Controls.Add(this.pnlQL_HD);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1397,8 +1360,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboDiemDen;
         private System.Windows.Forms.ComboBox cboDiemKhoiHanh;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtMaSanBay;
@@ -1409,7 +1370,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnQL_HoaDon;
         private System.Windows.Forms.Panel pnlQL_HD;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dataGrV_HoaDon;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox picTimKiem_QLHD;
