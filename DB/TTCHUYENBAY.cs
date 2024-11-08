@@ -56,14 +56,15 @@ namespace DB
                             "and TUYENBAY.IDMayBay = MAYBAY.ID " +
                             "and CHANGBAY.IDSanBaydi = SANBAYDI.ID " +
                             "and CHANGBAY.IDSanBayden = SANBAYDEN.ID " +
-                            "and SANBAYDI.MaSanBay ='SB001' " +
-                            "and SANBAYDEN.MaSanBay ='SB002' " +
-                            "and NgayBay='2024-10-30' ";
+                            "and SANBAYDI.MaSanBay ='" + maSanBayDi + "' " +
+                            "and SANBAYDEN.MaSanBay ='" + maSanBayDen + "' " +
+                            "and NgayBay='" + ngayBay + "' ";
+            //caulenh = "select SANBAYDI.MaSanBay,SANBAYDEN.MaSanBay, NgayBay, GioBay, GioDen, MaTuyenBay, MaMayBay, LoaiMB from SANBAY as SANBAYDI, SANBAY as SANBAYDEN, CHANGBAY, TUYENBAY, MAYBAY where TUYENBAY.IDChangBay = CHANGBAY.ID and TUYENBAY.IDMayBay = MAYBAY.ID and CHANGBAY.IDSanBaydi = SANBAYDI.ID and CHANGBAY.IDSanBayden = SANBAYDEN.ID and SANBAYDI.MaSanBay ='SB001' and SANBAYDEN.MaSanBay ='SB002' and NgayBay='2024-11-19'";
             #endregion
 
             SqlDataReader reader = db.GetExecuteReader(caulenh);
             while (reader.Read()){
-                TTCHUYENBAY cb= new TTCHUYENBAY();
+                TTCHUYENBAY cb = new TTCHUYENBAY();
                 cb.NgayKhoiHanh = Convert.ToDateTime(reader["NgayBay"]).ToString();
                 cb.ThoiGianDi = (TimeSpan)reader["GioBay"];
                 cb.ThoiGianDen = (TimeSpan)reader["GioDen"];

@@ -57,6 +57,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGrV_Ve = new System.Windows.Forms.DataGridView();
+            this.MaTuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoVeConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoVeDaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThaiTuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDMayBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDChangBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa_QLVe = new System.Windows.Forms.Button();
             this.btnSua_QLVe = new System.Windows.Forms.Button();
             this.btnThem_QLVe = new System.Windows.Forms.Button();
@@ -100,15 +109,6 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoVeConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoVeDaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThaiTuyenBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMayBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDChangBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
@@ -679,6 +679,78 @@
             this.dataGrV_Ve.TabIndex = 0;
             this.dataGrV_Ve.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_Ve_CellClick);
             // 
+            // MaTuyenBay
+            // 
+            this.MaTuyenBay.DataPropertyName = "MaTuyenBay";
+            this.MaTuyenBay.HeaderText = "Mã Tuyến bay";
+            this.MaTuyenBay.MinimumWidth = 8;
+            this.MaTuyenBay.Name = "MaTuyenBay";
+            this.MaTuyenBay.Width = 150;
+            // 
+            // NgayBay
+            // 
+            this.NgayBay.DataPropertyName = "NgayBay";
+            this.NgayBay.HeaderText = "Ngày Bay";
+            this.NgayBay.MinimumWidth = 8;
+            this.NgayBay.Name = "NgayBay";
+            this.NgayBay.Width = 150;
+            // 
+            // GioBay
+            // 
+            this.GioBay.DataPropertyName = "GioBay";
+            this.GioBay.HeaderText = "Giờ bay";
+            this.GioBay.MinimumWidth = 8;
+            this.GioBay.Name = "GioBay";
+            this.GioBay.Width = 130;
+            // 
+            // GioDen
+            // 
+            this.GioDen.DataPropertyName = "GioDen";
+            this.GioDen.HeaderText = "Giờ đến";
+            this.GioDen.MinimumWidth = 8;
+            this.GioDen.Name = "GioDen";
+            this.GioDen.Width = 130;
+            // 
+            // SoVeConLai
+            // 
+            this.SoVeConLai.DataPropertyName = "SoVeConLai";
+            this.SoVeConLai.HeaderText = "Số vé còn lại";
+            this.SoVeConLai.MinimumWidth = 8;
+            this.SoVeConLai.Name = "SoVeConLai";
+            this.SoVeConLai.Width = 140;
+            // 
+            // SoVeDaBan
+            // 
+            this.SoVeDaBan.DataPropertyName = "SoVeDaBan";
+            this.SoVeDaBan.HeaderText = "Số vé đã bán";
+            this.SoVeDaBan.MinimumWidth = 8;
+            this.SoVeDaBan.Name = "SoVeDaBan";
+            this.SoVeDaBan.Width = 140;
+            // 
+            // TrangThaiTuyenBay
+            // 
+            this.TrangThaiTuyenBay.DataPropertyName = "TrangThaiTuyenBay";
+            this.TrangThaiTuyenBay.HeaderText = "Trạng thái Tuyến bay";
+            this.TrangThaiTuyenBay.MinimumWidth = 8;
+            this.TrangThaiTuyenBay.Name = "TrangThaiTuyenBay";
+            this.TrangThaiTuyenBay.Width = 130;
+            // 
+            // IDMayBay
+            // 
+            this.IDMayBay.DataPropertyName = "IDMayBay";
+            this.IDMayBay.HeaderText = "Máy Bay";
+            this.IDMayBay.MinimumWidth = 8;
+            this.IDMayBay.Name = "IDMayBay";
+            this.IDMayBay.Width = 110;
+            // 
+            // IDChangBay
+            // 
+            this.IDChangBay.DataPropertyName = "IDChangBay";
+            this.IDChangBay.HeaderText = "Chặng Bay";
+            this.IDChangBay.MinimumWidth = 8;
+            this.IDChangBay.Name = "IDChangBay";
+            this.IDChangBay.Width = 150;
+            // 
             // btnXoa_QLVe
             // 
             this.btnXoa_QLVe.Enabled = false;
@@ -1139,13 +1211,17 @@
             // 
             // picTimKiem_QLHD
             // 
+            this.picTimKiem_QLHD.BackColor = System.Drawing.Color.White;
+            this.picTimKiem_QLHD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTimKiem_QLHD.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
             this.picTimKiem_QLHD.Location = new System.Drawing.Point(976, 55);
             this.picTimKiem_QLHD.Name = "picTimKiem_QLHD";
+            this.picTimKiem_QLHD.Padding = new System.Windows.Forms.Padding(5);
             this.picTimKiem_QLHD.Size = new System.Drawing.Size(39, 39);
             this.picTimKiem_QLHD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTimKiem_QLHD.TabIndex = 35;
             this.picTimKiem_QLHD.TabStop = false;
+            this.picTimKiem_QLHD.Click += new System.EventHandler(this.picTimKiem_QLHD_Click);
             // 
             // txtTimKiem_QLHD
             // 
@@ -1223,78 +1299,6 @@
             this.TrangThaiHoaDon.Name = "TrangThaiHoaDon";
             this.TrangThaiHoaDon.Width = 200;
             // 
-            // MaTuyenBay
-            // 
-            this.MaTuyenBay.DataPropertyName = "MaTuyenBay";
-            this.MaTuyenBay.HeaderText = "Mã Tuyến bay";
-            this.MaTuyenBay.MinimumWidth = 8;
-            this.MaTuyenBay.Name = "MaTuyenBay";
-            this.MaTuyenBay.Width = 150;
-            // 
-            // NgayBay
-            // 
-            this.NgayBay.DataPropertyName = "NgayBay";
-            this.NgayBay.HeaderText = "Ngày Bay";
-            this.NgayBay.MinimumWidth = 8;
-            this.NgayBay.Name = "NgayBay";
-            this.NgayBay.Width = 150;
-            // 
-            // GioBay
-            // 
-            this.GioBay.DataPropertyName = "GioBay";
-            this.GioBay.HeaderText = "Giờ bay";
-            this.GioBay.MinimumWidth = 8;
-            this.GioBay.Name = "GioBay";
-            this.GioBay.Width = 130;
-            // 
-            // GioDen
-            // 
-            this.GioDen.DataPropertyName = "GioDen";
-            this.GioDen.HeaderText = "Giờ đến";
-            this.GioDen.MinimumWidth = 8;
-            this.GioDen.Name = "GioDen";
-            this.GioDen.Width = 130;
-            // 
-            // SoVeConLai
-            // 
-            this.SoVeConLai.DataPropertyName = "SoVeConLai";
-            this.SoVeConLai.HeaderText = "Số vé còn lại";
-            this.SoVeConLai.MinimumWidth = 8;
-            this.SoVeConLai.Name = "SoVeConLai";
-            this.SoVeConLai.Width = 140;
-            // 
-            // SoVeDaBan
-            // 
-            this.SoVeDaBan.DataPropertyName = "SoVeDaBan";
-            this.SoVeDaBan.HeaderText = "Số vé đã bán";
-            this.SoVeDaBan.MinimumWidth = 8;
-            this.SoVeDaBan.Name = "SoVeDaBan";
-            this.SoVeDaBan.Width = 140;
-            // 
-            // TrangThaiTuyenBay
-            // 
-            this.TrangThaiTuyenBay.DataPropertyName = "TrangThaiTuyenBay";
-            this.TrangThaiTuyenBay.HeaderText = "Trạng thái Tuyến bay";
-            this.TrangThaiTuyenBay.MinimumWidth = 8;
-            this.TrangThaiTuyenBay.Name = "TrangThaiTuyenBay";
-            this.TrangThaiTuyenBay.Width = 130;
-            // 
-            // IDMayBay
-            // 
-            this.IDMayBay.DataPropertyName = "IDMayBay";
-            this.IDMayBay.HeaderText = "Máy Bay";
-            this.IDMayBay.MinimumWidth = 8;
-            this.IDMayBay.Name = "IDMayBay";
-            this.IDMayBay.Width = 110;
-            // 
-            // IDChangBay
-            // 
-            this.IDChangBay.DataPropertyName = "IDChangBay";
-            this.IDChangBay.HeaderText = "Chặng Bay";
-            this.IDChangBay.MinimumWidth = 8;
-            this.IDChangBay.Name = "IDChangBay";
-            this.IDChangBay.Width = 150;
-            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1303,9 +1307,9 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
-            this.Controls.Add(this.pnlQL_HD);
             this.Controls.Add(this.pnlQL_Ve);
             this.Controls.Add(this.pnlQL_SanBay);
+            this.Controls.Add(this.pnlQL_HD);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

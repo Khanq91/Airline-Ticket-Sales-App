@@ -21,13 +21,13 @@ namespace BanVeMayBay
         TTNguoiLon DBNL = new TTNguoiLon();
         TTTreEm DBTE = new TTTreEm();
         TTEmBe DBEB = new TTEmBe();
-        TTCHUYENBAY dbCB=new TTCHUYENBAY();
+        TTCHUYENBAY dbCB = new TTCHUYENBAY();
 
 
         List<TTNguoiLon> lstNguoiLon = new List<TTNguoiLon>();
         List<TTEmBe> lstEmBe = new List<TTEmBe>();
         List<TTTreEm> lstTreEm = new List<TTTreEm>();
-        List<TTCHUYENBAY> lstCB=new List<TTCHUYENBAY>();
+        List<TTCHUYENBAY> lstCB = new List<TTCHUYENBAY>();
 
         frmNhapTT_NguoiLon frmNL;
         frmNhapTT_TreEm frmTreEm;
@@ -102,9 +102,14 @@ namespace BanVeMayBay
         string __PhuongThucTT = "null";
         string __TenNganHang = "NHnull";
         frmThanhToan frmthanhtoan;
+        private string get_DiaDiemSanBay(string maSanBay)
+        {
+            string caulenh = "select DiaDiem from SANBAY where MaSanBay = '" + maSanBay + "'";
+            string kq = (string)DB.GetExecuteScalar(caulenh);
+            return kq;
+        }
         private void XuLy_btnDiTiep(int index)
         {
-
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
@@ -113,13 +118,15 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Padding = new Padding(0, 0, 0, 0);
                 pnlThanGiaoDien.Location = new Point(312, 285);
                 pnlThanGiaoDien.Height -= 50;
-
                 lblHangVe1.Visible = true;
                 lblHangVe4.Visible = true;
                 Load_DanhSachtoFrmVe(lstCB.Count());
 
+                tenDiaDiemKhoiHanh = get_DiaDiemSanBay(__diemkhoihanh);
+                tenDiaDiemDen = get_DiaDiemSanBay(__diemden);
+
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
@@ -140,7 +147,7 @@ namespace BanVeMayBay
                 frmDVInstance.Show();
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, "0", "0", "0", "0");
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, "0", "0");
@@ -157,7 +164,7 @@ namespace BanVeMayBay
                 __TienGoiHanhLy = frmDVInstance.lblTienHL.Text;
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, __diemkhoihanh, __diemden, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
+                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
@@ -216,6 +223,8 @@ namespace BanVeMayBay
         public string __diemkhoihanh;
         public string __diemden;
         public string __slTTND;
+        string tenDiaDiemKhoiHanh;
+        string tenDiaDiemDen;
         TTCHUYENBAY ttcb = new TTCHUYENBAY();
         public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
@@ -238,8 +247,10 @@ namespace BanVeMayBay
             lblChuyenBayKHMC.Text = "CHUYẾN BAY MỘT CHIỀU | " + TTHK;
 
             __ngaybay = ngaybay;
-            __diemkhoihanh = ttcb.TenSanBay(diemkhoihanh);
-            __diemden = ttcb.TenSanBay(diemden);
+            //__diemkhoihanh = ttcb.TenSanBay(diemkhoihanh);
+            //__diemden = ttcb.TenSanBay(diemden);
+            __diemkhoihanh = diemkhoihanh;
+            __diemden = diemden;
             pnlTTCB.Visible = true;
             pnlTTCB.Location = new Point(0, 144);
             lblDiemKhoiHanh.Text = __diemkhoihanh;

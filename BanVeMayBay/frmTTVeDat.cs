@@ -53,19 +53,19 @@ namespace BanVeMayBay
             this.Ngaybay = ngaybay;
             this.DiemKH = diemkhoihanh;
             this.DiemDen = diemden;
-            //load thông tin điểm khởi hành được người dùng chọn từ csdl
             lblDiemKhoiHanh.Text = DiemKH;
-            //load thông tin điểm đến được người dùng chọn từ csdl
             lblDiemDen.Text = DiemDen;
-            //load thông tin ngày bay sau khi người dùng chọn vé từ csdl
+
+            if(Hangve == "HV004")
+            {
+                Hangve = "Thương gia";
+            }
+            else if (Hangve == "HV001")
+            {
+                Hangve = "Phổ thông";
+            }
             lblNgayBay.Text = Ngaybay + "  |  " + tg_di + " - " + tg_den + "  |  " + ma_cb + "  |  " + Hangve + "  |";//"30/4/1975" + " |";
             lblHangVeDuoi.Text = Hangve + " x " + SL_Ve;
-            //load thông tin giờ bay sau khi người dùng chọn vé từ csdl
-            //lblTGBay_Den.Text = ; //"9:00 - 12:00" + " |";
-            ////load mã chuyến bay từ vé mà người dùng chọn từ csdl
-            //lblMaCB.Text = ;//"CB001" + " |";
-            ////hạng vé được người dùng chọn từ vé
-            //lblHangVeTren.Text = ;//"BUSSINESS1";
             this.ViTriGhe = viTriGhe;
             this.TienViTriGhe = tienViTriGhe;
             this.GoiHanhLy = goiHanhLy;

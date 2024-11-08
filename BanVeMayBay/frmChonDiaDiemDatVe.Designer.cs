@@ -205,6 +205,7 @@
             this.cboDiemDen.Name = "cboDiemDen";
             this.cboDiemDen.Size = new System.Drawing.Size(213, 40);
             this.cboDiemDen.TabIndex = 24;
+            this.cboDiemDen.DropDown += new System.EventHandler(this.cboDiemDen_DropDown);
             // 
             // cboDiemKhoiHanh
             // 
@@ -219,6 +220,7 @@
             this.cboDiemKhoiHanh.Name = "cboDiemKhoiHanh";
             this.cboDiemKhoiHanh.Size = new System.Drawing.Size(213, 40);
             this.cboDiemKhoiHanh.TabIndex = 23;
+            this.cboDiemKhoiHanh.SelectedIndexChanged += new System.EventHandler(this.cboDiemKhoiHanh_SelectedIndexChanged);
             // 
             // picHanhKhachDropDown
             // 

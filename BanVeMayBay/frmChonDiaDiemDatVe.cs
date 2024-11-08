@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,28 +17,30 @@ namespace BanVeMayBay
     public partial class frmChonDiaDiemDatVe : Form
     {
         SanBay sb = new SanBay();
-        DB_Connet db=new DB_Connet();
-       
+        DB_Connet db = new DB_Connet();
+        DataTable dt_sanBayDi = new DataTable();
+        DataTable dt_sanBayDen = new DataTable();
+
         public frmChonDiaDiemDatVe()
         {
             InitializeComponent();
             LoadSanBayDi();
-            LoadSanBayDen();
+            cboDiemKhoiHanh.SelectedIndex = -1;
+            cboDiemDen.SelectedIndex = -1;
         }
         public void LoadSanBayDi()
-        { 
-            DataTable sanBayDi=new DataTable();
-            sanBayDi = db.GetDataAdapter("SanBay");
-            cboDiemKhoiHanh.DataSource = sanBayDi;
-            cboDiemKhoiHanh.DisplayMember = "TenSB";
+        {
+            dt_sanBayDi = db.GetDataTable("select MaSanBay, DiaDiem from SANBAY");
+            cboDiemKhoiHanh.DataSource = dt_sanBayDi;
+            cboDiemKhoiHanh.DisplayMember = "DiaDiem";
             cboDiemKhoiHanh.ValueMember = "MaSanBay";
         }
-        public void LoadSanBayDen()
+        public void LoadSanBayDen(string DiaDiemDaChon)
         {
-            DataTable sanBayDen = new DataTable();
-            sanBayDen = db.GetDataAdapter("SanBay");
-            cboDiemDen.DataSource = sanBayDen;
-            cboDiemDen.DisplayMember = "TenSB";
+            string caulenh = "select MaSanBay, DiaDiem from SANBAY where DiaDiem != N'" + DiaDiemDaChon + "'";
+            dt_sanBayDen = db.GetDataTable(caulenh);
+            cboDiemDen.DataSource = dt_sanBayDen;
+            cboDiemDen.DisplayMember = "DiaDiem";
             cboDiemDen.ValueMember = "MaSanBay";
         }
         private void frmChonDiaDiemDatVe_Load(object sender, EventArgs e)
@@ -114,6 +117,22 @@ namespace BanVeMayBay
                 
         }
 
+        private void cboDiemDen_DropDown(object sender, EventArgs e)
+        {
+            if(cboDiemKhoiHanh.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn điểm khởi hành trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void cboDiemKhoiHanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboDiemKhoiHanh.SelectedIndex != -1)
+            {
+                LoadSanBayDen(cboDiemKhoiHanh.Text);
+            }
+        }
+
         private void rdoKhuHoi_CheckedChanged(object sender, EventArgs e)
         {
             if(rdoKhuHoi.Checked)
@@ -166,8 +185,14 @@ namespace BanVeMayBay
                 }
             }
             frmMain frmmain = (frmMain)this.Parent.Parent.Parent;
-            string date = dateTimePickerNgayDi.Value.ToString("dd/MM/yyyy");
-            frmmain.ShowTTCB(slNL, slTE, slEB, date, cboDiemKhoiHanh.SelectedValue.ToString(), cboDiemDen.SelectedValue.ToString());
+
+            //string date = dateTimePickerNgayDi.Value.ToString("dd/MM/yyyy");
+
+            string date = dateTimePickerNgayDi.Value.ToString("dd/MM/yyyy"); 
+            DateTime dateTime = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture); 
+            string sqlFormattedDate = dateTime.ToString("yyyy-MM-dd");
+
+            frmmain.ShowTTCB(slNL, slTE, slEB, sqlFormattedDate, cboDiemKhoiHanh.SelectedValue.ToString(), cboDiemDen.SelectedValue.ToString());
             this.Hide();
         }
     }
