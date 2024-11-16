@@ -122,9 +122,8 @@ namespace BanVeMayBay
             }
             catch (Exception ex)
             {
-                lbl_ThongBao.Text = "Thêm thất bại";
+                lbl_ThongBao.Text = "Thêm thất bại!\nLỗi: " + ex.Message;
                 return;
-
             }
         }
         private void txtTaiKhoan_DK_KeyPress(object sender, KeyPressEventArgs e)

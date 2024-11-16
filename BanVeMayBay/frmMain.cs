@@ -29,9 +29,6 @@ namespace BanVeMayBay
         List<TTTreEm> lstTreEm = new List<TTTreEm>();
         List<TTCHUYENBAY> lstCB = new List<TTCHUYENBAY>();
 
-        frmNhapTT_NguoiLon frmNL;
-        frmNhapTT_TreEm frmTreEm;
-        frmNhapTT_EmBe frmEmBe;
         public List<TTNguoiLon> ListNguoiLon { get; private set; } = new List<TTNguoiLon>();
         public List<TTEmBe> ListEmBe { get; private set; } = new List<TTEmBe>();
         public List<TTTreEm> ListTreEm { get; private set; } = new List<TTTreEm>();
@@ -40,12 +37,10 @@ namespace BanVeMayBay
 
         private frmChonDV frmDVInstance;
 
-        string idtaikhoan;
         string tennguoidung;
-        public frmMain(string TenNguoiDung, string idtaikhoan)
+        public frmMain(string TenNguoiDung)
         {
             this.tennguoidung = TenNguoiDung;
-            this.idtaikhoan = idtaikhoan;
             InitializeComponent();
             lblChaoNguoiDung.Text = "Xin Chào " + tennguoidung;
             frmDVInstance = new frmChonDV();
@@ -74,23 +69,20 @@ namespace BanVeMayBay
         private void picReset_Click(object sender, EventArgs e)
         {
             //phương thức reset form khi ấn nút reset
-            this.Hide();
-            Form frmm = new frmMain(tennguoidung, idtaikhoan);
-            frmm.FormClosed += (s, args) => this.Close();
-            frmm.Show();
+            getResetClick();
         }
         int flag = 1;
         private void btnDiTiep_Click(object sender, EventArgs e)
         {
             NhapKhachHang();
-            //if (check)
-            //{
-            //    AddTTKhachHangVaoSql();
+            if (check)
+            {
+                AddTTKhachHangVaoSql();
                 flowLayoutPnlThanGianDien.Controls.Clear();
                 frmChonDV frmDV = new frmChonDV();
                 frmDV.TopLevel = false;
                 XuLy_btnDiTiep(flag);
-            //}
+            }
             lstNguoiLon.Clear();
             lstTreEm.Clear();
             lstEmBe.Clear();
@@ -213,8 +205,6 @@ namespace BanVeMayBay
                 }
 
                 frmHDTT.Show();
-
-
                 flag = 5;
             }
         }
@@ -310,6 +300,13 @@ namespace BanVeMayBay
                 frmv.Show();
             }
         }
+        private void getResetClick()
+        {
+            this.Hide();
+            Form frmm = new frmMain(tennguoidung);
+            frmm.FormClosed += (s, args) => this.Close();
+            frmm.Show();
+        }
         public void resetAllform()
         {
             foreach (Control crtl in flowLayoutPnlThanGianDien.Controls)
@@ -404,38 +401,59 @@ namespace BanVeMayBay
             {
                 foreach (TTNguoiLon nl in lstNguoiLon)
                 {
-                    int result = DBNL.ThemKH_NguoiLon(nl);
-                    if (result == 0)
+                    try
                     {
-                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                        int result = DBNL.ThemKH_NguoiLon(nl);
+                        if (result == 0)
+                        {
+                            MessageBox.Show("Thêm thông tin khách hàng[NL] thất bại!", "Thông Báo", MessageBoxButtons.OK);
+                        }
+                        //else
+                        //{
+                        //    MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        //}
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Thêm thông tin khách hàng[NL] thất bại!\nLỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK);
                     }
                 }
                 foreach (TTTreEm treem in lstTreEm)
                 {
-                    int result = DBTE.ThemKH_TreEm(treem);
-                    if (result == 0)
+                    try
                     {
-                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                        int result = DBTE.ThemKH_TreEm(treem);
+                        if (result == 0)
+                        {
+                            MessageBox.Show("Thêm thông tin khách hàng[TE] thất bại!", "Thông Báo", MessageBoxButtons.OK);
+                        }
+                        //else
+                        //{
+                        //    MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        //}
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Thêm thông tin khách hàng[TE] thất bại!\nLỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK);
                     }
                 }
                 foreach (TTEmBe embe in lstEmBe)
                 {
-                    int result = DBEB.ThemKH_EmBe(embe);
-                    if (result == 0)
+                    try
                     {
-                        MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                        int result = DBEB.ThemKH_EmBe(embe);
+                        if (result == 0)
+                        {
+                            MessageBox.Show("Thêm thất bại", "Thông Báo", MessageBoxButtons.OK);
+                        }
+                        //else
+                        //{
+                        //    MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        //}
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Thêm thông tin khách hàng[EB] thất bại!\nLỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK);
                     }
                 }
             }

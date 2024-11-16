@@ -52,7 +52,7 @@ namespace BanVeMayBay
         {
             string caulenh = "SELECT MAX(ID) FROM HOADON";
             int KtraID = (int)db.GetExecuteScalar(caulenh);
-            caulenh = "update HOADON set TrangThaiHoaDon = N'Đã thanh toán' where MaHoaDon = '" + KtraID + "'";
+            caulenh = "update HOADON set TrangThaiHoaDon = N'Đã thanh toán' where ID = " + KtraID;
             //string caulenh = "update HOADON set TrangThaiHoaDon = N'Đã thanh toán' where MaHoaDon = 'HD202411001'";
             try
             {
@@ -90,7 +90,7 @@ namespace BanVeMayBay
         {
             lblNgayLapHD.Text = DateTime.Now.ToShortDateString();
             lblTen_NV.Text = TenNV;
-            lblSL_Ve.Text = SL_Ve;
+            lblSL_Ve.Text = SL_Ve + " x";
             lblGiaVe.Text = GiaVe;
             lblGiaGhe.Text = GiaGhe;
             lblGiaGoiHanhLy.Text = GiaGoiHL;

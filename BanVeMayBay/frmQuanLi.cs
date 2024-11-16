@@ -14,6 +14,9 @@ using OfficeOpenXml;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml.ConditionalFormatting.Contracts;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.CodeDom;
+using Microsoft.Office.Interop.Excel;
+using System.Security.Policy;
 
 namespace BanVeMayBay
 {
@@ -24,12 +27,12 @@ namespace BanVeMayBay
         string caulenh;
         bool ThemChangBay = false;
         DB_Connet db = new DB_Connet();
-        DataTable dt_SanBay = new DataTable();
-        DataTable dt_DiemKH = new DataTable();
-        DataTable dt_DiemDen = new DataTable();
-        DataTable dt_Ve = new DataTable();
-        DataTable dt_HoaDon = new DataTable();
-        DataTable dt_CTHoaDon = new DataTable();
+        System.Data.DataTable dt_SanBay = new System.Data.DataTable();
+        System.Data.DataTable dt_DiemKH = new System.Data.DataTable();
+        System.Data.DataTable dt_DiemDen = new System.Data.DataTable();
+        System.Data.DataTable dt_Ve = new System.Data.DataTable();
+        System.Data.DataTable dt_HoaDon = new System.Data.DataTable();
+        System.Data.DataTable dt_CTHoaDon = new System.Data.DataTable();
 
         bool LoadDuLieu = false;
         public frmQuanLi(string tennguoidung, string role)
@@ -146,7 +149,7 @@ namespace BanVeMayBay
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
         #endregion
 
@@ -401,26 +404,42 @@ namespace BanVeMayBay
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm \nSân bay: '" + txtTenSanBay.Text + "'\nỞ '" + cboViTri.SelectedItem.ToString() +"'", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    string caulenh = "insert into SANBAY(MaSanBay, TenSB, DiaDiem) values (" +
+                    string caulenh;
+                    caulenh = "select count(*) from SANBAY where MaSanBay = '" + txtMaSanBay.Text + "'";
+                    int ktTrungMaSB = (int)db.GetExecuteScalar(caulenh);
+                    if(ktTrungMaSB > 0)
+                    {
+                        MessageBox.Show("Đã tồn tại mã sân bay!\nVui lòng tạo lại mã.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtMaSanBay.Clear();
+                        txtTenSanBay.Clear();
+                        txtTenSanBay.Focus();
+                        cboViTri.Text = "";
+                        return;
+                    }
+                    else
+                    {
+                        caulenh = "insert into SANBAY(MaSanBay, TenSB, DiaDiem) values (" +
                         "'" + txtMaSanBay.Text +
                         "', N'" + txtTenSanBay.Text +
                         "', N'" + cboViTri.SelectedItem.ToString() + "')";
-                    try
-                    {
-                        int kq = db.GetExecuteNonQuery(caulenh);
-                        if (kq > 0)
+                        try
                         {
-                            MessageBox.Show("Thêm thành công!");
-                            Load_SanBay();
-                            txtMaSanBay.Clear();
-                            txtTenSanBay.Clear();
-                            txtTenSanBay.Focus();
+                            int kq = db.GetExecuteNonQuery(caulenh);
+                            if (kq > 0)
+                            {
+                                MessageBox.Show("Thêm thành công!");
+                                Load_SanBay();
+                                txtMaSanBay.Clear();
+                                txtTenSanBay.Clear();
+                                txtTenSanBay.Focus();
+                                cboViTri.Text = "";
+                            }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Thêm thất bại! \nLỗi:" + ex.Message);
-                        return;
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Thêm thất bại! \nLỗi:" + ex.Message);
+                            return;
+                        }
                     }
                 }
                 else return;
@@ -511,22 +530,22 @@ namespace BanVeMayBay
         #region Quản lý Hóa đơn
         private void btnXuatExcel_QLHD_Click(object sender, EventArgs e)
         {
-            //ExportFile(dt_HoaDon, "DanhSach", "Danh sách Hóa đơn");
-            SaveFileDialog saveFiledialog = new SaveFileDialog();
-            saveFiledialog.Title = "Xuất file Excel";
-            saveFiledialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
-            if (saveFiledialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    XuatExcel(saveFiledialog.FileName);
-                    MessageBox.Show("Xuất file thành công!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Xuất file thất bại!\nLỗi:" + ex.Message);
-                }
-            }
+            ExportFile(dt_HoaDon, "DanhSach", "Danh sách Hóa đơn");
+            //SaveFileDialog saveFiledialog = new SaveFileDialog();
+            //saveFiledialog.Title = "Xuất file Excel";
+            //saveFiledialog.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            //if (saveFiledialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    try
+            //    {
+            //        XuatExcel(saveFiledialog.FileName);
+            //        MessageBox.Show("Xuất file thành công!");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Xuất file thất bại!\nLỗi:" + ex.Message);
+            //    }
+            //}
         }
         //public void XuatExcel(string path)
         //{
@@ -571,7 +590,7 @@ namespace BanVeMayBay
             ExcApp.Quit();
         }
 
-        public void ExportFile(DataTable dataTable, string sheetName, string title)
+        public void ExportFile(System.Data.DataTable dataTable, string sheetName, string title)
         {
             //Tạo các đối tượng Excel
             Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
@@ -596,7 +615,6 @@ namespace BanVeMayBay
             head.Font.Name = "Times New Roman";
             head.Font.Size = "20";
             head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
             // Tạo tiêu đề cột 
             Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
             cl1.Value2 = "Mã Hóa đơn";
@@ -655,28 +673,50 @@ namespace BanVeMayBay
             range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
             //Căn giữa cả bảng 
             oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            Microsoft.Office.Interop.Excel.Range dateColumn = oSheet.get_Range("B4", "B" + rowEnd);
+            dateColumn.NumberFormat = "dd/MM/yyyy";
         }
         private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow selectedRow = dataGrV_HoaDon.Rows[e.RowIndex];
-            string id = selectedRow.Cells["ID"].Value.ToString();
-            Load_CTHoaDon(id);
-        }
-
-        private void picTimKiem_QLHD_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(txtTimKiem_QLHD.Text) == false)
+            if(e.RowIndex >= 0 && e.RowIndex < dataGrV_HoaDon.Rows.Count)
             {
-
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập thông tin cần tìm vào ô tìm kiếm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                DataGridViewRow selectedRow = dataGrV_HoaDon.Rows[e.RowIndex];
+                string maHD = selectedRow.Cells["MaHoaDon"].Value.ToString();
+                Load_CTHoaDon(maHD);
+            }    
         }
         #endregion
 
         #region Phương thức chức năng
+        
+        private void Filter_DSHD()
+        {
+            //(none)
+            //Theo ngày gần nhất
+            //Giảm dần theo tổng tiền
+            //Tăng dần theo tổng tiền
+
+            DataView dataView = new DataView(dt_HoaDon);
+            if(cboLocDuLieu_QLHD.SelectedItem.ToString() == "(none)")
+            {
+                Load_HoaDon();
+            }    
+            else if(cboLocDuLieu_QLHD.SelectedItem.ToString() == "Theo ngày gần nhất")
+            {
+                dataView.Sort = "NgayLapHoaDon DESC";
+                dataGrV_HoaDon.DataSource = dataView.ToTable();
+            }
+            else if(cboLocDuLieu_QLHD.SelectedItem.ToString() == "Tăng dần theo tổng tiền")
+            {
+                dataView.Sort = "TongTien ASC";
+                dataGrV_HoaDon.DataSource = dataView.ToTable();
+            }
+            else if (cboLocDuLieu_QLHD.SelectedItem.ToString() == "Giảm dần theo tổng tiền")
+            {
+                dataView.Sort = "TongTien DESC";
+                dataGrV_HoaDon.DataSource = dataView.ToTable();
+            }
+        }
         private void Load_Ve()
         {
             dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, LoaiMB AS IDMayBay, CONCAT(SBDi.DiaDiem, ' - ', SBDen.DiaDiem) AS IDChangBay from TUYENBAY TB, MAYBAY MB, CHANGBAY CB, SANBAY SBDi, SANBAY SBDen where TB.IDMayBay = MB.ID and TB.IDChangBay = CB.ID and CB.IDSanBaydi = SBDi.ID and CB.IDSanBayden = SBDen.ID");
@@ -689,12 +729,12 @@ namespace BanVeMayBay
         }
         private void Load_HoaDon()
         {
-            dt_HoaDon = db.GetDataAdapter("HOADON");
+            dt_HoaDon = db.GetDataTable("select MaHoaDon, NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon from HOADON");
             dataGrV_HoaDon.DataSource = dt_HoaDon;
         }
-        private void Load_CTHoaDon(string id)
+        private void Load_CTHoaDon(string maHD)
         {
-            string caulenh = "select VE, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, Thue, TenNhanVienTruc from CHITIETHOADON where ID = " + id + "";
+            string caulenh = "select VE, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, Thue, TenNhanVienTruc from CHITIETHOADON where MaHoaDon = '"+ maHD + "'";
             dt_CTHoaDon = db.GetDataTable(caulenh);
             dataGrV_CTHoaDon.DataSource = dt_CTHoaDon;
         }
@@ -767,5 +807,9 @@ namespace BanVeMayBay
         }
         #endregion
 
+        private void cboLocDuLieu_QLHD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter_DSHD();
+        }
     }
 }

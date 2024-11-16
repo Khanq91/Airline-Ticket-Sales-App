@@ -95,7 +95,7 @@ namespace BanVeMayBay
             if (Tennguoidung != null)
             {
                 this.Hide();
-                frmMain frmMain = new frmMain(Tennguoidung, idtaikhoan);
+                frmMain frmMain = new frmMain(Tennguoidung);
                 frmMain.Show();
             }
             else

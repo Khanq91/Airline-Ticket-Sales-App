@@ -70,7 +70,7 @@
             this.btnSua_QLVe = new System.Windows.Forms.Button();
             this.btnThem_QLVe = new System.Windows.Forms.Button();
             this.pnlQL_SanBay = new System.Windows.Forms.Panel();
-            this.txtTaoMaSB = new System.Windows.Forms.Button();
+            this.btnTaoMaSB = new System.Windows.Forms.Button();
             this.cboViTri = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtTenSanBay = new System.Windows.Forms.TextBox();
@@ -99,16 +99,14 @@
             this.Thue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNhanVienTruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXuatExcel_QLHD = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.picTimKiem_QLHD = new System.Windows.Forms.PictureBox();
-            this.txtTimKiem_QLHD = new System.Windows.Forms.TextBox();
             this.dataGrV_HoaDon = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLapHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboLocDuLieu_QLHD = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
@@ -118,7 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_SanBay)).BeginInit();
             this.pnlQL_HD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_CTHoaDon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -801,7 +798,7 @@
             // pnlQL_SanBay
             // 
             this.pnlQL_SanBay.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlQL_SanBay.Controls.Add(this.txtTaoMaSB);
+            this.pnlQL_SanBay.Controls.Add(this.btnTaoMaSB);
             this.pnlQL_SanBay.Controls.Add(this.cboViTri);
             this.pnlQL_SanBay.Controls.Add(this.label19);
             this.pnlQL_SanBay.Controls.Add(this.txtTenSanBay);
@@ -818,21 +815,21 @@
             this.pnlQL_SanBay.TabIndex = 16;
             this.pnlQL_SanBay.Visible = false;
             // 
-            // txtTaoMaSB
+            // btnTaoMaSB
             // 
-            this.txtTaoMaSB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaoMaSB.ForeColor = System.Drawing.Color.Lime;
-            this.txtTaoMaSB.Image = global::BanVeMayBay.Properties.Resources.refresh;
-            this.txtTaoMaSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtTaoMaSB.Location = new System.Drawing.Point(513, 76);
-            this.txtTaoMaSB.Name = "txtTaoMaSB";
-            this.txtTaoMaSB.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
-            this.txtTaoMaSB.Size = new System.Drawing.Size(142, 40);
-            this.txtTaoMaSB.TabIndex = 38;
-            this.txtTaoMaSB.Text = "Tạo mã";
-            this.txtTaoMaSB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.txtTaoMaSB.UseVisualStyleBackColor = true;
-            this.txtTaoMaSB.Click += new System.EventHandler(this.txtTaoMaSB_Click);
+            this.btnTaoMaSB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoMaSB.ForeColor = System.Drawing.Color.Lime;
+            this.btnTaoMaSB.Image = global::BanVeMayBay.Properties.Resources.refresh;
+            this.btnTaoMaSB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaoMaSB.Location = new System.Drawing.Point(513, 76);
+            this.btnTaoMaSB.Name = "btnTaoMaSB";
+            this.btnTaoMaSB.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnTaoMaSB.Size = new System.Drawing.Size(142, 40);
+            this.btnTaoMaSB.TabIndex = 38;
+            this.btnTaoMaSB.Text = "Tạo mã";
+            this.btnTaoMaSB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTaoMaSB.UseVisualStyleBackColor = true;
+            this.btnTaoMaSB.Click += new System.EventHandler(this.txtTaoMaSB_Click);
             // 
             // cboViTri
             // 
@@ -869,6 +866,7 @@
             "Hải Phòng",
             "Hậu Giang",
             "Hồ Chí Minh",
+            "TP.HCM",
             "Hòa Bình",
             "Hưng Yên",
             "Khánh Hòa",
@@ -902,7 +900,9 @@
             "Tuyên Quang",
             "Vĩnh Long",
             "Vĩnh Phúc",
-            "Yên Bái"});
+            "Yên Bái",
+            "Phú Quốc",
+            "Cam Ranh"});
             this.cboViTri.Location = new System.Drawing.Point(55, 231);
             this.cboViTri.MaxDropDownItems = 5;
             this.cboViTri.Name = "cboViTri";
@@ -1046,14 +1046,13 @@
             // pnlQL_HD
             // 
             this.pnlQL_HD.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlQL_HD.Controls.Add(this.label9);
+            this.pnlQL_HD.Controls.Add(this.cboLocDuLieu_QLHD);
             this.pnlQL_HD.Controls.Add(this.button1);
             this.pnlQL_HD.Controls.Add(this.label10);
             this.pnlQL_HD.Controls.Add(this.label2);
             this.pnlQL_HD.Controls.Add(this.dataGrV_CTHoaDon);
             this.pnlQL_HD.Controls.Add(this.btnXuatExcel_QLHD);
-            this.pnlQL_HD.Controls.Add(this.label21);
-            this.pnlQL_HD.Controls.Add(this.picTimKiem_QLHD);
-            this.pnlQL_HD.Controls.Add(this.txtTimKiem_QLHD);
             this.pnlQL_HD.Controls.Add(this.dataGrV_HoaDon);
             this.pnlQL_HD.Location = new System.Drawing.Point(396, 142);
             this.pnlQL_HD.Name = "pnlQL_HD";
@@ -1076,7 +1075,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 555);
+            this.label10.Location = new System.Drawing.Point(23, 598);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(190, 32);
             this.label10.TabIndex = 41;
@@ -1086,7 +1085,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 57);
+            this.label2.Location = new System.Drawing.Point(23, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(224, 32);
             this.label2.TabIndex = 40;
@@ -1106,11 +1105,11 @@
             this.KM_MaKhuyenMai,
             this.Thue,
             this.TenNhanVienTruc});
-            this.dataGrV_CTHoaDon.Location = new System.Drawing.Point(19, 593);
+            this.dataGrV_CTHoaDon.Location = new System.Drawing.Point(19, 635);
             this.dataGrV_CTHoaDon.Name = "dataGrV_CTHoaDon";
             this.dataGrV_CTHoaDon.RowHeadersWidth = 62;
             this.dataGrV_CTHoaDon.RowTemplate.Height = 28;
-            this.dataGrV_CTHoaDon.Size = new System.Drawing.Size(1464, 169);
+            this.dataGrV_CTHoaDon.Size = new System.Drawing.Size(1464, 127);
             this.dataGrV_CTHoaDon.TabIndex = 39;
             // 
             // Ve
@@ -1199,65 +1198,24 @@
             this.btnXuatExcel_QLHD.UseVisualStyleBackColor = true;
             this.btnXuatExcel_QLHD.Click += new System.EventHandler(this.btnXuatExcel_QLHD_Click);
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(478, 58);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(113, 32);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "Tìm kiếm";
-            // 
-            // picTimKiem_QLHD
-            // 
-            this.picTimKiem_QLHD.BackColor = System.Drawing.Color.White;
-            this.picTimKiem_QLHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTimKiem_QLHD.Image = global::BanVeMayBay.Properties.Resources.search_interface_symbol;
-            this.picTimKiem_QLHD.Location = new System.Drawing.Point(976, 55);
-            this.picTimKiem_QLHD.Name = "picTimKiem_QLHD";
-            this.picTimKiem_QLHD.Padding = new System.Windows.Forms.Padding(5);
-            this.picTimKiem_QLHD.Size = new System.Drawing.Size(39, 39);
-            this.picTimKiem_QLHD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTimKiem_QLHD.TabIndex = 35;
-            this.picTimKiem_QLHD.TabStop = false;
-            this.picTimKiem_QLHD.Click += new System.EventHandler(this.picTimKiem_QLHD_Click);
-            // 
-            // txtTimKiem_QLHD
-            // 
-            this.txtTimKiem_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem_QLHD.Location = new System.Drawing.Point(597, 55);
-            this.txtTimKiem_QLHD.Name = "txtTimKiem_QLHD";
-            this.txtTimKiem_QLHD.Size = new System.Drawing.Size(373, 39);
-            this.txtTimKiem_QLHD.TabIndex = 37;
-            // 
             // dataGrV_HoaDon
             // 
             this.dataGrV_HoaDon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGrV_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrV_HoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
             this.MaHoaDon,
             this.NgayLapHoaDon,
             this.TongTien,
             this.HinhThucThanhToan,
             this.TrangThaiHoaDon});
-            this.dataGrV_HoaDon.Location = new System.Drawing.Point(20, 106);
+            this.dataGrV_HoaDon.Location = new System.Drawing.Point(20, 126);
             this.dataGrV_HoaDon.Name = "dataGrV_HoaDon";
             this.dataGrV_HoaDon.RowHeadersWidth = 62;
             this.dataGrV_HoaDon.RowTemplate.Height = 28;
             this.dataGrV_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrV_HoaDon.Size = new System.Drawing.Size(995, 446);
+            this.dataGrV_HoaDon.Size = new System.Drawing.Size(995, 469);
             this.dataGrV_HoaDon.TabIndex = 34;
             this.dataGrV_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_HoaDon_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.Width = 80;
             // 
             // MaHoaDon
             // 
@@ -1265,7 +1223,7 @@
             this.MaHoaDon.HeaderText = "Mã Hóa đơn";
             this.MaHoaDon.MinimumWidth = 8;
             this.MaHoaDon.Name = "MaHoaDon";
-            this.MaHoaDon.Width = 150;
+            this.MaHoaDon.Width = 160;
             // 
             // NgayLapHoaDon
             // 
@@ -1273,7 +1231,7 @@
             this.NgayLapHoaDon.HeaderText = "Ngày lập";
             this.NgayLapHoaDon.MinimumWidth = 8;
             this.NgayLapHoaDon.Name = "NgayLapHoaDon";
-            this.NgayLapHoaDon.Width = 150;
+            this.NgayLapHoaDon.Width = 170;
             // 
             // TongTien
             // 
@@ -1281,7 +1239,7 @@
             this.TongTien.HeaderText = "Tổng tiền";
             this.TongTien.MinimumWidth = 8;
             this.TongTien.Name = "TongTien";
-            this.TongTien.Width = 150;
+            this.TongTien.Width = 180;
             // 
             // HinhThucThanhToan
             // 
@@ -1299,6 +1257,32 @@
             this.TrangThaiHoaDon.Name = "TrangThaiHoaDon";
             this.TrangThaiHoaDon.Width = 200;
             // 
+            // cboLocDuLieu_QLHD
+            // 
+            this.cboLocDuLieu_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocDuLieu_QLHD.FormattingEnabled = true;
+            this.cboLocDuLieu_QLHD.Items.AddRange(new object[] {
+            "(none)",
+            "Theo ngày gần nhất",
+            "Giảm dần theo tổng tiền",
+            "Tăng dần theo tổng tiền"});
+            this.cboLocDuLieu_QLHD.Location = new System.Drawing.Point(695, 77);
+            this.cboLocDuLieu_QLHD.Name = "cboLocDuLieu_QLHD";
+            this.cboLocDuLieu_QLHD.Size = new System.Drawing.Size(320, 40);
+            this.cboLocDuLieu_QLHD.TabIndex = 43;
+            this.cboLocDuLieu_QLHD.Text = "(none)";
+            this.cboLocDuLieu_QLHD.SelectedIndexChanged += new System.EventHandler(this.cboLocDuLieu_QLHD_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(626, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 32);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Lọc: ";
+            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1307,9 +1291,9 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
+            this.Controls.Add(this.pnlQL_HD);
             this.Controls.Add(this.pnlQL_Ve);
             this.Controls.Add(this.pnlQL_SanBay);
-            this.Controls.Add(this.pnlQL_HD);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1329,7 +1313,6 @@
             this.pnlQL_HD.ResumeLayout(false);
             this.pnlQL_HD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_CTHoaDon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem_QLHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).EndInit();
             this.ResumeLayout(false);
 
@@ -1375,21 +1358,12 @@
         private System.Windows.Forms.Button btnQL_HoaDon;
         private System.Windows.Forms.Panel pnlQL_HD;
         private System.Windows.Forms.DataGridView dataGrV_HoaDon;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.PictureBox picTimKiem_QLHD;
-        private System.Windows.Forms.TextBox txtTimKiem_QLHD;
         private System.Windows.Forms.Button btnXuatExcel_QLHD;
-        private System.Windows.Forms.Button txtTaoMaSB;
+        private System.Windows.Forms.Button btnTaoMaSB;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSanBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSB;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiem;
         private System.Windows.Forms.DataGridView dataGrV_CTHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HinhThucThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiHoaDon;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
@@ -1418,5 +1392,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiTuyenBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMayBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDChangBay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhThucThanhToan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiHoaDon;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboLocDuLieu_QLHD;
     }
 }
