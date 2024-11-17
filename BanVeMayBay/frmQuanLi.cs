@@ -202,6 +202,7 @@ namespace BanVeMayBay
                     if(ThemChangBay)
                     {
                         Add_TuyenBay();
+                        Load_Ve();
                     }    
                 }    
             } 
@@ -296,6 +297,10 @@ namespace BanVeMayBay
                 DataGridViewRow row = dataGrV_Ve.Rows[e.RowIndex];
                 MaTB = row.Cells["MaTuyenBay"].Value.ToString();
                 MaCB = row.Cells["IDChangBay"].Value.ToString();
+                string[] splitStrings = MaCB.Split(new string[] { " - " }, StringSplitOptions.None); 
+                string diemKH = splitStrings[0]; 
+                string diemDen = splitStrings[1];
+
                 DateTime NgayBay = DateTime.Parse(row.Cells["NgayBay"].Value.ToString());
                 try
                 {
@@ -321,11 +326,14 @@ namespace BanVeMayBay
                 cboGio_Den.Text = GioDen_int.ToString();
                 cboPhut_Den.Text = PhutDen_int.ToString();
 
-                caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBdi where ChB.ID = TnB.IDChangBay and ChB.IDSanBaydi = SBdi.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đi
-                cboDiemKhoiHanh.Text = (string)db.GetExecuteScalar(caulenh);
+                //caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBdi where ChB.ID = TnB.IDChangBay and ChB.IDSanBaydi = SBdi.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đi
+                //cboDiemKhoiHanh.Text = (string)db.GetExecuteScalar(caulenh);
+                //caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBden where ChB.ID = TnB.IDChangBay and ChB.IDSanBayden = SBden.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đến
+                //cboDiemDen.Text = (string)db.GetExecuteScalar(caulenh);
 
-                caulenh = "select DiaDiem from CHANGBAY ChB, TUYENBAY TnB, SANBAY SBden where ChB.ID = TnB.IDChangBay and ChB.IDSanBayden = SBden.ID and IDChangBay = " + MaCB + ""; //Tìm sân bay đến
-                cboDiemDen.Text = (string)db.GetExecuteScalar(caulenh);
+                cboDiemKhoiHanh.Text = diemKH;
+                cboDiemDen.Text = diemDen;
+
             }
 
         }
@@ -658,7 +666,7 @@ namespace BanVeMayBay
             //Thiết lập vùng điền dữ liệu
             int rowStart = 4;
             int columnStart = 1;
-            int rowEnd = rowStart + dataTable.Rows.Count - 2;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
             int columnEnd = dataTable.Columns.Count;
 
             // Ô bắt đầu điền dữ liệu
@@ -675,6 +683,10 @@ namespace BanVeMayBay
             oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             Microsoft.Office.Interop.Excel.Range dateColumn = oSheet.get_Range("B4", "B" + rowEnd);
             dateColumn.NumberFormat = "dd/MM/yyyy";
+        }
+        private void cboLocDuLieu_QLHD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Filter_DSHD();
         }
         private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -806,10 +818,5 @@ namespace BanVeMayBay
 
         }
         #endregion
-
-        private void cboLocDuLieu_QLHD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Filter_DSHD();
-        }
     }
 }

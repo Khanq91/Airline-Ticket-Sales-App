@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Security.AccessControl;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BanVeMayBay.frmChonDV;
@@ -114,8 +115,8 @@ namespace BanVeMayBay
                 lblHangVe4.Visible = true;
                 Load_DanhSachtoFrmVe(lstCB.Count());
 
-                tenDiaDiemKhoiHanh = get_DiaDiemSanBay(__diemkhoihanh);
-                tenDiaDiemDen = get_DiaDiemSanBay(__diemden);
+                //tenDiaDiemKhoiHanh = get_DiaDiemSanBay(__diemkhoihanh);
+                //tenDiaDiemDen = get_DiaDiemSanBay(__diemden);
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
                 frmTTVeDat frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
@@ -201,7 +202,7 @@ namespace BanVeMayBay
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi thêm hóa đơn: " + ex.Message);
+                    MessageBox.Show("Thêm hóa đơn thất bại\nLỗi: " + ex.Message);
                 }
 
                 frmHDTT.Show();
@@ -241,12 +242,16 @@ namespace BanVeMayBay
             //__diemden = ttcb.TenSanBay(diemden);
             __diemkhoihanh = diemkhoihanh;
             __diemden = diemden;
+
+            tenDiaDiemKhoiHanh = get_DiaDiemSanBay(__diemkhoihanh);
+            tenDiaDiemDen = get_DiaDiemSanBay(__diemden);
+
             pnlTTCB.Visible = true;
             pnlTTCB.Location = new Point(0, 144);
-            lblDiemKhoiHanh.Text = __diemkhoihanh;
-            lblDiemDen.Text = __diemden;
+            lblDiemKhoiHanh.Text = tenDiaDiemKhoiHanh;
+            lblDiemDen.Text = tenDiaDiemDen;
             pnlThanGiaoDien.Location = new Point(0, 229);
-
+                                               
             //xuất hiện footer chứa nút đi tiếp
             pnlThanGiaoDien.Height -= 171;
             pnlDuoiGiaoDien.Visible = true;
@@ -257,6 +262,7 @@ namespace BanVeMayBay
             flowLayoutPnlThanGianDien.Padding = new Padding(20, 20, 20, 20);
             xuatDSTTHK(slNL, slTE, slEB);
         }
+
         public void xuatDSTTHK(int slNL, int slTE, int slEB)
         {
             int i;

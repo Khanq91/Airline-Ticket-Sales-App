@@ -199,6 +199,7 @@ CREATE TABLE CHITIETHOADON
 (
 	ID INT,
     MaHoaDon CHAR(12),
+	SL_Ve int,
 	Ve MONEY,
 	Thue MONEY,
 	PhuPhiHeThong MONEY,

@@ -85,6 +85,8 @@
             this.btnSua_QLSB = new System.Windows.Forms.Button();
             this.btnThem_QLSB = new System.Windows.Forms.Button();
             this.pnlQL_HD = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboLocDuLieu_QLHD = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -105,8 +107,6 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboLocDuLieu_QLHD = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
@@ -1060,6 +1060,32 @@
             this.pnlQL_HD.TabIndex = 17;
             this.pnlQL_HD.Visible = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(626, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 32);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Lọc: ";
+            // 
+            // cboLocDuLieu_QLHD
+            // 
+            this.cboLocDuLieu_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLocDuLieu_QLHD.FormattingEnabled = true;
+            this.cboLocDuLieu_QLHD.Items.AddRange(new object[] {
+            "(none)",
+            "Theo ngày gần nhất",
+            "Giảm dần theo tổng tiền",
+            "Tăng dần theo tổng tiền"});
+            this.cboLocDuLieu_QLHD.Location = new System.Drawing.Point(695, 77);
+            this.cboLocDuLieu_QLHD.Name = "cboLocDuLieu_QLHD";
+            this.cboLocDuLieu_QLHD.Size = new System.Drawing.Size(320, 40);
+            this.cboLocDuLieu_QLHD.TabIndex = 43;
+            this.cboLocDuLieu_QLHD.Text = "(none)";
+            this.cboLocDuLieu_QLHD.SelectedIndexChanged += new System.EventHandler(this.cboLocDuLieu_QLHD_SelectedIndexChanged);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1257,32 +1283,6 @@
             this.TrangThaiHoaDon.Name = "TrangThaiHoaDon";
             this.TrangThaiHoaDon.Width = 200;
             // 
-            // cboLocDuLieu_QLHD
-            // 
-            this.cboLocDuLieu_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocDuLieu_QLHD.FormattingEnabled = true;
-            this.cboLocDuLieu_QLHD.Items.AddRange(new object[] {
-            "(none)",
-            "Theo ngày gần nhất",
-            "Giảm dần theo tổng tiền",
-            "Tăng dần theo tổng tiền"});
-            this.cboLocDuLieu_QLHD.Location = new System.Drawing.Point(695, 77);
-            this.cboLocDuLieu_QLHD.Name = "cboLocDuLieu_QLHD";
-            this.cboLocDuLieu_QLHD.Size = new System.Drawing.Size(320, 40);
-            this.cboLocDuLieu_QLHD.TabIndex = 43;
-            this.cboLocDuLieu_QLHD.Text = "(none)";
-            this.cboLocDuLieu_QLHD.SelectedIndexChanged += new System.EventHandler(this.cboLocDuLieu_QLHD_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(626, 81);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 32);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Lọc: ";
-            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1291,9 +1291,9 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
-            this.Controls.Add(this.pnlQL_HD);
             this.Controls.Add(this.pnlQL_Ve);
             this.Controls.Add(this.pnlQL_SanBay);
+            this.Controls.Add(this.pnlQL_HD);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

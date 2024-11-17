@@ -118,7 +118,7 @@ namespace BanVeMayBay
             float TongThue = float.Parse(lblThue_Ve.Text.Replace(".", "")) + float.Parse(lblThue_PhuPhi.Text.Replace(".", ""));
             
             caulenh = "insert into CHITIETHOADON(ID, MaHoaDon, SL_Ve, Ve, Thue, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, TenNhanVienTruc) " +
-                "values (" + KtraID + ", '" + lblMaHD.Text + "', " + lblSL_Ve.Text + ", " + lblGiaVe.Text.Replace(".", "") + ", " + TongThue.ToString() + ", 215000, 99000, " + __giaGhe + ", " + __giaHL + ", 0, 0, N'" + lblTen_NV.Text + "')";
+                "values (" + KtraID + ", '" + lblMaHD.Text + "', " + SL_Ve + ", " + lblGiaVe.Text.Replace(".", "") + ", " + TongThue.ToString() + ", 215000, 99000, " + __giaGhe + ", " + __giaHL + ", 0, 0, N'" + lblTen_NV.Text + "')";
 
             try
             {
@@ -126,7 +126,7 @@ namespace BanVeMayBay
             }
             catch(Exception ex) 
             {
-                MessageBox.Show("Thêm chi tiết hóa đơn thất bại!" + ex.Message);
+                MessageBox.Show("Thêm chi tiết hóa đơn thất bại!\nLỗi: " + ex.Message);
             }
 
         }
