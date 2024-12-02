@@ -284,25 +284,14 @@ namespace BanVeMayBay
             }
             else GiaHL_ = 0;
 
-            float VAT1_ = GiaVe_ * 0.1f;
+            float VAT1_ = GiaVe_ * float.Parse(SL_Ve) * 0.1f;
             //Tiền vé và thuế 10% của vé
-            thanhtien += GiaVe_ + VAT1_;
+            thanhtien += GiaVe_ * float.Parse(SL_Ve) + VAT1_;
             //Các loại phụ phí riêng và VAT của phụ phí (không tính vé)
             thanhtien += 329700;
             //Tiền ghế và hành lý(nếu có)
             thanhtien += GiaGhe_ + GiaHL_;
-            if (thanhtien < 1000000)
-            { 
-                //thanhtien /= 1000;
-                //lblTongTien.Text = thanhtien.ToString() + ".000"; 
-                lblTongTien.Text = string.Format("{0:n0}", thanhtien);
-            }
-            else
-            {
-                //thanhtien /= 1000000;
-                //lblTongTien.Text = thanhtien.ToString() + ".000.000";
-                lblTongTien.Text = string.Format("{0:n0}", thanhtien);
-            }
+            lblTongTien.Text = string.Format("{0:n0}", thanhtien);
         }
         public string GetThanhTien()
         {

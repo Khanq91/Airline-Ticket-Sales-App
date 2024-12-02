@@ -18,7 +18,7 @@ namespace DB
         }
         public int ThemKH_EmBe(TTEmBe emBe)
         {
-            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,TenNguoiDiCung) values(N'" + emBe.Gioitinh + "',N'" + emBe.TenKH + "','" + emBe.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + emBe.NguoiBayCung + "')";
+            string caulenh = "insert into HANHKHACH(GioiTinhHanhKhach,TenHanhKhach,NgaySinhHanhKhach,TenNguoiDiCung) VALUES (N'" + emBe.Gioitinh + "',N'" + emBe.TenKH + "','" + emBe.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + emBe.NguoiBayCung + "')";
             int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }

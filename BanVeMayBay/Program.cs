@@ -31,11 +31,11 @@ namespace BanVeMayBay
             Application.SetCompatibleTextRenderingDefault(false);
             #endregion
 
-
+            Application.Run(new frmDangNhap());
             //Application.Run(new frmMain("Khang"));
             //Application.Run(new frmThanhToan("10000"));
             //Application.Run(new frmQR_ThanhToan("Test", "1000"));
-            Application.Run(new frmQuanLi("Khang", "Quản lý"));
+            //Application.Run(new frmQuanLi("Khang", "Quản lý"));
 
         }
     }

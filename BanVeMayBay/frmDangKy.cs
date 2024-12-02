@@ -44,6 +44,10 @@ namespace BanVeMayBay
 
         private void picTroLaiDN_Click(object sender, EventArgs e)
         {
+            getDangNhapfrm();
+        }
+        void getDangNhapfrm()
+        {
             frmDangNhap fdn = new frmDangNhap();
             this.Hide();
             fdn.Show();
@@ -75,7 +79,7 @@ namespace BanVeMayBay
         private void txtTenNguoiDung_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
-            if (txtNhapLaiMatKhau_DK.Text.Trim().Length == 0)
+            if (txtTenNguoiDung.Text.Trim().Length == 0)
                 this.erpTKMK.SetError(ctr, "Bạn phải nhập tên người dùng!");
             else
                 this.erpTKMK.Clear();
@@ -107,17 +111,20 @@ namespace BanVeMayBay
                     int kq = db_Dk.ThemTaiKHoan(txtTenNguoiDung.Text,txtTaiKhoan_DK.Text, txtMatKhau_DK.Text);
                     if (kq > 0)
                     {
-                        lbl_ThongBao.Text = "Đăng kí tài khoản thành công";
-                        lbl_ThongBao.ForeColor = Color.Green;
-                        return;
-
+                        //lbl_ThongBao.Text = "Đăng kí tài khoản thành công";
+                        //lbl_ThongBao.ForeColor = Color.Green;
+                        DialogResult result = MessageBox.Show("Đăng kí tài khoản thành công! \nQuay lại trang đăng nhập?","Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if(result == DialogResult.OK)
+                        {
+                            getDangNhapfrm();
+                        }
+                        else return;
                     }
                 }
                 else
                 {
                     lbl_ThongBao.Text = "Tài khoản đã tồn tại";
                     return;
-
                 }
             }
             catch (Exception ex)

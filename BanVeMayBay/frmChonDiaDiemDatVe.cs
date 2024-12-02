@@ -61,7 +61,7 @@ namespace BanVeMayBay
         {
             dateTimePickerNgayVe.MinDate = dateTimePickerNgayDi.Value;
         }
-        //Form frmcon = new frmCon_frmChonDiaDiemDatVe();
+
         frmCon_frmChonDiaDiemDatVe frmcon = new frmCon_frmChonDiaDiemDatVe();
         bool frmCoDangMoHayKhong = false; //Form có đang mở hay không
         public int slNL, slTE, slEB;
@@ -102,7 +102,6 @@ namespace BanVeMayBay
                     }
                     lblTTHanhKhach.Visible = true;
                     lblTTHanhKhach.Text = SLHK;
-                    //kt so luong nguoi de xuat hien tren form
                 }    
             }
         }
@@ -151,11 +150,9 @@ namespace BanVeMayBay
         {
             if(rdoMotChieu.Checked)
             {
-                if (
-                    cboDiemDen.SelectedItem != null &&
+                if (cboDiemDen.SelectedItem != null &&
                     cboDiemKhoiHanh.SelectedItem != null &&
-                    lblTTHanhKhach.Text != "null"
-                    )
+                    lblTTHanhKhach.Text != "null")
                 {
                     if(dateTimePickerNgayDi.Value == dateTimePickerNgayDi.MinDate)
                     {

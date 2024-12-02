@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DB;
 
 namespace BanVeMayBay
 {
@@ -27,6 +28,7 @@ namespace BanVeMayBay
         string _ngay_kh;
         string _Hangve;
         private frmMain ParentForm;
+        DB_Connet db = new DB_Connet();
         public string Hangve { get => _Hangve; set => _Hangve = value; }
         public string Tienve { get => _tienve; set => _tienve = value; }
         public string tg_di { get => _tg_di; set => _tg_di = value; }

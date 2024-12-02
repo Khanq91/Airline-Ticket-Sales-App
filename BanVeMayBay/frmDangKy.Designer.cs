@@ -92,7 +92,7 @@
             this.btnDangKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKi.ForeColor = System.Drawing.Color.White;
-            this.btnDangKi.Location = new System.Drawing.Point(1019, 714);
+            this.btnDangKi.Location = new System.Drawing.Point(1019, 721);
             this.btnDangKi.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKi.Name = "btnDangKi";
             this.btnDangKi.Size = new System.Drawing.Size(366, 92);
@@ -123,7 +123,7 @@
             this.lbl_ThongBao.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_ThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ThongBao.ForeColor = System.Drawing.Color.Red;
-            this.lbl_ThongBao.Location = new System.Drawing.Point(1015, 685);
+            this.lbl_ThongBao.Location = new System.Drawing.Point(1015, 695);
             this.lbl_ThongBao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ThongBao.Name = "lbl_ThongBao";
             this.lbl_ThongBao.Size = new System.Drawing.Size(0, 22);

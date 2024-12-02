@@ -91,17 +91,28 @@ namespace BanVeMayBay
             }
             string Taikhoan = txtTaiKhoan_DN.Text.Trim();
             string MatKhau = txtMatKhau_DN.Text.Trim();
-            var (Tennguoidung, idtaikhoan) = db_DN.KTraTaiKhoan(Taikhoan, MatKhau);
+            var (Tennguoidung, idtaikhoan, loaitk) = db_DN.KTraTaiKhoan(Taikhoan, MatKhau);
             if (Tennguoidung != null)
             {
-                this.Hide();
-                frmMain frmMain = new frmMain(Tennguoidung);
-                frmMain.Show();
+                if(loaitk == "Quản lý")
+                {
+                    this.Hide();
+                    frmQuanLi frmQL = new frmQuanLi(Tennguoidung, loaitk);
+                    frmQL.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    frmMain frmMain = new frmMain(Tennguoidung);
+                    frmMain.Show();
+                }
             }
             else
             {
                 lbl_ThongBao.Text = "Tài khoản hoặc mật khẩu không chính xác.";
+                return;
             }
+            return;
         }
     }
 }

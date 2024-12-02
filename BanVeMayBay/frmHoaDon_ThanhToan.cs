@@ -52,20 +52,31 @@ namespace BanVeMayBay
         {
             string caulenh = "SELECT MAX(ID) FROM HOADON";
             int KtraID = (int)db.GetExecuteScalar(caulenh);
-            caulenh = "update HOADON set TrangThaiHoaDon = N'Đã thanh toán' where ID = " + KtraID;
+            caulenh = "UPDATE HOADON SET TrangThaiHoaDon = N'Ðã thanh toán' WHERE ID = " + KtraID;
             //string caulenh = "update HOADON set TrangThaiHoaDon = N'Đã thanh toán' where MaHoaDon = 'HD202411001'";
             try
             {
                 var kq = db.GetExecuteNonQuery(caulenh);
                 if (kq > 0)
                 {
-                    MessageBox.Show("Đã thanh toán!");
+                    MessageBox.Show("Đã thanh toán!\n Cảm ơn quý khách đã sử dụng dịch vụ ");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Thanh toán lỗi!" + ex.Message);
             }
+        }
+        void getTenNhanVienNgauNhien()
+        {
+            string caulenh;
+            caulenh = "SELECT COUNT(ID) FROM NHANVIEN";
+            int maxrand = (int)db.GetExecuteScalar(caulenh);
+            Random rd = new Random();
+            int randNVID = rd.Next(1, maxrand);
+            caulenh = "SELECT TenNhanVien FROM NHANVIEN WHERE ID = " + randNVID;
+            string tenNV = db.GetExecuteScalar(caulenh).ToString();
+            lblTen_NV.Text = tenNV;
         }
         private void Load_MaHD()
         {
@@ -76,7 +87,7 @@ namespace BanVeMayBay
             var result = db.GetExecuteScalar(caulenh);
             if (result != DBNull.Value)
             {
-                KTRAmaHD = Convert.ToInt32(result) + 1;
+                KTRAmaHD = Convert.ToInt32(result);
             }
             else
             {
@@ -89,7 +100,8 @@ namespace BanVeMayBay
         private void Load_DuLieuHD()
         {
             lblNgayLapHD.Text = DateTime.Now.ToShortDateString();
-            lblTen_NV.Text = TenNV;
+            lblTenHanhKhach.Text = TenNV;
+            getTenNhanVienNgauNhien();
             lblSL_Ve.Text = SL_Ve + " x";
             lblGiaVe.Text = GiaVe;
             lblGiaGhe.Text = GiaGhe;
@@ -117,8 +129,8 @@ namespace BanVeMayBay
             int KtraID = (int)db.GetExecuteScalar(caulenh); 
             float TongThue = float.Parse(lblThue_Ve.Text.Replace(".", "")) + float.Parse(lblThue_PhuPhi.Text.Replace(".", ""));
             
-            caulenh = "insert into CHITIETHOADON(ID, MaHoaDon, SL_Ve, Ve, Thue, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, TenNhanVienTruc) " +
-                "values (" + KtraID + ", '" + lblMaHD.Text + "', " + SL_Ve + ", " + lblGiaVe.Text.Replace(".", "") + ", " + TongThue.ToString() + ", 215000, 99000, " + __giaGhe + ", " + __giaHL + ", 0, 0, N'" + lblTen_NV.Text + "')";
+            caulenh = "INSERT INTO CHITIETHOADON(ID, MaHoaDon, SoLuongVe, Ve, Thue, PhuPhiHeThong, PhuPhiAnNinh, Ghe, HanhLy, KM_ThanhVienLauNam, KM_MaKhuyenMai, TenNhanVienTruc) " +
+                "VALUES (" + KtraID + ", '" + lblMaHD.Text + "', " + SL_Ve + ", " + lblGiaVe.Text.Replace(".", "") + ", " + TongThue.ToString() + ", 215000, 99000, " + __giaGhe + ", " + __giaHL + ", 0, 0, N'" + lblTen_NV.Text + "')";
 
             try
             {

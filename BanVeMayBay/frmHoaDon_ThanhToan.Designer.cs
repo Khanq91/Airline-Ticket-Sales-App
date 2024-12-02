@@ -69,17 +69,19 @@
             this.label36 = new System.Windows.Forms.Label();
             this.lblTongThanhToan = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.contextMenuStripTraTien = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.trảTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.lblNgayLapHD = new System.Windows.Forms.Label();
             this.lblTen_NV = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblThoat = new System.Windows.Forms.Label();
-            this.contextMenuStripTraTien = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.trảTiềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTenHanhKhach = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.grbTTHD.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.contextMenuStripTraTien.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -145,7 +147,7 @@
             this.grbTTHD.Controls.Add(this.label6);
             this.grbTTHD.Controls.Add(this.label5);
             this.grbTTHD.Controls.Add(this.label4);
-            this.grbTTHD.Location = new System.Drawing.Point(22, 159);
+            this.grbTTHD.Location = new System.Drawing.Point(22, 202);
             this.grbTTHD.Name = "grbTTHD";
             this.grbTTHD.Size = new System.Drawing.Size(586, 531);
             this.grbTTHD.TabIndex = 3;
@@ -483,7 +485,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(16, 697);
+            this.label36.Location = new System.Drawing.Point(16, 740);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(210, 32);
             this.label36.TabIndex = 36;
@@ -492,7 +494,7 @@
             // lblTongThanhToan
             // 
             this.lblTongThanhToan.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongThanhToan.Location = new System.Drawing.Point(22, 727);
+            this.lblTongThanhToan.Location = new System.Drawing.Point(22, 770);
             this.lblTongThanhToan.Name = "lblTongThanhToan";
             this.lblTongThanhToan.Size = new System.Drawing.Size(490, 32);
             this.lblTongThanhToan.TabIndex = 37;
@@ -504,11 +506,26 @@
             this.label38.AutoSize = true;
             this.label38.ContextMenuStrip = this.contextMenuStripTraTien;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(523, 724);
+            this.label38.Location = new System.Drawing.Point(523, 767);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(76, 38);
             this.label38.TabIndex = 36;
             this.label38.Text = "VND";
+            // 
+            // contextMenuStripTraTien
+            // 
+            this.contextMenuStripTraTien.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStripTraTien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trảTiềnToolStripMenuItem});
+            this.contextMenuStripTraTien.Name = "contextMenuStripTraTien";
+            this.contextMenuStripTraTien.Size = new System.Drawing.Size(141, 36);
+            // 
+            // trảTiềnToolStripMenuItem
+            // 
+            this.trảTiềnToolStripMenuItem.Name = "trảTiềnToolStripMenuItem";
+            this.trảTiềnToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
+            this.trảTiềnToolStripMenuItem.Text = "Trả tiền";
+            this.trảTiềnToolStripMenuItem.Click += new System.EventHandler(this.trảTiềnToolStripMenuItem_Click);
             // 
             // lblMaHD
             // 
@@ -549,6 +566,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblTenHanhKhach);
+            this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.lblThoat);
             this.panel1.Controls.Add(this.lblNgayLapHD);
             this.panel1.Controls.Add(this.lblTen_NV);
@@ -563,7 +582,7 @@
             this.panel1.Controls.Add(this.label38);
             this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 772);
+            this.panel1.Size = new System.Drawing.Size(625, 826);
             this.panel1.TabIndex = 42;
             // 
             // lblThoat
@@ -578,27 +597,30 @@
             this.lblThoat.Text = "x";
             this.lblThoat.Click += new System.EventHandler(this.lblThoat_Click);
             // 
-            // contextMenuStripTraTien
+            // lblTenHanhKhach
             // 
-            this.contextMenuStripTraTien.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStripTraTien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.trảTiềnToolStripMenuItem});
-            this.contextMenuStripTraTien.Name = "contextMenuStripTraTien";
-            this.contextMenuStripTraTien.Size = new System.Drawing.Size(241, 69);
+            this.lblTenHanhKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHanhKhach.Location = new System.Drawing.Point(149, 149);
+            this.lblTenHanhKhach.Name = "lblTenHanhKhach";
+            this.lblTenHanhKhach.Size = new System.Drawing.Size(459, 32);
+            this.lblTenHanhKhach.TabIndex = 45;
+            this.lblTenHanhKhach.Text = "Tên";
             // 
-            // trảTiềnToolStripMenuItem
+            // label23
             // 
-            this.trảTiềnToolStripMenuItem.Name = "trảTiềnToolStripMenuItem";
-            this.trảTiềnToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.trảTiềnToolStripMenuItem.Text = "Trả tiền";
-            this.trảTiềnToolStripMenuItem.Click += new System.EventHandler(this.trảTiềnToolStripMenuItem_Click);
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(16, 149);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(127, 32);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "Tên khách:";
             // 
             // frmHoaDon_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(630, 778);
+            this.ClientSize = new System.Drawing.Size(630, 835);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -608,9 +630,9 @@
             this.Load += new System.EventHandler(this.frmHoaDon_ThanhToan_Load);
             this.grbTTHD.ResumeLayout(false);
             this.grbTTHD.PerformLayout();
+            this.contextMenuStripTraTien.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.contextMenuStripTraTien.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -665,5 +687,7 @@
         private System.Windows.Forms.Label lblThoat;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTraTien;
         private System.Windows.Forms.ToolStripMenuItem trảTiềnToolStripMenuItem;
+        private System.Windows.Forms.Label lblTenHanhKhach;
+        private System.Windows.Forms.Label label23;
     }
 }

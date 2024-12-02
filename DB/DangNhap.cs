@@ -10,18 +10,21 @@ namespace DB
     public class DangNhap
     {
         DB_Connet db = new DB_Connet();
-        public (string tennguoidung, string idTaiKhoan) KTraTaiKhoan(string Tk, string MK)
+        public (string tennguoidung, string idTaiKhoan, string loaitk) KTraTaiKhoan(string TaiKhoan, string MatKhau)
         {
             string tenNguoiDung = null;
             string idTaiKhoan = null;
-            string caulenh = "SELECT TenTaiKhoan,IDTaiKhoan FROM QLTaiKhoan WHERE TenDangNhap = '" + Tk + "' AND MatKhau = '" + MK + "'";
+            string loaitk = null;
+            string caulenh = "SELECT TenTaiKhoan, ID, LoaiTaiKhoan FROM QLTaiKhoan WHERE TenDangNhap = '" + TaiKhoan + "' AND MatKhau = '" + MatKhau + "'";
             SqlDataReader reader = db.GetExecuteReader(caulenh);
             if (reader.Read()) // Nếu có kết quả
             {
                 tenNguoiDung = reader["TenTaiKhoan"].ToString();
-                idTaiKhoan = reader["IDTaiKhoan"].ToString(); // Lấy IDTaiKhoan
+                idTaiKhoan = reader["ID"].ToString(); // Lấy IDTaiKhoan
+                loaitk = reader["LoaiTaiKhoan"].ToString(); // Lấy Loại tài khoản
             }
-            return (tenNguoiDung, idTaiKhoan);
+            reader.Close();
+            return (tenNguoiDung, idTaiKhoan, loaitk);
         }
     }
 }

@@ -17,6 +17,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.CodeDom;
 using Microsoft.Office.Interop.Excel;
 using System.Security.Policy;
+using System.Data.SqlTypes;
 
 namespace BanVeMayBay
 {
@@ -33,6 +34,7 @@ namespace BanVeMayBay
         System.Data.DataTable dt_Ve = new System.Data.DataTable();
         System.Data.DataTable dt_HoaDon = new System.Data.DataTable();
         System.Data.DataTable dt_CTHoaDon = new System.Data.DataTable();
+        System.Data.DataTable dt_TaiKhoan = new System.Data.DataTable();
 
         bool LoadDuLieu = false;
         public frmQuanLi(string tennguoidung, string role)
@@ -43,7 +45,9 @@ namespace BanVeMayBay
             Load_SanBay();
             Load_HoaDon();
             Load_DiemKH(); 
-            Load_Ve();
+            Load_Ve(); 
+            Load_TaiKhoan();
+            cboLoaiTK.SelectedIndex = 0;
             LoadDuLieu = true;
         }
         //startPosition cho thân giao diện (396, 142), Size(1502, 782)
@@ -58,7 +62,7 @@ namespace BanVeMayBay
                 lblRole.Text = "Quản lý";
                 lblTenNguoiDung.Text = tennguoidung;
             }    
-            if (role == "Nhân viên đặt vé")
+            if (role == "Nhân viên")
             {
                 lblRole.Text = "Nhân viên";
                 lblTenNguoiDung.Text = tennguoidung;
@@ -74,70 +78,92 @@ namespace BanVeMayBay
             if(pnlQL_Ve.Visible == false)
             {
                 pnlQL_Ve.Visible = true;
+                UICLICKtoOFF();
                 btnQL_Ve.BackColor = Color.WhiteSmoke;
                 btnQL_Ve.ForeColor = Color.ForestGreen;
 
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
+                //btnQL_SanBay.BackColor = Color.ForestGreen;
+                //btnQL_HoaDon.BackColor = Color.ForestGreen;
+                //btnQL_SanBay.ForeColor = Color.WhiteSmoke;
+                //btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }  
             else
             {
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
+                UICLICKtoOFF();
+                //btnQL_SanBay.BackColor = Color.ForestGreen;
+                //btnQL_HoaDon.BackColor = Color.ForestGreen;
+                //btnQL_SanBay.ForeColor = Color.WhiteSmoke;
+                //btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
             pnlQL_SanBay.Visible = false;
             pnlQL_HD.Visible = false;
+            pnlQL_TaiKhoan.Visible = false;
         }
         private void btnQL_SanBay_Click(object sender, EventArgs e)
         {
             if (pnlQL_SanBay.Visible == false)
             {
                 pnlQL_SanBay.Visible = true;
+                UICLICKtoOFF();
                 btnQL_SanBay.BackColor = Color.WhiteSmoke;
                 btnQL_SanBay.ForeColor = Color.ForestGreen;
 
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
+                //btnQL_Ve.BackColor = Color.ForestGreen;
+                //btnQL_Ve.ForeColor = Color.WhiteSmoke;
+                //btnQL_HoaDon.BackColor = Color.ForestGreen;
+                //btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
             else
             {
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_HoaDon.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
+                //btnQL_Ve.BackColor = Color.ForestGreen;
+                //btnQL_HoaDon.BackColor = Color.ForestGreen;
+                //btnQL_Ve.ForeColor = Color.WhiteSmoke;
+                //btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
             }
 
             pnlQL_Ve.Visible = false;
             pnlQL_HD.Visible = false;
+            pnlQL_TaiKhoan.Visible = false;
         }
         private void btnQL_HoaDon_Click(object sender, EventArgs e)
         {
             if(pnlQL_HD.Visible == false)
             {
                 pnlQL_HD.Visible = true;
+                UICLICKtoOFF();
                 btnQL_HoaDon.BackColor = Color.WhiteSmoke;
                 btnQL_HoaDon.ForeColor = Color.ForestGreen;
 
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
+                //btnQL_Ve.BackColor = Color.ForestGreen;
+                //btnQL_Ve.ForeColor = Color.WhiteSmoke;
+                //btnQL_SanBay.BackColor = Color.ForestGreen;
+                //btnQL_SanBay.ForeColor = Color.WhiteSmoke;
 
             }
             else
             {
-                btnQL_Ve.BackColor = Color.ForestGreen;
-                btnQL_SanBay.BackColor = Color.ForestGreen;
-                btnQL_Ve.ForeColor = Color.WhiteSmoke;
-                btnQL_SanBay.ForeColor = Color.WhiteSmoke;
+                UICLICKtoOFF();
+                //btnQL_Ve.BackColor = Color.ForestGreen;
+                //btnQL_SanBay.BackColor = Color.ForestGreen;
+                //btnQL_Ve.ForeColor = Color.WhiteSmoke;
+                //btnQL_SanBay.ForeColor = Color.WhiteSmoke;
             }
             pnlQL_Ve.Visible = false;
+            pnlQL_SanBay.Visible = false;
+            pnlQL_TaiKhoan.Visible = false;
+        }
+        private void btnQL_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            if (pnlQL_TaiKhoan.Visible == false)
+            {
+                pnlQL_TaiKhoan.Visible = true;
+                UICLICKtoOFF();
+                btnQL_TaiKhoan.BackColor = Color.WhiteSmoke;
+                btnQL_TaiKhoan.ForeColor = Color.ForestGreen;
+            }    
+            else UICLICKtoOFF();
+            pnlQL_Ve.Visible = false;
+            pnlQL_HD.Visible = false;
             pnlQL_SanBay.Visible = false;
         }
         private void btnReset_Click(object sender, EventArgs e)
@@ -340,19 +366,184 @@ namespace BanVeMayBay
         #endregion
 
         #region Quản lý Tài khoản
-        private void btnThem_QLTK_Click(object sender, EventArgs e)
+        private void btnThemQL_TK_Click(object sender, EventArgs e)
         {
+            string tentk;
+            string tendn;
+            string matkhau;
+            string loaiTK;
+            if (string.IsNullOrEmpty(txtMaTK.Text))
+            {
+                MessageBox.Show("Vui lòng tạo mã tài khoản trước khi thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }   
+            
+            if (string.IsNullOrEmpty(txtTenTK.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                tentk = txtTenTK.Text;
+            }
 
+            if (string.IsNullOrEmpty(txtTenDN.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                tendn = txtTenDN.Text;
+            }
+
+            if (string.IsNullOrEmpty(txtMatKhau.Text))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                matkhau = txtMatKhau.Text;
+            }
+
+            if (cboLoaiTK.SelectedIndex != -1)
+            {
+                loaiTK = cboLoaiTK.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại tài khoản cho tài khoản này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string caulenh = "INSERT INTO QLTaiKhoan (TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES (N'" + tentk + "', '" + tendn + "', '" + matkhau + "', N'" + loaiTK + "')";
+            try
+            {
+                var kq = db.GetExecuteNonQuery(caulenh);
+                if(kq != 0)
+                {
+                    MessageBox.Show("Thêm tài khoản thành công!");
+                    Load_TaiKhoan();
+                    return;
+                }    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không thể thêm tài khoản!\nLỗi: " + ex.Message);
+                return;
+            }
         }
 
-        private void btnSua_QLTK_Click(object sender, EventArgs e)
+        private void btnSuaQL_TK_Click(object sender, EventArgs e)
         {
-
+            string caulenh;
+            if (dataGrV_TaiKhoan.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật thông tin của tài khoản '" + txtMaTK.Text + "' !", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    caulenh = "SELECT COUNT(MaTaiKhoan) FROM QLTaiKhoan WHERE MaTaiKhoan = '" + txtMaTK.Text + "'";
+                    int ktra = (int)db.GetExecuteScalar(caulenh);
+                    if (ktra <= 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn lại dữ liệu muốn sửa!");
+                        return;
+                    }
+                    caulenh = "UPDATE QLTaiKhoan " +
+                                "SET TenTaiKhoan = '" + txtTenTK.Text + "', " +
+                                "TenDangNhap = '" + txtTenDN.Text + "', " +
+                                "MatKhau = '" + txtMatKhau.Text + "', " +
+                                "LoaiTaiKhoan = '" + cboLoaiTK.SelectedItem.ToString() + "' " +
+                                "WHERE MaTaiKhoan = '" + txtMaTK.Text + "'";
+                    try
+                    {
+                        db.GetExecuteNonQuery(caulenh);
+                        Load_TaiKhoan();
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể cập nhật thông tin của tài khoản '" + txtMaTK.Text + "'\nLỗi: " + ex.Message);
+                        return;
+                    }
+                }
+                else return;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng dữ liệu trong bảng để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+        private void btnXoaQL_TK_Click(object sender, EventArgs e)
+        {
+            if(dataGrV_TaiKhoan.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản có mã là '" + txtMaTK.Text + "' không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(result == DialogResult.Yes)
+                {
+                    string caulenh = "DELETE QLTaiKhoan WHERE MaTaiKhoan = '" + txtMaTK.Text + "'";
+                    db.GetExecuteNonQuery(caulenh);
+                    Load_TaiKhoan(); clearTaiKhoan();
+                    return;
+                }    
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng dữ liệu trong bảng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
-        private void btnXoa_QLTK_Click(object sender, EventArgs e)
+        private void btnAutoMaTK_Click(object sender, EventArgs e)
         {
-
+            string nam = DateTime.Now.Year.ToString();
+            string thang = DateTime.Now.Month.ToString();
+            string ktraMa = "TK" + nam + thang;
+            string caulenh = "SELECT MAX(CAST(SUBSTRING(MaTaiKhoan, 9, 3) AS INT)) " +
+                "FROM QLTaiKhoan " +
+                "WHERE MaTaiKhoan LIKE 'TK202412%'";
+            int KTRAmaTK;
+            var result = db.GetExecuteScalar(caulenh);
+            if (result != DBNull.Value)
+            {
+                KTRAmaTK = Convert.ToInt32(result) + 1;
+            }
+            else
+            {
+                KTRAmaTK = 1;
+            }
+            string maTK = ktraMa + $"{KTRAmaTK:D3}";
+            txtMaTK.Text = maTK;
+        }
+        private void dataGrV_TaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGrV_TaiKhoan.Rows[e.RowIndex];
+                txtMaTK.Text = row.Cells["MaTaiKhoan"].Value.ToString();
+                txtTenTK.Text = row.Cells["TenTaiKhoan"].Value.ToString();
+                txtTenDN.Text = row.Cells["TenDangNhap"].Value.ToString();
+                txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
+                string loaitk = row.Cells["LoaiTaiKhoan"].Value.ToString();
+                int index = cboLoaiTK.FindStringExact(loaitk);
+                if (index != -1)
+                    cboLoaiTK.SelectedIndex = index;
+                else cboLoaiTK.SelectedIndex = -1;
+                cboLoaiTK.Refresh();
+                btnXoaQL_TK.Enabled = true;
+                btnSuaQL_TK.Enabled = true;
+                return;
+            }    
+        }
+        private void btnShow_QLTK_Click(object sender, EventArgs e)
+        {
+            if (!txtMatKhau.UseSystemPasswordChar)
+            {
+                txtMatKhau.UseSystemPasswordChar = true;
+            }
+            else txtMatKhau.UseSystemPasswordChar = false;
         }
         #endregion
 
@@ -363,7 +554,7 @@ namespace BanVeMayBay
             {
                 DataGridViewRow row = dataGrV_SanBay.Rows[e.RowIndex];
                 txtMaSanBay.Text = row.Cells["MaSanBay"].Value.ToString();
-                txtTenSanBay.Text = row.Cells["TenSB"].Value.ToString();
+                txtTenSanBay.Text = row.Cells["TenSanBay"].Value.ToString();
                 string diaDiem = row.Cells["DiaDiem"].Value.ToString();
                 int index = cboViTri.FindStringExact(diaDiem);
                 if (index != -1)
@@ -401,7 +592,7 @@ namespace BanVeMayBay
             }
             else if(string.IsNullOrEmpty(txtMaSanBay.Text))
             {
-                MessageBox.Show("Vui lòng tạo mã sân bay trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Vui lòng tạo hoặc nhập mã sân bay trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else if(cboViTri.SelectedIndex == -1)
             {
@@ -426,7 +617,7 @@ namespace BanVeMayBay
                     }
                     else
                     {
-                        caulenh = "insert into SANBAY(MaSanBay, TenSB, DiaDiem) values (" +
+                        caulenh = "insert into SANBAY(MaSanBay, TenSanBay, DiaDiem) values (" +
                         "'" + txtMaSanBay.Text +
                         "', N'" + txtTenSanBay.Text +
                         "', N'" + cboViTri.SelectedItem.ToString() + "')";
@@ -476,7 +667,7 @@ namespace BanVeMayBay
                     {
                         string caulenh = "update SANBAY " +
                             "set DiaDiem = N'" + cboViTri.SelectedItem.ToString() + "', " +
-                            "TenSB = N'" + txtTenSanBay.Text + "' " +
+                            "TenSanBay = N'" + txtTenSanBay.Text + "' " +
                             "where MaSanBay = '" + txtMaSanBay.Text + "'";
                         try
                         {
@@ -700,7 +891,26 @@ namespace BanVeMayBay
         #endregion
 
         #region Phương thức chức năng
-        
+        void UICLICKtoOFF()
+        {
+            btnQL_TaiKhoan.BackColor = Color.ForestGreen;
+            btnQL_TaiKhoan.ForeColor = Color.WhiteSmoke;
+            btnQL_Ve.BackColor = Color.ForestGreen;
+            btnQL_Ve.ForeColor = Color.WhiteSmoke;
+            btnQL_SanBay.BackColor = Color.ForestGreen;
+            btnQL_HoaDon.BackColor = Color.ForestGreen;
+            btnQL_SanBay.ForeColor = Color.WhiteSmoke;
+            btnQL_HoaDon.ForeColor = Color.WhiteSmoke;
+        }
+        void clearTaiKhoan()
+        {
+            txtMaTK.Clear();
+            txtTenTK.Clear();
+            txtTenDN.Clear();
+            txtMatKhau.Clear();
+            cboLoaiTK.SelectedIndex = 0;
+            txtTenTK.Focus();
+        }
         private void Filter_DSHD()
         {
             //(none)
@@ -731,12 +941,12 @@ namespace BanVeMayBay
         }
         private void Load_Ve()
         {
-            dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, LoaiMB AS IDMayBay, CONCAT(SBDi.DiaDiem, ' - ', SBDen.DiaDiem) AS IDChangBay from TUYENBAY TB, MAYBAY MB, CHANGBAY CB, SANBAY SBDi, SANBAY SBDen where TB.IDMayBay = MB.ID and TB.IDChangBay = CB.ID and CB.IDSanBaydi = SBDi.ID and CB.IDSanBayden = SBDen.ID");
+            dt_Ve = db.GetDataTable("select MaTuyenBay, NgayBay, GioBay, GioDen, SoVeConLai, SoVeDaBan, TrangThaiTuyenBay, LoaiMayBay AS IDMayBay, CONCAT(SBDi.DiaDiem, ' - ', SBDen.DiaDiem) AS IDChangBay from TUYENBAY TB, MAYBAY MB, CHANGBAY CB, SANBAY SBDi, SANBAY SBDen where TB.IDMayBay = MB.ID and TB.IDChangBay = CB.ID and CB.IDSanBaydi = SBDi.ID and CB.IDSanBayden = SBDen.ID");
             dataGrV_Ve.DataSource = dt_Ve;
         }
         private void Load_SanBay()
         {
-            dt_SanBay = db.GetDataTable("select MaSanBay, TenSB, DiaDiem from SANBAY");
+            dt_SanBay = db.GetDataTable("select MaSanBay, TenSanBay, DiaDiem from SANBAY");
             dataGrV_SanBay.DataSource = dt_SanBay;
         }
         private void Load_HoaDon()
@@ -767,6 +977,12 @@ namespace BanVeMayBay
             cboDiemDen.DisplayMember = "DiaDiem";
             cboDiemDen.ValueMember = "MaSanBay";
             cboDiemDen.SelectedIndex = -1;
+        }
+        private void Load_TaiKhoan()
+        {
+            string caulenh = "SELECT MaTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan FROM QLTaiKhoan";
+            dt_TaiKhoan = db.GetDataTable(caulenh);
+            dataGrV_TaiKhoan.DataSource = dt_TaiKhoan;
         }
         private void Add_ChangBay()
         {
@@ -817,6 +1033,10 @@ namespace BanVeMayBay
             }
 
         }
+
+
         #endregion
+
+        
     }
 }

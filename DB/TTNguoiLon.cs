@@ -28,7 +28,7 @@ namespace DB
         }
         public int ThemKH_NguoiLon(TTNguoiLon nl)
         {
-            string caulenh = "insert into HANHKHACH(GioiTinhHK,TenHK,NgaySinhHK,DiaChiHK,CCCD,SDThk,EmailHK) values (N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + nl.DiaChi + "','" + nl.CCCD + "','" + nl.SDT + "','" + nl.Email + "')";
+            string caulenh = "INSERT INTO HANHKHACH(GioiTinhHanhKhach,TenHanhKhach,NgaySinhHanhKhach,DiaChiHanhKhach,CCCD,SDTHanhKhach,Email) VALUES (N'" + nl.Gioitinh + "',N'" + nl.TenKH + "','" + nl.NgaySinh.ToString("yyyy-MM-dd") + "',N'" + nl.DiaChi + "','" + nl.CCCD + "','" + nl.SDT + "','" + nl.Email + "')";
             int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }

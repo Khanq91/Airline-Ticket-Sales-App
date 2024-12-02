@@ -11,7 +11,7 @@ namespace DB
         DB_Connet db = new DB_Connet();
         public int ThemTaiKHoan(string tennguoidung, string TK, string Mk)
         {
-            string caulenh = "insert into QLTaiKhoan(TenTaiKhoan,TenDangNhap,MatKhau,LoaiTK) values(N'" + tennguoidung + "','" + TK + "','" + Mk + "','HANHKHACH') ";
+            string caulenh = "INSERT INTO QLTaiKhoan(TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES(N'" + tennguoidung + "','" + TK + "','" + Mk + "',N'Khách hàng') ";
             int kq = db.GetExecuteNonQuery(caulenh);
             return kq;
         }

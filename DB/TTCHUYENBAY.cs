@@ -32,7 +32,7 @@ namespace DB
 
         public string TenSanBay(string maSanBay)
         {
-            string caulenh = "select TenSB from SANBAY where MaSanBay ='"+ maSanBay + "'";
+            string caulenh = "select TenSanBay from SANBAY where MaSanBay ='"+ maSanBay + "'";
             string kq = (string)db.GetExecuteScalar(caulenh);
             return kq;
         }
@@ -42,15 +42,7 @@ namespace DB
             List<TTCHUYENBAY> lstCB = new List<TTCHUYENBAY>();
 
             #region Câu lệnh tìm các sân bay phù hợp
-            //string caulenh = "select SANBAYDI.MaSanBay,SANBAYDEN.MaSanBay, NgayBay, GioBay, GioDen, MaTuyenBay " +
-            //                "from SANBAY as SANBAYDI, SANBAY as SANBAYDEN, CHANGBAY, TUYENBAY " +
-            //                "where TUYENBAY.IDChangBay = CHANGBAY.ID " +
-            //                "and CHANGBAY.IDSanBaydi = SANBAYDI.ID " +
-            //                "and CHANGBAY.IDSanBayden = SANBAYDEN.ID " +
-            //                "and SANBAYDI.MaSanBay = '"+ maSanBayDi + "' " +
-            //                "and SANBAYDEN.MaSanBay = '"+ maSanBayDen + "' " +
-            //                "and NgayBay = '"+ ngayBay + "'";
-            string caulenh = "select SANBAYDI.MaSanBay,SANBAYDEN.MaSanBay, NgayBay, GioBay, GioDen, MaTuyenBay, MaMayBay, LoaiMB " +
+            string caulenh = "select SANBAYDI.MaSanBay,SANBAYDEN.MaSanBay, NgayBay, GioBay, GioDen, MaTuyenBay, MaMayBay, LoaiMayBay " +
                             "from SANBAY as SANBAYDI, SANBAY as SANBAYDEN, CHANGBAY, TUYENBAY, MAYBAY " +
                             "where TUYENBAY.IDChangBay = CHANGBAY.ID " +
                             "and TUYENBAY.IDMayBay = MAYBAY.ID " +
@@ -70,12 +62,12 @@ namespace DB
                 cb.ThoiGianDen = (TimeSpan)reader["GioDen"];
                 cb.MaChuyenBay = reader["MaTuyenBay"].ToString();
                 cb.MaMayBay = reader["MaMayBay"].ToString();
-                cb.LoaiMB = reader["LoaiMB"].ToString();
+                cb.LoaiMB = reader["LoaiMayBay"].ToString();
                 lstCB.Add(cb);
             }
-            reader.Close();
             db.CloseSql();
-            foreach(var cb in lstCB)
+            reader.Close();
+            foreach (var cb in lstCB)
             {
                 cb.DiemKhoiHanh = TenSanBay(maSanBayDi);
                 cb.DiemDen = TenSanBay(maSanBayDen);

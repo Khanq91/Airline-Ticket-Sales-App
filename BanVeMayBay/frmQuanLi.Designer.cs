@@ -78,16 +78,12 @@
             this.txtMaSanBay = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGrV_SanBay = new System.Windows.Forms.DataGridView();
-            this.MaSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa_QLSB = new System.Windows.Forms.Button();
             this.btnSua_QLSB = new System.Windows.Forms.Button();
             this.btnThem_QLSB = new System.Windows.Forms.Button();
             this.pnlQL_HD = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.cboLocDuLieu_QLHD = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGrV_CTHoaDon = new System.Windows.Forms.DataGridView();
@@ -107,6 +103,32 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThaiHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQL_TaiKhoan = new System.Windows.Forms.Button();
+            this.pnlQL_TaiKhoan = new System.Windows.Forms.Panel();
+            this.btnAutoMaTK = new System.Windows.Forms.Button();
+            this.cboLoaiTK = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTenTK = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMaTK = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dataGrV_TaiKhoan = new System.Windows.Forms.DataGridView();
+            this.btnXoaQL_TK = new System.Windows.Forms.Button();
+            this.btnSuaQL_TK = new System.Windows.Forms.Button();
+            this.btnThemQL_TK = new System.Windows.Forms.Button();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.MaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnShow_QLTK = new System.Windows.Forms.Button();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.pnlTraiGiaoDien.SuspendLayout();
@@ -117,6 +139,8 @@
             this.pnlQL_HD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_CTHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).BeginInit();
+            this.pnlQL_TaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_TaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDauGiaoDien
@@ -177,6 +201,7 @@
             // pnlTraiGiaoDien
             // 
             this.pnlTraiGiaoDien.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlTraiGiaoDien.Controls.Add(this.btnQL_TaiKhoan);
             this.pnlTraiGiaoDien.Controls.Add(this.btnQL_HoaDon);
             this.pnlTraiGiaoDien.Controls.Add(this.btnReset);
             this.pnlTraiGiaoDien.Controls.Add(this.btnThoat);
@@ -939,7 +964,6 @@
             // 
             // txtMaSanBay
             // 
-            this.txtMaSanBay.Enabled = false;
             this.txtMaSanBay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSanBay.Location = new System.Drawing.Point(55, 76);
             this.txtMaSanBay.Name = "txtMaSanBay";
@@ -962,7 +986,7 @@
             this.dataGrV_SanBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrV_SanBay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSanBay,
-            this.TenSB,
+            this.TenSanBay,
             this.DiaDiem});
             this.dataGrV_SanBay.Location = new System.Drawing.Point(707, 41);
             this.dataGrV_SanBay.Name = "dataGrV_SanBay";
@@ -972,30 +996,6 @@
             this.dataGrV_SanBay.Size = new System.Drawing.Size(779, 700);
             this.dataGrV_SanBay.TabIndex = 11;
             this.dataGrV_SanBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_SanBay_CellClick);
-            // 
-            // MaSanBay
-            // 
-            this.MaSanBay.DataPropertyName = "MaSanBay";
-            this.MaSanBay.HeaderText = "Mã sân bay";
-            this.MaSanBay.MinimumWidth = 8;
-            this.MaSanBay.Name = "MaSanBay";
-            this.MaSanBay.Width = 150;
-            // 
-            // TenSB
-            // 
-            this.TenSB.DataPropertyName = "TenSB";
-            this.TenSB.HeaderText = "Tên sân bay";
-            this.TenSB.MinimumWidth = 8;
-            this.TenSB.Name = "TenSB";
-            this.TenSB.Width = 327;
-            // 
-            // DiaDiem
-            // 
-            this.DiaDiem.DataPropertyName = "DiaDiem";
-            this.DiaDiem.HeaderText = "Địa điểm";
-            this.DiaDiem.MinimumWidth = 8;
-            this.DiaDiem.Name = "DiaDiem";
-            this.DiaDiem.Width = 238;
             // 
             // btnXoa_QLSB
             // 
@@ -1048,7 +1048,6 @@
             this.pnlQL_HD.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlQL_HD.Controls.Add(this.label9);
             this.pnlQL_HD.Controls.Add(this.cboLocDuLieu_QLHD);
-            this.pnlQL_HD.Controls.Add(this.button1);
             this.pnlQL_HD.Controls.Add(this.label10);
             this.pnlQL_HD.Controls.Add(this.label2);
             this.pnlQL_HD.Controls.Add(this.dataGrV_CTHoaDon);
@@ -1085,17 +1084,6 @@
             this.cboLocDuLieu_QLHD.TabIndex = 43;
             this.cboLocDuLieu_QLHD.Text = "(none)";
             this.cboLocDuLieu_QLHD.SelectedIndexChanged += new System.EventHandler(this.cboLocDuLieu_QLHD_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1121, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 55);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Xuất Crystal Report";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -1215,7 +1203,7 @@
             this.btnXuatExcel_QLHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatExcel_QLHD.Image = global::BanVeMayBay.Properties.Resources.sheet;
             this.btnXuatExcel_QLHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(1121, 137);
+            this.btnXuatExcel_QLHD.Location = new System.Drawing.Point(1113, 200);
             this.btnXuatExcel_QLHD.Name = "btnXuatExcel_QLHD";
             this.btnXuatExcel_QLHD.Size = new System.Drawing.Size(304, 55);
             this.btnXuatExcel_QLHD.TabIndex = 38;
@@ -1283,6 +1271,297 @@
             this.TrangThaiHoaDon.Name = "TrangThaiHoaDon";
             this.TrangThaiHoaDon.Width = 200;
             // 
+            // MaSanBay
+            // 
+            this.MaSanBay.DataPropertyName = "MaSanBay";
+            this.MaSanBay.HeaderText = "Mã sân bay";
+            this.MaSanBay.MinimumWidth = 8;
+            this.MaSanBay.Name = "MaSanBay";
+            this.MaSanBay.Width = 150;
+            // 
+            // TenSanBay
+            // 
+            this.TenSanBay.DataPropertyName = "TenSanBay";
+            this.TenSanBay.HeaderText = "Tên sân bay";
+            this.TenSanBay.MinimumWidth = 8;
+            this.TenSanBay.Name = "TenSanBay";
+            this.TenSanBay.Width = 327;
+            // 
+            // DiaDiem
+            // 
+            this.DiaDiem.DataPropertyName = "DiaDiem";
+            this.DiaDiem.HeaderText = "Địa điểm";
+            this.DiaDiem.MinimumWidth = 8;
+            this.DiaDiem.Name = "DiaDiem";
+            this.DiaDiem.Width = 238;
+            // 
+            // btnQL_TaiKhoan
+            // 
+            this.btnQL_TaiKhoan.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnQL_TaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQL_TaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQL_TaiKhoan.ForeColor = System.Drawing.Color.White;
+            this.btnQL_TaiKhoan.Location = new System.Drawing.Point(-4, 361);
+            this.btnQL_TaiKhoan.Name = "btnQL_TaiKhoan";
+            this.btnQL_TaiKhoan.Size = new System.Drawing.Size(406, 74);
+            this.btnQL_TaiKhoan.TabIndex = 9;
+            this.btnQL_TaiKhoan.Text = "Quản lý Tài khoản";
+            this.btnQL_TaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQL_TaiKhoan.UseVisualStyleBackColor = false;
+            this.btnQL_TaiKhoan.Click += new System.EventHandler(this.btnQL_TaiKhoan_Click);
+            // 
+            // pnlQL_TaiKhoan
+            // 
+            this.pnlQL_TaiKhoan.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlQL_TaiKhoan.Controls.Add(this.btnShow_QLTK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.txtMatKhau);
+            this.pnlQL_TaiKhoan.Controls.Add(this.label21);
+            this.pnlQL_TaiKhoan.Controls.Add(this.txtTenDN);
+            this.pnlQL_TaiKhoan.Controls.Add(this.label20);
+            this.pnlQL_TaiKhoan.Controls.Add(this.btnAutoMaTK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.cboLoaiTK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.label14);
+            this.pnlQL_TaiKhoan.Controls.Add(this.txtTenTK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.label15);
+            this.pnlQL_TaiKhoan.Controls.Add(this.txtMaTK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.label16);
+            this.pnlQL_TaiKhoan.Controls.Add(this.dataGrV_TaiKhoan);
+            this.pnlQL_TaiKhoan.Controls.Add(this.btnXoaQL_TK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.btnSuaQL_TK);
+            this.pnlQL_TaiKhoan.Controls.Add(this.btnThemQL_TK);
+            this.pnlQL_TaiKhoan.Location = new System.Drawing.Point(396, 142);
+            this.pnlQL_TaiKhoan.Name = "pnlQL_TaiKhoan";
+            this.pnlQL_TaiKhoan.Size = new System.Drawing.Size(1502, 782);
+            this.pnlQL_TaiKhoan.TabIndex = 39;
+            this.pnlQL_TaiKhoan.Visible = false;
+            // 
+            // btnAutoMaTK
+            // 
+            this.btnAutoMaTK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutoMaTK.ForeColor = System.Drawing.Color.Lime;
+            this.btnAutoMaTK.Image = global::BanVeMayBay.Properties.Resources.refresh;
+            this.btnAutoMaTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAutoMaTK.Location = new System.Drawing.Point(511, 76);
+            this.btnAutoMaTK.Name = "btnAutoMaTK";
+            this.btnAutoMaTK.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnAutoMaTK.Size = new System.Drawing.Size(142, 40);
+            this.btnAutoMaTK.TabIndex = 49;
+            this.btnAutoMaTK.Text = "Tạo mã";
+            this.btnAutoMaTK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAutoMaTK.UseVisualStyleBackColor = true;
+            this.btnAutoMaTK.Click += new System.EventHandler(this.btnAutoMaTK_Click);
+            // 
+            // cboLoaiTK
+            // 
+            this.cboLoaiTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiTK.FormattingEnabled = true;
+            this.cboLoaiTK.IntegralHeight = false;
+            this.cboLoaiTK.Items.AddRange(new object[] {
+            "Quản lý",
+            "Nhân viên",
+            "Khách hàng"});
+            this.cboLoaiTK.Location = new System.Drawing.Point(53, 384);
+            this.cboLoaiTK.MaxDropDownItems = 5;
+            this.cboLoaiTK.Name = "cboLoaiTK";
+            this.cboLoaiTK.Size = new System.Drawing.Size(600, 40);
+            this.cboLoaiTK.TabIndex = 40;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(65, 349);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(163, 32);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "Loại tài khoản";
+            // 
+            // txtTenTK
+            // 
+            this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTK.Location = new System.Drawing.Point(53, 153);
+            this.txtTenTK.Name = "txtTenTK";
+            this.txtTenTK.Size = new System.Drawing.Size(600, 39);
+            this.txtTenTK.TabIndex = 39;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(65, 118);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(158, 32);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Tên tài khoản";
+            // 
+            // txtMaTK
+            // 
+            this.txtMaTK.Enabled = false;
+            this.txtMaTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.Location = new System.Drawing.Point(53, 76);
+            this.txtMaTK.Name = "txtMaTK";
+            this.txtMaTK.Size = new System.Drawing.Size(452, 39);
+            this.txtMaTK.TabIndex = 46;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(65, 41);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(154, 32);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Mã tài khoản";
+            // 
+            // dataGrV_TaiKhoan
+            // 
+            this.dataGrV_TaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrV_TaiKhoan.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGrV_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrV_TaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaTaiKhoan,
+            this.TenTaiKhoan,
+            this.TenDangNhap,
+            this.MatKhau,
+            this.LoaiTaiKhoan});
+            this.dataGrV_TaiKhoan.Location = new System.Drawing.Point(705, 41);
+            this.dataGrV_TaiKhoan.Name = "dataGrV_TaiKhoan";
+            this.dataGrV_TaiKhoan.RowHeadersWidth = 62;
+            this.dataGrV_TaiKhoan.RowTemplate.Height = 28;
+            this.dataGrV_TaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrV_TaiKhoan.Size = new System.Drawing.Size(779, 700);
+            this.dataGrV_TaiKhoan.TabIndex = 44;
+            this.dataGrV_TaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrV_TaiKhoan_CellClick);
+            // 
+            // btnXoaQL_TK
+            // 
+            this.btnXoaQL_TK.Enabled = false;
+            this.btnXoaQL_TK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaQL_TK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnXoaQL_TK.Image = global::BanVeMayBay.Properties.Resources.delete_button_32px;
+            this.btnXoaQL_TK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaQL_TK.Location = new System.Drawing.Point(484, 549);
+            this.btnXoaQL_TK.Name = "btnXoaQL_TK";
+            this.btnXoaQL_TK.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnXoaQL_TK.Size = new System.Drawing.Size(215, 60);
+            this.btnXoaQL_TK.TabIndex = 43;
+            this.btnXoaQL_TK.Text = "Xóa";
+            this.btnXoaQL_TK.UseVisualStyleBackColor = true;
+            this.btnXoaQL_TK.Click += new System.EventHandler(this.btnXoaQL_TK_Click);
+            // 
+            // btnSuaQL_TK
+            // 
+            this.btnSuaQL_TK.Enabled = false;
+            this.btnSuaQL_TK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaQL_TK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnSuaQL_TK.Image = global::BanVeMayBay.Properties.Resources.edit_button_32px;
+            this.btnSuaQL_TK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaQL_TK.Location = new System.Drawing.Point(251, 549);
+            this.btnSuaQL_TK.Name = "btnSuaQL_TK";
+            this.btnSuaQL_TK.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSuaQL_TK.Size = new System.Drawing.Size(215, 60);
+            this.btnSuaQL_TK.TabIndex = 42;
+            this.btnSuaQL_TK.Text = "Sửa";
+            this.btnSuaQL_TK.UseVisualStyleBackColor = true;
+            this.btnSuaQL_TK.Click += new System.EventHandler(this.btnSuaQL_TK_Click);
+            // 
+            // btnThemQL_TK
+            // 
+            this.btnThemQL_TK.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemQL_TK.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnThemQL_TK.Image = global::BanVeMayBay.Properties.Resources.add_button_32px;
+            this.btnThemQL_TK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemQL_TK.Location = new System.Drawing.Point(18, 549);
+            this.btnThemQL_TK.Name = "btnThemQL_TK";
+            this.btnThemQL_TK.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnThemQL_TK.Size = new System.Drawing.Size(215, 60);
+            this.btnThemQL_TK.TabIndex = 41;
+            this.btnThemQL_TK.Text = "Thêm";
+            this.btnThemQL_TK.UseVisualStyleBackColor = true;
+            this.btnThemQL_TK.Click += new System.EventHandler(this.btnThemQL_TK_Click);
+            // 
+            // txtTenDN
+            // 
+            this.txtTenDN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDN.Location = new System.Drawing.Point(53, 230);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(600, 39);
+            this.txtTenDN.TabIndex = 50;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(65, 195);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(174, 32);
+            this.label20.TabIndex = 51;
+            this.label20.Text = "Tên đăng nhập";
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Location = new System.Drawing.Point(53, 307);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(554, 39);
+            this.txtMatKhau.TabIndex = 52;
+            this.txtMatKhau.UseSystemPasswordChar = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(65, 272);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(115, 32);
+            this.label21.TabIndex = 53;
+            this.label21.Text = "Mật khẩu";
+            // 
+            // MaTaiKhoan
+            // 
+            this.MaTaiKhoan.DataPropertyName = "MaTaiKhoan";
+            this.MaTaiKhoan.HeaderText = "Mã tài khoản";
+            this.MaTaiKhoan.MinimumWidth = 8;
+            this.MaTaiKhoan.Name = "MaTaiKhoan";
+            // 
+            // TenTaiKhoan
+            // 
+            this.TenTaiKhoan.DataPropertyName = "TenTaiKhoan";
+            this.TenTaiKhoan.HeaderText = "Tên tài khoản";
+            this.TenTaiKhoan.MinimumWidth = 8;
+            this.TenTaiKhoan.Name = "TenTaiKhoan";
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.DataPropertyName = "TenDangNhap";
+            this.TenDangNhap.HeaderText = "Tên đăng nhập";
+            this.TenDangNhap.MinimumWidth = 8;
+            this.TenDangNhap.Name = "TenDangNhap";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.MinimumWidth = 8;
+            this.MatKhau.Name = "MatKhau";
+            // 
+            // LoaiTaiKhoan
+            // 
+            this.LoaiTaiKhoan.DataPropertyName = "LoaiTaiKhoan";
+            this.LoaiTaiKhoan.HeaderText = "Loại Tài khoản";
+            this.LoaiTaiKhoan.MinimumWidth = 8;
+            this.LoaiTaiKhoan.Name = "LoaiTaiKhoan";
+            // 
+            // btnShow_QLTK
+            // 
+            this.btnShow_QLTK.Location = new System.Drawing.Point(613, 307);
+            this.btnShow_QLTK.Name = "btnShow_QLTK";
+            this.btnShow_QLTK.Size = new System.Drawing.Size(40, 40);
+            this.btnShow_QLTK.TabIndex = 54;
+            this.btnShow_QLTK.Text = "(+)";
+            this.btnShow_QLTK.UseVisualStyleBackColor = true;
+            this.btnShow_QLTK.Click += new System.EventHandler(this.btnShow_QLTK_Click);
+            // 
             // frmQuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -1291,9 +1570,10 @@
             this.ClientSize = new System.Drawing.Size(1898, 924);
             this.Controls.Add(this.pnlTraiGiaoDien);
             this.Controls.Add(this.pnlDauGiaoDien);
-            this.Controls.Add(this.pnlQL_Ve);
-            this.Controls.Add(this.pnlQL_SanBay);
             this.Controls.Add(this.pnlQL_HD);
+            this.Controls.Add(this.pnlQL_Ve);
+            this.Controls.Add(this.pnlQL_TaiKhoan);
+            this.Controls.Add(this.pnlQL_SanBay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1314,6 +1594,9 @@
             this.pnlQL_HD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_CTHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrV_HoaDon)).EndInit();
+            this.pnlQL_TaiKhoan.ResumeLayout(false);
+            this.pnlQL_TaiKhoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrV_TaiKhoan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1360,11 +1643,7 @@
         private System.Windows.Forms.DataGridView dataGrV_HoaDon;
         private System.Windows.Forms.Button btnXuatExcel_QLHD;
         private System.Windows.Forms.Button btnTaoMaSB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSanBay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiem;
         private System.Windows.Forms.DataGridView dataGrV_CTHoaDon;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ve;
@@ -1399,5 +1678,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThaiHoaDon;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboLocDuLieu_QLHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSanBay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSanBay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiem;
+        private System.Windows.Forms.Button btnQL_TaiKhoan;
+        private System.Windows.Forms.Panel pnlQL_TaiKhoan;
+        private System.Windows.Forms.Button btnAutoMaTK;
+        private System.Windows.Forms.ComboBox cboLoaiTK;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtTenTK;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtMaTK;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dataGrV_TaiKhoan;
+        private System.Windows.Forms.Button btnXoaQL_TK;
+        private System.Windows.Forms.Button btnSuaQL_TK;
+        private System.Windows.Forms.Button btnThemQL_TK;
+        private System.Windows.Forms.TextBox txtTenDN;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTaiKhoan;
+        private System.Windows.Forms.Button btnShow_QLTK;
     }
 }
