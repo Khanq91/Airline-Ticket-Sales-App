@@ -100,8 +100,8 @@ namespace BanVeMayBay
         private void Load_DuLieuHD()
         {
             lblNgayLapHD.Text = DateTime.Now.ToShortDateString();
-            lblTenHanhKhach.Text = TenNV;
-            getTenNhanVienNgauNhien();
+            lblTen_NV.Text = TenNV;
+            //getTenNhanVienNgauNhien();
             lblSL_Ve.Text = SL_Ve + " x";
             lblGiaVe.Text = GiaVe;
             lblGiaGhe.Text = GiaGhe;

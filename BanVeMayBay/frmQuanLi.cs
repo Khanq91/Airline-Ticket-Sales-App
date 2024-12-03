@@ -47,7 +47,7 @@ namespace BanVeMayBay
             Load_DiemKH(); 
             Load_Ve(); 
             Load_TaiKhoan();
-            cboLoaiTK.SelectedIndex = 0;
+            cboLoaiTK.SelectedIndex = 1;
             LoadDuLieu = true;
         }
         //startPosition cho thân giao diện (396, 142), Size(1502, 782)
