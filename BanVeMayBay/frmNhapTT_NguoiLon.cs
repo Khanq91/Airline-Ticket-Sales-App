@@ -87,7 +87,7 @@ namespace BanVeMayBay
             {
                 return false; // Một trong các trường thông tin trống
             }
-            if (txtSDT_NL.Text.Length <= 9 || string.IsNullOrWhiteSpace(txtSDT_NL.Text))
+            if (txtSDT_NL.Text.Length <=9 && txtSDT_NL.Text.Length >=11 || string.IsNullOrWhiteSpace(txtSDT_NL.Text))
             {
                 lbl_SDT.Text = "Số điện thoại không hợp lệ";
                 return false;
@@ -95,6 +95,11 @@ namespace BanVeMayBay
             if (!IsValidEmail(txtEmail_NL.Text))
             {
                 lblEmail.Text = "Email không hợp lệ";
+                return false;
+            }
+            if (txtCCCD.Text.Length != 12)
+            {
+                lbl_CCCD.Text = "CCCD không hợp lệ";
                 return false;
             }
             //if (!IsAgeValid())
@@ -135,17 +140,16 @@ namespace BanVeMayBay
             {
                 MessageBox.Show("Lỗi chuyển đổi ngày sinh" + ex.Message);
             }
-            
+            //if ((tt.NgaySinh.Year - DateTime.Now.Year) <= 12)
+            //{
+
+            //}    
             //tt.NgaySinh = mtxtNgaySinh.Text.ToString("yyyy-MM-dd");
             tt.Email = txtEmail_NL.Text;
             tt.SDT = txtSDT_NL.Text;
             tt.DiaChi = txtNoiO_NL.Text;
             tt.CCCD=txtCCCD.Text;
             return tt;
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void txtSDT_NL_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,6 +160,10 @@ namespace BanVeMayBay
             }
         }
 
+        private void lblThongTin_NL_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

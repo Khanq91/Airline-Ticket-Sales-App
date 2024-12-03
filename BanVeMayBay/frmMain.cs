@@ -97,6 +97,7 @@ namespace BanVeMayBay
             lstNguoiLon.Clear();
             lstTreEm.Clear();
             lstEmBe.Clear();
+            return;
         }
         #endregion
 
@@ -371,6 +372,7 @@ namespace BanVeMayBay
         bool check = true;
         public void NhapKhachHang()
         {
+            check = true;
             foreach (Control control in flowLayoutPnlThanGianDien.Controls) // Lặp qua các điều khiển trong flowLayoutPanelTT
             {
                 if (control is frmNhapTT_NguoiLon frmNL)
@@ -381,6 +383,7 @@ namespace BanVeMayBay
                     {
                         check = false;
                         MessageBox.Show("Thông tin người lớn không hợp lệ."); // Hiển thị thông báo lỗi
+                        flag = 1;
                         return; // Dừng quá trình nếu thông tin là null
                     }
                     lstNguoiLon.Add(nl); // Thêm vào danh sách
@@ -392,6 +395,7 @@ namespace BanVeMayBay
                     {
                         check = false;
                         MessageBox.Show("Thông tin trẻ em không hợp lệ."); // Hiển thị thông báo lỗi
+                        flag = 1;
                         return; // Dừng quá trình nếu thông tin là null
                     }
                     lstTreEm.Add(trem); // Thêm vào danh sách
@@ -403,6 +407,7 @@ namespace BanVeMayBay
                     {
                         check = false;
                         MessageBox.Show("Thông tin em bé không hợp lệ."); // Hiển thị thông báo lỗi
+                        flag = 1;
                         return; // Dừng quá trình nếu thông tin là null
                     }
                     lstEmBe.Add(EMBE); // Thêm vào danh sách

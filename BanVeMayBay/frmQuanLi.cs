@@ -315,7 +315,7 @@ namespace BanVeMayBay
             cboGio_Den.SelectedIndex = -1;
             cboPhut_Den.SelectedIndex = -1;
             dateTimePickerNgayKhoiHanh.Value = DateTime.Now;
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGrV_Ve.Rows.Count - 1)
             {
                 string caulenh;
                 btnXoa_QLVe.Enabled = true;
@@ -519,7 +519,7 @@ namespace BanVeMayBay
         }
         private void dataGrV_TaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if(e.RowIndex >= 0 && e.RowIndex < dataGrV_TaiKhoan.Rows.Count - 1)
             {
                 DataGridViewRow row = dataGrV_TaiKhoan.Rows[e.RowIndex];
                 txtMaTK.Text = row.Cells["MaTaiKhoan"].Value.ToString();
@@ -550,7 +550,7 @@ namespace BanVeMayBay
         #region Quản lí Sân bay
         private void dataGrV_SanBay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < dataGrV_SanBay.Rows.Count - 1)
             {
                 DataGridViewRow row = dataGrV_SanBay.Rows[e.RowIndex];
                 txtMaSanBay.Text = row.Cells["MaSanBay"].Value.ToString();
@@ -881,7 +881,7 @@ namespace BanVeMayBay
         }
         private void dataGrV_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.RowIndex < dataGrV_HoaDon.Rows.Count)
+            if(e.RowIndex >= 0 && e.RowIndex < dataGrV_HoaDon.Rows.Count -1)
             {
                 DataGridViewRow selectedRow = dataGrV_HoaDon.Rows[e.RowIndex];
                 string maHD = selectedRow.Cells["MaHoaDon"].Value.ToString();

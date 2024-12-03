@@ -93,6 +93,6 @@ namespace BanVeMayBay
             tt.Gioitinh = cboGioiTinh_TE.Text;
             return tt; 
         }
-
+     
     }
 }
