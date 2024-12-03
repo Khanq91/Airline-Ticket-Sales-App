@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -62,10 +63,42 @@ namespace BanVeMayBay
             {
                 return false;
             }
+            else if(!ktraTuoi())
+            {
+                if(lblNgaySinh.Visible == false)
+                    lblNgaySinh.Visible = true;
+                return false;
+            }
             else
             {
+                if (lblNgaySinh.Visible == true)
+                    lblNgaySinh.Visible = false;
                 return true;
             }
+        }
+        bool ktraTuoi()
+        {
+            string dateString = mtxtNgaySinh_TE.Text;
+            DateTime dateValue;
+            DateTime ngaysinh;
+            int nam = 0;
+            int thang = 0;
+
+            if (DateTime.TryParse(dateString, out dateValue))
+            {
+                ngaysinh = dateValue;
+                nam = ngaysinh.Year;
+                thang = ngaysinh.Month;
+
+                int age = DateTime.Now.Year - nam;
+                if (ngaysinh > DateTime.Now.AddYears(-age)) age--;
+
+                if (age > 2 && age <= 12)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public TTTreEm GetKhachHang()
         {

@@ -13,8 +13,8 @@ namespace DB
         SqlConnection con;
         public DB_Connet()
         {
-            String conn = "Data Source=DESKTOP-MMVLGPG\\SQL2012;Initial Catalog=QL_VeMayBay_dotNet;Integrated Security=True";
-            //String conn = "Data Source=LAPTOP-GHCIUOL8\\MSSQLSERVER01;Initial Catalog=QL_VeMayBay_dotNet;Integrated Security=True;Encrypt=False";
+            //String conn = "Data Source=DESKTOP-MMVLGPG\\SQL2012;Initial Catalog=QL_VeMayBay_dotNet;Integrated Security=True";
+            String conn = "Data Source=LAPTOP-GHCIUOL8\\MSSQLSERVER01;Initial Catalog=QL_VeMayBay_dotNet;Integrated Security=True;Encrypt=False";
             con = new SqlConnection(conn);
         }
         public void OpenSql()

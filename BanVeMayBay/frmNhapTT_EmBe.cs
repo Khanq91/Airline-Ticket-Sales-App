@@ -73,10 +73,40 @@ namespace BanVeMayBay
             {
                 return false;
             }
+            else if (!ktraTuoi())
+            {
+                lblNgaySinh.Visible = true;
+                return false;
+            }
             else
             {
+                lblNgaySinh.Visible = false;
                 return true;
             }
+        }
+        bool ktraTuoi()
+        {
+            string dateString = mtxtNgaySinh_EB.Text;
+            DateTime dateValue;
+            DateTime ngaysinh;
+            int nam = 0;
+            int thang = 0;
+
+            if (DateTime.TryParse(dateString, out dateValue))
+            {
+                ngaysinh = dateValue;
+                nam = ngaysinh.Year;
+                thang = ngaysinh.Month;
+
+                int age = DateTime.Now.Year - nam;
+                if (ngaysinh > DateTime.Now.AddYears(-age)) age--;
+
+                if (age <= 2 && age > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public TTEmBe GetKhachHang()
         {

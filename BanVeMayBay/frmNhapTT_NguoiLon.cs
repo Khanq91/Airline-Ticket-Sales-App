@@ -89,26 +89,53 @@ namespace BanVeMayBay
             }
             if (txtSDT_NL.Text.Length <=9 && txtSDT_NL.Text.Length >=11 || string.IsNullOrWhiteSpace(txtSDT_NL.Text))
             {
-                lbl_SDT.Text = "Số điện thoại không hợp lệ";
+                lbl_SDT.Visible = true;
                 return false;
             }
             if (!IsValidEmail(txtEmail_NL.Text))
             {
-                lblEmail.Text = "Email không hợp lệ";
+                lbl_Email.Visible = true;
                 return false;
             }
             if (txtCCCD.Text.Length != 12)
             {
-                lbl_CCCD.Text = "CCCD không hợp lệ";
+                lbl_CCCD.Visible = true;
                 return false;
             }
-            //if (!IsAgeValid())
-            //{
-            //    lbl_NgaySinh.Text = "Ngày sinh không hợp lệ";
-            //    return false;
-            //}
-            // Nếu tất cả các trường đều hợp lệ
+            else if (!ktraTuoi())
+            {
+                lblNgaySinh.Visible = true;
+                return false;
+            }
+            lbl_SDT.Visible = false;
+            lbl_Email.Visible = false;
+            lbl_CCCD.Visible = false;
+            lblNgaySinh.Visible = false;
             return true;
+        }
+        bool ktraTuoi()
+        {
+            string dateString = mtxtNgaySinh.Text;
+            DateTime dateValue;
+            DateTime ngaysinh;
+            int nam = 0;
+            int thang = 0;
+
+            if (DateTime.TryParse(dateString, out dateValue))
+            {
+                ngaysinh = dateValue;
+                nam = ngaysinh.Year;
+                thang = ngaysinh.Month;
+
+                int age = DateTime.Now.Year - nam;
+                if (ngaysinh > DateTime.Now.AddYears(-age)) age--;
+
+                if (age > 12)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public TTNguoiLon GetKhachHang()
         {
@@ -116,6 +143,10 @@ namespace BanVeMayBay
             {
                 return null;
             }
+            lbl_SDT.Text = "";
+            lblEmail.Text = "";
+            lbl_CCCD.Text = "";
+            lblNgaySinh.Text = "";
             TTNguoiLon tt =new TTNguoiLon();
             if (rdoGioiTinhNam_NL.Checked)
             {

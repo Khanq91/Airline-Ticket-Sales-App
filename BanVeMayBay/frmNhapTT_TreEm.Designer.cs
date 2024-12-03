@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mtxtNgaySinh_TE = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.lblThongTin_TE = new System.Windows.Forms.Label();
             this.picNguoi = new System.Windows.Forms.PictureBox();
             this.erpNhapTT = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mtxtNgaySinh_TE = new System.Windows.Forms.MaskedTextBox();
+            this.lblNgaySinh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpNhapTT)).BeginInit();
@@ -59,6 +60,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblNgaySinh);
             this.panel1.Controls.Add(this.mtxtNgaySinh_TE);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -76,6 +78,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(879, 217);
             this.panel1.TabIndex = 0;
+            // 
+            // mtxtNgaySinh_TE
+            // 
+            this.mtxtNgaySinh_TE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNgaySinh_TE.Location = new System.Drawing.Point(15, 154);
+            this.mtxtNgaySinh_TE.Mask = "00/00/0000";
+            this.mtxtNgaySinh_TE.Name = "mtxtNgaySinh_TE";
+            this.mtxtNgaySinh_TE.Size = new System.Drawing.Size(411, 39);
+            this.mtxtNgaySinh_TE.TabIndex = 2;
+            this.mtxtNgaySinh_TE.ValidatingType = typeof(System.DateTime);
             // 
             // label7
             // 
@@ -223,15 +235,16 @@
             // 
             this.erpNhapTT.ContainerControl = this;
             // 
-            // mtxtNgaySinh_TE
+            // lblNgaySinh
             // 
-            this.mtxtNgaySinh_TE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtNgaySinh_TE.Location = new System.Drawing.Point(15, 154);
-            this.mtxtNgaySinh_TE.Mask = "00/00/0000";
-            this.mtxtNgaySinh_TE.Name = "mtxtNgaySinh_TE";
-            this.mtxtNgaySinh_TE.Size = new System.Drawing.Size(411, 39);
-            this.mtxtNgaySinh_TE.TabIndex = 2;
-            this.mtxtNgaySinh_TE.ValidatingType = typeof(System.DateTime);
+            this.lblNgaySinh.AutoSize = true;
+            this.lblNgaySinh.ForeColor = System.Drawing.Color.Red;
+            this.lblNgaySinh.Location = new System.Drawing.Point(11, 196);
+            this.lblNgaySinh.Name = "lblNgaySinh";
+            this.lblNgaySinh.Size = new System.Drawing.Size(326, 20);
+            this.lblNgaySinh.TabIndex = 29;
+            this.lblNgaySinh.Text = "Ngày sinh không hợp lệ. Tuổi phải > 2 và < 12";
+            this.lblNgaySinh.Visible = false;
             // 
             // frmNhapTT_TreEm
             // 
@@ -275,5 +288,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ErrorProvider erpNhapTT;
         private System.Windows.Forms.MaskedTextBox mtxtNgaySinh_TE;
+        private System.Windows.Forms.Label lblNgaySinh;
     }
 }

@@ -372,6 +372,13 @@ namespace BanVeMayBay
             string tendn;
             string matkhau;
             string loaiTK;
+            string sqlCheckTK = "SELECT COUNT(*) FROM QLTaiKhoan WHERE TenDangNhap = '" + txtTenDN.Text + "'";
+            int countTaiKhoan = (int)db.GetExecuteScalar(sqlCheckTK);
+            if (countTaiKhoan > 0)
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại!.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (string.IsNullOrEmpty(txtMaTK.Text))
             {
                 MessageBox.Show("Vui lòng tạo mã tài khoản trước khi thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -417,22 +424,27 @@ namespace BanVeMayBay
                 MessageBox.Show("Vui lòng chọn loại tài khoản cho tài khoản này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string caulenh = "INSERT INTO QLTaiKhoan (TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES (N'" + tentk + "', '" + tendn + "', '" + matkhau + "', N'" + loaiTK + "')";
-            try
+            DialogResult result = MessageBox.Show("Bạn có chắn chắn muốn thêm tài khoản có mã là '" + txtMaTK.Text + "'", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                var kq = db.GetExecuteNonQuery(caulenh);
-                if(kq != 0)
+                string caulenh = "INSERT INTO QLTaiKhoan (TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan) VALUES (N'" + tentk + "', '" + tendn + "', '" + matkhau + "', N'" + loaiTK + "')";
+                try
                 {
-                    MessageBox.Show("Thêm tài khoản thành công!");
-                    Load_TaiKhoan();
+                    var kq = db.GetExecuteNonQuery(caulenh);
+                    if (kq != 0)
+                    {
+                        MessageBox.Show("Thêm tài khoản thành công!");
+                        Load_TaiKhoan();
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không thể thêm tài khoản!\nLỗi: " + ex.Message);
                     return;
-                }    
+                }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Không thể thêm tài khoản!\nLỗi: " + ex.Message);
-                return;
-            }
+            else return;            
         }
 
         private void btnSuaQL_TK_Click(object sender, EventArgs e)
