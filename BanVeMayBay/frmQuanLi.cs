@@ -62,12 +62,7 @@ namespace BanVeMayBay
                 lblRole.Text = "Quản lý";
                 lblTenNguoiDung.Text = tennguoidung;
             }    
-            if (role == "Nhân viên")
-            {
-                lblRole.Text = "Nhân viên";
-                lblTenNguoiDung.Text = tennguoidung;
-                btnQL_SanBay.Visible = false;
-            }
+            
             dateTimePickerNgayKhoiHanh.MinDate = DateTime.Now;
             pnlQL_Ve.Visible = true;
                 
@@ -992,7 +987,7 @@ namespace BanVeMayBay
         }
         private void Load_TaiKhoan()
         {
-            string caulenh = "SELECT MaTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan FROM QLTaiKhoan";
+            string caulenh = "SELECT MaTaiKhoan, TenTaiKhoan, TenDangNhap, MatKhau, LoaiTaiKhoan FROM QLTaiKhoan WHERE LoaiTaiKhoan != N'Quản lý'";
             dt_TaiKhoan = db.GetDataTable(caulenh);
             dataGrV_TaiKhoan.DataSource = dt_TaiKhoan;
         }

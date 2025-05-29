@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|d:\\file\\hk5\\flighttickerbooking-app[.net]\\new folder (6)\\nhom11_quanlybanvemaybay\\nhom11_quanlybanvemaybay\\banvemaybay\\banvemaybay\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25DA6A1F-03A7-4BA3-99A9-D1270FBA8939}|DB\\DB.csproj|solutionrelative:db\\db_connet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmqr_thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmqr_thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmquanli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\frmhoadon_thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\frmhoadon_thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCE782A-85B4-40FE-B687-9684C2A48E2E}|BanVeMayBay\\BanVeMayBay.csproj|solutionrelative:banvemaybay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMain.Designer.cs",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmMain.Designer.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.Designer.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmMain.Designer.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmMain.Designer.cs",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T11:39:19.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmMain.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmMain.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmMain.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:46:32.928Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmThanhToan.cs [Design]",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmThanhToan.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmThanhToan.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmThanhToan.cs [Design]",
+              "RelativeToolTip": "BanVeMayBay\\frmThanhToan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:37:57.51Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DB_Connet.cs",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\DB\\DB_Connet.cs",
+              "RelativeDocumentMoniker": "DB\\DB_Connet.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\DB\\DB_Connet.cs",
+              "RelativeToolTip": "DB\\DB_Connet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T08:17:01.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmQR_ThanhToan.cs [Design]",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmQR_ThanhToan.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmQR_ThanhToan.cs",
+              "ToolTip": "D:\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmQR_ThanhToan.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmQR_ThanhToan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:37:36.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmHoaDon_ThanhToan.cs [Design]",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmHoaDon_ThanhToan.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmHoaDon_ThanhToan.cs",
+              "ToolTip": "D:\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmHoaDon_ThanhToan.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmHoaDon_ThanhToan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:37:30.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmQuanLi.cs",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmQuanLi.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeToolTip": "BanVeMayBay\\frmQuanLi.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAcwHwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T06:57:04.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmQuanLi.cs [Design]",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\frmQuanLi.cs",
+              "ToolTip": "D:\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\T\u1ED5ng h\u1EE3p CNTT\\FlightTickerBooking-App[.Net]\\3-12-2024\\BanVeMayBay\\BanVeMayBay\\frmQuanLi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T06:57:03.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\Program.cs",
+              "RelativeDocumentMoniker": "BanVeMayBay\\Program.cs",
+              "ToolTip": "D:\\File\\HK5\\FlightTickerBooking-App[.Net]\\New folder (6)\\Nhom11_QuanLyBanVeMayBay\\Nhom11_QuanLyBanVeMayBay\\BanVeMayBay\\BanVeMayBay\\Program.cs",
+              "RelativeToolTip": "BanVeMayBay\\Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwCEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T01:08:48.721Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

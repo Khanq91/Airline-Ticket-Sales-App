@@ -28,6 +28,7 @@ namespace BanVeMayBay
         string _ngay_kh;
         string _Hangve;
         private frmMain ParentForm;
+        //bool checkClick();
         DB_Connet db = new DB_Connet();
         public string Hangve { get => _Hangve; set => _Hangve = value; }
         public string Tienve { get => _tienve; set => _tienve = value; }
@@ -79,6 +80,14 @@ namespace BanVeMayBay
             //VD: giá của hạng vé 1 = 1000000 thì lblGiaHV1.Text bằng 1.000
             lblGiaHV1.Text = "500";
             lblGiaHV4.Text = "1.500";
+        }
+        public bool ktraClick()
+        {
+            if (picCTVe1.Image == Resources.arrow_up && picCTVe4.Image == Resources.arrow_up)
+            {
+                return false;
+            }
+            else return true;
         }
         #region Hàm xử lý giao diện
         //Các hàm xuất thông tin các dịch vụ trên frm

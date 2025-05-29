@@ -51,7 +51,7 @@
             this.pnlTTVeDat = new System.Windows.Forms.Panel();
             this.lblHangVe4 = new System.Windows.Forms.Label();
             this.lblHangVe1 = new System.Windows.Forms.Label();
-            this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
+            //this.elipseTool1 = new BanVeMayBay.Tool.ElipseTool();
             this.pnlThanGiaoDien.SuspendLayout();
             this.pnlDauGiaoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -332,8 +332,8 @@
             // 
             // elipseTool1
             // 
-            this.elipseTool1.CornerRadius = 40;
-            this.elipseTool1.TargetControl = this;
+            //this.elipseTool1.CornerRadius = 40;
+            //this.elipseTool1.TargetControl = this;
             // 
             // frmMain
             // 

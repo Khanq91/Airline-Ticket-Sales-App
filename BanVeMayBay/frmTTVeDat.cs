@@ -21,7 +21,7 @@ namespace BanVeMayBay
         string _TienPAN;
         string _SL_Ve;
         string _TienVeVao, _tg_di, _tg_den, _ma_cb, _hangve, _Ngaybay, _DiemKH, _DiemDen, _ViTriGhe, _TienViTriGhe, _GoiHanhLy, _TienGoiHanhLy;//Được truyền từ frmVe vào
-
+        bool checkClick = false;
         public string GiaVe { get => _GiaVe; set => _GiaVe = value; }
         public string SL_Ve { get => _SL_Ve; set => _SL_Ve = value; }
         public string TienVeVao { get => _TienVeVao; set => _TienVeVao = value; }
@@ -293,6 +293,9 @@ namespace BanVeMayBay
             thanhtien += GiaGhe_ + GiaHL_;
             lblTongTien.Text = string.Format("{0:n0}", thanhtien);
         }
+        //public bool ktraClick()
+        //{
+        //}
         public string GetThanhTien()
         {
             return lblTongTien.Text;

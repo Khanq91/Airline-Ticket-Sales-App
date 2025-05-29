@@ -11,7 +11,7 @@ namespace BanVeMayBay
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        #region Để tao yên
+        #region 
         // Sửa lỗi trên màn hình có DPI cao khiến winform bị mờ
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
@@ -20,7 +20,7 @@ namespace BanVeMayBay
 
         static void Main()
         {
-            #region Để tao yên
+            #region 
             //Kiểm tra phiên bản Windows để chắc rằng nó từ Vista trở về sau
             //Vì bản XP trở về trước không hỗ trợ DPI cao
             if (Environment.OSVersion.Version.Major >= 6)

@@ -59,7 +59,7 @@ namespace BanVeMayBay
         #endregion
 
         private frmChonDV frmDVInstance;
-
+        bool checkClick = false;
         string tennguoidung;
         public frmMain(string TenNguoiDung)
         {
@@ -125,6 +125,7 @@ namespace BanVeMayBay
         }
         private void XuLy_btnDiTiep(int index)
         {
+            frmTTVeDat frmttvd;
             frmDVInstance.LabelTextChanged += FrmDVInstance_LabelTextChanged;
             if (index == 1)
             {
@@ -137,11 +138,8 @@ namespace BanVeMayBay
                 lblHangVe4.Visible = true;
                 loadDanhSachtoFrmVe(lstCB.Count());
 
-                //tenDiaDiemKhoiHanh = getDiaDiemSanBay(__diemkhoihanh);
-                //tenDiaDiemDen = getDiaDiemSanBay(__diemden);
-
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
+                frmttvd = new frmTTVeDat(__slTTND,__TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
@@ -151,6 +149,13 @@ namespace BanVeMayBay
             }
             if (index == 2)
             {
+                if(!checkClick)
+                {
+                    MessageBox.Show("Vui lòng chọn vé!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    getDanhSachVe(__diemkhoihanh.Trim(), __diemden.Trim(), __ngaybay);
+                    loadDanhSachtoFrmVe(lstCB.Count());
+                    return;
+                }    
                 lblHangVe1.Visible = false;
                 lblHangVe4.Visible = false;
 
@@ -162,7 +167,7 @@ namespace BanVeMayBay
                 frmDVInstance.Show();
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
+                frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, "0", "0");
@@ -179,7 +184,7 @@ namespace BanVeMayBay
                 __TienGoiHanhLy = frmDVInstance.lblTienHL.Text;
 
                 flowLayoutPanelTTVeDat.Controls.Clear();
-                frmTTVeDat frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
+                frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
                 frmttvd.TopLevel = false;
                 flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
                 frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
@@ -201,6 +206,12 @@ namespace BanVeMayBay
                 flowLayoutPnlThanGianDien.Controls.Add(frmthanhtoan);
                 frmthanhtoan.Show();
 
+                //if (!frmthanhtoan.checkClick)
+                //{
+                //    MessageBox.Show("Vui lòng chọn phương thức thanh toán trước!");
+                //    return;
+                //}
+                //else
                 flag = 4;
             }
             if (index == 4)
@@ -224,6 +235,11 @@ namespace BanVeMayBay
                 try
                 {
                     var kq = DB.GetExecuteNonQuery(caulenh);
+                    if(kq != 0)
+                    {
+                        caulenh = "UPDATE TUYENBAY SET SoVeDaBan = SoVeDaBan + 1, SoVeConLai = SoVeConLai - 1 WHERE MaTuyenBay = '" + __machuyenbay + "'";
+                        DB.GetExecuteNonQuery(caulenh);
+                    }    
                 }
                 catch (Exception ex)
                 {
@@ -231,9 +247,12 @@ namespace BanVeMayBay
                 }
 
                 frmHDTT.Show();
+                //getResetClick();
+                //frmHDTT.TopLevel = true;
                 flag = 5;
             }
         }
+
         public void ShowTTCB(int slNL, int slTE, int slEB, string ngaybay, string diemkhoihanh, string diemden)
         {
             int sl = slNL + slTE + slEB;
@@ -352,6 +371,7 @@ namespace BanVeMayBay
                     __tgdi = tgdi;
                     __tgden = tgden;
                     __machuyenbay = machuyenbay;
+                    checkClick = true;
                 }
             }
         }
@@ -479,5 +499,106 @@ namespace BanVeMayBay
         }
         #endregion
 
+        private void btnQuaylai_Click(object sender, EventArgs e)
+        {
+            frmTTVeDat frmttvd;
+            int index = flag;
+            if (index == 2)
+            {
+                NhapKhachHang();
+                if (check)
+                {
+                    //AddTTKhachHangVaoSql();
+                    flowLayoutPnlThanGianDien.Controls.Clear();
+                    frmChonDV frmDV = new frmChonDV();
+                    frmDV.TopLevel = false;
+                    XuLy_btnDiTiep(flag);
+                }
+                lstNguoiLon.Clear();
+                lstTreEm.Clear();
+                lstEmBe.Clear();
+                return;
+            }
+            else if(index == 3) 
+            {            
+                getDanhSachVe(__diemkhoihanh.Trim(), __diemden.Trim(), __ngaybay);
+                flowLayoutPnlThanGianDien.Controls.Clear();
+                flowLayoutPnlThanGianDien.Padding = new Padding(0, 0, 0, 0);
+                pnlThanGiaoDien.Location = new Point(312, 285);
+                pnlThanGiaoDien.Height -= 50;
+                lblHangVe1.Visible = true;
+                lblHangVe4.Visible = true;
+                loadDanhSachtoFrmVe(lstCB.Count());
+
+                flowLayoutPanelTTVeDat.Controls.Clear();
+                frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, "0", "0", "0", "0");
+                frmttvd.TopLevel = false;
+                flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+                lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
+                frmttvd.Show();
+                return;
+            }
+            else if(index == 4)
+            {
+                __ViTriGhe = frmDVInstance.lblMaGhe.Text;
+                __TienViTriGhe = frmDVInstance.lblTienGhe.Text;
+                __GoiHanhLy = frmDVInstance.lblGoiHanhLy.Text;
+                __TienGoiHanhLy = frmDVInstance.lblTienHL.Text;
+
+                flowLayoutPanelTTVeDat.Controls.Clear();
+                frmttvd = new frmTTVeDat(__slTTND, __TienVe, __ngaybay, __tgdi, __tgden, __machuyenbay, __Hangve, tenDiaDiemKhoiHanh, tenDiaDiemDen, __ViTriGhe, __TienViTriGhe, __GoiHanhLy, __TienGoiHanhLy);
+                frmttvd.TopLevel = false;
+                flowLayoutPanelTTVeDat.Controls.Add(frmttvd);
+                frmttvd.TinhThanhTien(__TienVe, __TienViTriGhe, __TienGoiHanhLy);
+                lblTongTien.Text = frmttvd.GetThanhTien() + " VND";
+                TongTien = frmttvd.GetThanhTien();
+                frmttvd.Show();
+
+                pnlThanGiaoDien.Location = new Point(25, 229);
+                flowLayoutPnlThanGianDien.Controls.Clear();
+
+                btnDiTiep.BackColor = Color.Gold;
+                btnDiTiep.Text = "Thanh Toán";
+                btnDiTiep.ForeColor = Color.Black;
+                btnDiTiep.Font = new Font(btnDiTiep.Font, FontStyle.Bold | FontStyle.Italic);
+
+                frmthanhtoan = new frmThanhToan(TongTien);
+                frmthanhtoan.ThanhTien();
+                frmthanhtoan.TopLevel = false;
+                flowLayoutPnlThanGianDien.Controls.Add(frmthanhtoan);
+                frmthanhtoan.Show();
+            }
+            //else if(index == 5)
+            //{
+            //    //string tongtienstr = TongTien.ToString("N0");
+            //    __PhuongThucTT = frmthanhtoan.getHinhThucTT();
+            //    frmHoaDon_ThanhToan frmHDTT = new frmHoaDon_ThanhToan(tennguoidung, __slTTND, __TienVe, __TienViTriGhe, __TienGoiHanhLy, TongTien);
+            //    __TenNganHang = frmthanhtoan.getTenNganHang();
+            //    frmQR_ThanhToan frmQRTT = new frmQR_ThanhToan(__TenNganHang, TongTien);
+            //    string caulenh;
+            //    Random rd = new Random();
+            //    int countid = (int)DB.GetExecuteScalar("SELECT COUNT(ID) FROM HANHKHACH");
+            //    int randID = rd.Next(1, countid);
+            //    if (__PhuongThucTT == "Chuyển khoản")
+            //    {
+            //        frmQRTT.Show();
+            //        caulenh = "INSERT INTO HOADON(NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon, IDHanhKhach) VALUES (GETDATE(), " + TongTien.Replace(".", "") + ", N'" + __PhuongThucTT + "', N'Ðã thanh toán', " + randID + ")";
+            //    }//INSERT INTO HOADON(NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon, IDHanhKhach) VALUES (GETDATE(), 10000000, N'Chuyển khoản', N'Ðã thanh toán', 1)
+            //    else caulenh = "INSERT INTO HOADON(NgayLapHoaDon, TongTien, HinhThucThanhToan, TrangThaiHoaDon, IDHanhKhach) VALUES (GETDATE(), " + TongTien.Replace(".", "") + ", N'" + __PhuongThucTT + "', N'Chưa thanh toán', " + randID + ")";
+
+            //    try
+            //    {
+            //        var kq = DB.GetExecuteNonQuery(caulenh);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Thêm hóa đơn thất bại\nLỗi: " + ex.Message);
+            //    }
+
+            //    frmHDTT.Show();
+            //    getResetClick();
+            //}    
+
+        }
     }
 }

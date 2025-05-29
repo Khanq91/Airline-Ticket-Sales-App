@@ -17,6 +17,7 @@ namespace BanVeMayBay
         string _HinhThucThanhToan;
         string _TrangThaiHoaDon;
         string _TenNganHang;
+        public bool checkClick = false;
         List<Label> labels = new List<Label>();
         public string TamTinh { get => _TamTinh; set => _TamTinh = value; }
         public string HinhThucThanhToan { get => _HinhThucThanhToan; set => _HinhThucThanhToan = value; }
@@ -45,6 +46,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineMB);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "MB";
+            checkClick = true;
         }
 
         private void pnlSacombank_Click(object sender, EventArgs e)
@@ -52,6 +54,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineSacombank);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "Sacombank";
+            checkClick = true;
         }
 
         private void pnlAgribank_Click(object sender, EventArgs e)
@@ -59,6 +62,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineAgribank);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "Agribank";
+            checkClick = true;
         }
 
         private void pnlVietcombank_Click(object sender, EventArgs e)
@@ -66,6 +70,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineVietcombank);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "Vietcombank";
+            checkClick = true;
         }
 
         private void pnlVietinbank_Click(object sender, EventArgs e)
@@ -73,6 +78,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineVietinbank);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "Vietinbank";
+            checkClick = true;
         }
 
         private void pnlACB_Click(object sender, EventArgs e)
@@ -80,6 +86,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineACB);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "ACB";
+            checkClick = true;
         }
 
         private void pnlBIDV_Click(object sender, EventArgs e)
@@ -87,6 +94,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineBIDV);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "BIDV";
+            checkClick = true;
         }
 
         private void pnlTechcombank_Click(object sender, EventArgs e)
@@ -94,6 +102,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineTechcombank);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "Techcombank";
+            checkClick = true;
         }
 
         private void pnlOCB_Click(object sender, EventArgs e)
@@ -101,6 +110,7 @@ namespace BanVeMayBay
             XulyLine(lbl_LineOCB);
             setTrangThaiHD_HinhThucTT("Chuyển khoản", "Đã thanh toán");
             this.TenNganHang = "OCB";
+            checkClick = true;
         }
 
 
@@ -108,6 +118,7 @@ namespace BanVeMayBay
         {
             XulyLine(lbl_LineTienMat);
             setTrangThaiHD_HinhThucTT("Trả tiền mặt", "Đã thanh toán");
+            checkClick = true;
         }
         public void XulyLine(object sender)
         {
